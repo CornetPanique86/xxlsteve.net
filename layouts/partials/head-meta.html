@@ -1,0 +1,11 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{ if isset .Params "title" }}
+  <title>{{ site.Title }} | {{ .Title }}</title>
+{{ else }}
+  <title>{{ .Title }}</title>
+{{ end }}
+<meta property="og:title" content="{{ site.Title }}" />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Prompt:wght@700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<script src="/js/nav.js"></script>

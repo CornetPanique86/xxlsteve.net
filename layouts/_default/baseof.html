@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ partial "head-meta.html" }}
+    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+  </head>
+  <body class="page">
+    {{ partial "nav.html" }}
+    <main class="main-content">
+      <div class="container">
+        <div class="page-content">
+          {{ block "main" . }}{{ end }}
+        </div>
+      </div>
+    </main>
+    {{ partial "footer.html" }}
+
+    {{ partial "cookies.html" }}
+  </body>
+</html>

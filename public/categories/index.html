@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title></title>
+
+<meta property="og:title" content="XXL Steve site" />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Prompt:wght@700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<script src="/js/nav.js"></script>
+    
+    <link rel="stylesheet" href="http://xxlsteve.net/sass/main.min.css">
+  </head>
+  <body class="page">
+    <header>
+  <nav>
+    <ul class="top-nav">
+      <li class="top-nav__logo"><a href="/">
+        <img class="icons" src="/header-icon.png">
+      </a></li>
+      <div class="top-nav__link-group">
+        <li class="top-nav__link"><a href="/"> <span>Home</span> </a></li>
+        <li class="top-nav__link"><a href="/resources"><span>Resources</span></a></li>
+        <li class="top-nav__link"><a href="/tools"><span>Tools</span></a></li>
+        <li class="top-nav__link"><a href="/blog"><span>Blog</span></a>
+        <li class="top-nav__link"><a href="/about"><span>About</span></a>
+        <li class="top-nav__link">
+          <select name="theme" id="themeToggler" class="mcbutton" onchange="themeSettings()">
+            <option value="auto">Auto</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </li>
+        <li class="top-nav__link">
+          <button type="button">
+            <img class="icons" src="/search-icon.svg" style="width:30px; height:30px;">
+          </button>
+        </li>
+      </div>
+    </ul>
+  </nav>
+</header>
+    <main class="main-content">
+      <div class="container">
+        <div class="page-content">
+          
+  <div class="container">
+    <h1>All categories</h1>
+    <ul>
+      
+        <li>
+          <a href="http://xxlsteve.net/categories/blog/">Blog</a>
+        </li>
+      
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </main>
+    <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-content__left-group">
+          <h2 class="footer-content__site-name">XXL Steve site, </h2>
+          <p>Learn Hugo with CloudCannon, 2022</p>
+        </div>
+        <div class="footer-content__right-group">
+          <div class="newsletter-form">
+            <h2 class="newsletter-form__form-title">Sign up for our newsletter</h2>
+            <div class="input-wrapper">
+              <input type="text" placeholder="Enter your email">
+              <a>
+                <img class="submit-arrow" src="/arrow-white.svg">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="icons"><img src="/facebook-icon.svg"></a>
+        <a href="#" class="icons"><img src="/linkedin-icon.svg"></a>
+        <a href="#" class="icons"><img src="/twitter-icon.svg"></a>
+        <a href="https://youtube.com/@XXLSteve" class="icons"><img src="/youtube-icon.svg"></a>
+      </div>
+    </div>
+</footer>
+
+    <div id="cookie-consent-popup" class="hidden">
+    <h1>This website uses <span style="color:#c38108">cookies</span></h1>
+    <p>By using this website, you agree to our Cookie Policy.<br>
+        By agreeing to Cookies, the website will store the following:
+    </p>
+    <input type="checkbox" id="themeCookieCheckbox" value="Remember theme" checked disabled>
+    <label for="themeCookieCheckbox">Remember my color scheme/theme</label><br><br>
+
+    <button type="button" class="mcbutton">I refuse Cookies</button>
+    <button type="button" class="mcbutton" id="cookie-accept">I accept Cookies</button>
+</div>
+  </body>
+</html>

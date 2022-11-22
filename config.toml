@@ -1,0 +1,12 @@
+baseURL = "http://xxlsteve.net/"
+languageCode = "en-us"
+title = "XXL Steve site"
+uglyURLs = false
+[params]
+  author = "XXL Steve"
+
+
+# New "examples" taxonomy available
+[taxonomies]
+  tag = "tags"
+  category = "categories"
