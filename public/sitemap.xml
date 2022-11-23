@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://xxlsteve.net/categories/blog/</loc>
+    <loc>/categories/blog/</loc>
     <lastmod>2022-11-04T19:34:38+01:00</lastmod>
   </url><url>
-    <loc>http://xxlsteve.net/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2022-11-04T19:34:38+01:00</lastmod>
   </url><url>
-    <loc>http://xxlsteve.net/blog/first-post/</loc>
+    <loc>/blog/first-post/</loc>
     <lastmod>2022-11-04T19:34:38+01:00</lastmod>
   </url><url>
-    <loc>http://xxlsteve.net/tags/other/</loc>
+    <loc>/tags/other/</loc>
     <lastmod>2022-11-04T19:34:38+01:00</lastmod>
   </url><url>
-    <loc>http://xxlsteve.net/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2022-11-04T19:34:38+01:00</lastmod>
   </url><url>
-    <loc>http://xxlsteve.net/blog/</loc>
+    <loc>/blog/</loc>
     <lastmod>2022-11-04T19:33:39+01:00</lastmod>
   </url><url>
-    <loc>http://xxlsteve.net/</loc>
+    <loc>/</loc>
     <lastmod>2022-11-04T19:33:17+01:00</lastmod>
   </url>
 </urlset>

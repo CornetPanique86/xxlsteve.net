@@ -1,12 +1,9 @@
-baseURL = "http://xxlsteve.net/"
 languageCode = "en-us"
-title = "XXL Steve site"
+title = "XXL Steve"
 uglyURLs = false
 [params]
   author = "XXL Steve"
 
-
-# New "examples" taxonomy available
 [taxonomies]
   tag = "tags"
   category = "categories"
