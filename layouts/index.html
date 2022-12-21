@@ -4,57 +4,116 @@
     {{ partial "head-meta.html" }}
     {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+      // About this background button
+      function aboutbgOpenPopup(theme) {
+          document.getElementById("aboutbg-pageblock").style.display = "block";
+          let aboutbgText = document.getElementById("aboutbg-text");
+          if (theme == "nc") {
+            aboutbgText.innerHTML = 
+            `<div id="aboutbg-text-header">
+              <img src="/images/noxcity_logo.png" style="width: 30px; height: 30px; display:inline; margin-right: 10px;" alt="NoxCity logo"><h3 class="minecraft-aqua" style="display:inline">NoxCity</h3>
+            </div>
+            <div id="aboutbg-text-p">
+              <p>NoxCity was a (French) city created by <a href="https:\\www.youtube.com/@nesoxis610" target="_blank" rel="noopener noreferrer">Nesoxis</a> in 2019 (I am unsure of the date) in a flat world.<br>
+                I joined and discovered the world when the city already had several buildings on one big street, and I helped extend that street, and then built a supermarket and my house.<br>
+                I quickly became friends with the creator and also made many new friends that became mods and the city's discord server was born.<br>
+                A ton of different people have contributed to the city, but unfortunately it gradually became inactive.<br>
+                However, the owner is working on a V2 of NoxCity, so if you're interested join the <a href="https:\\discord.gg/ZjpkXj37tJ" target="_blank" rel="noopener noreferrer">Discord server</a>!
+                </p>
+
+                <br><br><h5 class="minecraft-green">Read more...</h5>
+            </div>`;
+          } else {
+            aboutbgText.innerHTML = 
+            `<div id="aboutbg-text-header">
+              <img src="/images/ulorium_logo_rgb.gif" style="width: 30px; height: 30px; display:inline; margin-right: 10px;" alt="UloriumGames logo"><h3 class="minecraft-dark-blue" style="display:inline">UloriumGames</h3>
+            </div>
+
+            <div id="aboutbg-text-p">
+              <p>UloriumGames was a minigames world created by <a href="https:\\www.youtube.com/@Sam0312_" target="_blank" rel="noopener noreferrer">Sam0312</a> the 4th of May 2020.
+              <br>As it got more and more minigames, players and staff members, I decided to host it on a Realm.
+              <br>However we put it on maintainance for almost a year and it gradually became inactive.
+              <br>During that period, a new amazing lobby was built thanks to the hard work from <a href="https:\\www.youtube.com/@Snowbqll" target="_blank" rel="noopener noreferrer">Snowify</a> and other builders, which is what the background is!</p>
+              
+              <br><br><h5 class="minecraft-green">Read more...</h5>
+            </div>`;
+          }
+      }
+    </script>
   </head>
   <body class="page">
     {{ partial "nav.html" }}
     <main class="main-content">
       <div id="parallax-container">
-        <div class="page-content">
-          <section class="parallax">
-            <h4 id="parallax__aboutbg" class="mcbutton">About this background</h4>
+        <div style="padding: 0; margin: 0 0 80px 0;">
+          <section id="parallax">
+            <button type="button" id="parallax__aboutbg" class="mcbutton" onclick="aboutbgOpenPopup('ug')">About this background</button>
             <img src="/index/redbuilding01.png" id="redbuilding1" style="z-index: 5">
             <img src="/index/uglogo02.png" id="uglogo2" style="z-index: 4">
             <img src="/index/platform03.png" id="platform3" style="z-index: 3">
             <img src="/index/bgbuilds04.png" id="bgbuilds4" style="z-index: 2">
             <img src="/index/clouds05.png" id="clouds5" style="z-index: 1">
+            <script>
+              gsap.from("#redbuilding1", {
+                  scrollTrigger : {
+                    scrub: true
+                  },
+                  y: 200
+              });
+              gsap.from("#uglogo2", {
+                scrollTrigger : {
+                  scrub: true
+                },
+                y: 100
+              });
+              gsap.from("#platform3", {
+                scrollTrigger : {
+                  scrub: true
+                },
+                y: 80
+              });
+              gsap.from("#bgbuilds4", {
+                scrollTrigger : {
+                  scrub: true
+                },
+                y: 50
+              });
+              gsap.from("#parallax__aboutbg", {
+                scrollTrigger : {
+                  scrub: true
+                },
+                opacity: 0.5
+              });
+            </script>
           </section>
-        
+
           <section class="indexsec">
             {{ .Content }}
+
+            <br><br>
+            <span style="text-align: center;"><h3>About | Blog | Socials</h3>
+            <h3><a href="https://youtube.com/@XXLSteve" class="icons youtube" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i> YouTube</a>
+               | <a href="https://discord.gg/dJJyryc" class="icons discord" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i> Discord</a></h3></span>
           </section>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-          <script>
-            gsap.from("#redbuilding1", {
-              scrollTrigger : {
-                scrub: true
-              },
-              y: 200
-            })
-            gsap.from("#uglogo2", {
-              scrollTrigger : {
-                scrub: true
-              },
-              y: 100
-            })
-            gsap.from("#platform3", {
-              scrollTrigger : {
-                scrub: true
-              },
-              y: 80
-            })
-            gsap.from("#bgbuilds4", {
-              scrollTrigger : {
-                scrub: true
-              },
-              y: 50
-            })
-          </script>
         </div>
       </div>
     </main>
     {{ partial "footer.html" }}
 
+    <div id="aboutbg-pageblock" class="pageblock" style="display: none" onclick="closePageBlock('aboutbg-pageblock')">
+      <div id="aboutbg" onclick="event.stopPropagation();">
+        <img src="/icons/cross_mc.png" class="cross-button" id="aboutbg-closebutton" onclick="closePageBlock('aboutbg-pageblock')">
+        <div id="aboutbg-text">
+          <h1>Loading...</h1>
+          <div id="aboutbg-text-p">
+            <p>Loading hehe</p>
+          </div>
+        </div>
+      </div>
+    </div>
     {{ partial "cookies.html" }}
   </body>
 </html>

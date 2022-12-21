@@ -6,10 +6,16 @@
 
   <title>XXL Steve</title>
 
-<meta property="og:title" content="XXL Steve" />
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Prompt:wght@700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta property="og:title" content="XXL Steve" />
+
+
+
+<meta name="og:url" content="">
+<meta property="twitter:url" content="">
+
 <script src="/js/nav.js"></script>
+<script src="https://kit.fontawesome.com/24bbd48e74.js" crossorigin="anonymous"></script>
     
     <link rel="stylesheet" href="/sass/main.min.css">
   </head>
@@ -46,13 +52,29 @@
       <div class="container">
         <div class="page-content">
           
-    <h1 class="col-header dark-orange">All blog posts</h1>
+    <h1>Blog posts</h1>
     
     <div class="post-preview">
-        <img class="post-preview__left" src="first-post/images/header.png">
-        <div class="post-preview__right">
-            <a class="preview-title" href="/blog/first-post/">First Post</a>
-            <span>November 4, 2022</span>
+        <a href="/blog/noxcity/"><img class="post-preview__top" src="noxcity/img/header-image.png"></a>
+        <div class="post-preview__bottom">
+            <a class="preview-title" href="/blog/noxcity/"><h3 style="color: #fff;">NoxCity</h3></a>
+            <span style="color: #fff;">December 7, 2022</span>
+        </div>
+    </div>
+    
+    <div class="post-preview">
+        <a href="/blog/uloriumgames/"><img class="post-preview__top" src="uloriumgames/img/header-image.png"></a>
+        <div class="post-preview__bottom">
+            <a class="preview-title" href="/blog/uloriumgames/"><h3 style="color: #fff;">What is Ulorium Games?</h3></a>
+            <span style="color: #fff;">December 7, 2022</span>
+        </div>
+    </div>
+    
+    <div class="post-preview">
+        <a href="/blog/first-post/"><img class="post-preview__top" src="first-post/images/header.png"></a>
+        <div class="post-preview__bottom">
+            <a class="preview-title" href="/blog/first-post/"><h3 style="color: #fff;">First Post</h3></a>
+            <span style="color: #fff;">November 4, 2022</span>
         </div>
     </div>
     
@@ -64,40 +86,44 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-content__left-group">
-          <h2 class="footer-content__site-name">XXL Steve, </h2>
-          <p>Learn Hugo with CloudCannon, 2022</p>
-        </div>
-        <div class="footer-content__right-group">
-          <div class="newsletter-form">
-            <h2 class="newsletter-form__form-title">Sign up for our newsletter</h2>
-            <div class="input-wrapper">
-              <input type="text" placeholder="Enter your email">
-              <a>
-                <img class="submit-arrow" src="/arrow-white.svg">
-              </a>
-            </div>
+          <h3 class="footer-content__site-name">Socials</h3>
+          <div class="footer-social">
+            <a href="https://youtube.com/@XXLSteve" class="icons youtube" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://discord.gg/dJJyryc" class="icons discord" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i></a>
+            <a href="https://twitter.com/CornetPanique86" class="icons twitter" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://github.com/CornetPanique86" class="icons github" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+            <a href="https://reddit.com/u/CornetPanique86" class="icons reddit" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-reddit"></i></a>
           </div>
         </div>
+        <div class="footer-content__right-group">
+          <h3 class="footer-content__site-name">Links</h3>
+          <div class="footer-social">
+            <a href="/credits" class="links">Credits</a>
+            <a href="/privacy-policy" class="links">Privacy Policy</a>
+            <a href="/about" class="links">About</a>
+            <a href="/socials" class="links">Socials</a>
+          </div>
+          <br>
+            "Minecraft" is a trademark of Mojang AB. This website is not affiliated in any way with Microsoft or Mojang AB.
+        </div>
       </div>
-      <div class="footer-social">
-        <a href="#" class="icons"><img src="/facebook-icon.svg"></a>
-        <a href="#" class="icons"><img src="/linkedin-icon.svg"></a>
-        <a href="#" class="icons"><img src="/twitter-icon.svg"></a>
-        <a href="https://youtube.com/@XXLSteve" class="icons"><img src="/youtube-icon.svg"></a>
-      </div>
+      
     </div>
 </footer>
 
-    <div id="cookie-consent-popup" class="hidden">
+    <div id="page-blur" class="pageblock hidden" style="display: none">
+<div id="cookie-consent-popup">
     <h1>This website uses <span style="color:#c38108">cookies</span></h1>
-    <p>By using this website, you agree to our Cookie Policy.<br>
+    <p>By using this website, you agree to our <a href="/cookies">Cookie Policy</a>.<br>
         By agreeing to Cookies, the website will store the following:
     </p>
+    <br>
     <input type="checkbox" id="themeCookieCheckbox" value="Remember theme" checked disabled>
-    <label for="themeCookieCheckbox">Remember my color scheme/theme</label><br><br>
+    <label for="themeCookieCheckbox">Remember my color scheme/theme</label><br><br><br>
 
-    <button type="button" class="mcbutton">I refuse Cookies</button>
-    <button type="button" class="mcbutton" id="cookie-accept">I accept Cookies</button>
+    <button type="button" class="mcbutton-hsl" style="filter: brightness(100%)" onclick="cookieAgreementFn(-1)">I reject Cookies</button>
+    <button type="button" class="mcbutton-hsl" style="filter: hue-rotate(90deg) brightness(200%); margin: 10px;" onclick="cookieAgreementFn(1)">I accept Cookies</button>
+</div>
 </div>
   </body>
 </html>

@@ -1,11 +1,11 @@
 {{ define "main" }}
-    <h1 class="col-header dark-orange">All blog posts</h1>
+    <h1>Blog posts</h1>
     {{ range (.Site.GetPage "section" "blog").Pages }}
     <div class="post-preview">
-        <img class="post-preview__left" src="{{ .Params.image }}">
-        <div class="post-preview__right">
-            <a class="preview-title" href="{{ .Permalink }}">{{ .Title }}</a>
-            <span>{{ .Date.Format "January 2, 2006" }}</span>
+        <a href="{{ .Permalink }}"><img class="post-preview__top" src="{{ .Params.image }}"></a>
+        <div class="post-preview__bottom">
+            <a class="preview-title" href="{{ .Permalink }}"><h3 style="color: #fff;">{{ .Title }}</h3></a>
+            <span style="color: #fff;">{{ .Date.Format "January 2, 2006" }}</span>
         </div>
     </div>
     {{ end }}

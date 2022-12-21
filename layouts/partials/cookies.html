@@ -1,11 +1,14 @@
-<div id="cookie-consent-popup" class="hidden">
+<div id="page-blur" class="pageblock hidden" style="display: none">
+<div id="cookie-consent-popup">
     <h1>This website uses <span style="color:#c38108">cookies</span></h1>
-    <p>By using this website, you agree to our Cookie Policy.<br>
+    <p>By using this website, you agree to our <a href="/cookies">Cookie Policy</a>.<br>
         By agreeing to Cookies, the website will store the following:
     </p>
+    <br>
     <input type="checkbox" id="themeCookieCheckbox" value="Remember theme" checked disabled>
-    <label for="themeCookieCheckbox">Remember my color scheme/theme</label><br><br>
+    <label for="themeCookieCheckbox">Remember my color scheme/theme</label><br><br><br>
 
-    <button type="button" class="mcbutton">I refuse Cookies</button>
-    <button type="button" class="mcbutton" id="cookie-accept">I accept Cookies</button>
+    <button type="button" class="mcbutton-hsl" style="filter: brightness(100%)" onclick="cookieAgreementFn(-1)">I reject Cookies</button>
+    <button type="button" class="mcbutton-hsl" style="filter: hue-rotate(90deg) brightness(200%); margin: 10px;" onclick="cookieAgreementFn(1)">I accept Cookies</button>
+</div>
 </div>

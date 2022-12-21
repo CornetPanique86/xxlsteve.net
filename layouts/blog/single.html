@@ -1,11 +1,15 @@
 {{ define "main" }}
-    <div class="b-hero">
-        <img class="b-hero__image" src="{{ .Params.image }}">
+<article>
+    <meta itemprop="image" content="/blog/{{ .Params.image }}">
+    <meta itemprop="publisher" content="xxlsteve.net">
+    <div class="b-hero" itemscope itemtype="https://schema.org/BlogPosting">
+        <img class="b-hero__image" src="/blog/{{ .Params.image }}">
         <div class="b-hero__info">
-            <h1 class="b-hero__title">{{ .Title }}</h1>
+            <h1 class="b-hero__title" itemprop="name headline">{{ .Title }}</h1>
             <div class="b-hero__author-date">
-                <span>Written by: {{ .Params.author }}</span>
-                <span>{{ .Date.Format "January 2, 2006" }}</span>
+                <span>By <a href="/about" itemprop="author" name="XXL Steve">{{ .Params.author }}</a></span>
+                <span>Published: {{ .Date.Format "January 2, 2006" }}</span>
+                <span>Updated: {{ .Lastmod.Format "January 2, 2006" }}</span>
                 <div class="tag-group">
                     {{ range .Params.tags }}
                         <div class="tag">
@@ -18,5 +22,9 @@
             </div>
         </div>
     </div>
+    <div itemprop="headline">
     {{ .Content }}
+    </div>
+</article>
+    
 {{ end }}

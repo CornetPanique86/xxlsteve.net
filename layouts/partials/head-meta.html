@@ -1,11 +1,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{{ if (.Params "title") }}
-  <title>{{ .Title }} | {{ site.Title }}</title>
+{{ with .Title.Pages }}
+  <title>{{ . }} | {{ site.Title }}</title>
+  <meta property="twitter:title" content="{{ . }} | {{ site.Title }}">
 {{ else }}
   <title>{{ site.Title }}</title>
 {{ end }}
-<meta property="og:title" content="{{ site.Title }}" />
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Prompt:wght@700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta property="og:title" content="{{ site.Title }}" />
+{{ with .Description }}
+  <meta name="og:description" content="{{ . }}">
+  <meta name="description" content="{{ . }}">
+  <meta property="twitter:description" content="{{ . }}">
+{{ end }}
+{{ with .Params "ogtype" }}
+  <meta name="og:type" content="{{ . }}">
+{{ end }}
+{{ with .Params "image" }}
+  <meta name="og:image" content="{{ . }}">
+  <meta property="twitter:image" content="{{ . }}">
+{{ end }}
+<meta name="og:url" content="{{ .Permalink }}">
+<meta property="twitter:url" content="{{ .Permalink }}">
+
 <script src="/js/nav.js"></script>
+<script src="https://kit.fontawesome.com/24bbd48e74.js" crossorigin="anonymous"></script>

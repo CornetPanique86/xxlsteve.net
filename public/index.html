@@ -7,12 +7,57 @@
 
   <title>XXL Steve</title>
 
-<meta property="og:title" content="XXL Steve" />
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Prompt:wght@700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta property="og:title" content="XXL Steve" />
+
+
+
+<meta name="og:url" content="">
+<meta property="twitter:url" content="">
+
 <script src="/js/nav.js"></script>
+<script src="https://kit.fontawesome.com/24bbd48e74.js" crossorigin="anonymous"></script>
     
     <link rel="stylesheet" href="/sass/main.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+      
+      function aboutbgOpenPopup(theme) {
+          document.getElementById("aboutbg-pageblock").style.display = "block";
+          let aboutbgText = document.getElementById("aboutbg-text");
+          if (theme == "nc") {
+            aboutbgText.innerHTML = 
+            `<div id="aboutbg-text-header">
+              <img src="/images/noxcity_logo.png" style="width: 30px; height: 30px; display:inline; margin-right: 10px;" alt="NoxCity logo"><h3 class="minecraft-aqua" style="display:inline">NoxCity</h3>
+            </div>
+            <div id="aboutbg-text-p">
+              <p>NoxCity was a (French) city created by <a href="https:\\www.youtube.com/@nesoxis610" target="_blank" rel="noopener noreferrer">Nesoxis</a> in 2019 (I am unsure of the date) in a flat world.<br>
+                I joined and discovered the world when the city already had several buildings on one big street, and I helped extend that street, and then built a supermarket and my house.<br>
+                I quickly became friends with the creator and also made many new friends that became mods and the city's discord server was born.<br>
+                A ton of different people have contributed to the city, but unfortunately it gradually became inactive.<br>
+                However, the owner is working on a V2 of NoxCity, so if you're interested join the <a href="https:\\discord.gg/ZjpkXj37tJ" target="_blank" rel="noopener noreferrer">Discord server</a>!
+                </p>
+
+                <br><br><h5 class="minecraft-green">Read more...</h5>
+            </div>`;
+          } else {
+            aboutbgText.innerHTML = 
+            `<div id="aboutbg-text-header">
+              <img src="/images/ulorium_logo_rgb.gif" style="width: 30px; height: 30px; display:inline; margin-right: 10px;" alt="UloriumGames logo"><h3 class="minecraft-dark-blue" style="display:inline">UloriumGames</h3>
+            </div>
+
+            <div id="aboutbg-text-p">
+              <p>UloriumGames was a minigames world created by <a href="https:\\www.youtube.com/@Sam0312_" target="_blank" rel="noopener noreferrer">Sam0312</a> the 4th of May 2020.
+              <br>As it got more and more minigames, players and staff members, I decided to host it on a Realm.
+              <br>However we put it on maintainance for almost a year and it gradually became inactive.
+              <br>During that period, a new amazing lobby was built thanks to the hard work from <a href="https:\\www.youtube.com/@Snowbqll" target="_blank" rel="noopener noreferrer">Snowify</a> and other builders, which is what the background is!</p>
+              
+              <br><br><h5 class="minecraft-green">Read more...</h5>
+            </div>`;
+          }
+      }
+    </script>
   </head>
   <body class="page">
     <header>
@@ -45,49 +90,59 @@
 </header>
     <main class="main-content">
       <div id="parallax-container">
-        <div class="page-content">
-          <section class="parallax">
-            <h4 id="parallax__aboutbg" class="mcbutton">About this background</h4>
+        <div style="padding: 0; margin: 0 0 80px 0;">
+          <section id="parallax">
+            <button type="button" id="parallax__aboutbg" class="mcbutton" onclick="aboutbgOpenPopup('ug')">About this background</button>
             <img src="/index/redbuilding01.png" id="redbuilding1" style="z-index: 5">
             <img src="/index/uglogo02.png" id="uglogo2" style="z-index: 4">
             <img src="/index/platform03.png" id="platform3" style="z-index: 3">
             <img src="/index/bgbuilds04.png" id="bgbuilds4" style="z-index: 2">
             <img src="/index/clouds05.png" id="clouds5" style="z-index: 1">
+            <script>
+              gsap.from("#redbuilding1", {
+                  scrollTrigger : {
+                    scrub: true
+                  },
+                  y: 200
+              });
+              gsap.from("#uglogo2", {
+                scrollTrigger : {
+                  scrub: true
+                },
+                y: 100
+              });
+              gsap.from("#platform3", {
+                scrollTrigger : {
+                  scrub: true
+                },
+                y: 80
+              });
+              gsap.from("#bgbuilds4", {
+                scrollTrigger : {
+                  scrub: true
+                },
+                y: 50
+              });
+              gsap.from("#parallax__aboutbg", {
+                scrollTrigger : {
+                  scrub: true
+                },
+                opacity: 0.5
+              });
+            </script>
           </section>
-        
-          <section class="indexsec">
-            <h1 id="this-website-is-under-construction">This website is under construction!</h1>
-<p>Lots of bugs but that&rsquo;s because this was just a test build. I will update the site when it&rsquo;s completely done, probably</p>
 
+          <section class="indexsec">
+            <h1 id="hi-im-xxl-steve-aka-cornetpanique86">Hi, I&rsquo;m XXL Steve <em>(aka CornetPanique86)</em></h1>
+<p>I like to play Minecraft (Java and Bedrock) 🙂</p>
+<p>If you&rsquo;re looking for United Noobs creations click on the link below!</p>
+
+
+            <br><br>
+            <span style="text-align: center;"><h3>About | Blog | Socials</h3>
+            <h3><a href="https://youtube.com/@XXLSteve" class="icons youtube" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i> YouTube</a>
+               | <a href="https://discord.gg/dJJyryc" class="icons discord" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i> Discord</a></h3></span>
           </section>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-          <script>
-            gsap.from("#redbuilding1", {
-              scrollTrigger : {
-                scrub: true
-              },
-              y: 200
-            })
-            gsap.from("#uglogo2", {
-              scrollTrigger : {
-                scrub: true
-              },
-              y: 100
-            })
-            gsap.from("#platform3", {
-              scrollTrigger : {
-                scrub: true
-              },
-              y: 80
-            })
-            gsap.from("#bgbuilds4", {
-              scrollTrigger : {
-                scrub: true
-              },
-              y: 50
-            })
-          </script>
         </div>
       </div>
     </main>
@@ -95,40 +150,55 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-content__left-group">
-          <h2 class="footer-content__site-name">XXL Steve, </h2>
-          <p>Learn Hugo with CloudCannon, 2022</p>
-        </div>
-        <div class="footer-content__right-group">
-          <div class="newsletter-form">
-            <h2 class="newsletter-form__form-title">Sign up for our newsletter</h2>
-            <div class="input-wrapper">
-              <input type="text" placeholder="Enter your email">
-              <a>
-                <img class="submit-arrow" src="/arrow-white.svg">
-              </a>
-            </div>
+          <h3 class="footer-content__site-name">Socials</h3>
+          <div class="footer-social">
+            <a href="https://youtube.com/@XXLSteve" class="icons youtube" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://discord.gg/dJJyryc" class="icons discord" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i></a>
+            <a href="https://twitter.com/CornetPanique86" class="icons twitter" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://github.com/CornetPanique86" class="icons github" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+            <a href="https://reddit.com/u/CornetPanique86" class="icons reddit" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-reddit"></i></a>
           </div>
         </div>
+        <div class="footer-content__right-group">
+          <h3 class="footer-content__site-name">Links</h3>
+          <div class="footer-social">
+            <a href="/credits" class="links">Credits</a>
+            <a href="/privacy-policy" class="links">Privacy Policy</a>
+            <a href="/about" class="links">About</a>
+            <a href="/socials" class="links">Socials</a>
+          </div>
+          <br>
+            "Minecraft" is a trademark of Mojang AB. This website is not affiliated in any way with Microsoft or Mojang AB.
+        </div>
       </div>
-      <div class="footer-social">
-        <a href="#" class="icons"><img src="/facebook-icon.svg"></a>
-        <a href="#" class="icons"><img src="/linkedin-icon.svg"></a>
-        <a href="#" class="icons"><img src="/twitter-icon.svg"></a>
-        <a href="https://youtube.com/@XXLSteve" class="icons"><img src="/youtube-icon.svg"></a>
-      </div>
+      
     </div>
 </footer>
 
-    <div id="cookie-consent-popup" class="hidden">
+    <div id="aboutbg-pageblock" class="pageblock" style="display: none" onclick="closePageBlock('aboutbg-pageblock')">
+      <div id="aboutbg" onclick="event.stopPropagation();">
+        <img src="/icons/cross_mc.png" class="cross-button" id="aboutbg-closebutton" onclick="closePageBlock('aboutbg-pageblock')">
+        <div id="aboutbg-text">
+          <h1>Loading...</h1>
+          <div id="aboutbg-text-p">
+            <p>Loading hehe</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="page-blur" class="pageblock hidden" style="display: none">
+<div id="cookie-consent-popup">
     <h1>This website uses <span style="color:#c38108">cookies</span></h1>
-    <p>By using this website, you agree to our Cookie Policy.<br>
+    <p>By using this website, you agree to our <a href="/cookies">Cookie Policy</a>.<br>
         By agreeing to Cookies, the website will store the following:
     </p>
+    <br>
     <input type="checkbox" id="themeCookieCheckbox" value="Remember theme" checked disabled>
-    <label for="themeCookieCheckbox">Remember my color scheme/theme</label><br><br>
+    <label for="themeCookieCheckbox">Remember my color scheme/theme</label><br><br><br>
 
-    <button type="button" class="mcbutton">I refuse Cookies</button>
-    <button type="button" class="mcbutton" id="cookie-accept">I accept Cookies</button>
+    <button type="button" class="mcbutton-hsl" style="filter: brightness(100%)" onclick="cookieAgreementFn(-1)">I reject Cookies</button>
+    <button type="button" class="mcbutton-hsl" style="filter: hue-rotate(90deg) brightness(200%); margin: 10px;" onclick="cookieAgreementFn(1)">I accept Cookies</button>
+</div>
 </div>
   </body>
 </html>
