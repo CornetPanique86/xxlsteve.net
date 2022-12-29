@@ -1,13 +1,24 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
+lastmod: {{ .Date }}
 draft: true
 image:
-author:
-tags:
-categories: ["Blog"]
+author: XXL Steve
+description:
+ogtype: article
+ogimage: /blog/
 
-resources:
-- alt: Alt text
-  src: img/header.png
+tableOfContents:
+    - h1:
+      n1: 1
+      a1:
+      h2:
+        - t2:
+          n2: 1.1
+          a2:
+
+tags:
+categories:
+- Blog
 ---

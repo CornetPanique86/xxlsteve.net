@@ -182,3 +182,14 @@ const closePageBlock = id => {
     document.getElementById(id).style.display = "none";
     
 }
+
+// Image popup
+function imagePopup(figure) {
+  let image = figure.querySelector("img");
+  document.getElementById("image-popup__image").src = image.getAttribute("src");
+  document.getElementById("image-popup__download").href = image.getAttribute("src");
+  document.getElementById("image-popup__download").title = "Download (" + image.getAttribute("src").split("/").pop() + ")";
+  document.getElementById("image-popup__image").alt = image.getAttribute("alt");
+  document.getElementById("image-popup__text").innerHTML = figure.querySelector("figcaption").innerHTML;
+  document.getElementById("image-popup-pageblock").style.display = "block";
+}

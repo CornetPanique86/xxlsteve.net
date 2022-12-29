@@ -1,24 +1,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{{ with .Title.Pages }}
+{{ with .Title }}
   <title>{{ . }} | {{ site.Title }}</title>
+  <meta property="og:title" content="{{ . }} | {{ site.Title }}" />
   <meta property="twitter:title" content="{{ . }} | {{ site.Title }}">
 {{ else }}
   <title>{{ site.Title }}</title>
+  <meta property="og:title" content="{{ site.Title }}" />
+  <meta property="twitter:title" content="{{ site.Title }}">
 {{ end }}
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<meta property="og:title" content="{{ site.Title }}" />
 {{ with .Description }}
   <meta name="og:description" content="{{ . }}">
   <meta name="description" content="{{ . }}">
   <meta property="twitter:description" content="{{ . }}">
 {{ end }}
-{{ with .Params "ogtype" }}
+{{ with $.Params.ogtype }}
   <meta name="og:type" content="{{ . }}">
 {{ end }}
-{{ with .Params "image" }}
-  <meta name="og:image" content="{{ . }}">
-  <meta property="twitter:image" content="{{ . }}">
+{{ with $.Params.ogimage }}
+  <meta name="og:image" content="xxlsteve.net{{ . }}">
+  <meta property="twitter:image" content="xxlsteve.net{{ . }}">
 {{ end }}
 <meta name="og:url" content="{{ .Permalink }}">
 <meta property="twitter:url" content="{{ .Permalink }}">

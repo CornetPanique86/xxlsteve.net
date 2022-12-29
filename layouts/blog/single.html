@@ -10,21 +10,74 @@
                 <span>By <a href="/about" itemprop="author" name="XXL Steve">{{ .Params.author }}</a></span>
                 <span>Published: {{ .Date.Format "January 2, 2006" }}</span>
                 <span>Updated: {{ .Lastmod.Format "January 2, 2006" }}</span>
-                <div class="tag-group">
-                    {{ range .Params.tags }}
-                        <div class="tag">
-                            <span class="tag-text">
-                                <a href="/tags/{{. | urlize }}">{{.}}</a>
-                            </span>
-                        </div>
-                    {{end}}
-                </div>
             </div>
         </div>
     </div>
+    <div class="taxonomies">
+        <span class="taxonomies__text">Categories:</span>
+        <div class="taxonomies__tag-group">
+            {{ range .Params.categories }}
+                <div class="tag">
+                    <span class="tag-text">
+                        <a href="/categories/{{. | urlize }}">{{.}}</a>
+                    </span>
+                </div>
+            {{end}}
+        </div>
+        <span class="taxonomies__text">Tags:</span>
+        <div class="taxonomies__tag-group">
+            {{ range .Params.tags }}
+                <div class="tag">
+                    <span class="tag-text">
+                        <a href="/tags/{{. | urlize }}">{{.}}</a>
+                    </span>
+                </div>
+            {{end}}
+        </div>
+    </div>
+
+    <div class="b-table-of-contents">
+        <div class="b-table-of-contents__header">
+            Table of Contents
+        </div>
+        <div class="b-table-of-contents__content">
+            <div class="b-table-of-contents__text">
+                {{ range .Params.tableOfContents }}
+                <a href="#{{ anchorize .h1 }}">
+                    <span class="b-table-of-contents__h1"> {{ .h1 }} </span>
+                </a>
+                <br>
+                    {{ with .h2 }}
+                        {{ range . }}
+                            <a href="#{{ anchorize .t2 }}">
+                                <span class="b-table-of-contents__h2"> {{ .t2 }} </span>
+                            </a>
+                            <br>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            </div>
+            <div class="b-table-of-contents__number">
+                {{ range .Params.tableOfContents }}
+                    {{ .n1 }}
+                    <br>
+                    {{ with .h2 }}
+                        {{ range . }}
+                                {{ .n2 }}
+                                <br>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+        
+    </div>
+    
     <div itemprop="headline">
     {{ .Content }}
     </div>
 </article>
     
+{{ partial "image-popup.html" }}
+
 {{ end }}
