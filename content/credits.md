@@ -4,7 +4,11 @@ date: 2022-11-23T19:26:21+01:00
 draft: true
 ---
 
-# Credits
+{{< hanchor h="1" >}}
+Credits
+{{< /hanchor >}}
+
+
 
 - [**CloudCannon's Hugo tutorial**](https://cloudcannon.com/community/learn/hugo-beginner-tutorial/) - it helped me so much to introduce myself to creating websites and to using Hugo (Hugo's documentation is hard to understand imo)!
 - [**typeface-minecraft**](https://github.com/South-Paw/typeface-minecraft) ([License](https://github.com/South-Paw/typeface-minecraft/blob/master/LICENSE)) by South-Paw is the fonts package I used for one of the Minecraft fonts.

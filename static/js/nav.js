@@ -193,3 +193,15 @@ function imagePopup(figure) {
   document.getElementById("image-popup__text").innerHTML = figure.querySelector("figcaption").innerHTML;
   document.getElementById("image-popup-pageblock").style.display = "block";
 }
+
+// Header anchors
+// document.getElementsByClassName("hanchor").forEach(() => {
+//   console.log("so many headers");
+// });
+// document.querySelectorAll(".hanchor").forEach(header => { header.onmouseover = () => {
+//   console.log("test");
+//   header.querySelector("a").style.display = "inline";
+// } });
+// document.querySelectorAll(".hanchor").forEach(header => { header.onmouseout = () => {
+//   header.querySelector("a").style.display = "none";
+// } });

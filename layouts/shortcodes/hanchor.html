@@ -1,0 +1,8 @@
+<div class="hanchor__div">
+    <h{{ .Get "h" }} class="hanchor">
+        {{ .Inner }}
+    </h{{ .Get "h" }}>
+    <a href="#{{ with .Get "anchor" }}{{ . }}{{ else }}{{ anchorize .Inner }}{{ end }}" class="hanchor__anchor" title="Anchor: {{ .Inner }}">
+        <i class="fa-sharp fa-solid fa-link"></i>
+    </a>
+</div>
