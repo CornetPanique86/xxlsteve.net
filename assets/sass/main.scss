@@ -189,6 +189,7 @@ body[data-theme="dark"] {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html, body {
@@ -511,7 +512,7 @@ th, td {
   margin-right: auto;
   left: 0;
   right: 0;
-  max-width: clamp(50vw, 75vw, 90vw);
+  max-width: clamp(50vw, 80vw, 90vw);
 
   & li {
     & span {
@@ -867,6 +868,9 @@ th, td {
     position: relative;
     width: 95%;
     padding: 10px;
+    & h3 {
+      padding: 5px 0;
+    }
   }
 }
 

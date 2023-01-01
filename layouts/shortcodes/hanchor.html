@@ -1,5 +1,5 @@
 <div class="hanchor__div">
-    <h{{ .Get "h" }} class="hanchor">
+    <h{{ .Get "h" }} class="hanchor" id="{{ with .Get "anchor" }}{{ . }}{{ else }}{{ anchorize .Inner }}{{ end }}">
         {{ .Inner }}
     </h{{ .Get "h" }}>
     <a href="#{{ with .Get "anchor" }}{{ . }}{{ else }}{{ anchorize .Inner }}{{ end }}" class="hanchor__anchor" title="Anchor: {{ .Inner }}">

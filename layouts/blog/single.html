@@ -4,8 +4,10 @@
     <meta itemprop="publisher" content="xxlsteve.net">
     <div class="b-hero" itemscope itemtype="https://schema.org/BlogPosting">
         <img class="b-hero__image" src="/blog/{{ .Params.image }}">
-        <div class="b-hero__info">
-            <h1 class="b-hero__title" itemprop="name headline">{{ .Title }}</h1>
+        <div class="b-hero__info">:
+            <header>
+                <h1 class="b-hero__title" itemprop="name headline">{{ .Title }}</h1>
+            </header>
             <div class="b-hero__author-date">
                 <span>By <a href="/about" itemprop="author" name="XXL Steve">{{ .Params.author }}</a></span>
                 <span>Published: {{ .Date.Format "January 2, 2006" }}</span>
@@ -35,8 +37,8 @@
             {{end}}
         </div>
     </div>
-
-    <div class="b-table-of-contents">
+    <aside>
+        <div class="b-table-of-contents">
         <div class="b-table-of-contents__header">
             Table of Contents
         </div>
@@ -71,8 +73,8 @@
             </div>
         </div>
         
-    </div>
-    
+        </div>
+    </aside>
     <div itemprop="headline">
     {{ .Content }}
     </div>

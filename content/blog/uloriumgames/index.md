@@ -1,8 +1,8 @@
 ---
 title: "What is Ulorium Games?"
 date: 2022-12-07T19:32:51+01:00
-lastmod: 2022-12-19T14:51:54.603Z
-draft: true
+lastmod: 2023-01-01T23:11:32+06:00
+draft: false
 image: uloriumgames/img/header-image.png
 author: XXL Steve
 description: UloriumGames is a Minecraft Bedrock minigames realm.
@@ -96,4 +96,4 @@ Credits:
 
 And thanks for the 433 unique players who joined the realm!
 
-Shader used in some of the screenshots (also, if you're curious, Ulorium Games is on Bedrock but I converted it to java to use kool shaders): Chocapic 13
+Shader used in some of the screenshots (also, if you're curious, Ulorium Games is on Bedrock but I converted it to java to use kool shaders): [Chocapic 13](https://www.curseforge.com/minecraft/customization/chocapic13-shaders)
