@@ -27,7 +27,7 @@ tags:
 - Minecraft Bedrock
 - v1.16
 categories:
-- Minecraft Content
+- Creation
 - Map
 ---
 

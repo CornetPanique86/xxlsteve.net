@@ -26,7 +26,7 @@ tags:
 - v1.16
 
 categories:
-- Minecraft Content
+- Creation
 - Resource Pack
 ---
 

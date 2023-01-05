@@ -21,6 +21,9 @@
 {{ with $.Params.ogimage }}
   <meta name="og:image" content="xxlsteve.net{{ . }}">
   <meta property="twitter:image" content="xxlsteve.net{{ . }}">
+{{ else }}
+<meta name="og:image" content="xxlsteve.net/favicon.png">
+<meta property="twitter:image" content="xxlsteve.net/favicon.png">
 {{ end }}
 <meta name="og:url" content="{{ .Permalink }}">
 <meta property="twitter:url" content="{{ .Permalink }}">

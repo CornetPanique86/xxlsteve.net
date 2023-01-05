@@ -29,7 +29,7 @@ tags:
 - Minecraft Bedrock
 - v1.14
 categories:
-- Minecraft Content
+- Creation
 - Map
 ---
 

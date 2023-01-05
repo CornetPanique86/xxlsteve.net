@@ -199,8 +199,8 @@ html, body {
   //flex-direction: column;
   font-family: $text-font;
   background-color: var(--bg-color);
-  transition: background-color, color, 1s;
   color: var(--text-color);
+  // transition: background-color, color, 1s;
 }
 
 footer {
@@ -286,6 +286,26 @@ table {
 th, td {
   padding: 5px;
   border: 3px solid var(--box-border-lefttop);
+}
+
+details {
+  background-color: #595959;
+  padding: 10px;
+  border: 3px solid var(--bg-color-opposite);
+  color: var(--text-white);
+  margin: 10px 0;
+  & > * {
+    color: var(--text-white);
+  }
+}
+
+summary {
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+details[open] > summary {
+  padding-bottom: 8px;
 }
 
 .container {
@@ -614,9 +634,9 @@ th, td {
 // Footer area
 
 .footer-content {
+  color: #d8d8d8;
   &__left-group {
     width: 100%;
-    color: white;
     margin-bottom: 5px;
 
     & img {
@@ -651,7 +671,7 @@ th, td {
 .footer-social {
   width: 100%;
   display: flex;
-  margin-top: 10px;
+  margin-top: 5px;
 
   & .links {
     padding: 8px;
@@ -916,10 +936,8 @@ article section.mainArticle {
 
 .post-preview {
   background-color: #494949;
-
   &__top {
-    width: auto;
-    max-width: 100%;
+    width: 100%;
     border: 3px solid black;
     object-fit: cover;
   }

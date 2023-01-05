@@ -94,9 +94,47 @@
             {{ .Content }}
 
             <br><br>
-            <span style="text-align: center;"><h3>About | Blog | Socials</h3>
+            <span style="text-align: center;"><h3><a href="/about">About</a> | <a href="/blog">Blog</a> | <a href="/socials">Socials & Contact</a></h3>
             <h3><a href="https://youtube.com/@XXLSteve" class="icons youtube" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i> YouTube</a>
                | <a href="https://discord.gg/dJJyryc" class="icons discord" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i> Discord</a></h3></span>
+
+            <h2><a href="/categories/creation">Creations</a></h2>
+            <ul class="post-preview-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+              {{ range first 3 (.Site.Taxonomies.categories.creation) }}
+                <div class="post-preview">
+                  <a href="{{ .Permalink }}">
+                      <img class="post-preview__top" src="/blog/{{ .Params.image }}">
+                  </a>
+                  <div class="post-preview__bottom">
+                      <div class="taxonomies" style="flex-direction: column;">
+                          <div class="taxonomies__tag-group" style="margin: 4px 0;">
+                              {{ range .Params.categories }}
+                                  <div class="tag">
+                                      <span class="tag-text">
+                                          <a href="/categories/{{. | urlize }}">{{.}}</a>
+                                      </span>
+                                  </div>
+                              {{end}}
+                          </div>
+                          <div class="taxonomies__tag-group" style="margin: 4px 0;">
+                              {{ range .Params.tags }}
+                                  <div class="tag">
+                                      <span class="tag-text">
+                                          <a href="/tags/{{. | urlize }}">{{.}}</a>
+                                      </span>
+                                  </div>
+                              {{end}}
+                          </div>
+                      </div>
+                      <a href="{{ .Permalink }}">
+                          <h3 class="preview-title" style="color: #fff;">{{ .Title }}</h3>
+                          <span style="color: #fff;">{{ .Date.Format "January 2, 2006" }}</span>
+                      </a>
+                  </div>
+                  
+                </div>
+              {{ end }}
+            </ul>
           </section>
         </div>
       </div>
