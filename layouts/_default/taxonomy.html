@@ -1,12 +1,38 @@
 {{ define "main" }}
-  <div class="container">
-    <h1>All posts for {{ .Type | singularize }} "{{ .Title }}"</h1>
-    <ul>
+    <h1>{{ .Type | singularize }}: {{ .Title }}</h1>
+    <ul class="post-preview-grid">
       {{ range .Data.Pages }}
-        <li>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </li>
+      <li class="post-preview">
+        <a href="{{ .Permalink }}">
+            <img class="post-preview__top" src="/blog/{{ .Params.image }}">
+        </a>
+        <div class="post-preview__bottom">
+            <div class="taxonomies" style="flex-direction: column;">
+                <div class="taxonomies__tag-group" style="margin: 4px 0;">
+                    {{ range .Params.categories }}
+                        <div class="tag">
+                            <span class="tag-text">
+                                <a href="/categories/{{. | urlize }}">{{.}}</a>
+                            </span>
+                        </div>
+                    {{end}}
+                </div>
+                <div class="taxonomies__tag-group" style="margin: 4px 0;">
+                    {{ range .Params.tags }}
+                        <div class="tag">
+                            <span class="tag-text">
+                                <a href="/tags/{{. | urlize }}">{{.}}</a>
+                            </span>
+                        </div>
+                    {{end}}
+                </div>
+            </div>
+            <a href="{{ .Permalink }}">
+                <h3 class="preview-title" style="color: #fff;">{{ .Title }}</h3>
+                <span style="color: #fff;">{{ .Date.Format "January 2, 2006" }}</span>
+            </a>
+        </div>
+    </li>
       {{ end }}
     </ul>
-  </div>
-{{ end}}
+{{ end }}

@@ -1,12 +1,14 @@
 {{ define "main" }}
   <div class="container">
     <h1>All {{ .Type }}</h1>
-    <ul>
+    <div class="taxonomies__tag-group">
       {{ range .Data.Pages }}
-        <li>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </li>
-      {{ end }}
-    </ul>
+          <div class="tag">
+              <span class="tag-text">
+                  <a href="{{ .Permalink }}">{{ .Title }}</a>
+              </span>
+          </div>
+      {{end}}
+    </div>
   </div>
 {{ end }}

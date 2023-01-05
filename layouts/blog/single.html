@@ -1,17 +1,18 @@
 {{ define "main" }}
 <article>
+    <section>
     <meta itemprop="image" content="/blog/{{ .Params.image }}">
     <meta itemprop="publisher" content="xxlsteve.net">
     <div class="b-hero" itemscope itemtype="https://schema.org/BlogPosting">
         <img class="b-hero__image" src="/blog/{{ .Params.image }}">
-        <div class="b-hero__info">:
+        <div class="b-hero__info">
             <header>
                 <h1 class="b-hero__title" itemprop="name headline">{{ .Title }}</h1>
             </header>
             <div class="b-hero__author-date">
-                <span>By <a href="/about" itemprop="author" name="XXL Steve">{{ .Params.author }}</a></span>
-                <span>Published: {{ .Date.Format "January 2, 2006" }}</span>
-                <span>Updated: {{ .Lastmod.Format "January 2, 2006" }}</span>
+                <span>By <a href="/about" itemprop="author" name="{{ .Params.author }}">{{ .Params.author }}</a></span>
+                <span>Published: <span class="date">{{ .Date.Format "January 2, 2006" }}<span class="date__expand">{{ .Date | time.Format ":date_full" }} {{ .Date | time.Format ":time_full" }}</span></span></span>
+                <span>Updated: <span class="date">{{ .Lastmod.Format "January 2, 2006" }}<span class="date__expand">{{ .Lastmod | time.Format ":date_full" }} {{ .Lastmod | time.Format ":time_full" }}</span></span></span>
             </div>
         </div>
     </div>
@@ -37,6 +38,7 @@
             {{end}}
         </div>
     </div>
+    </section>
     <aside>
         <div class="b-table-of-contents">
         <div class="b-table-of-contents__header">
@@ -75,9 +77,25 @@
         
         </div>
     </aside>
-    <div itemprop="headline">
+    <section itemprop="headline" class="mainArticle">
     {{ .Content }}
-    </div>
+    </section>
+    {{ with .Params.downloads }}
+        <br>
+        <section>
+            <div class="hanchor__div">
+            <h2 class="hanchor" id="downloads">Downloads</h2><a href="#downloads" class="hanchor__anchor" title="Anchor: Downloads"><i class="fa-sharp fa-solid fa-link"></i></a>
+            </div>
+            <div class="b-downloads">
+                {{ range . }}
+                    <a href="{{ .dl }}" class="noA b-downloads__element" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-download"></i>
+                        <p>{{ .text }}</p>
+                    </a>
+                {{ end }}
+            </div>
+        </section>
+    {{ end }}
 </article>
     
 {{ partial "image-popup.html" }}

@@ -2,22 +2,22 @@
   <nav>
     <ul class="top-nav">
       <li class="top-nav__logo"><a href="/">
-        <img class="icons" src="/header-icon.png">
+        <img class="icons" src="/header-icon.png" title="Home">
       </a></li>
       <div class="top-nav__link-group">
-        <li class="top-nav__link"><a href="/resources"><span>Resources</span></a></li>
-        <li class="top-nav__link"><a href="/tools"><span>Tools</span></a></li>
-        <li class="top-nav__link"><a href="/blog"><span>Blog</span></a>
-        <li class="top-nav__link"><a href="/about"><span>About</span></a>
+        <li class="top-nav__link"><a href="/resources" class="noA"><span>Resources</span></a></li>
+        <li class="top-nav__link"><a href="/tools" class="noA"><span>Tools</span></a></li>
+        <li class="top-nav__link"><a href="/blog" class="noA"><span>Blog</span></a>
+        <li class="top-nav__link"><a href="/about" class="noA"><span>About</span></a>
         <li class="top-nav__link">
-          <select name="theme" id="themeToggler" class="mcbutton" onchange="themeSettings()">
+          <select name="theme" id="themeToggler" class="mcbutton" onchange="themeSettings()" title="Select theme">
             <option value="auto">Auto</option>
             <option value="light">Light</option>
             <option value="dark">Dark</option>
           </select>
         </li>
         <li class="top-nav__link">
-          <button type="button">
+          <button type="button" title="Search">
             <img class="icons" src="/search-icon.svg" style="width:30px; height:30px;">
           </button>
         </li>

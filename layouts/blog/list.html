@@ -1,8 +1,11 @@
 {{ define "main" }}
     <h1>Blog posts</h1>
+    <ul class="post-preview-grid">
     {{ range (.Site.GetPage "section" "blog").Pages }}
-    <div class="post-preview">
-        <a href="{{ .Permalink }}"><img class="post-preview__top" src="{{ .Params.image }}"></a>
+    <li class="post-preview">
+        <a href="{{ .Permalink }}">
+            <img class="post-preview__top" src="{{ .Params.image }}">
+        </a>
         <div class="post-preview__bottom">
             <div class="taxonomies" style="flex-direction: column;">
                 <div class="taxonomies__tag-group" style="margin: 4px 0;">
@@ -24,9 +27,12 @@
                     {{end}}
                 </div>
             </div>
-            <h3 style="color: #fff;"><a class="preview-title" href="{{ .Permalink }}">{{ .Title }}</a></h3>
-            <span style="color: #fff;">{{ .Date.Format "January 2, 2006" }}</span>
+            <a href="{{ .Permalink }}">
+                <h3 class="preview-title" style="color: #fff;">{{ .Title }}</h3>
+                <span style="color: #fff;">{{ .Date.Format "January 2, 2006" }}</span>
+            </a>
         </div>
-    </div>
+    </li>
     {{ end }}
+    </ul>
 {{ end }}

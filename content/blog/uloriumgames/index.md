@@ -47,9 +47,7 @@ A staff member named [endereyes202](https://www.youtube.com/@endereyes202) (ende
 
 {{< figure src="/blog/uloriumgames/img/uloriumgames-logo.jpg" caption="New logo by endereyes202" alt="The new logo by endereyes202" class="figurePopup" >}}
 
-{{< hanchor h="5" >}}
-Screenshots
-{{< /hanchor >}}
+##### Screenshots
 
 {{< imgslider >}}
   {{< imgslide src="/blog/uloriumgames/img/ffa.jpg" caption="FFA" alt="FFA minigame">}}
