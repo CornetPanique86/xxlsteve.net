@@ -3,7 +3,7 @@ title: "About"
 date: 2023-01-05T23:36:16+06:00
 draft: true
 description: About XXL Steve
-ogtype: article
+ogtype: profile
 ---
 
 # About me
