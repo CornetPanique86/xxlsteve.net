@@ -1,0 +1,56 @@
+# Nav
+home: Home
+resources: Resources
+tools: Tools
+blog: Blog
+about: About
+socials: Socials & Contact
+
+selectTheme: Select theme
+themeLight: Light
+themeDark: Dark
+search: Search
+
+aboutThisBg: About this background
+
+creations: Creations
+
+# Blog
+wordCount: '{{ .Count }} words'
+readingTime: "Reading time:"
+
+author: "Author:"
+published: "Published:"
+updated: "Updated:"
+
+tableOfContents: Table of Contents
+anchor: "Anchor:"
+downloads: Downloads
+
+# Footer
+footSocials: Socials
+footLinks: Links
+
+linkYtEn: English YouTube Channel
+linkYtFr: French YouTube Channel
+linkDiscEn: English Discord Server
+linkDiscFr: French Discord Server
+linkDiscEvents: Events Minecraft Français
+linkNonAffiliation: '"Minecraft" is a trademark of Mojang AB. This website is not affiliated in any way with Microsoft or Mojang AB.'
+
+credits: Credits
+privacyPolicy: Privacy Policy
+
+# socials
+contact: Contact me
+ingame: "In-Game"
+elytra: "Elytra"
+
+# Cookies
+cookieT1: This website uses
+cookieT2: "By using this website, you agree to our"
+cookieT3: Cookie Policy
+cookieT4: "By agreeing to Cookies, the website will store the following:"
+cookieT5: "Remember my color scheme/theme"
+cookieT6: I reject Cookies
+cookieT7: I accept Cookies

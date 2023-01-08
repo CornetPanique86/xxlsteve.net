@@ -2,7 +2,7 @@
     <h{{ .Get "h" }} class="hanchor" id="{{ with .Get "anchor" }}{{ . }}{{ else }}{{ anchorize .Inner }}{{ end }}">
         {{ .Inner }}
     </h{{ .Get "h" }}>
-    <a href="#{{ with .Get "anchor" }}{{ . }}{{ else }}{{ anchorize .Inner }}{{ end }}" class="hanchor__anchor" title="Anchor: {{ .Inner }}">
+    <a href="#{{ with .Get "anchor" }}{{ . }}{{ else }}{{ anchorize .Inner }}{{ end }}" class="hanchor__anchor" title="{{ i18n "anchor" }} {{ .Inner }}">
         <i class="fa-sharp fa-solid fa-link"></i>
     </a>
 </div>

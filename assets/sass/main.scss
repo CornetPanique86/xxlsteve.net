@@ -547,7 +547,8 @@ details[open] > summary {
   outline: 5px solid black;
   background-color: var(--box-bg);
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
   justify-content: space-between;
   align-items: center;
   position: absolute;
@@ -560,7 +561,7 @@ details[open] > summary {
   & li {
     & span {
       line-height: 60px;
-      font-size: 1.5em;
+      font-size: 1.3em;
       font-family: $primary-font;
       color: var(--box-text-color);
       text-shadow: 0px 4px #00000051;

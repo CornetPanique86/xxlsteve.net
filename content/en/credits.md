@@ -1,7 +1,7 @@
 ---
 title: "Credits"
 date: 2022-11-23T19:26:21+01:00
-draft: true
+draft: false
 ---
 
 {{< hanchor h="1" >}}
@@ -12,6 +12,7 @@ Credits
 
 - [**CloudCannon's Hugo tutorial**](https://cloudcannon.com/community/learn/hugo-beginner-tutorial/) - it helped me so much to introduce myself to creating websites and to using Hugo (Hugo's documentation is hard to understand imo)!
 - [**typeface-minecraft**](https://github.com/South-Paw/typeface-minecraft) ([License](https://github.com/South-Paw/typeface-minecraft/blob/master/LICENSE)) by South-Paw is the fonts package I used for one of the Minecraft fonts.
+- [**skinview3d**](https://github.com/bs-community/skinview3d) by bs-community is the 3D skin viewer tool used in my socials page
 - [**Dark Mode UI**](https://github.com/Offroaders123/Dark-Mode) by Offroaders123 is the color palette I used for all the Minecraft style buttons on my site while in dark mode.
 - [**Complementary Reimagined**](https://www.complementary.dev/reimagined/) - the shader used for my home page light mode background (Ulorium Games lobby)
 - [**Overimagined Shaders**](https://github.com/isuewo/OverimaginedShaders) - the shader used for my home page dark mode background (NoxCity)

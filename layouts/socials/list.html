@@ -28,7 +28,12 @@
 <body>
     <section id="intro">
         <header>
-            <h6><a href="https://xxlsteve.net">WEBSITE</a> | 🇺🇸 | 🇫🇷 | <a href="#" onclick="addCape()">✨</a></h6>
+            <h6><a href='{{ relLangURL "" }}'>SITE</a> | 
+                {{ if .IsTranslated }}
+                  {{ range .Translations }}
+                    <a href='{{ .Permalink }}'>[ {{ .Language.LanguageName }} ]</a>
+                  {{ end }}
+                {{ end }} | <a href="#" onclick="addCape()"><i class="fa-solid fa-star"></i></a></h6>
             <h3>Hi, I'm</h3> <h1>XXL Steve</h1> <h3>aka</h3> <h2>CornetPanique86</h2>
         </header>
     </section>
@@ -36,22 +41,22 @@
     <article>
         <section id="socials">
             <header>
-                <h3>Social links</h3>
+                <h3>{{ i18n "footSocials" }}</h3>
             </header>
             <details open>
                 <summary>
                     [ 🇺🇸 ]
                 </summary>
-                <a href="https://youtube.com/@XXLSteve" class="icons youtube" target="_blank" rel="noopener noreferrer" title="English YouTube channel">
+                <a href="https://youtube.com/@XXLSteve" class="icons youtube" target="_blank" rel="noopener noreferrer" title='{{ i18n "linkYtEn" }}'>
                     <div class="link">
                         <i class="fa-brands fa-youtube"></i>
-                        <span>English YouTube Channel</span>
+                        <span>{{ i18n "linkYtEn" }}</span>
                     </div>
                 </a>
-                <a href="https://discord.gg/dJJyryc" class="icons discord" target="_blank" rel="noopener noreferrer" title="English Discord server">
+                <a href="https://discord.gg/dJJyryc" class="icons discord" target="_blank" rel="noopener noreferrer" title='{{ i18n "linkDiscEn" }}'>
                     <div class="link">
                         <i class="fa-brands fa-discord"></i>
-                        <span>English Discord Server</span>
+                        <span>{{ i18n "linkDiscEn" }}</span>
                     </div>
                 </a>
                 <a href="https://twitter.com/CornetPanique86" class="icons twitter" target="_blank" rel="noopener noreferrer" title="Twitter">
@@ -77,34 +82,34 @@
                 <summary>
                     [ 🇫🇷 ]
                 </summary>
-                <a href="https://youtube.com/@XXLSteveFR" class="icons youtube" target="_blank" rel="noopener noreferrer" title="English YouTube channel">
+                <a href="https://youtube.com/@XXLSteveFR" class="icons youtube" target="_blank" rel="noopener noreferrer" title='{{ i18n "linkYtFr" }}'>
                     <div class="link">
                         <i class="fa-brands fa-youtube"></i>
-                        <span>French YouTube Channel</span>
+                        <span>{{ i18n "linkYtFr" }}</span>
                     </div>
                 </a>
-                <a href="https://discord.gg/qPcDsAUZyv" class="icons discord" target="_blank" rel="noopener noreferrer" title="English Discord server">
+                <a href="https://discord.gg/qPcDsAUZyv" class="icons discord" target="_blank" rel="noopener noreferrer" title='{{ i18n "linkDiscFr" }}'>
                     <div class="link">
                         <i class="fa-brands fa-discord"></i>
-                        <span>French Discord Server</span>
+                        <span>{{ i18n "linkDiscFr" }}</span>
                     </div>
                 </a>
-                <a href="https://discord.gg/nsgXbM7sxz" class="icons discord" target="_blank" rel="noopener noreferrer" title="English Discord server">
+                <a href="https://discord.gg/nsgXbM7sxz" class="icons discord" target="_blank" rel="noopener noreferrer" title='{{ i18n "linkDiscEvents" }}'>
                     <div class="link">
                         <i class="fa-brands fa-discord"></i>
-                        <span>Events Minecraft Français</span>
+                        <span>{{ i18n "linkDiscEvents" }}</span>
                     </div>
                 </a>
             </details>
         </section>
         <section id="ingame">
             <header>
-                <h3>In-Game</h3>
+                <h3>{{ i18n "ingame" }}</h3>
             </header>
             <select name="ign" id="ign" class="mcbutton" onchange="skinChange()" title="Nickname">
                 <option value="bedrock">Bedrock</option>
                 <option value="java">Java</option>
-              </select>
+            </select>
             <div id="skin_div">
               <canvas id="skin_container"></canvas>
             </div>
@@ -123,26 +128,39 @@
                     if (skin == "java") {
                         skinViewer.loadSkin("/socials/java.png");
                         skinViewer.nameTag = "XXL_Steve";
-                    } else {
+                        skinViewer.loadCape(null);
+                    } else if (skin == "bedrock") {
                         skinViewer.loadSkin("/socials/bedrock.png");
                         skinViewer.nameTag = "CornetPanique86";
+                        skinViewer.loadCape(null);
+                    } else {
+                        skinViewer.loadCape("/socials/cape.png", { backEquipment: "elytra" });
                     }
                 }
-            	// Load a cape
-            	// skinViewer.loadCape("img/cape.png");
-            
-            	// Load an elytra (from a cape texture)
-            	// skinViewer.loadCape("img/cape.png", { backEquipment: "elytra" });
-            
-            	// Unload(hide) the cape / elytra
-            	// skinViewer.loadCape(null);
+
+                function addCape() {
+                    skinViewer.loadCape("/socials/cape.png");
+                    document.getElementById("skin_div").setAttribute("data-animation", "true");
+                    setTimeout(() => {
+                        document.getElementById("skin_div").removeAttribute("data-animation");
+                    }, 2500);
+                    let skinButton = document.getElementById("ign");
+                    if (skinButton.childElementCount < 3) {
+                        const option = document.createElement("option");
+                        const optionText = document.createTextNode('{{ i18n "elytra" }}');
+                        option.appendChild(optionText);
+                        option.value = "elytra";
+                        skinButton.appendChild(option);
+                    }
+                }
             </script>
             
         </section>
         <section id="contact">
             <header>
-                <h3>Contact me</h3>
+                <h3>{{ i18n "contact" }}</h3>
             </header>
+            {{ .Content }}
         </section>
     </article>
 </body>

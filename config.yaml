@@ -1,0 +1,20 @@
+defaultContentLanguage: en
+title: XXL Steve
+uglyURLs: false
+
+languages:
+  en:
+    contentDir: content/en
+    languageName: 🇺🇸
+    weight: 1
+  fr:
+    contentDir: content/fr
+    languageName: 🇫🇷
+    weight: 2
+
+params:
+  author: XXL Steve
+
+taxonomies:
+  tag: tags
+  category: categories

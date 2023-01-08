@@ -1,7 +1,7 @@
 ---
 title: "Privacy Policy"
 date: 2022-12-03T19:57:14+01:00
-draft: true
+draft: false
 ---
 
 {{< hanchor h="1" >}}

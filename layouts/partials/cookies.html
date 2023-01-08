@@ -1,14 +1,14 @@
 <div id="page-blur" class="pageblock hidden" style="display: none">
 <div id="cookie-consent-popup">
-    <h1>This website uses <span style="color:#c38108">cookies</span></h1>
-    <p>By using this website, you agree to our <a href="/privacy-policy">Cookie Policy</a>.<br>
-        By agreeing to Cookies, the website will store the following:
+    <h1>{{ i18n "cookieT1" }} <span style="color:#c38108">cookies</span></h1>
+    <p>{{ i18n "cookieT2" }} <a href='{{ relLangURL "privacy-policy" }}'>{{ i18n "cookieT3" }}</a>.<br>
+        {{ i18n "cookieT4" }}
     </p>
     <br>
     <input type="checkbox" id="themeCookieCheckbox" value="Remember theme" checked disabled>
-    <label for="themeCookieCheckbox">Remember my color scheme/theme</label><br><br><br>
+    <label for="themeCookieCheckbox">{{ i18n "cookieT5" }}</label><br><br><br>
 
-    <button type="button" class="mcbutton-hsl" style="filter: brightness(100%)" onclick="cookieAgreementFn(-1)">I reject Cookies</button>
-    <button type="button" class="mcbutton-hsl" style="filter: hue-rotate(90deg) brightness(200%); margin: 10px;" onclick="cookieAgreementFn(1)">I accept Cookies</button>
+    <button type="button" class="mcbutton-hsl" style="filter: brightness(100%)" onclick="cookieAgreementFn(-1)">{{ i18n "cookieT6" }}</button>
+    <button type="button" class="mcbutton-hsl" style="filter: hue-rotate(90deg) brightness(200%); margin: 10px;" onclick="cookieAgreementFn(1)">{{ i18n "cookieT7" }}</button>
 </div>
 </div>

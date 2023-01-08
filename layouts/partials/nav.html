@@ -1,23 +1,30 @@
 <header>
   <nav>
     <ul class="top-nav">
-      <li class="top-nav__logo"><a href="/">
-        <img class="icons" src="/header-icon.png" title="Home">
+      <li class="top-nav__logo"><a href='{{ relLangURL "" }}'>
+        <img class="icons" src="/header-icon.png" title='{{ i18n "home" }}'>
       </a></li>
       <div class="top-nav__link-group">
-        <li class="top-nav__link"><a href="/resources" class="noA"><span>Resources</span></a></li>
-        <li class="top-nav__link"><a href="/tools" class="noA"><span>Tools</span></a></li>
-        <li class="top-nav__link"><a href="/blog" class="noA"><span>Blog</span></a>
-        <li class="top-nav__link"><a href="/about" class="noA"><span>About</span></a>
+        <li class="top-nav__link"><a href='{{ relLangURL "resources" }}' class="noA"><span>{{ i18n "resources" }}</span></a></li>
+        <li class="top-nav__link"><a href='{{ relLangURL "tools" }}' class="noA"><span>{{ i18n "tools" }}</span></a></li>
+        <li class="top-nav__link"><a href='{{ relLangURL "blog" }}' class="noA"><span>{{ i18n "blog" }}</span></a></li>
+        <li class="top-nav__link"><a href='{{ relLangURL "about" }}' class="noA"><span>{{ i18n "about" }}</span></a></li>
         <li class="top-nav__link">
-          <select name="theme" id="themeToggler" class="mcbutton" onchange="themeSettings()" title="Select theme">
+          <select name="theme" id="themeToggler" class="mcbutton" onchange="themeSettings()" title='{{ i18n "selectTheme" }}'>
             <option value="auto">Auto</option>
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
+            <option value="light">{{ i18n "themeLight" }}</option>
+            <option value="dark">{{ i18n "themeDark" }}</option>
           </select>
         </li>
+        {{ if .IsTranslated }}
+          {{ range .Translations }}
+            <li class="top-nav__link">
+              <a href="{{ .Permalink }}" class="noA"><span>{{ .Language.LanguageName }}</span></a>
+            </li>
+          {{ end}}
+        {{ end }}
         <li class="top-nav__link">
-          <button type="button" title="Search">
+          <button type="button" title='{{ i18n "search" }}'>
             <img class="icons" src="/search-icon.svg" style="width:30px; height:30px;">
           </button>
         </li>

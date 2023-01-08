@@ -12,7 +12,7 @@
                     {{ range .Params.categories }}
                         <div class="tag">
                             <span class="tag-text">
-                                <a href="/categories/{{. | urlize }}">{{.}}</a>
+                                <a href='{{ relLangURL "categories/" }}{{. | urlize }}'>{{.}}</a>
                             </span>
                         </div>
                     {{end}}
@@ -21,7 +21,7 @@
                     {{ range .Params.tags }}
                         <div class="tag">
                             <span class="tag-text">
-                                <a href="/tags/{{. | urlize }}">{{.}}</a>
+                                <a href='{{ relLangURL "tags/" }}{{. | urlize }}'>{{.}}</a>
                             </span>
                         </div>
                     {{end}}

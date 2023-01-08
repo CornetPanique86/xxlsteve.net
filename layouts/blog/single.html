@@ -10,9 +10,10 @@
                 <h1 class="b-hero__title" itemprop="name headline">{{ .Title }}</h1>
             </header>
             <div class="b-hero__author-date">
-                <span>By <a href="/about" itemprop="author" name="{{ .Params.author }}">{{ .Params.author }}</a></span>
-                <span>Published: <span class="date">{{ .Date.Format "January 2, 2006" }}<span class="date__expand">{{ .Date | time.Format ":date_full" }} {{ .Date | time.Format ":time_full" }}</span></span></span>
-                <span>Updated: <span class="date">{{ .Lastmod.Format "January 2, 2006" }}<span class="date__expand">{{ .Lastmod | time.Format ":date_full" }} {{ .Lastmod | time.Format ":time_full" }}</span></span></span>
+                <span>{{ i18n "author" }} <a href="/about" itemprop="author" name="{{ .Params.author }}">{{ .Params.author }}</a></span>
+                <span>{{ i18n "published" }} <span class="date">{{ .Date | time.Format ":date_long" }}<span class="date__expand">{{ .Date | time.Format ":date_full" }} {{ .Date | time.Format ":time_full" }}</span></span></span>
+                <span>{{ i18n "updated" }} <span class="date">{{ .Lastmod | time.Format ":date_long" }}<span class="date__expand">{{ .Lastmod | time.Format ":date_full" }} {{ .Lastmod | time.Format ":time_full" }}</span></span></span>
+                <span>{{ i18n "readingTime" }} <span class="date">{{ .ReadingTime }} min<span class="date__expand">{{ i18n "wordCount" .WordCount }}</span></span></span>
             </div>
         </div>
     </div>
@@ -42,7 +43,7 @@
     <aside>
         <div class="b-table-of-contents">
         <div class="b-table-of-contents__header">
-            Table of Contents
+            {{ i18n "tableOfContents" }}
         </div>
         <div class="b-table-of-contents__content">
             <div class="b-table-of-contents__text">
@@ -84,7 +85,7 @@
         <br>
         <section>
             <div class="hanchor__div">
-            <h2 class="hanchor" id="downloads">Downloads</h2><a href="#downloads" class="hanchor__anchor" title="Anchor: Downloads"><i class="fa-sharp fa-solid fa-link"></i></a>
+            <h2 class="hanchor" id='{{ anchorize (i18n "downloads") }}'>{{ i18n "downloads" }}</h2><a href='#{{ anchorize (i18n "downloads") }}' class="hanchor__anchor" title="Anchor: Downloads"><i class="fa-sharp fa-solid fa-link"></i></a>
             </div>
             <div class="b-downloads">
                 {{ range . }}

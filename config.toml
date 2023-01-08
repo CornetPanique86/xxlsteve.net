@@ -1,9 +1,0 @@
-languageCode = "en-us"
-title = "XXL Steve"
-uglyURLs = false
-[params]
-  author = "XXL Steve"
-
-[taxonomies]
-  tag = "tags"
-  category = "categories"

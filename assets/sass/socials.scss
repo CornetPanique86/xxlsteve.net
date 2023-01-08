@@ -103,8 +103,10 @@ summary {
 article {
     display: grid;
     grid-template-areas: "socials ingame contact";
+    grid-template-columns: 2fr 2fr 1fr;
     gap: 20px;
-    margin: 20px;    
+    margin: 20px;
+    //width: 100%;  
     & section {
         background: #2e2e2e;
         padding: 20px;
@@ -159,13 +161,61 @@ article {
         width: auto;
     }
 }
-#contact { grid-area: contact; }
+
+#skin_div[data-animation] {
+    animation: rainbowshadow 2s linear;
+    border-radius: 5px;
+}
+
+@keyframes rainbowshadow{
+    100%,0%{
+        box-shadow: 0 0 10px 5px rgb(255,0,0);
+    }
+    8%{
+        box-shadow: 0 0 10px 5px rgb(255,127,0);
+    }
+    16%{
+        box-shadow: 0 0 10px 5px rgb(255,255,0);
+    }
+    25%{
+        box-shadow: 0 0 10px 5px rgb(127,255,0);
+    }
+    33%{
+        box-shadow: 0 0 10px 5px rgb(0,255,0);
+    }
+    41%{
+        box-shadow: 0 0 10px 5px rgb(0,255,127);
+    }
+    50%{
+        box-shadow: 0 0 10px 5px rgb(0,255,255);
+    }
+    58%{
+        box-shadow: 0 0 10px 5px rgb(0,127,255);
+    }
+    66%{
+        box-shadow: 0 0 10px 5px rgb(0,0,255);
+    }
+    75%{
+        box-shadow: 0 0 10px 5px rgb(127,0,255);
+    }
+    83%{
+        box-shadow: 0 0 10px 5px rgb(255,0,255);
+    }
+    91%{
+        box-shadow: 0 0 10px 5px rgb(255,0,127);
+    }
+}
+
+#contact {
+    grid-area: contact;
+}
 
 @media screen and (max-width: 992px) {
     article {
         grid-template-areas: 
             "socials ingame"
             "contact contact";
+        grid-template-columns: 1fr 1fr;
     }   
 }
 
@@ -175,7 +225,11 @@ article {
             "socials"
             "ingame"
             "contact";
-    }   
+            grid-template-columns: 1fr;
+    }
+    #intro h6 {
+        position: inherit;
+    }
 }
 
 // ICONS
@@ -200,6 +254,50 @@ article {
 
 .icons.github:hover  i {
     color: #c9c9c9;
+}
+
+.fa-star:hover {
+    animation: rainbow 5s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rainbow{
+    100%,0%{
+        color: rgb(255,0,0);
+    }
+    8%{
+        color: rgb(255,127,0);
+    }
+    16%{
+        color: rgb(255,255,0);
+    }
+    25%{
+        color: rgb(127,255,0);
+    }
+    33%{
+        color: rgb(0,255,0);
+    }
+    41%{
+        color: rgb(0,255,127);
+    }
+    50%{
+        color: rgb(0,255,255);
+    }
+    58%{
+        color: rgb(0,127,255);
+    }
+    66%{
+        color: rgb(0,0,255);
+    }
+    75%{
+        color: rgb(127,0,255);
+    }
+    83%{
+        color: rgb(255,0,255);
+    }
+    91%{
+        color: rgb(255,0,127);
+    }
 }
 
 .mcbutton {

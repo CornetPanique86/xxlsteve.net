@@ -1,5 +1,0 @@
-minecraft.ttf = "F77 Minecraft" de fontspace: https://www.fontspace.com/f77-minecraft-font-f30628 /!\ CC BY-ND 4.0 License
-
-minecraftten.woff = "Minecraft Ten" de Patrick Griffin (canadatype.com) /!\ (c) 2015-2017 Mojang AB. All rights reserved.
-
-Dark mode buttons textures are from Offroaders123's Dark Mode texture pack: https://mcpedl.com/dark-mode-resource-pack/

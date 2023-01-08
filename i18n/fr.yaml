@@ -1,0 +1,53 @@
+# Nav
+resources: Ressources
+tools: Outils
+about: À propos
+socials: Liens & Contacter
+
+selectTheme: Thème
+themeLight: Clair
+themeDark: Sombre
+search: Rechercher
+
+aboutThisBg: À propos de cet arrière-plan
+
+creations: Créations
+
+# Blog
+wordCount: '{{ .Count }} mots'
+readingTime: "Lecture :"
+author: "Par"
+published: "Publié :"
+updated: "Mis à jour :"
+
+tableOfContents: Table des Matières
+anchor: "Ancre :"
+downloads: Téléchargements
+
+# Footer
+footSocials: Liens sociaux
+footLinks: Liens
+
+linkYtEn: Chaîne YouTube Anglaise
+linkYtFr: Chaîne YouTube Française
+linkNonAffiliation: "Non affilié à Mojang ou Microsoft."
+linkDiscEn: Serveur Discord Anglais
+linkDiscFr: Serveur Discord Français
+linkDiscEvents: Events Minecraft Français
+
+credits: Crédits
+privacyPolicy: Mentions Légales
+
+# socials
+contact: Me contacter
+ingame: Minecraft
+elytra: "Élytre"
+
+# Cookies
+cookieT1: Ce site utilise les
+cookieT2: "En utilisant ce site, vous acceptez la"
+cookieT3: Politique de Cookies
+cookieT4: "En acceptant les Cookies, ce site stockera :"
+cookieT5: "Mémoriser mon thème"
+cookieT6: Je refuse les Cookies
+cookieT7: J'accepte Cookies
