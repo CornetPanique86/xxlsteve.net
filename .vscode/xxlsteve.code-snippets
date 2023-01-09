@@ -10,7 +10,7 @@
 		"scope": "markdown",
 		"prefix": "hanchor",
 		"body": [
-			"{{< hanchor h='$1' >}}",
+			"{{< hanchor h=\"$1\" >}}",
 			"$0",
 			"{{< /hanchor >}}"
 		],
@@ -20,8 +20,16 @@
 		"scope": "markdown",
 		"prefix": "figure",
 		"body": [
-			"{{< figure src='/blog/$1' caption='$2' alt='$3' class='figurePopup' >}}"
+			"{{< figure src=\"/blog/$1\" caption=\"$2\" alt=\"$3\" class=\"figurePopup\" >}}"
 		],
 		"description": "Insert figure element"
+	},
+	"YouTube video": {
+		"scope": "markdown",
+		"prefix": "youtube",
+		"body": [
+			"{{< ytcustom id=\"$1\" title=\"$0\" >}}"
+		],
+		"description": "Insert youtube shortcode"
 	}
 }

@@ -1,0 +1,26 @@
+{{ define "main" }}
+    <h1>{{.Content}}</h1>
+    <ul class="resources-grid">
+        {{ range (.Site.GetPage "/resources").Pages }}
+            <li class="resources-preview">
+                <a href="{{ .RelPermalink }}" class="noA">
+                    {{ with .Resources.ByType "image" }}
+                        {{ range first 1 . }}
+                            <img src="{{ .Permalink }}" title="{{ .Name }}" alt="{{ .Name }}">
+                        {{ end }}
+                    {{ else }}
+                        {{ with .Resources.GetMatch "*" }}
+                            <div class="resources-preview__top">{{ .Name }}</div>
+                        {{ end }}
+                    {{ end }}
+                    <div class="resources-preview__bottom">
+                        <h3 class="preview-title">{{ .Title }}</h3>
+                        {{ if gt (len .Resources) 1 }}
+                            <span>and {{sub (len .Resources) 1}} more...</span>
+                        {{ end }}
+                    </div>
+                </a>
+            </li>
+        {{ end }}
+    </ul>
+{{ end }}

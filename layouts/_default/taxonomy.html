@@ -1,10 +1,11 @@
 {{ define "main" }}
+    <a href='{{ relLangURL .Type }}'>← {{ .Type }}</a>
     <h1>{{ .Type | singularize }}: {{ .Title }}</h1>
     <ul class="post-preview-grid">
       {{ range .Data.Pages }}
       <li class="post-preview">
         <a href="{{ .Permalink }}">
-            <img class="post-preview__top" src="/blog/{{ .Params.image }}">
+            <img class="post-preview__top" src='/blog/{{ .Params.image }}'>
         </a>
         <div class="post-preview__bottom">
             <div class="taxonomies" style="flex-direction: column;">
@@ -12,7 +13,7 @@
                     {{ range .Params.categories }}
                         <div class="tag">
                             <span class="tag-text">
-                                <a href="/categories/{{. | urlize }}">{{.}}</a>
+                                <a href='{{ relLangURL "categories/" }}{{. | urlize }}'>{{.}}</a>
                             </span>
                         </div>
                     {{end}}
@@ -21,7 +22,7 @@
                     {{ range .Params.tags }}
                         <div class="tag">
                             <span class="tag-text">
-                                <a href="/tags/{{. | urlize }}">{{.}}</a>
+                                <a href='{{ relLangURL "tags/" }}{{. | urlize }}'>{{.}}</a>
                             </span>
                         </div>
                     {{end}}
@@ -29,7 +30,7 @@
             </div>
             <a href="{{ .Permalink }}">
                 <h3 class="preview-title" style="color: #fff;">{{ .Title }}</h3>
-                <span style="color: #fff;">{{ .Date.Format "January 2, 2006" }}</span>
+                <span style="color: #fff;">{{ .Date | time.Format ":date_long" }}</span>
             </a>
         </div>
     </li>

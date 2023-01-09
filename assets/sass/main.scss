@@ -1,6 +1,7 @@
 $primary-font: "Minecraft", 'Gill Sans', Calibri, Tahoma, sans-serif;
 $text-font: Calibri, Tahoma, sans-serif;
 $heading-font: "minecraftHeaderFont", sans-serif;
+$monospace-font: "Courier New", Courier, monospace;
 $desktop-page-sp: 100px;
 $container-padding-sm: 24px;
 $container-padding-lg: 96px;
@@ -239,6 +240,9 @@ p {
 
 ul {
   list-style-type: square;
+}
+
+ul, ol {
   line-height: 1.6rem;
   padding-left: 20px;
 }
@@ -960,6 +964,55 @@ article section.mainArticle {
   font-size: 1rem;
   margin-bottom: 5px;
 }
+
+// Resources
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 400px));
+  gap: 15px;
+  list-style-type: none;
+}
+
+.resources-preview {
+  background-color: #4949497a;
+  border: 3px solid #161616;
+  position: relative;
+  transition: background-color, box-shadow, transform, border, 0.4s ease;
+  &__top, img {
+    width: 100%;
+    max-height: 80%;
+    object-fit: cover;
+  }
+  &__top {
+    opacity: 0.5;
+    font-size: 2.5rem;
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.2em;
+    padding: 0.2em;
+    height: 80%;
+    color: var(--text-color);
+    font-family: $monospace-font;
+    transition: opacity, 0.4s ease;
+  }
+  &__bottom {
+    width: 95%;
+    padding: 10px;
+  }
+  & h3 {
+    padding: 0;
+  }
+  &:hover {
+    background-color: #49494947;
+    box-shadow: 0 10px 10px #00000078;
+    transform: translateY(-2%);
+    border: 3px solid #fff;
+    & .resources-preview__top {
+      opacity: 0.9;
+    }
+  }
+}
+
 
 // Media queries
 

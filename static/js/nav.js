@@ -190,18 +190,12 @@ function imagePopup(figure) {
   document.getElementById("image-popup__download").href = image.getAttribute("src");
   document.getElementById("image-popup__download").title = "Download (" + image.getAttribute("src").split("/").pop() + ")";
   document.getElementById("image-popup__image").alt = image.getAttribute("alt");
-  document.getElementById("image-popup__text").innerHTML = figure.querySelector("figcaption").innerHTML;
+  try {
+    document.getElementById("image-popup__text").innerHTML = figure.querySelector("figcaption").innerHTML;
+  } catch { }
   document.getElementById("image-popup-pageblock").style.display = "block";
 }
 
-// Header anchors
-// document.getElementsByClassName("hanchor").forEach(() => {
-//   console.log("so many headers");
-// });
-// document.querySelectorAll(".hanchor").forEach(header => { header.onmouseover = () => {
-//   console.log("test");
-//   header.querySelector("a").style.display = "inline";
-// } });
-// document.querySelectorAll(".hanchor").forEach(header => { header.onmouseout = () => {
-//   header.querySelector("a").style.display = "none";
-// } });
+document.getElementById("image-popup-pageblock").addEventListener("keyup", (e) => {
+  if (document.getElementById("image-popup-pageblock").style.display == "block" && e.key == "Escape") closePageBlock();
+});

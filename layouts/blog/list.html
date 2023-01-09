@@ -29,7 +29,7 @@
             </div>
             <a href="{{ .Permalink }}">
                 <h3 class="preview-title" style="color: #fff;">{{ .Title }}</h3>
-                <span style="color: #fff;">{{ .Date.Format "January 2, 2006" }}</span>
+                <span style="color: #fff;">{{ .Date | time.Format ":date_long" }}</span>
             </a>
         </div>
     </li>

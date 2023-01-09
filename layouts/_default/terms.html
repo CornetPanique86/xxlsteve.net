@@ -1,6 +1,6 @@
 {{ define "main" }}
   <div class="container">
-    <h1>All {{ .Type }}</h1>
+    <h1>{{ i18n "termsAll" }} {{ .Type }}</h1>
     <div class="taxonomies__tag-group">
       {{ range .Data.Pages }}
           <div class="tag">
