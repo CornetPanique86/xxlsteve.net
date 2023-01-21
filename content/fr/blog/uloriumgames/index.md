@@ -7,7 +7,8 @@ image: uloriumgames/img/header-image.png
 author: XXL Steve
 description: UloriumGames is a Minecraft Bedrock minigames realm.
 ogtype: article
-ogimage: /blog/uloriumgames/img/header-image.png
+images:
+- /blog/uloriumgames/img/header-image.png
 tags:
     - Other
 categories:
@@ -31,7 +32,7 @@ How it started
 
 Ulorium Games was founded by [Sam0312](https://www.youtube.com/@Sam0312_) (Sam0312#3846 on discord) around the 4th of may 2020. It was preceded by a few other worlds like one named "Plantania" for which I had made an addon.
 
-{{< figure src="/blog/uloriumgames/img/old-first-lobby.jpg" caption="The first build of UloriumGames" alt="The first build of UloriumGames" class="figurePopup" >}}
+{{< figure src="/blog/uloriumgames/img/old-first-lobby.jpg" caption="The first build of UloriumGames" alt="The first build of UloriumGames" class="figurePopup imagePopup" >}}
 
 I was already friends with him at the time, so I would occasionally hop on and help him with the world.
 
@@ -45,7 +46,7 @@ With an increasing staff and player base came an increasing number of minigames:
 
 A staff member named [endereyes202](https://www.youtube.com/@endereyes202) (endereyes202#5828 on discord) also made a logo and a banner for UloriumGames (because it used to be a random picture taken from Google)!
 
-{{< figure src="/blog/uloriumgames/img/uloriumgames-logo.jpg" caption="New logo by endereyes202" alt="The new logo by endereyes202" class="figurePopup" >}}
+{{< figure src="/blog/uloriumgames/img/uloriumgames-logo.jpg" caption="New logo by endereyes202" alt="The new logo by endereyes202" class="figurePopup imagePopup" >}}
 
 ##### Screenshots
 

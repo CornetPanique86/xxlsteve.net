@@ -7,7 +7,8 @@ image: french-slap/img/header-image.png
 author: XXL Steve
 description: French Slap is a game like Cookie Slap; the goal is to knock all the players off the arena, last player alive wins, but this map is in a typically-French theme!
 ogtype: article
-ogimage: /blog/french-slap/img/header-image.png
+images:
+- /blog/french-slap/img/header-image.png
 
 tableOfContents:
     - h1: Additions
@@ -41,7 +42,7 @@ Additions:
 - Cheese Power - right-click on PC or long-tap on mobile to trigger it, and you will get a levitation effect for 1 second! 
 - Power-up - it will randomly spawn in the game. It looks like a floating lucky block. Step in it and it will give you a random power-up (like an effect or additional Cheese Power).
 
-{{< figure src="https://my.mcpedl.com/storage/worlds/7810/images/french-slap_2.png" caption="1st hotbar slot: baguette, 2nd hotbar slot: Cheese Power, middle: Power-Up." class="figurePopup" >}}
+{{< figure src="https://my.mcpedl.com/storage/worlds/7810/images/french-slap_2.png" caption="1st hotbar slot: baguette, 2nd hotbar slot: Cheese Power, middle: Power-Up." class="figurePopup imagePopup" >}}
 
 {{< ytcustom id="5zbpmtRtp6w" title="Showcase" >}}
 

@@ -1,7 +1,7 @@
 <script>
-    document.querySelectorAll(".figurePopup").forEach(figure => { figure.onclick = () => { imagePopup(figure) } });
+    document.querySelectorAll(".imagePopup").forEach(figure => { figure.onclick = () => { imagePopup(figure) } });
 </script>
-<div id="image-popup-pageblock" class="pageblock" style="display: none" onclick="closePageBlock('image-popup-pageblock')">
+<div id="image-popup-pageblock" class="pageblock hidden" style="display: none" onclick="closePageBlock('image-popup-pageblock')">
     <div id="image-popup" onclick="event.stopPropagation();">
         <a href="" download id="image-popup__download" title="Download"><i class="fa-solid fa-download"></i></a>
         <img src="/icons/cross_mc.png" alt="Close" class="cross-button" onclick="closePageBlock('image-popup-pageblock')" style="display: inline" draggable="false">

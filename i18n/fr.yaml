@@ -7,9 +7,9 @@ socials: Liens & Contacter
 selectTheme: Thème
 themeLight: Clair
 themeDark: Sombre
-search: Rechercher
+search: "Rechercher (Ctrl /)"
 
-aboutThisBg: À propos de cet arrière-plan
+aboutThisBg: "À propos de cet arrière-plan"
 
 creations: Créations
 
@@ -23,6 +23,7 @@ updated: "Mis à jour :"
 tableOfContents: Table des Matières
 anchor: "Ancre :"
 downloads: Téléchargements
+seeAlso: Articles Similaires
 
 # Footer
 footSocials: Liens sociaux
@@ -54,3 +55,6 @@ cookieT7: J'accepte Cookies
 
 # Taxonomies
 termsAll: Tous les
+
+# 404
+pageNotFound: Page introuvable

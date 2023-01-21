@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {{ partial "head-meta.html" }}
-    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    {{ partial "head-meta.html" . }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script>
@@ -44,6 +42,7 @@
       }
     </script>
   </head>
+  {{ template "_internal/twitter_cards.html" . }}
   <body class="page">
     {{ partial "nav.html" . }}
     <main class="main-content">
@@ -153,5 +152,7 @@
       </div>
     </div>
     {{ partial "cookies.html" }}
+    <!-- <script src="{{ "/scripts/fuse.js" | relURL }}"></script> -->
+    <script src="{{ "/scripts/fixedsearch/fixedsearch.js" | relURL }}"></script>
   </body>
 </html>

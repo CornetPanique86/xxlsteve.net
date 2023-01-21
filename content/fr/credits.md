@@ -1,5 +1,6 @@
 ---
 title: "Crédits"
+description: Crédits à propos de la création de ce site.
 date: 2022-11-23T19:26:21+01:00
 draft: false
 ---
@@ -11,6 +12,7 @@ Crédits
 
 
 - [**CloudCannon's Hugo tutorial**](https://cloudcannon.com/community/learn/hugo-beginner-tutorial/) - cela m'a beaucoup aidé à m'initier à la création de sites web et à l'utilisation d'Hugo (la documentation d'Hugo est difficile à comprendre je trouve) !
+- [**fixedsearch**](https://gist.github.com/Arty2/8b0c43581013753438a3d35c15091a9f) de Arty2 est l'outil de recherche côté client utilisé sur mon site (légèrement modifié) avec [Fuse.js](https://fusejs.io/) comme librairie de recherche.
 - [**typeface-minecraft**](https://github.com/South-Paw/typeface-minecraft) ([License](https://github.com/South-Paw/typeface-minecraft/blob/master/LICENSE)) par South-Paw est le package de polices d'écriture que j'ai utilisé pour l'une des polices Minecraft.
 - [**skinview3d**](https://github.com/bs-community/skinview3d) par bs-community est l'outil de visualisation de skins 3D utilisé dans ma page de réseaux sociaux.
 - [**Dark Mode UI**](https://github.com/Offroaders123/Dark-Mode) par Offroaders123 est la palette de couleurs que j'ai utilisée pour tous les boutons de style Minecraft sur mon site en mode sombre.

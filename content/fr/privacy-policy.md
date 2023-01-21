@@ -1,5 +1,6 @@
 ---
 title: "Mentions Légales"
+description: Mentions légales du site.
 date: 2022-12-03T19:57:14+01:00
 draft: false
 ---

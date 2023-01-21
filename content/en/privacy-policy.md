@@ -1,5 +1,6 @@
 ---
 title: "Privacy Policy"
+description: Privacy policy of this website.
 date: 2022-12-03T19:57:14+01:00
 draft: false
 ---

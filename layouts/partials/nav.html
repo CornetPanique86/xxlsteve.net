@@ -1,5 +1,6 @@
 <header>
   <nav>
+    <button class="nav-burger" title="Navigation" type="button" onclick="showNavBar()"><i class="fa-solid fa-bars"></i></button>
     <ul class="top-nav">
       <li class="top-nav__logo"><a href='{{ relLangURL "" }}'>
         <img class="icons" src="/header-icon.png" title='{{ i18n "home" }}'>
@@ -24,11 +25,12 @@
           {{ end}}
         {{ end }}
         <li class="top-nav__link">
-          <button type="button" title='{{ i18n "search" }}'>
-            <img class="icons" src="/search-icon.svg" style="width:30px; height:30px;">
+          <button type="button" title='{{ i18n "search" }}' id="navSearchBtn">
+            <span><i class="fa-solid fa-magnifying-glass"></i></span>
           </button>
         </li>
       </div>
     </ul>
+    {{ partialCached "search.html" . }}
   </nav>
 </header>

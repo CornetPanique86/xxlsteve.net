@@ -7,7 +7,8 @@ image: dreams-minecraft-ultimate-tag/img/header-image.png
 author: XXL Steve
 description: "Dream's Ultimate Tag is a function pack of the minigame Minecraft Ultimate Tag by Dream. A random hunter is chosen and has to tag a runner. If the runner(s) survive for 2 minutes, they win! If they don't... they lose."
 ogtype: article
-ogimage: /blog/dreams-minecraft-ultimate-tag/img/header-image.png
+images:
+- /blog/dreams-minecraft-ultimate-tag/img/header-image.png
 
 tableOfContents:
     - h1: How to start
@@ -51,7 +52,7 @@ To start playing, write */function start* in the chat. You will get teleported i
 
 If you need help, you can also write */function help* and */function credits* for the credits.
 
-{{< figure src="https://my.mcpedl.com/storage/addons/4690/images/dreams-minecraft-ultimate-tag_2.png" caption="Start the game" class="figurePopup" >}}
+{{< figure src="https://my.mcpedl.com/storage/addons/4690/images/dreams-minecraft-ultimate-tag_2.png" caption="Start the game" class="figurePopup imagePopup" >}}
 
 {{< hanchor h="3" >}}
 Roles
@@ -60,7 +61,7 @@ Roles
 - **Hunter:** the hunter has to chase the runners and tag/hit them to win. If he runs out of time, he loses!
 - **Runner:** the runner has to avoid being cought by the hunter. After 2 minutes, if the runner is still alive, he wins!
 
-{{< figure src="https://my.mcpedl.com/storage/addons/4690/images/dreams-minecraft-ultimate-tag_3.png" caption="RUN!" class="figurePopup" >}}
+{{< figure src="https://my.mcpedl.com/storage/addons/4690/images/dreams-minecraft-ultimate-tag_3.png" caption="RUN!" class="figurePopup imagePopup" >}}
 
 {{< hanchor h="3" >}}
 Bugs

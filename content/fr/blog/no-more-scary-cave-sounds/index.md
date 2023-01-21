@@ -7,7 +7,8 @@ image: no-more-scary-cave-sounds/img/header-image.jpg
 author: United Noobs
 description: "No More Scary Cave Sounds is a resource pack that will change the cave sounds (yes, they got added in 1.16!) ambient.cave to ambient sounds like water lowing in a cave or birds singing."
 ogtype: article
-ogimage: /blog/no-more-scary-cave-sounds/img/header-image.jpg
+images:
+- /blog/no-more-scary-cave-sounds/img/header-image.jpg
 
 downloads:
 - text: .mcpack (MCPEDL DL)

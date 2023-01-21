@@ -7,7 +7,8 @@ image: death-swap/img/header-image.jpg
 author: United Noobs
 description: Welcome to Death Swap, a mini-game of trapping your friend! When the game starts, you have 8 minutes to gather resources. Then the swapping will begin! You and your friend will swap places! The goal is to kill your opponent!
 ogtype: article
-ogimage: /blog/death-swap/img/header-image.jpg
+images:
+- /blog/death-swap/img/header-image.jpg
 
 tableOfContents:
 - h1: How to start the game
@@ -46,9 +47,9 @@ At the start of the game, you have 8 minutes to gather resources. After these 8 
 
 Here are examples of traps : 
 
-{{< figure src="/blog/death-swap/img/fall_trap.jpg" caption="Alex falls off a tower at the last second, so Steve takes her place!" alt="Alex falling off a tower at the last second, and Steve taking her place" class="figurePopup" >}}
+{{< figure src="/blog/death-swap/img/fall_trap.jpg" caption="Alex falls off a tower at the last second, so Steve takes her place!" alt="Alex falling off a tower at the last second, and Steve taking her place" class="figurePopup imagePopup" >}}
 
-{{< figure src="/blog/death-swap/img/lava_trap.jpg" caption="R.I.P. Steve..." alt="Alex swaps with Steve in a lava lake" class="figurePopup" >}}
+{{< figure src="/blog/death-swap/img/lava_trap.jpg" caption="R.I.P. Steve..." alt="Alex swaps with Steve in a lava lake" class="figurePopup imagePopup" >}}
 
 {{< hanchor h="3" >}}
 How to start the game
@@ -59,7 +60,7 @@ How to start the game
 - It will setup the game. When that has finished, press the button again to start the game.
 - If you get a bug during your gameplay, you can always press the button to reset the game!
 
-{{< figure src="/blog/death-swap/img/overview.jpg" caption="This is where you will appear when joining the world." alt="The orange cube to start the game" class="figurePopup" >}}
+{{< figure src="/blog/death-swap/img/overview.jpg" caption="This is where you will appear when joining the world." alt="The orange cube to start the game" class="figurePopup imagePopup" >}}
 
 {{< hanchor h="3" >}}
 Credits:

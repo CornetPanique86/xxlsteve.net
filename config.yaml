@@ -14,7 +14,26 @@ languages:
 
 params:
   author: XXL Steve
+  description: Welcome to my website
+  images:
+  - /favicon.png
+  title: XXL Steve
+
+social:
+  twitter: cornetpanique86
 
 taxonomies:
   tag: tags
   category: categories
+
+sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 0.5
+
+outputs:
+  home:
+    - html
+    - json
+  page:
+    - html

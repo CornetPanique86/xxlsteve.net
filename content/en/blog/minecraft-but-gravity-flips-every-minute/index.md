@@ -7,7 +7,8 @@ image: minecraft-but-gravity-flips-every-minute/img/header-image.png
 author: XXL Steve
 description: "Every minute, gravity flips for 30 seconds! You will get levitated in the air! The goal of this challenge is to beat Minecraft (kill the Ender dragon). Play with your friends or alone!"
 ogtype: article
-ogimage: /blog/minecraft-but-gravity-flips-every-minute/img/header-image.png
+images:
+- /blog/minecraft-but-gravity-flips-every-minute/img/header-image.png
 
 tableOfContents:
     - h1: How to start
@@ -45,7 +46,7 @@ Also, thanks to CrazeVideos on YouTube for suggesting that!
 How to start:
 {{< /hanchor >}}
 
-{{< figure src="https://my.mcpedl.com/storage/addons/4821/images/minecraft-but-gravity-flips-every-minute_2.png" caption="To start the challenge, simply write /function start in the chat!" class="figurePopup" >}}
+{{< figure src="https://my.mcpedl.com/storage/addons/4821/images/minecraft-but-gravity-flips-every-minute_2.png" caption="To start the challenge, simply write /function start in the chat!" class="figurePopup imagePopup" >}}
 
 For the credits, write */function credits*
 
@@ -57,7 +58,7 @@ Change time between gravity flip:
 
 If you think 1 minute is too fast/slow, you can always change it! Write */scoreboard players set @s time yourTimeInSeconds* (note: you have to be the host for it to work. If someone else writes it, he has to write */scoreboard players set @p[tag=plsuseme] timeInSeconds)*.
 
-{{< figure src="https://my.mcpedl.com/storage/addons/4821/images/minecraft-but-gravity-flips-every-minute_3.png" caption="Change the time between each flip" class="figurePopup" >}}
+{{< figure src="https://my.mcpedl.com/storage/addons/4821/images/minecraft-but-gravity-flips-every-minute_3.png" caption="Change the time between each flip" class="figurePopup imagePopup" >}}
 
 {{< hanchor h="3" >}}
 Copyright:

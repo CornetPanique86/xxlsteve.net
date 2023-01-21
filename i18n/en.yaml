@@ -9,7 +9,7 @@ socials: Socials & Contact
 selectTheme: Select theme
 themeLight: Light
 themeDark: Dark
-search: Search
+search: "Search (Ctrl /)"
 
 aboutThisBg: About this background
 
@@ -26,6 +26,7 @@ updated: "Updated:"
 tableOfContents: Table of Contents
 anchor: "Anchor:"
 downloads: Downloads
+seeAlso: See Also
 
 # Footer
 footSocials: Socials
@@ -57,3 +58,6 @@ cookieT7: I accept Cookies
 
 # Taxonomies
 termsAll: All
+
+# 404
+pageNotFound: Page not found

@@ -7,7 +7,8 @@ image: {{ .Name }}/img/header-image.png
 author: XXL Steve
 description:
 ogtype: article
-ogimage: /blog/{{ .Name }}/img/header-image.png
+images:
+- /blog/{{.Name}}/img/thumbnail.png
 
 tableOfContents:
 - h1:

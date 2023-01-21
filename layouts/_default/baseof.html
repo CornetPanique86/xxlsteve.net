@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     {{ partial "head-meta.html" . }}
-    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    {{ block "headfiles" . }}
+    {{ end }}
   </head>
+  {{ template "_internal/twitter_cards.html" . }}
   <body class="page">
     {{ partial "nav.html" . }}
     <main class="main-content">
@@ -17,5 +18,10 @@
     {{ partial "footer.html" }}
 
     {{ partial "cookies.html" }}
+
+    {{ block "footerfiles" . }}
+    {{ end }}
+    <!-- <script src="{{ "/scripts/fuse.js" | relURL }}"></script> -->
+    <script src="{{ "/scripts/fixedsearch/fixedsearch.js" | relURL }}"></script>
   </body>
 </html>

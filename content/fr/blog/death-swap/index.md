@@ -7,7 +7,8 @@ image: death-swap/img/header-image.jpg
 author: Organisation des Noobs Unis
 description: Bienvenue dans Death Swap, un mini-jeu de piégeage de votre ami ! Lorsque le jeu démarre, vous avez 8 minutes pour rassembler des ressources. Alors la téléportation commencera ! Vous et votre ami échangerez de place ! Le but est de tuer votre adversaire ! Par l'Organisation des Noobs Unis.
 ogtype: article
-ogimage: /blog/death-swap/img/header-image.jpg
+images:
+- /blog/death-swap/img/header-image.jpg
 
 tableOfContents:
 - h1: Démarrer le jeu
@@ -46,9 +47,9 @@ Au début du jeu, vous avez 8 minutes pour rassembler des ressources. Après ces
 
 Voici des exemples de trappes :
 
-{{< figure src="/blog/death-swap/img/fall_trap.jpg" caption="Alex tombe d'une tour à la dernière seconde, alors Steve prend sa place !" class="figurePopup" >}}
+{{< figure src="/blog/death-swap/img/fall_trap.jpg" caption="Alex tombe d'une tour à la dernière seconde, alors Steve prend sa place !" class="figurePopup imagePopup" >}}
 
-{{< figure src="/blog/death-swap/img/lava_trap.jpg" caption="R.I.P. Steve..." alt="Alex échange de place avec Steve dans un lac de lave" class="figurePopup" >}}
+{{< figure src="/blog/death-swap/img/lava_trap.jpg" caption="R.I.P. Steve..." alt="Alex échange de place avec Steve dans un lac de lave" class="figurePopup imagePopup" >}}
 
 {{< hanchor h="3" >}}
 Démarrer le jeu
@@ -59,7 +60,7 @@ Démarrer le jeu
 - Cela configurera le jeu. Lorsque cela est terminé, appuyez à nouveau sur le bouton pour démarrer le jeu.
 - Si vous rencontrez un bug pendant votre jeu, vous pouvez toujours appuyer sur le bouton pour réinitialiser le jeu !
 
-{{< figure src="/blog/death-swap/img/overview.jpg" caption="C'est là que vous apparaîtrez lorsque vous rejoignez le monde." alt="Le cube orange pour démarrer la partie" class="figurePopup" >}}
+{{< figure src="/blog/death-swap/img/overview.jpg" caption="C'est là que vous apparaîtrez lorsque vous rejoignez le monde." alt="Le cube orange pour démarrer la partie" class="figurePopup imagePopup" >}}
 
 {{< hanchor h="3" >}}
 Crédits

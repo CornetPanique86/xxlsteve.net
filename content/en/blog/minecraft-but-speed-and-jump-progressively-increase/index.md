@@ -7,7 +7,8 @@ image: minecraft-but-speed-and-jump-progressively-increase/img/header-image.png
 author: XXL Steve
 description: "Minecraft, but Speed and Jump progressively increase: the more you walk and jump, the faster you move and the higher you jump. This addon is very challenging, and with enough walking as well as jumping, you might reach the maximum levels!"
 ogtype: article
-ogimage: /blog/minecraft-but-speed-and-jump-progressively-increase/img/header-image.png
+images:
+- /blog/minecraft-but-speed-and-jump-progressively-increase/img/header-image.png
 
 tableOfContents:
     - h1: Copyright
@@ -45,11 +46,11 @@ This addon also features 3 different modes:
   {{< imgslide src="https://api.mcpedl.com/storage/submissions/116475/images/minecraft-but-speed-and-jump-progressively-increase_4.png" caption="Speed and jump increase - both your speed and jump height will increase every time you move/jump" >}}
 {{< /imgslider >}}
 
-{{< figure src="https://api.mcpedl.com/storage/submissions/116475/images/minecraft-but-speed-and-jump-progressively-increase_5.png" caption="To choose the mode, click on the gear icon on the addon" class="figurePopup" >}}
+{{< figure src="https://api.mcpedl.com/storage/submissions/116475/images/minecraft-but-speed-and-jump-progressively-increase_5.png" caption="To choose the mode, click on the gear icon on the addon" class="figurePopup imagePopup" >}}
 
 If you would like to reset your current speed and/or jump level, write ***/function reset*** in Minecraft chat.
 
-{{< figure src="https://api.mcpedl.com/storage/submissions/116475/images/minecraft-but-speed-and-jump-progressively-increase_6.png" caption="function reset" class="figurePopup" >}}
+{{< figure src="https://api.mcpedl.com/storage/submissions/116475/images/minecraft-but-speed-and-jump-progressively-increase_6.png" caption="function reset" class="figurePopup imagePopup" >}}
 
 {{< ytcustom id="VrAshinIIRU" title="Addon showcase" >}}
 

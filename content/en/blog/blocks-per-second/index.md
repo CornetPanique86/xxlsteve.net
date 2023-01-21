@@ -8,7 +8,8 @@ image: blocks-per-second/img/header-image.png
 author: XXL Steve
 description: "This script lets you calculate how many blocks you place every second! You can customise the time between every update: 1, 3, 5, 30 or 60 seconds! Singleplayer and Windows 10 only."
 ogtype: article
-ogimage: /blog/blocks-per-second/img/header-image.png
+images:
+- /blog/blocks-per-second/img/header-image.png
 
 tableOfContents:
     - h1: Copyright
@@ -40,17 +41,17 @@ This addon/script is useful for knowing the average speed of bridging techniques
 
 This addon only works for Windows 10 and in singleplayer with the additional modding capabilities feature enabled!
 
-{{< figure src="https://api.mcpedl.com/storage/submissions/120751/images/blocks-per-second-calculator-scriptwindows-10-only_2.png" caption="Enable Additional Modding Capabilities" class="figurePopup" >}}
+{{< figure src="https://api.mcpedl.com/storage/submissions/120751/images/blocks-per-second-calculator-scriptwindows-10-only_2.png" caption="Enable Additional Modding Capabilities" class="figurePopup imagePopup" >}}
 
 To choose how many seconds you want between every update, click on the gear icon when the addon is applied to your world:
 
-{{< figure src="https://api.mcpedl.com/storage/submissions/120751/images/blocks-per-second-calculator-scriptwindows-10-only_3.png" caption="Click on the gear icon" class="figurePopup" >}}
+{{< figure src="https://api.mcpedl.com/storage/submissions/120751/images/blocks-per-second-calculator-scriptwindows-10-only_3.png" caption="Click on the gear icon" class="figurePopup imagePopup" >}}
 
-{{< figure src="https://api.mcpedl.com/storage/submissions/120751/images/blocks-per-second-calculator-scriptwindows-10-only_4.png" caption="You can then choose a mode" class="figurePopup" >}}
+{{< figure src="https://api.mcpedl.com/storage/submissions/120751/images/blocks-per-second-calculator-scriptwindows-10-only_4.png" caption="You can then choose a mode" class="figurePopup imagePopup" >}}
 
 In-game, the number of blocks you place every second(s) will appear on the actionbar:
 
-{{< figure src="https://api.mcpedl.com/storage/submissions/120751/images/blocks-per-second-calculator-scriptwindows-10-only_5.png" caption="BPS" class="figurePopup" >}}
+{{< figure src="https://api.mcpedl.com/storage/submissions/120751/images/blocks-per-second-calculator-scriptwindows-10-only_5.png" caption="BPS" class="figurePopup imagePopup" >}}
 
 {{< ytcustom id="bj-iId7ZJp4" >}}
 

@@ -7,7 +7,8 @@ image: spleef/img/header-image.jpg
 author: United Noobs
 description: "Just a little, simple Spleef game. Spleef is a game where you need to break the block under the other players to make them fall into the void and die. This map contains 2 different arenas and 2 gamemodes. 1 arena has 3 layers and the other 2 layers!"
 ogtype: article
-ogimage: /blog/spleef/img/header-image.jpg
+images:
+- /blog/spleef/img/header-image.jpg
 
 downloads:
 - text: .mcworld (MCPEDL DL)
@@ -53,7 +54,7 @@ In this gamemode you will have 1 snowball for every block you break. You can thr
 
 **⚠ WARNING: For the Snowball Spleef gamemode to work correctly, your language needs to be set to French or English. ⚠**
 
-{{< figure src="/blog/spleef/img/gameplay.jpg" caption="Gameplay" alt="Gameplay" class="figurePopup" >}}
+{{< figure src="/blog/spleef/img/gameplay.jpg" caption="Gameplay" alt="Gameplay" class="figurePopup imagePopup" >}}
 
 Enjoy :D
 

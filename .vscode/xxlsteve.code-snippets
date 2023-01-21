@@ -20,7 +20,7 @@
 		"scope": "markdown",
 		"prefix": "figure",
 		"body": [
-			"{{< figure src=\"/blog/$1\" caption=\"$2\" alt=\"$3\" class=\"figurePopup\" >}}"
+			"{{< figure src=\"/blog/$1\" caption=\"$2\" alt=\"$3\" class=\"figurePopup imagePopup\" >}}"
 		],
 		"description": "Insert figure element"
 	},
@@ -31,5 +31,13 @@
 			"{{< ytcustom id=\"$1\" title=\"$0\" >}}"
 		],
 		"description": "Insert youtube shortcode"
+	},
+	"Multilingual reference": {
+		"scope": "html",
+		"prefix": "i18n",
+		"body": [
+			"{{ i18n \"$1\" }}$0"
+		],
+		"description": "Insert i18n"
 	}
 }

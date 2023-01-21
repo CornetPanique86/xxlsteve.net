@@ -1,0 +1,35 @@
+{{ define "headFiles" }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+{{ end }}
+
+{{ define "main" }}
+    <article>
+        <ul class="resources-grid" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));">
+            {{ range .Resources.Match "*" }}
+                <li class="resources-preview">
+                    {{ if eq .ResourceType "image" }}
+                        <img src="{{ .Permalink }}" title="{{ .Name }}" alt="{{ .Name }}" class="imagePopup resources-image">
+                    {{ else }}
+                        <div class="resources-preview__top">
+                            <a download href="{{ .Permalink }}" class="noA download-button" title="Download: {{ .Name }}"><i class="fa-solid fa-download"></i></a>
+                            {{ .Name }}
+                        </div>
+                    {{ end }}
+                    <div class="resources-preview__bottom">
+                        <h3 class="preview-title">
+                            {{ with .Title }}{{ . }}{{ else }}{{ .Name }}{{ end }}
+                        </h3>
+                    </div>
+                </li>
+            {{ end }}
+        </ul>
+        <section>
+            <h1>
+                {{ .Title }}
+            </h1>
+            {{ .Content }}
+        </section>
+    </article>
+
+    {{ partial "image-popup" }}
+{{ end }}
