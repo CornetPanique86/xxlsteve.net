@@ -1,4 +1,4 @@
-{{ define "headFiles" }}
+{{ define "headfiles" }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 {{ end }}
 {{ define "main" }}
@@ -102,11 +102,12 @@
         </section>
     {{ end }}
 </article>
-<aside>
-    {{ $related := .Site.RegularPages.Related . | first 3 }}
-    {{ with $related }}
+
+{{ $related := .Site.RegularPages.Related . | first 3 }}
+{{ with $related }}
+    <aside>
         <h2>{{ i18n "seeAlso" }}</h2>
-        <ul class="post-preview-grid" style="grid-template-columns: repeat(auto-fit, minmax(100px, 400px));">
+        <ul class="post-preview-grid seeAlso noUl">
             {{ range . }}
               <div class="post-preview">
                 <a href="{{ .Permalink }}">
@@ -114,7 +115,7 @@
                 </a>
                 <div class="post-preview__bottom">
                     <div class="taxonomies" style="flex-direction: column;">
-                        <div class="taxonomies__tag-group" style="margin: 4px 0;">
+                        <div class="taxonomies__tag-group" style="margin: 0 0;">
                             {{ range .Params.categories }}
                                 <div class="tag">
                                     <span class="tag-text">
@@ -123,7 +124,7 @@
                                 </div>
                             {{end}}
                         </div>
-                        <div class="taxonomies__tag-group" style="margin: 4px 0;">
+                        <div class="taxonomies__tag-group" style="margin: 0 0;">
                             {{ range .Params.tags }}
                                 <div class="tag">
                                     <span class="tag-text">
@@ -142,9 +143,20 @@
               </div>
             {{ end }}
         </ul>
-    {{ end }}
-</aside>
-    
+    </aside>
+{{ end }}
+
+<!-- Comments -->
+<script>
+    var remark_config = {
+      host: 'https://comments.xxlsteve.net',
+      site_id: 'xxlsteve.net',
+    }
+</script>
+<script>!function(e,n){for(var o=0;o<e.length;o++){var r=n.createElement("script"),c=".js",d=n.head||n.body;"noModule"in r?(r.type="module",c=".mjs"):r.async=!0,r.defer=!0,r.src=remark_config.host+"/web/"+e[o]+c,d.appendChild(r)}}(remark_config.components||["embed"],document);</script>
+
+<div id="remark42"></div>
+
 {{ partial "image-popup.html" }}
 
 {{ end }}

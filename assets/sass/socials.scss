@@ -1,5 +1,5 @@
 $primary-font: "Minecraft", 'Gill Sans', Calibri, Tahoma, sans-serif;
-$text-font: Calibri, Tahoma, sans-serif;
+$text-font: "Open Sans", Calibri, Tahoma, sans-serif;
 $heading-font: "minecraftHeaderFont", sans-serif;
 $text-color: #e8e8e8;
 
@@ -55,6 +55,13 @@ a {
 }
 a:active {
     text-decoration: underline;
+}
+
+button {
+  background: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
 }
 
 #intro { 
@@ -137,6 +144,7 @@ article {
     transition: background 1s;
     width: auto;
     margin: 10px 0;
+    position: relative;
     & span, i {
         color: black;
     }
@@ -146,6 +154,26 @@ article {
     &:active {
         // outline: 2px solid hsl(0, 0%, 51%);
         box-shadow: 0 0 10px #ffffffba;
+    }
+}
+
+.infoBtn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px 6px 4.5px 6px;
+    font-size: 1.2rem;
+    // height: 90%;
+    width: auto;
+    border-radius: 5px;
+    color: #1c1c1c;
+    &:hover {
+        background: hsla(0, 0%, 51%, 0.565);
+    }
+    & i {
+        color: #313131;
+        pointer-events: none;
     }
 }
 
@@ -169,40 +197,40 @@ article {
 
 @keyframes rainbowshadow{
     100%,0%{
-        box-shadow: 0 0 10px 5px rgb(255,0,0);
+        border: 5px solid rgb(255,0,0);
     }
     8%{
-        box-shadow: 0 0 10px 5px rgb(255,127,0);
+        border: 5px solid rgb(255,127,0);
     }
     16%{
-        box-shadow: 0 0 10px 5px rgb(255,255,0);
+        border: 5px solid rgb(255,255,0);
     }
     25%{
-        box-shadow: 0 0 10px 5px rgb(127,255,0);
+        border: 5px solid rgb(127,255,0);
     }
     33%{
-        box-shadow: 0 0 10px 5px rgb(0,255,0);
+        border: 5px solid rgb(0,255,0);
     }
     41%{
-        box-shadow: 0 0 10px 5px rgb(0,255,127);
+        border: 5px solid rgb(0,255,127);
     }
     50%{
-        box-shadow: 0 0 10px 5px rgb(0,255,255);
+        border: 5px solid rgb(0,255,255);
     }
     58%{
-        box-shadow: 0 0 10px 5px rgb(0,127,255);
+        border: 5px solid rgb(0,127,255);
     }
     66%{
-        box-shadow: 0 0 10px 5px rgb(0,0,255);
+        border: 5px solid rgb(0,0,255);
     }
     75%{
-        box-shadow: 0 0 10px 5px rgb(127,0,255);
+        border: 5px solid rgb(127,0,255);
     }
     83%{
-        box-shadow: 0 0 10px 5px rgb(255,0,255);
+        border: 5px solid rgb(255,0,255);
     }
     91%{
-        box-shadow: 0 0 10px 5px rgb(255,0,127);
+        border: 5px solid rgb(255,0,127);
     }
 }
 
@@ -236,23 +264,23 @@ article {
 .icons  i {
     transition: color, 0.2s ease;
 }
-.icons.twitter:hover  i {
+.icons.twitter:hover i:not(.noIcons) {
     color: #1DA1F2;
 }
 
-.icons.youtube:hover  i {
+.icons.youtube:hover i:not(.noIcons) {
     color: #FF0000;
 }
 
-.icons.discord:hover  i {
+.icons.discord:hover i:not(.noIcons) {
     color: #7289da;
 }
 
-.icons.reddit:hover  i {
+.icons.reddit:hover  i:not(.noIcons) {
     color: #ff4500;
 }
 
-.icons.github:hover  i {
+.icons.github:hover  i:not(.noIcons) {
     color: #c9c9c9;
 }
 
@@ -329,3 +357,91 @@ article {
     outline: 2px solid #fff;
     color: #fff;
   }
+
+.hidden {
+    animation: fadeOut 0.5s ease forwards !important;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+#detailsPopup {
+    animation: fadeIn 0.5s ease forwards;
+    display: none;
+    position: fixed;
+    max-width: 50%;
+    width: auto;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.4rem;
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 10px;
+    border: 5px solid #ffffff3c;
+    box-shadow: 0px 0px 20px 20px #0000009f;
+    &__header {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        & img {
+            height: 65px;
+            width: auto;
+            border-radius: 10px;
+        }
+        & h3 {
+            margin-left: 15px;
+            font-size: 1.8em;
+            padding: 0;
+        }
+    }
+    &__desc {
+        flex: 2;
+    }
+    & > a {
+        flex: 2;
+        border-radius: 50px;
+        padding: 15px;
+        text-align: center;
+        font-size: 1.2em;
+        position: relative;
+        & span {
+            font-weight: bold;
+        }
+        & i {
+            margin-left: 5px;
+        }
+        &::before {
+            content:'';
+            transition: opacity, 0.7s ease;
+            background: linear-gradient(90deg, #57ebde 0%, #aefb2a 100%);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top:0;
+            left:0;
+            opacity: 0.7;
+            z-index: -1;
+            border-radius: 50px;
+            outline: 0px solid #ffffffab;
+        }
+        &:hover::before {
+            opacity: 0.9;
+        }
+        &:active::before {
+            outline: 3px solid #ffffffab;
+        }
+    }
+    & > * {
+        margin: 10px;
+    }
+}

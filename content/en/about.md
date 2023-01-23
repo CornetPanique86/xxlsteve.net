@@ -16,7 +16,7 @@ If you'd like to check my social links or contact me, check out my [socials page
 United Noobs
 {{< /hanchor >}}
 
-United Noobs is a team I founded to make Minecraft: Bedrock content creation like maps, addons or resource packs.
+United Noobs is a team I founded to make Minecraft Bedrock content creation like maps, addons or resource packs.
 Our content is published on [MCPEDL](https://mcpedl.com/user/cornetpanique86), [PlanetMinecraft](https://www.planetminecraft.com/member/united_noobs/) and [Addons for Minecraft](https://play.google.com/store/apps/details?id=com.kayenworks.mcpeaddons).
 
 {{< hanchor h="4" >}}

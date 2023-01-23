@@ -16,7 +16,7 @@ Si vous souhaitez consulter mes liens sociaux ou me contacter, consultez ma [pag
 L'Organisation des Noobs Unis
 {{< /hanchor >}}
 
-L'Organisation des Noobs Unis est une équipe que j'ai fondée pour créer du contenu Minecraft: Bedrock comme des cartes, des addons ou des packs de ressources.
+L'Organisation des Noobs Unis est une équipe que j'ai fondée pour créer du contenu Minecraft Bedrock comme des cartes, des addons ou des packs de ressources.
 Notre contenu est publié sur [MCPEDL](https://mcpedl.com/user/cornetpanique86), [PlanetMinecraft](https://www.planetminecraft.com/member/united_noobs/) et [Addons for Minecraft](https://play.google.com/store/apps/details?id=com.kayenworks.mcpeaddons).
 
 {{< hanchor h="4" >}}

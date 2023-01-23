@@ -1,13 +1,19 @@
 <header>
   <nav>
     <button class="nav-burger" title="Navigation" type="button" onclick="showNavBar()"><i class="fa-solid fa-bars"></i></button>
-    <ul class="top-nav">
+    <ul class="noUl top-nav">
       <li class="top-nav__logo"><a href='{{ relLangURL "" }}'>
         <img class="icons" src="/header-icon.png" title='{{ i18n "home" }}'>
       </a></li>
       <div class="top-nav__link-group">
-        <li class="top-nav__link"><a href='{{ relLangURL "resources" }}' class="noA"><span>{{ i18n "resources" }}</span></a></li>
-        <li class="top-nav__link"><a href='{{ relLangURL "tools" }}' class="noA"><span>{{ i18n "tools" }}</span></a></li>
+        <li class="top-nav__link top-nav__dropDownParent"><a href='{{ relLangURL "resources" }}' class="noA"><span>{{ i18n "resources" }}</span></a>
+          <i class="fa-solid fa-caret-down"></i>
+          <ul class="noUl top-nav__dropDown">
+            <li>
+              <a href='{{ relLangURL "tools" }}' class="noA"><span>{{ i18n "tools" }}</span></a>
+            </li>
+          </ul>
+        </li>
         <li class="top-nav__link"><a href='{{ relLangURL "blog" }}' class="noA"><span>{{ i18n "blog" }}</span></a></li>
         <li class="top-nav__link"><a href='{{ relLangURL "about" }}' class="noA"><span>{{ i18n "about" }}</span></a></li>
         <li class="top-nav__link">

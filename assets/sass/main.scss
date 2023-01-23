@@ -246,7 +246,7 @@ ul {
   list-style-type: square;
 }
 
-ul, ol {
+ul:not(.noUl), ol:not(.noUl) {
   line-height: 1.6rem;
   padding-left: 20px;
 }
@@ -562,7 +562,7 @@ hr {
 
 .top-nav {
   z-index: 100;
-  list-style-type: none;
+  list-style: none;
   border-bottom: 10px solid var(--box-border-rightbottom);
   border-left: 10px solid var(--box-border-lefttop);
   border-right: 10px solid var(--box-border-rightbottom);
@@ -572,7 +572,8 @@ hr {
   background-color: var(--box-bg);
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  // overflow-x: visible;
+  // overflow-y: hidden;
   justify-content: space-between;
   align-items: center;
   position: absolute;
@@ -637,6 +638,28 @@ hr {
     align-items: center;
     width: auto;
     margin: 0;
+  }
+  &__dropDownParent {
+    position: relative;
+    &:hover > .top-nav__dropDown {
+      display: block;
+    }
+  }
+  &__dropDown {
+    list-style: none;
+    display: none;
+    position: absolute;
+    min-width: 100%;
+    overflow: visible;
+    top: 100%;
+    left: 0;
+    background-color: var(--box-bg);
+    & > li {
+      padding: 10px 0;
+      & span {
+        padding: 0;
+      }
+    }
   }
 }
 
@@ -993,6 +1016,10 @@ article section.mainArticle {
   margin-bottom: 5px;
 }
 
+.seeAlso {
+  grid-template-columns: repeat(3, minmax(50px, 400px));
+}
+
 // Resources
 .resources-grid {
   display: grid;
@@ -1172,10 +1199,25 @@ article section.mainArticle {
       flex-wrap: wrap;
       justify-content: center;
     }
+    &__dropDownParent {
+      & > i {
+        display: inline;
+        padding: 5px 10px;
+        &:hover {
+          background: #ffffffce;
+        }
+        &:active {
+          background: #ffffff91;
+        }
+      }
+    }
   }
   #themeToggler {
     padding: 5px 0 5px 5px;
     margin-top: 0;
+  }
+  .seeAlso {
+    grid-template-columns: repeat(1, minmax(50px, 400px));
   }
 }
 
@@ -1205,6 +1247,21 @@ article section.mainArticle {
     #themeToggler {
       padding: 5px 0 5px 5px;
     }
+    &__dropDownParent {
+      & > i {
+        display: inline;
+        padding: 5px 10px;
+        &:hover {
+          background: #ffffffce;
+        }
+        &:active {
+          background: #ffffff91;
+        }
+      }
+    }
+  }
+  .seeAlso {
+    grid-template-columns: repeat(2, minmax(50px, 400px));
   }
 }
 
@@ -1225,6 +1282,12 @@ article section.mainArticle {
   .container {
     padding-left: $container-padding-lg;
     padding-right: $container-padding-lg;
+  }
+
+  .top-nav {
+    &__dropDownParent {
+      & > i { display: none; }
+    }
   }
 
   .footer-content {

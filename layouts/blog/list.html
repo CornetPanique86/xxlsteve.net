@@ -1,6 +1,6 @@
 {{ define "main" }}
     <h1>Blog posts</h1>
-    <ul class="post-preview-grid">
+    <ul class="noUl post-preview-grid">
     {{ range (.Site.GetPage "section" "blog").Pages }}
     <li class="post-preview">
         <a href="{{ .Permalink }}">
