@@ -28,23 +28,20 @@ function cookieAgreementFn (value) {
 }
 
 window.onload = () => {
-    const body = document.body;
     const consentPopup = document.getElementById("page-blur");
 
     switch (shouldShowPopup()) {
         case "-1":
-            changeIndexBackground("auto");
+            changeTheme("auto");
             break;
         case "3":
-            body.setAttribute("data-theme", "dark");
-            changeIndexBackground("dark");
+            changeTheme("dark");
             break;
         case "2":
-            body.setAttribute("data-theme", "light");
+            changeTheme("light");
             break;
         case "1":
-            body.setAttribute("data-theme", "auto");
-            changeIndexBackground("auto");
+            changeTheme("auto");
             break;
         default:
             consentPopup.style.display = "block";
@@ -66,27 +63,36 @@ window.onload = () => {
 }
 
 function themeSettings() {
-    const body = document.body;
     const theme = document.getElementById("themeToggler").value;
 
     switch(theme) {
         case "light":
-            body.setAttribute("data-theme", "light");
-            changeIndexBackground("light");
+            changeTheme("light");
             saveToStorage(2);
             break;
         case "dark":
-            body.setAttribute("data-theme", "dark");
-            changeIndexBackground("dark");
+            changeTheme("dark");
             saveToStorage(3);
             break;
         case "auto":
         default:
-            body.setAttribute("data-theme", "auto");
-            changeIndexBackground("auto");
+            changeTheme("auto");
             saveToStorage(1);
             break;
     }
+}
+function changeTheme(theme) {
+  const body = document.body;
+  body.setAttribute("data-theme", theme);
+  if (!(theme == "light" && document.getElementById("redbuilding1"))) changeIndexBackground(theme);
+  if (window.REMARK42) {
+    if (theme == "light" || theme == "auto") {
+      window.REMARK42.changeTheme("light");
+    } else {
+      window.REMARK42.changeTheme("dark");
+    }
+  }
+  return;
 }
 
 const setInnerHTML = (elm, html) => {

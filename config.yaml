@@ -18,6 +18,8 @@ params:
   images:
   - /favicon.png
   title: XXL Steve
+  remark42SiteID: "xxlsteve"
+  remark42Url: "https://comments.xxlsteve.net"
 
 social:
   twitter: cornetpanique86
