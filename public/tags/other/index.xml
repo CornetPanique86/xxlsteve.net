@@ -1,38 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Other on XXL Steve</title>
-    <link>/tags/other/</link>
-    <description>Recent content in Other on XXL Steve</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 07 Dec 2022 19:33:08 +0100</lastBuildDate><atom:link href="/tags/other/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>NoxCity</title>
-      <link>/blog/noxcity/</link>
-      <pubDate>Wed, 07 Dec 2022 19:33:08 +0100</pubDate>
-      
-      <guid>/blog/noxcity/</guid>
-      <description>Epik city </description>
-    </item>
-    
-    <item>
-      <title>What is Ulorium Games?</title>
-      <link>/blog/uloriumgames/</link>
-      <pubDate>Wed, 07 Dec 2022 19:32:51 +0100</pubDate>
-      
-      <guid>/blog/uloriumgames/</guid>
-      <description>Ulorium Games </description>
-    </item>
-    
-    <item>
-      <title>First Post</title>
-      <link>/blog/first-post/</link>
-      <pubDate>Fri, 04 Nov 2022 19:34:38 +0100</pubDate>
-      
-      <guid>/blog/first-post/</guid>
-      <description>Prout prout caca prout prout caca prout</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Other on XXL Steve</title><link>https://xxlsteve.net/tags/other/</link><description>Recent content in Other on XXL Steve</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Wed, 07 Dec 2022 19:32:51 +0100</lastBuildDate><atom:link href="https://xxlsteve.net/tags/other/index.xml" rel="self" type="application/rss+xml"/><item><title>What is Ulorium Games?</title><link>https://xxlsteve.net/blog/uloriumgames/</link><pubDate>Wed, 07 Dec 2022 19:32:51 +0100</pubDate><guid>https://xxlsteve.net/blog/uloriumgames/</guid><description>How it started
+Ulorium Games was founded by Sam0312 (Sam0312#3846 on discord) around the 4th of may 2020. It was preceded by a few other worlds like one named &amp;ldquo;Plantania&amp;rdquo; for which I had made an addon.
+The first build of UloriumGames
+I was already friends with him at the time, so I would occasionally hop on and help him with the world.
+The rise
+More and more people would know about the world, so Sam made a Discord server.</description></item></channel></rss>
