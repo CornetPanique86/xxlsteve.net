@@ -7,7 +7,6 @@
     <script>
       // About this background button
       function aboutbgOpenPopup(theme) {
-          document.getElementById("aboutbg-pageblock").style.display = "block";
           let aboutbgText = document.getElementById("aboutbg-text");
           if (theme == "nc") {
             aboutbgText.innerHTML = 
@@ -39,6 +38,7 @@
               <br><br><a href='{{ relLangURL "blog/uloriumgames" }}'><h5 class="minecraft-green">Read more...</h5></a>
             </div>`;
           }
+          openPageBlock("aboutbg-pageblock");
       }
     </script>
   </head>
