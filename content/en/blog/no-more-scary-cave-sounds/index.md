@@ -18,9 +18,9 @@ downloads:
 
 tableOfContents:
   - h1: Credits
-    n1: 1
+    
   - h1: Copyright
-    n1: 2
+    
 
 tags:
 - Minecraft Bedrock

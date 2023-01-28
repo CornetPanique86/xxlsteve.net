@@ -7,17 +7,23 @@
   </head>
   {{ template "_internal/twitter_cards.html" . }}
   <body class="page">
-    {{ partial "nav.html" . }}
-    <main class="main-content">
-      <div class="container">
-        <div class="page-content">
-          {{ block "main" . }}{{ end }}
+    <div class="grid-page">
+      {{ partial "nav.html" . }}
+      <main class="main-content">
+        <div class="container">
+          <div class="page-content">
+            {{ block "main" . }}{{ end }}
+          </div>
         </div>
-      </div>
-    </main>
-    {{ partial "footer.html" }}
+      </main>
+      {{ partial "footer.html" }}
+    </div>
 
     {{ partial "cookies.html" }}
+
+    <div id="customAlert">
+      
+    </div>
 
     {{ block "footerfiles" . }}
     {{ end }}

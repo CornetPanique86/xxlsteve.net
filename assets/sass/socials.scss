@@ -37,7 +37,7 @@ html, body {
 h1, h2 {
   font-family: $heading-font;
   font-weight: normal;
-  padding: 20px 0;
+  padding: 20px 2px;
 }
 
 h1 { font-size: xx-large; }
@@ -238,28 +238,6 @@ article {
     grid-area: contact;
 }
 
-@media screen and (max-width: 992px) {
-    article {
-        grid-template-areas: 
-            "socials ingame"
-            "contact contact";
-        grid-template-columns: 1fr 1fr;
-    }   
-}
-
-@media screen and (max-width: 600px) {
-    article {
-        grid-template-areas: 
-            "socials"
-            "ingame"
-            "contact";
-            grid-template-columns: 1fr;
-    }
-    #intro h6 {
-        position: inherit;
-    }
-}
-
 // ICONS
 .icons  i {
     transition: color, 0.2s ease;
@@ -412,7 +390,7 @@ article {
         border-radius: 50px;
         padding: 15px;
         text-align: center;
-        font-size: 1.2em;
+        font-size: 1.1em;
         position: relative;
         & span {
             font-weight: bold;
@@ -443,5 +421,56 @@ article {
     }
     & > * {
         margin: 10px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    article {
+        grid-template-areas: 
+            "socials ingame"
+            "contact contact";
+        grid-template-columns: 1fr 1fr;
+    }
+    #detailsPopup {
+        max-width: 75%;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    article {
+        grid-template-areas: 
+            "socials"
+            "ingame"
+            "contact";
+            grid-template-columns: 1fr;
+    }
+    #intro h6 {
+        position: inherit;
+    }
+    #detailsPopup {
+        max-width: 96%;
+        min-width: 60%;
+        font-size: 1.1rem;
+        &__header {
+            flex-wrap: wrap;
+            & img {
+                height: 50px;
+            }
+            & h3 {
+                margin-left: 5px;
+                font-size: 1.1em;
+            }
+        }
+        & > * {
+            margin: 5px;
+        }
+        &__desc {
+            min-width: 20ch;
+        }
+        & > a {
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
     }
 }

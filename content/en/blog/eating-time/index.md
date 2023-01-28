@@ -12,17 +12,17 @@ images:
 
 tableOfContents:
     - h1: Items
-      n1: 1
+      
     - h1: Decoration entities
-      n1: 2
+      
     - h1: Copyright
-      n1: 3
+      
     - h1: Credits
-      n1: 4
+      
     - h1: Installation
-      n1: 5
+      
     - h1: Downloads
-      n1: 6
+      
 
 downloads:
 - text: ".mcpack Behavior (MCPEDL DL)"

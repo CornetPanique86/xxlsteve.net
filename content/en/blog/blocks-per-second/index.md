@@ -13,11 +13,11 @@ images:
 
 tableOfContents:
     - h1: Copyright
-      n1: 1
+      
     - h1: Credits
-      n1: 2
+      
     - h1: Downloads
-      n1: 3
+      
 
 downloads:
 - text: ".mcpack (Mediafire)"

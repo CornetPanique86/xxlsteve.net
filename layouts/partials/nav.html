@@ -10,7 +10,7 @@
           <i class="fa-solid fa-caret-down"></i>
           <ul class="noUl top-nav__dropDown">
             <li>
-              <a href='{{ relLangURL "tools" }}' class="noA"><span>{{ i18n "tools" }}</span></a>
+              <a href="javascript: customAlert('{{ i18n "toolsComingSoon" }}')" class="noA"><span>{{ i18n "tools" }}</span></a>
             </li>
           </ul>
         </li>
@@ -24,7 +24,7 @@
           </select>
         </li>
         {{ if .IsTranslated }}
-          {{ range .Translations }}
+          {{ range .Translations | first 1 }}
             <li class="top-nav__link">
               <a href="{{ .Permalink }}" class="noA"><span>{{ .Language.LanguageName }}</span></a>
             </li>

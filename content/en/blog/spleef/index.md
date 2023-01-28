@@ -18,11 +18,11 @@ downloads:
 
 tableOfContents:
     - h1: How to play
-      n1: 1
+      
     - h1: Gamemodes
-      n1: 2
+      
     - h1: Creators
-      n1: 3
+      
 
 tags:
 - Minecraft Bedrock

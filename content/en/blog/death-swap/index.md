@@ -12,13 +12,13 @@ images:
 
 tableOfContents:
 - h1: How to start the game
-  n1: 1
+  
 - h1: Credits
-  n1: 2
+  
 - h1: Copyright
-  n1: 3
+  
 - h1: Downloads
-  n1: 4
+  
 
 downloads:
 - text: ".mcworld (MCPEDL DL)"

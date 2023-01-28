@@ -18,3 +18,9 @@
 <script src="{{ $mainScript.Permalink }}" {{ printf "integrity=%q" $mainScript.Data.Integrity | safeHTMLAttr }}></script>
 
 <script src="https://kit.fontawesome.com/24bbd48e74.js" crossorigin="anonymous"></script>
+
+{{ if .IsTranslated }}
+  {{ range .AllTranslations }}
+    <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}" />
+  {{ end }}
+{{ end }}

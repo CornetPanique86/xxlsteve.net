@@ -59,7 +59,7 @@ window.onload = () => {
           closePageBlock("image-popup-pageblock");
         }
       });
-    } catch(e) { console.log(e) }
+    } catch { }
 }
 
 function themeSettings() {
@@ -84,7 +84,8 @@ function themeSettings() {
 function changeTheme(theme) {
   const body = document.body;
   body.setAttribute("data-theme", theme);
-  if (!(theme == "light" && document.getElementById("redbuilding1"))) changeIndexBackground(theme);
+  // if (!(theme == "light" && document.getElementById("redbuilding1"))) 
+  changeIndexBackground(theme);
   if (window.REMARK42) {
     if (theme == "light" || theme == "auto") {
       window.REMARK42.changeTheme("light");
@@ -211,6 +212,22 @@ const openPageBlock = id => {
   document.documentElement.classList.remove("noScroll");
 }
 
+function customAlert(text) {
+  const customAlert = document.getElementById("customAlert");
+  customAlert.innerHTML = text;
+  customAlert.style.display = "inline-block";
+  customAlert.classList.add("slideIn");
+
+  setTimeout(() => {
+    customAlert.classList.add("slideOut");
+    setTimeout(() => {
+      customAlert.style.display = "none";
+      customAlert.classList.remove("slideOut");
+      customAlert.classList.remove("slideIn");
+    }, 520);
+  }, 3000);
+}
+
 // Image popup
 function imagePopup(figure) {
   document.documentElement.classList.add("noScroll");
@@ -223,6 +240,7 @@ function imagePopup(figure) {
   try {
     document.getElementById("image-popup__text").innerHTML = figure.querySelector("figcaption").innerHTML;
   } catch { }
+
   openPageBlock("image-popup-pageblock");
 }
 

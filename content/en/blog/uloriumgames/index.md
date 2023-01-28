@@ -16,15 +16,15 @@ categories:
 
 tableOfContents:
     - h1: How it started
-      n1: 1
+      
     - h1: The rise
-      n1: 2
+      
     - h1: The maintenance
-      n1: 3
+      
     - h1: The fall
-      n1: 4
+      
     - h1: Credits
-      n1: 5
+      
 ---
 {{< hanchor h="3" >}}
 How it started
@@ -50,10 +50,12 @@ A staff member named [endereyes202](https://www.youtube.com/@endereyes202) (ende
 
 ##### Screenshots
 
-{{< imgslider >}}
-  {{< imgslide src="/blog/uloriumgames/img/ffa.jpg" caption="FFA" alt="FFA minigame">}}
-  {{< imgslide src="/blog/uloriumgames/img/hikabrain.jpg" caption="Hikabrain" alt="Hikabrain minigame">}}
-  {{< imgslide src="/blog/uloriumgames/img/lobby-old.jpg" caption="Lobby (the first version)" alt="Lobby (the first version)">}}
+{{< imgslider "screenshots1" >}}
+  {{< imgslide src="/blog/uloriumgames/img/ffa.jpg" caption="FFA" alt="FFA minigame" >}}
+  {{< imgslide src="/blog/uloriumgames/img/hikabrain.jpg" caption="Hikabrain" alt="Hikabrain minigame" >}}
+  {{< imgslide src="/blog/uloriumgames/img/sumo.jpg" caption="Sumo" alt="Sumo minigame" >}}
+  {{< imgslide src="/blog/uloriumgames/img/tntrun.jpg" caption="TNT run" alt="TNT run minigame" >}}
+  {{< imgslide src="/blog/uloriumgames/img/lobby-old.jpg" caption="Lobby (the first version)" alt="Lobby (the first version)" >}}
 {{< /imgslider >}}
 
 {{< hanchor h="3" >}}
@@ -62,7 +64,9 @@ The maintenance
 
 But for the next minigame, we wanted it to be bigger. We made a vote on the Discord server and the winner was: 'Bedwars'! 
 
-And that's how the maintenance began. We built a map and Carl was responsible for coding the functionality of the minigame. 
+{{< figure src="/blog/uloriumgames/img/bedwars.jpg" caption="Bedwars map" alt="The bedwars map" class="figurePopup imagePopup" >}}
+
+And that's how the maintenance began. We built a map and Carl (Carl#1681 on discord) was responsible for coding the functionality of the minigame. 
 
 At that time, I was starting to lose motivation to work on the realm, so I barely helped with anything. And obviously, a Bedwars minigame takes a long time to do (especially with the pain that are command blocks, chunk loading, etc...) and globally the whole staff team would log on less often than we used to. So that's how the progress for bedwars practically halted. I made a custom shop NPC and nothing else.
 
@@ -70,7 +74,14 @@ At that time, I was starting to lose motivation to work on the realm, so I barel
 
 The whole minigame contained small bugs for pretty much every mechanic, and I was too lazy to fix it lol. I did find motivation to work on other features though: I improved the shop and the addon by adding cosmetics (custom 3D armor), and found a way to add custom "emojis", making Ulorium Games probably one of the first realms to have this feature before it got properly documented and used by most content creators :). Finally, I later added 2 minigames: block party and king of the hill (the latter being my own original twist to it). 
 
-Aside from me, many work was done: a much bigger FFA arena was built by builders like EzraOcelot. And of course, biggest of all, a completely new lobby built primarily by everythingpro: with tons of attention to detail, it took him several months to finish it! 
+Aside from me, many work was done: a much bigger FFA arena was built by builders like EzraOcelot (Ezracelot#4707), and we made some parkour courses. And of course, biggest of all, a completely new lobby built primarily by [Snowify](https://www.youtube.com/@Snowbqll "_blank") (Snowify#0001): with tons of attention to detail, it took him several months to finish it! 
+
+##### Screenshots
+
+{{< imgslider "screenshots2" >}}
+  {{< imgslide src="/blog/uloriumgames/img/parkour.jpg" caption="Parkour" alt="Parkour">}}
+  {{< imgslide src="/blog/uloriumgames/img/shop.jpg" caption="The shop" alt="The shop">}}
+{{< /imgslider >}}
 
 {{< hanchor h="3" >}}
 The fall

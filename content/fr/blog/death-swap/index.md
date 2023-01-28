@@ -12,13 +12,9 @@ images:
 
 tableOfContents:
 - h1: Démarrer le jeu
-  n1: 1
 - h1: Crédits
-  n1: 2
 - h1: Droits d'auteur
-  n1: 3
 - h1: Téléchargements
-  n1: 4
 
 downloads:
 - text: ".mcworld (MCPEDL DL)"

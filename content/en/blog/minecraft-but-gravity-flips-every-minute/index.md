@@ -12,15 +12,15 @@ images:
 
 tableOfContents:
     - h1: How to start
-      n1: 1
+      
     - h1: Change time between gravity flip
-      n1: 2
+      
     - h1: Copyright
-      n1: 3
+      
     - h1: Credits
-      n1: 4
+      
     - h1: Downloads
-      n1: 5
+      
 
 downloads:
 - text: ".mcpack (MCPEDL DL)"

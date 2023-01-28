@@ -18,4 +18,4 @@ Credits
 - [**Dark Mode UI**](https://github.com/Offroaders123/Dark-Mode) by Offroaders123 is the color palette I used for all the Minecraft style buttons on my site while in dark mode.
 - [**Complementary Reimagined**](https://www.complementary.dev/reimagined/) - the shader used for my home page light mode background (Ulorium Games lobby).
 - [**Overimagined Shaders**](https://github.com/isuewo/OverimaginedShaders) - the shader used for my home page dark mode background (NoxCity).
-- [**IJAMinecraft's awesome website**](https://ijaminecraft.com/) - my website's style is higly inspired from it!
+- [**IJAMinecraft's awesome website**](https://ijaminecraft.com/) - my website's style is highly inspired from it!

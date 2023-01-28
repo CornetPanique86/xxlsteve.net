@@ -12,7 +12,7 @@ images:
 
 tableOfContents:
 - h1:
-  n1: 1
+  
 
 tags:
 - Minecraft
@@ -98,12 +98,13 @@ Software and Online tools
 Worlds
 {{< /hanchor >}}
 
+- [Cubical](https://cubical.xyz/) - an advanced **online** editor, creator and viewer for Minecraft projects and builds
 - [Amulet](https://www.amuletmc.com/) - Minecraft world editor and converter, a better version of [MCEdit](http://www.mcedit.net/) (Java 1.12+ and Bedrock 1.7+)
 - [WorldPainter](https://www.worldpainter.net/) - an interactive map generator for Minecraft. It allows you to "paint" landscapes using similar tools as a regular paint program.
 - [Chunky](https://chunky-dev.github.io/docs/) - Render photorealistic scenes of your Minecraft worlds with path tracing, Minecraft 1.2.1+
 - [uNmINeD](https://unmined.net/) - an easy to use and fast Minecraft world viewer and mapper tool (supports Java & Bedrock worlds)
 - [Amidst](https://github.com/toolbox4minecraft/amidst) - a tool to display an overview of a Minecraft seed
-- [Cubical](https://cubical.xyz/) - an advanced **online** editor, creator and viewer for Minecraft projects and builds
+- [MCSeeder](https://www.mcseeder.com/) - an online tool to display an overview of a Minecraft seed
 
 &nbsp;
 

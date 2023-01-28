@@ -12,24 +12,24 @@ images:
 
 tableOfContents:
 - h1: What is Team Seas?
-  n1: 1
+  
 - h1: How to play
-  n1: 2
+  
   h2:
     - t2: Types of trash
       n2: 2.1
     - t2: Shop powerups
       n2: 2.2
 - h1: Credits
-  n1: 3
+  
 - h1: Languages
-  n1: 4
+  
 - h1: "Donate to #TeamSeas"
-  n1: 5
+  
 - h1: Installation
-  n1: 6
+  
 - h1: Downloads
-  n1: 7
+  
 
 downloads:
 - text: ".mcworld (Mediafire)"

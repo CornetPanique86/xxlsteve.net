@@ -1,11 +1,11 @@
 ---
-title: "What is Ulorium Games?"
+title: "Qu'est-ce que Ulorium Games?"
 date: 2022-12-07T19:32:51+01:00
-lastmod: 2023-01-01T23:11:32+06:00
+lastmod: 2023-01-27T16:42:11+01:00
 draft: false
 image: uloriumgames/img/header-image.png
 author: XXL Steve
-description: UloriumGames is a Minecraft Bedrock minigames realm.
+description: UloriumGames est un realm de minijeux sur Minecraft Bedrock.
 ogtype: article
 images:
 - /blog/uloriumgames/img/header-image.png
@@ -15,84 +15,90 @@ categories:
     - Blog
 
 tableOfContents:
-    - h1: How it started
-      n1: 1
-    - h1: The rise
-      n1: 2
-    - h1: The maintenance
-      n1: 3
-    - h1: The fall
-      n1: 4
-    - h1: Credits
-      n1: 5
+    - h1: Les origines
+    - h1: L'apogée
+    - h1: La maintenance
+    - h1: La chute
+    - h1: Crédits
 ---
 {{< hanchor h="3" >}}
-How it started
+Les origines
 {{< /hanchor >}}
 
-Ulorium Games was founded by [Sam0312](https://www.youtube.com/@Sam0312_) (Sam0312#3846 on discord) around the 4th of may 2020. It was preceded by a few other worlds like one named "Plantania" for which I had made an addon.
+Ulorium Games a été fondé par [Sam0312](https://www.youtube.com/@Sam0312_) (Sam0312#3846 sur discord) vers le 4 mai 2020. Il a été précédé par quelques autres mondes comme celui nommé "Plantania" pour lequel j'avais fait un addon.
 
-{{< figure src="/blog/uloriumgames/img/old-first-lobby.jpg" caption="The first build of UloriumGames" alt="The first build of UloriumGames" class="figurePopup imagePopup" >}}
+{{< figure src="/blog/uloriumgames/img/old-first-lobby.jpg" caption="La première version du lobby" alt="La première version du lobby d'UloriumGames" class="figurePopup imagePopup" >}}
 
-I was already friends with him at the time, so I would occasionally hop on and help him with the world.
+J'étais déjà ami avec lui à l'époque, alors je rejoignais de temps en temps et l'aidais avec le monde.
 
 {{< hanchor h="3" >}}
-The rise
+L'apogée
 {{< /hanchor >}}
 
-More and more people would know about the world, so Sam made a Discord server. We also started recruiting staff and our team became pretty big!
+De plus en plus de gens découvraient le monde, alors Sam a créé un serveur Discord. Nous avons également commencé à recruter et notre équipe est devenue assez grande !
 
-With an increasing staff and player base came an increasing number of minigames: sumo, FFA, Hikabrain (a game similar to MLG Rush) and TNT run.
+Avec de plus en plus de staff et de joueurs, sont venus de plus en plus de mini-jeux : sumo, FFA, Hikabrain (un jeu similaire à MLG Rush) et TNT run.
 
-A staff member named [endereyes202](https://www.youtube.com/@endereyes202) (endereyes202#5828 on discord) also made a logo and a banner for UloriumGames (because it used to be a random picture taken from Google)!
+Un membre du staff nommé [endereyes202](https://www.youtube.com/@endereyes202) (endereyes202#5828 sur discord) a également créé un logo et une bannière pour UloriumGames (parce qu'il s'agissait à la base d'une image prise au hasard sur Google) !
 
-{{< figure src="/blog/uloriumgames/img/uloriumgames-logo.jpg" caption="New logo by endereyes202" alt="The new logo by endereyes202" class="figurePopup imagePopup" >}}
+{{< figure src="/blog/uloriumgames/img/uloriumgames-logo.jpg" caption="Nouveau logo par endereyes202" alt="Le nouveau logo par endereyes202" class="figurePopup imagePopup" >}}
 
-##### Screenshots
+##### Captures d'écran
 
-{{< imgslider >}}
-  {{< imgslide src="/blog/uloriumgames/img/ffa.jpg" caption="FFA" alt="FFA minigame">}}
-  {{< imgslide src="/blog/uloriumgames/img/hikabrain.jpg" caption="Hikabrain" alt="Hikabrain minigame">}}
-  {{< imgslide src="/blog/uloriumgames/img/lobby-old.jpg" caption="Lobby (the first version)" alt="Lobby (the first version)">}}
+{{< imgslider "screenshots1" >}}
+  {{< imgslide src="/blog/uloriumgames/img/ffa.jpg" caption="FFA" alt="FFA" >}}
+  {{< imgslide src="/blog/uloriumgames/img/hikabrain.jpg" caption="Hikabrain" alt="Hikabrain" >}}
+  {{< imgslide src="/blog/uloriumgames/img/sumo.jpg" caption="Sumo" alt="Sumo" >}}
+  {{< imgslide src="/blog/uloriumgames/img/tntrun.jpg" caption="TNT run" alt="TNT run" >}}
+  {{< imgslide src="/blog/uloriumgames/img/lobby-old.jpg" caption="Lobby (1ère version)" alt="Lobby (1ère version)" >}}
 {{< /imgslider >}}
 
 {{< hanchor h="3" >}}
-The maintenance
+La maintenance
 {{< /hanchor >}}
 
-But for the next minigame, we wanted it to be bigger. We made a vote on the Discord server and the winner was: 'Bedwars'! 
+Mais pour le prochain mini-jeu, nous voulions qu'il soit plus grand. Nous avons fait un vote sur le serveur Discord et le gagnant était : 'Bedwars' !
 
-And that's how the maintenance began. We built a map and Carl was responsible for coding the functionality of the minigame. 
+{{< figure src="/blog/uloriumgames/img/bedwars.jpg" caption="La map Bedwars" alt="La map Bedwars" class="figurePopup imagePopup" >}}
 
-At that time, I was starting to lose motivation to work on the realm, so I barely helped with anything. And obviously, a Bedwars minigame takes a long time to do (especially with the pain that are command blocks, chunk loading, etc...) and globally the whole staff team would log on less often than we used to. So that's how the progress for bedwars practically halted. I made a custom shop NPC and nothing else.
+Et c'est ainsi que la maintenance a commencé. Nous avons construit une map et Carl (Carl#1681 sur discord) était responsable du développement du minijeu.
 
-{{< ytcustom id="R96NuYzkMv0" title="The shop NPC mimicking Morshu" >}}
+À ce moment-là, je commençais à perdre ma motivation pour travailler sur le realm, alors j'ai à peine aidé avec quoi que ce soit. Et évidemment, un mini-jeu Bedwars prend beaucoup de temps à faire (surtout avec la galère que sont les blocs de commandes, le chargement des chunks, etc...) et globalement toute l'équipe du staff se connectait moins souvent qu'avant. C'est ainsi que la progression du bedwars s'est pratiquement arrêtée. J'ai créé un PNJ personnalisé et rien d'autre.
 
-The whole minigame contained small bugs for pretty much every mechanic, and I was too lazy to fix it lol. I did find motivation to work on other features though: I improved the shop and the addon by adding cosmetics (custom 3D armor), and found a way to add custom "emojis", making Ulorium Games probably one of the first realms to have this feature before it got properly documented and used by most content creators :). Finally, I later added 2 minigames: block party and king of the hill (the latter being my own original twist to it). 
+{{< ytcustom id="R96NuYzkMv0" title="Le PNJ de la boutique (référence à Morshu)" >}}
 
-Aside from me, many work was done: a much bigger FFA arena was built by builders like EzraOcelot. And of course, biggest of all, a completely new lobby built primarily by everythingpro: with tons of attention to detail, it took him several months to finish it! 
+L'ensemble du mini-jeu contenait de petits bugs pour à peu près tous les mécanismes, et j'étais trop paresseux pour le réparer lol. J'ai cependant trouvé la motivation pour travailler sur d'autres fonctionnalités : j'ai amélioré la boutique et l'addon en ajoutant des cosmétiques (armures 3D customs), et j'ai trouvé un moyen d'ajouter des "émojis" personnalisés, faisant d'Ulorium Games probablement l'un des premiers realms à avoir cette fonctionnalité avant qu'elle ne soit correctement documentée et utilisée par la plupart des créateurs de contenu :). Enfin, j'ai ajouté plus tard 2 mini-jeux : block party et king of the hill (ce dernier étant ma propre version originale).
+
+À part moi, beaucoup de travail a été fait : une arène FFA beaucoup plus grande a été construite par des builders comme EzraOcelot (Ezracelot#4707), et nous avons fait des niveaux de parkour. Et bien sûr, le plus important de tous, un tout nouveau lobby construit principalement par [Snowify](https://www.youtube.com/@Snowbqll "_blank") (Snowify#0001) : avec une tonne d'attention portée aux détails, il lui a fallu plusieurs mois pour le terminer !
+
+##### Captures d'écran
+
+{{< imgslider "screenshots2" >}}
+  {{< imgslide src="/blog/uloriumgames/img/parkour.jpg" caption="Parkour" alt="Parkour">}}
+  {{< imgslide src="/blog/uloriumgames/img/shop.jpg" caption="Le magasin" alt="Le magasin">}}
+{{< /imgslider >}}
 
 {{< hanchor h="3" >}}
-The fall
+La chute
 {{< /hanchor >}}
 
-But after a year of maintenance, the Bedwars was still not done... and honestly, that's the excuse I used to insist that we should keep the realm on maintenance... because I simply was too lazy to do the work to open it, as I wanted a more grand opening than just letting people join, and knew there were still some bugs and improvement to do to the addon. Furthermore, I simply had completely lost motivation to work on Ulorium and instead wanted to concentrate on making videos and working other projects. So that's how eventually, I decided to leave the staff team, and that kinda meant the death of Ulorium Games as it anyway had barely any players anymore. I'm pretty sure Sam0312 (the owner) has now officially closed the realm, and I'd like to thank all the staff members who helped with building such a cool minigames world.
+Mais après un an de maintenance, le Bedwars n'était toujours pas terminé... et honnêtement, c'est l'excuse que j'ai utilisée pour insister sur le fait que nous devrions garder le realm en maintenance... parce que j'avais tout simplement trop la flemme pour faire l'effort de l'ouvrir, car je voulais une ouverture plus grandiose que de simplement désactiver la whitelist, et je savais qu'il y avait encore des bugs et des améliorations à apporter à l'addon. De plus, j'avais complètement perdu la motivation de travailler sur Ulorium et je voulais plutôt me concentrer sur la réalisation de vidéos et sur d'autres projets. C'est ainsi que finalement, j'ai décidé de quitter l'équipe du staff, et cela a un peu signifié la mort d'Ulorium Games car il n'y avait presque plus de joueurs. Je crois que Sam0312 (le propriétaire) a maintenant officiellement fermé le realm, et j'aimerais remercier tous les membres du staff qui ont aidé à construire un monde de mini-jeux aussi cool.
 
-I've always wanted to make a "server" with a bunch of minigames, but I feel like if I kept on working on it, I wouldn't have the time to learn new and more advanced things as I would be stuck with using... command blocks. Anyway, thanks for taking the time and interest to read the story about a random MCBE world :D 
+J'ai toujours voulu créer un "serveur" avec un tas de mini-jeux, mais j'ai l'impression que si je continuais à travailler dessus, je n'aurais pas le temps d'apprendre de nouvelles choses plus avancées car je devrais continuer à utiliser... les blocs de commande. Quoi qu'il en soit, merci d'avoir pris le temps et l'intérêt de lire l'histoire d'un monde MCBE random :D
 
 {{< hanchor h="3" >}}
-Credits:
+Crédits
 {{< /hanchor >}}
 
-**Big thanks to the staff members who contributed a ton:**
-- Sam0312#3846 ([YouTube](https://www.youtube.com/@Sam0312_)) - the owner
-- Snowify#0001 ([YouTube](https://www.youtube.com/@Snowbqll)) - builder
-- Robotdinosaur143#0860 ([YouTube](https://www.youtube.com/@Robotdinosaur143), [Twitch](https://www.twitch.tv/robotdinosaur143), [Twitter](https://twitter.com/Robotdinosaur11)) - builder
-- Ezracelot#4707 ([YouTube](https://www.youtube.com/@ezracelot4601), [Twitter](https://twitter.com/ezracelot)) - builder
-- Sinatheking#3408 - moderator
+**Un grand merci aux membres du staff qui ont énormément contribué :**
+- Sam0312#3846 ([YouTube](https://www.youtube.com/@Sam0312_)) - le propriétaire
+- Snowify#0001 ([YouTube](https://www.youtube.com/@Snowbqll)) - buildeur
+- Robotdinosaur143#0860 ([YouTube](https://www.youtube.com/@Robotdinosaur143), [Twitch](https://www.twitch.tv/robotdinosaur143), [Twitter](https://twitter.com/Robotdinosaur11)) - buildeur
+- Ezracelot#4707 ([YouTube](https://www.youtube.com/@ezracelot4601), [Twitter](https://twitter.com/ezracelot)) - buildeur
+- Sinatheking#3408 - modérateur
 - tbg#5757 ([YouTube](https://www.youtube.com/@tbgbrostech2.082), [Twitter](https://twitter.com/BrosTbg), [Twitch](https://www.twitch.tv/tbgbros2021), [Reddit](https://www.reddit.com/u/tbgbros)) - helper
-- endereyes202#5828 ([YouTube](https://www.youtube.com/@endereyes202), [Twitch](https://www.twitch.tv/endereyes202), [Twitter](https://twitter.com/endereyes202)) - builder & designer
+- endereyes202#5828 ([YouTube](https://www.youtube.com/@endereyes202), [Twitch](https://www.twitch.tv/endereyes202), [Twitter](https://twitter.com/endereyes202)) - buildeur & designer
 
-And thanks for the 433 unique players who joined the realm!
+Et merci pour les 433 joueurs uniques qui ont rejoint le realm !
 
-Shader used in some of the screenshots (also, if you're curious, Ulorium Games is on Bedrock but I converted it to java to use kool shaders): [Chocapic 13](https://www.curseforge.com/minecraft/customization/chocapic13-shaders)
+Shader utilisé dans certaines des captures d'écran (aussi, si vous êtes curieux, Ulorium Games est sur Bedrock mais je l'ai converti en java pour utiliser les shaders kool) : [Chocapic 13](https://www.curseforge.com/minecraft/customization/chocapic13-shaders)

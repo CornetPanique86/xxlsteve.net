@@ -11,15 +11,15 @@
                 <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
               {{ end }}
               <div class="taxonomies__tag-group">
-                {{ range $term, $weightedPages := $terms }}
-                  {{ with site.GetPage (path.Join $taxonomy $term) }}
-                    <div class="tag">
-                      <span class="tag-text">
-                          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                      </span>
-                    </div>
-                  {{ end }}
+              {{ range $term, $weightedPages := $terms }}
+                {{ with site.GetPage (path.Join $taxonomy $term) }}
+                  <div class="tag">
+                    <span class="tag-text">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </span>
+                  </div>
                 {{ end }}
+              {{ end }}
               </div>
             </div>
           {{ end }}

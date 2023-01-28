@@ -1,5 +1,25 @@
 {{ define "headfiles" }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    window.onload = () => {
+        document.querySelectorAll(".swiper").forEach(elm => {
+            const swiper = new Swiper(`#${elm.id}`, {
+                loop: true,
+
+                pagination: {
+                  el: '.swiper-pagination',
+                  clickable: true,
+                },
+            
+                navigation: {
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+                },
+            });
+        });
+    }
+</script>
 {{ end }}
 {{ define "main" }}
 <article>
@@ -66,13 +86,17 @@
                 {{ end }}
             </div>
             <div class="b-table-of-contents__number">
+                {{ $tocCount := 0 }}
                 {{ range .Params.tableOfContents }}
-                    {{ .n1 }}
+                    {{ $tocCount = add $tocCount 1 }}
+                    {{ $tocCount }}
                     <br>
                     {{ with .h2 }}
+                        {{ $tocCountH2 := 0 }}
                         {{ range . }}
-                                {{ .n2 }}
-                                <br>
+                            {{ $tocCountH2 = add $tocCountH2 1 }}
+                            {{ $tocCount }}.{{ $tocCountH2 }}
+                            <br>
                         {{ end }}
                     {{ end }}
                 {{ end }}

@@ -12,11 +12,11 @@ images:
 
 tableOfContents:
     - h1: Copyright
-      n1: 1
+      
     - h1: Credits
-      n1: 2
+      
     - h1: Downloads
-      n1: 3
+      
 
 downloads:
 - text: ".mcpack (Mediafire)"
@@ -40,7 +40,7 @@ This addon was inspired by Dream's "[Minecraft, But Speed Rises Every Second](ht
 
 This addon also features 3 different modes:
 
-{{< imgslider >}}
+{{< imgslider "modes" >}}
   {{< imgslide src="https://api.mcpedl.com/storage/submissions/116475/images/minecraft-but-speed-and-jump-progressively-increase_2.png" caption="Speed increases - only your speed will increase every time you move" >}}
   {{< imgslide src="https://api.mcpedl.com/storage/submissions/116475/images/minecraft-but-speed-and-jump-progressively-increase_3.png" caption="Jump increases - only your jumping height will increase every time you jump" >}}
   {{< imgslide src="https://api.mcpedl.com/storage/submissions/116475/images/minecraft-but-speed-and-jump-progressively-increase_4.png" caption="Speed and jump increase - both your speed and jump height will increase every time you move/jump" >}}
