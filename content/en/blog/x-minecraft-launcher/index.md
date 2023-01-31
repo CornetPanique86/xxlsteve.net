@@ -2,7 +2,7 @@
 title: "X Minecraft Launcher - the only launcher you need"
 date: 2023-01-30T16:54:28+01:00
 lastmod: 2023-01-30T16:54:28+01:00
-draft: true
+draft: false
 
 aliases:
   - xmcl
