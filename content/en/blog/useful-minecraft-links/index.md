@@ -83,6 +83,7 @@ Launchers (Java)
 - [Hello Minecraft! Launcher](https://github.com/huanghongxun/HMCL) a Minecraft launcher that even works for [mobile devices](https://github.com/huanghongxun/HMCL-PE)!
 - [Curseforge launcher](https://curseforge.overwolf.com/)
 - [ATLauncher](https://atlauncher.com/)
+- [HelixLauncher](https://helixlauncher.dev/) - a fast, lightweight, nicely designed and open-source launcher for Minecraft (still work in progress).
 
 A comparison video of the most popular Minecraft launchers:
 

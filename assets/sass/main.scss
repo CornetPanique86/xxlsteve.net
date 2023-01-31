@@ -455,30 +455,52 @@ hr {
   position: relative;
   &__expand {
     visibility: hidden;
-  width: 200%;
-  background-color: #555;
-  color: white;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: -50%;
-
-  &::after {
-    content: "";
+    max-width: 200%;
+    width: max-content;
+    background-color: #555;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
     position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  }
+    z-index: 1;
+    bottom: 125%;
+    left: -50%;
+    &__moreWidth {
+      max-width: 25rem;
+      left: -100%;
+      &::after {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
   }
   &:hover > .date__expand {
     visibility: visible;
+  }
+}
+
+.helphint {
+  padding: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  cursor: help;
+  background: #7c7c7c56;
+  &:hover {
+    background: #7c7c7cb7;
+  }
+  &:active {
+    background: #7c7c7c84;
   }
 }
 
@@ -881,7 +903,7 @@ article section.mainArticle {
     }
   }
   &__title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding:0;
     padding-bottom: 20px;
   }
@@ -1331,7 +1353,7 @@ article section.mainArticle {
       max-width: 100%;
     }
     &__title {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
   }
   .taxonomies {

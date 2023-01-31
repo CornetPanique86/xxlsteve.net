@@ -32,6 +32,14 @@
 		],
 		"description": "Insert youtube shortcode"
 	},
+	"Hint text": {
+		"scope": "markdown",
+		"prefix": "helphint",
+		"body": [
+			"{{< helphint >}}$1{{< /helphint >}}$0"
+		],
+		"description": "Expanded hint text to help with the initial text"
+	},
 	"Multilingual reference": {
 		"scope": "html",
 		"prefix": "i18n",
