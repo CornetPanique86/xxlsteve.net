@@ -15,11 +15,11 @@ categories:
     - Blog
 
 tableOfContents:
-    - h1: Les origines
-    - h1: L'apogée
-    - h1: La maintenance
-    - h1: La chute
-    - h1: Crédits
+- h1: Les origines
+- h1: L'apogée
+- h1: La maintenance
+- h1: La chute
+- h1: Crédits
 ---
 {{< hanchor h="3" >}}
 Les origines

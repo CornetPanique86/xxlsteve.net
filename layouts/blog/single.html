@@ -1,4 +1,5 @@
 {{ define "headfiles" }}
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=63dc0e00b14908001316e618&product=inline-share-buttons' async='async'></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script>
@@ -18,10 +19,16 @@
                 },
             });
         });
+        if(!window.matchMedia) {
+            return false;
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches && window.REMARK42) {
+            window.REMARK42.changeTheme("dark");
+        }
     }
 </script>
 {{ end }}
 {{ define "main" }}
+<a href='{{ relLangURL "blog" }}'>← {{ i18n "blog" }}</a>
 <article>
     <section>
     <meta itemprop="image" content="/blog/{{ .Params.image }}">
@@ -38,6 +45,7 @@
                 <span>{{ i18n "updated" }} <span class="date">{{ .Lastmod | time.Format ":date_long" }}<span class="date__expand">{{ .Lastmod | time.Format ":date_full" }} {{ .Lastmod | time.Format ":time_full" }}</span></span></span>
                 <span>{{ i18n "readingTime" }} <span class="date">{{ .ReadingTime }} min<span class="date__expand">{{ i18n "wordCount" .WordCount }}</span></span></span>
             </div>
+            <div class="sharethis-inline-share-buttons"></div>
         </div>
     </div>
     <div class="taxonomies">
@@ -65,43 +73,43 @@
     </section>
     <aside>
         <div class="b-table-of-contents">
-        <div class="b-table-of-contents__header">
-            {{ i18n "tableOfContents" }}
-        </div>
-        <div class="b-table-of-contents__content">
-            <div class="b-table-of-contents__text">
-                {{ range .Params.tableOfContents }}
-                <a href="#{{ anchorize .h1 }}">
-                    <span class="b-table-of-contents__h1"> {{ .h1 }} </span>
-                </a>
-                <br>
-                    {{ with .h2 }}
-                        {{ range . }}
-                            <a href="#{{ anchorize .t2 }}">
-                                <span class="b-table-of-contents__h2"> {{ .t2 }} </span>
-                            </a>
-                            <br>
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
+            <div class="b-table-of-contents__header">
+                {{ i18n "tableOfContents" }}
             </div>
-            <div class="b-table-of-contents__number">
-                {{ $tocCount := 0 }}
-                {{ range .Params.tableOfContents }}
-                    {{ $tocCount = add $tocCount 1 }}
-                    {{ $tocCount }}
+            <div class="b-table-of-contents__content">
+                <div class="b-table-of-contents__text">
+                    {{ range .Params.tableOfContents }}
+                    <a href="#{{ anchorize .h1 }}">
+                        <span class="b-table-of-contents__h1"> {{ .h1 }} </span>
+                    </a>
                     <br>
-                    {{ with .h2 }}
-                        {{ $tocCountH2 := 0 }}
-                        {{ range . }}
-                            {{ $tocCountH2 = add $tocCountH2 1 }}
-                            {{ $tocCount }}.{{ $tocCountH2 }}
-                            <br>
+                        {{ with .h2 }}
+                            {{ range . }}
+                                <a href="#{{ anchorize .t2 }}">
+                                    <span class="b-table-of-contents__h2"> {{ .t2 }} </span>
+                                </a>
+                                <br>
+                            {{ end }}
                         {{ end }}
                     {{ end }}
-                {{ end }}
+                </div>
+                <div class="b-table-of-contents__number">
+                    {{ $tocCount := 0 }}
+                    {{ range .Params.tableOfContents }}
+                        {{ $tocCount = add $tocCount 1 }}
+                        {{ $tocCount }}
+                        <br>
+                        {{ with .h2 }}
+                            {{ $tocCountH2 := 0 }}
+                            {{ range . }}
+                                {{ $tocCountH2 = add $tocCountH2 1 }}
+                                {{ $tocCount }}.{{ $tocCountH2 }}
+                                <br>
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                </div>
             </div>
-        </div>
         
         </div>
     </aside>
@@ -169,6 +177,10 @@
         </ul>
     </aside>
 {{ end }}
+
+<hr>
+<!-- Reactions -->
+<div class="sharethis-inline-reaction-buttons"></div>
 
 <!-- Comments -->
 <script>

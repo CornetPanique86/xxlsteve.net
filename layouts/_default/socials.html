@@ -47,7 +47,7 @@
             <header>
                 <h3>{{ i18n "footSocials" }}</h3>
             </header>
-            <details open tabindex="0">
+            <details {{ if eq .Site.Language.Lang "en" }}open{{ end }} tabindex="0">
                 <summary>
                     [ 🇺🇸 ]
                 </summary>
@@ -84,7 +84,7 @@
                     </div>
                 </a>
             </details>
-            <details tabindex="0">
+            <details {{ if eq .Site.Language.Lang "fr" }}open{{ end }} tabindex="0">
                 <summary>
                     [ 🇫🇷 ]
                 </summary>

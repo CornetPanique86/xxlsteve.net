@@ -40,6 +40,14 @@
 		],
 		"description": "Expanded hint text to help with the initial text"
 	},
+	"Notice box": {
+		"scope": "markdown",
+		"prefix": "boxnotice",
+		"body": [
+			"{{< boxnotice type=\"tip\" >}}$1{{< /boxnotice >}}$0"
+		],
+		"description": "Box notice. Type=tip/warning Title="
+	},
 	"Multilingual reference": {
 		"scope": "html",
 		"prefix": "i18n",

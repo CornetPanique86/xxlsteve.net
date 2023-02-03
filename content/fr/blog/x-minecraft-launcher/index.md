@@ -66,9 +66,7 @@ Installer XMCL
 
 Bon, l'intro commence à être longue, voici le tuto 😆
 
-⚠️ **Le tuto est axé vers les utilisateurs Windows 10 ou 11**
-
-&nbsp;
+{{< boxnotice type="warning" >}}Le tuto est axé vers les utilisateurs Windows 10 ou 11{{< /boxnotice >}}
 
 1. Téléchargez l'installeur .appinstaller ou .appx (ça n'a pas vraiment d'importance) depuis le [site](https://xmcl.app/), ou le .zip pour une version portable {{< helphint >}}Une application portable ne dépend pas de composants externes et n'engendre pas de modification durable du système par son fonctionnement.{{< /helphint >}}
 

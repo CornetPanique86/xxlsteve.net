@@ -205,6 +205,11 @@ html, body {
   overflow: hidden;
 }
 
+::selection {
+  background-color: #cce2ff;
+  color: rgba(0,0,0,.87);
+}
+
 footer {
   background-image: url("/images/deepslate_tiles.png");
   min-height: 100px;
@@ -312,6 +317,38 @@ summary {
 }
 details[open] > summary {
   padding-bottom: 8px;
+}
+
+.custom-block {
+  margin: 1rem 0;
+  border-left: .5rem solid;
+  padding: .1rem 1.5rem;
+  overflow-x: auto;
+
+  & p {
+    display: block;
+    margin-block-start: 0.8em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+  &__title {
+    margin-bottom: -0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+.custom-block.warning {
+  border-color: #e7c000;
+  color: #6b5900;
+  background-color: #ffe5644d;
+}
+
+.custom-block.tip {
+  border-color: #3eaf7c;
+  background-color: #95ffe84d;
+  color: #fff;
 }
 
 hr {
@@ -835,12 +872,12 @@ article section.mainArticle {
   background-image: url("/images/figure_bg.png");
   background-repeat: no-repeat;
   background-size: contain;
-  max-width: 268px;
+  max-width: 256px;
   cursor: pointer;
 
   & img {
     border: 17px solid transparent;
-    width: 268px;
+    width: 256px;
     height: 232px;
     object-fit: cover;
     opacity: 1;

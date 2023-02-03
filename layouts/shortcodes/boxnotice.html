@@ -1,0 +1,10 @@
+<div class="{{ with .Get "type" }}{{ . }}{{ end }} custom-block">
+    <p class="custom-block__title">
+        {{ with .Get "title" }}
+            {{ . }}
+        {{ else }}
+            {{ .Get "type" }}
+        {{ end }}
+    </p>
+    <p>{{ .Inner }}</p>
+</div>

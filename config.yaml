@@ -1,7 +1,7 @@
-defaultContentLanguage: en
 title: XXL Steve
 uglyURLs: false
 
+defaultContentLanguage: en
 languages:
   en:
     contentDir: content/en
@@ -12,8 +12,10 @@ languages:
     languageName: 🇫🇷
     weight: 2
 
+author:
+  name: XXL Steve
+
 params:
-  author: XXL Steve
   description: Welcome to my website
   images:
   - /favicon.png
@@ -37,5 +39,7 @@ outputs:
   home:
     - html
     - json
+    - rss
   page:
     - html
+    - rss
