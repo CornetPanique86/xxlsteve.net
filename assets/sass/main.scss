@@ -201,6 +201,11 @@ html, body {
   // transition: background-color, color, 1s;
 }
 
+.main-content {
+  max-width: 100vw;
+  max-width: 100dvw;
+}
+
 .noScroll {
   overflow: hidden;
 }
@@ -277,6 +282,16 @@ button {
   appearance: none;
   border: none;
   cursor: pointer;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  max-width: 100%;
+  & > table {
+    position: sticky;
+    top: 0;
+    width: 100%;
+  }
 }
 
 table {

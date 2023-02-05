@@ -23,12 +23,14 @@ Our content is published on [MCPEDL](https://mcpedl.com/user/cornetpanique86), [
 Team members:
 {{< /hanchor >}}
 
+{{< table >}}
 | **⛏️ Builders:**      | **🖌️ Texturer:** | **🖥️ Addon:**  | **💻 Commands:** | **㊗️ Translators:**                          |
 | --------------------- | ----------------- | --------------- | ---------------- | -------------------------------------------- |
 | Everythingpro8#1688   | endereyes202#0202 | CarlTheDev#4810 | CarlTheDev#4810  | unstoppable turtle#0964 (simplified Chinese) |
 | Robotdinosaur143#0860 |                   |                 |                  | CarlTheDev#4810 (swedish)                    |
 | Ezracelot#4707        |                   |                 |                  |                                              |
 | ProTeleporters#0981   |                   |                 |                  |                                              |
+{{< /table >}}
 
 &nbsp;
 

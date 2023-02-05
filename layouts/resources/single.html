@@ -4,7 +4,7 @@
 
 {{ define "main" }}
     <article>
-        <ul class="resources-grid" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));">
+        <ul class="resources-grid noUl" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));">
             {{ range .Resources.Match "*" }}
                 <li class="resources-preview">
                     {{ if eq .ResourceType "image" }}

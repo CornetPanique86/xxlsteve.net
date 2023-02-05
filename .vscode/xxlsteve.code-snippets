@@ -48,6 +48,14 @@
 		],
 		"description": "Box notice. Type=tip/warning Title="
 	},
+	"Table": {
+		"scope": "markdown",
+		"prefix": "table",
+		"body": [
+			"{{< table >}}$1{{< /table >}}$0"
+		],
+		"description": "Table div for overflow"
+	},
 	"Multilingual reference": {
 		"scope": "html",
 		"prefix": "i18n",

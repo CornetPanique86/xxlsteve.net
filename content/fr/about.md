@@ -4,6 +4,9 @@ date: 2023-01-05T23:36:16+06:00
 draft: false
 description: À propos de XXL Steve
 ogtype: profile
+
+aliases:
+  - a-propos
 ---
 
 # À propos de moi
@@ -23,12 +26,14 @@ Notre contenu est publié sur [MCPEDL](https://mcpedl.com/user/cornetpanique86),
 Membres de l'équipe
 {{< /hanchor >}}
 
+{{< table >}}
 | **⛏️ Buildeurs :**      | **🖌️ Texturer :** | **🖥️ Addon :**  | **💻 Commandes :** | **㊗️ Traducteurs :**                          |
 | --------------------- | ----------------- | --------------- | ---------------- | -------------------------------------------- |
 | Everythingpro8#1688   | endereyes202#0202 | CarlTheDev#4810 | CarlTheDev#4810  | unstoppable turtle#0964 (Chinois simplifié) |
 | Robotdinosaur143#0860 |                   |                 |                  | CarlTheDev#4810 (suédois)                    |
 | Ezracelot#4707        |                   |                 |                  |                                              |
 | ProTeleporters#0981   |                   |                 |                  |                                              |
+{{< /table >}}
 
 &nbsp;
 
