@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="{{ $CSS.RelPermalink }}">
 
 {{ template "_internal/opengraph.html" . }}
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
 <meta content="#4A3C5C" data-react-helmet="true" name="theme-color" />
 
 {{ $mainScript := resources.Get "js/main.js" | minify | fingerprint -}}

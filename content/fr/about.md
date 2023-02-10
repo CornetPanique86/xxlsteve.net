@@ -65,3 +65,15 @@ Pour les modèles, j'utilise [Blockbench](https://blockbench.net/).
 
 Pour l'édition d'images, j'utilise [paint.net](https://www.getpaint.net/).
 {{< /spoiler >}}
+
+{{< hanchor h="3" >}}
+L'histoire du site
+{{< /hanchor >}}
+
+Pendant le mois d'août 2022, je souhaitais héberger des serveurs Minecraft, et pour cela, je prévoyais de louer un {{< helphint "Serveur Virtuel Privé" >}}VPS{{< /helphint >}}. Mais cela signifiait que je pouvais aussi héberger un site Web, et cela m'a un peu obligé à en créer un.
+
+J'ai commencé à faire des recherches sur la framework à utiliser et j'ai commencé à apprendre [Hugo](https://gohugo.io) fin août.
+
+Le 22 novembre 2022, j'ai mis le site en ligne pour tester.
+
+Le 25 janvier 2023, j'ai enfin rendu le site public ! Maintenant, je fais de petites mises à jour de temps en temps pour corriger les nombreux bugs que le site a encore 😁

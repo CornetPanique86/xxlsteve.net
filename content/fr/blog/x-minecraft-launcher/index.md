@@ -42,7 +42,7 @@ Il y a tellement de bugs que tout un article y est contribué sur le [Minecraft 
 
 &nbsp;
 
-En recherche de meilleures solutions, j'ai trouvé le launcher [MultiMC](https://multimc.org/) que j'ai utilisé pendant pas mal de temps jusqu'à ce que je trouve PolyMC (qu'est un fork de MultiMC {{< helphint >}}Un fork est la copie d'un repository Github. En gros, dans ce cas, PolyMC est une autre version de MultiMC.{{< /helphint >}}), puis que je migre vers [Prism Launcher](https://prismlauncher.org) parce que PolyMC a été compromis.
+En recherche de meilleures solutions, j'ai trouvé le launcher [MultiMC](https://multimc.org/) que j'ai utilisé pendant pas mal de temps jusqu'à ce que je trouve PolyMC (qu'est un {{< helphint "Un fork est la copie d'un repository Github. En gros, dans ce cas, PolyMC est une autre version de MultiMC." >}}fork{{< /helphint >}} de MultiMC), puis que je migre vers [Prism Launcher](https://prismlauncher.org) parce que PolyMC a été compromis.
 
 Prism Launcher marche parfaitement et a plus ou moins tout ce dont on attend d'un launcher. Mais il y a un truc qui me gênait : c'était l'interface utilisateur. J'ai jamais vraiment aimé le design de Prism ou MultiMC. Et mettre un thème custom n'aidait pas non plus.
 
@@ -68,7 +68,7 @@ Bon, l'intro commence à être longue, voici le tuto 😆
 
 {{< boxnotice type="warning" >}}Le tuto est axé vers les utilisateurs Windows 10 ou 11{{< /boxnotice >}}
 
-1. Téléchargez l'installeur .appinstaller ou .appx (ça n'a pas vraiment d'importance) depuis le [site](https://xmcl.app/fr), ou le .zip pour une version portable {{< helphint >}}Une application portable ne dépend pas de composants externes et n'engendre pas de modification durable du système par son fonctionnement.{{< /helphint >}}
+1. Téléchargez l'installeur .appinstaller ou .appx (ça n'a pas vraiment d'importance) depuis le [site](https://xmcl.app/fr), ou le .zip pour une {{< helphint "Une application portable ne dépend pas de composants externes et n'engendre pas de modification durable du système par son fonctionnement." >}}version portable{{< /helphint >}}
 
 2. Double-cliquez/ouvrez le fichier téléchargé, et installez.
 

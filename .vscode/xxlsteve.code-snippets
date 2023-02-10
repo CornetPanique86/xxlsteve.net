@@ -36,7 +36,7 @@
 		"scope": "markdown",
 		"prefix": "helphint",
 		"body": [
-			"{{< helphint >}}$1{{< /helphint >}}$0"
+			"{{< helphint \"$1\" >}}$2{{< /helphint >}}$0"
 		],
 		"description": "Expanded hint text to help with the initial text"
 	},

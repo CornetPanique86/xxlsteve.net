@@ -1,1 +1,2 @@
-<span class="date"><i class="fa-solid fa-circle-question helphint"></i><span class="date__expand date__expand__moreWidth">{{ .Inner }}</span></span>
+<!-- <span class="date"><i class="fa-solid fa-circle-question helphint"></i><span class="date__expand date__expand__moreWidth">{{ .Inner }}</span></span> -->
+<dfn data-info="{{ .Get 0 | safeHTMLAttr }}">{{ .Inner }}</dfn>

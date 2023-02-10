@@ -62,3 +62,15 @@ For models, I use [Blockbench](https://blockbench.net/).
 
 For image editing, I use [paint.net](https://www.getpaint.net/).
 {{< /spoiler >}}
+
+{{< hanchor h="3" >}}
+Website history
+{{< /hanchor >}}
+
+During the month of August 2022, I wanted to host Minecraft servers, and for that, I was planning to rent a {{< helphint "Virtual Private Server" >}}VPS{{< /helphint >}}. But that meant I could also host a website, and that kinda forced me to make one.
+
+I started doing research on which framework to use and started learning [Hugo](https://gohugo.io) in late august.
+
+The 22nd of November 2022, I put the site online for testing purposes.
+
+The 25th of January 2023, I finally made the website public! Now, I make small updates every once in a while to fix the numerous bugs the site still has 😁

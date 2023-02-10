@@ -42,7 +42,7 @@ There are so many bugs that an entire article is dedicated for that on the [Mine
 
 &nbsp;
 
-Looking for better solutions, I found the launcher [MultiMC](https://multimc.org/) which I used for quite a while until I found PolyMC (which is a fork of MultiMC {{< helphint >}}A fork is the copy of a Github repository, basically in this case PolyMC is another version of MultiMC.{{< /helphint >}}), then migrated to [Prism Launcher](https://prismlauncher.org) because PolyMC got compromised.
+Looking for better solutions, I found the launcher [MultiMC](https://multimc.org/) which I used for quite a while until I found PolyMC (which is a{{< helphint "A fork is the copy of a Github repository, basically in this case PolyMC is another version of MultiMC." >}}fork{{< /helphint >}} of MultiMC), then migrated to [Prism Launcher](https://prismlauncher.org) because PolyMC got compromised.
 
 Prism Launcher works perfectly and has more or less everything you'd expect from a launcher. But there is one thing that bothered me: it was the user interface. I never really liked the design of Prism or MultiMC. And putting a custom theme didn't help either.
 
@@ -68,7 +68,7 @@ Well, the intro is starting to get long, here's the tutorial you are waiting for
 
 {{< boxnotice type="warning" >}}This tutorial was made for Windows 10 or 11 users.{{< /boxnotice >}}
 
-1. Download the .appinstaller or .appx (it doesn't really matter) from the [website](https://xmcl.app/), or the .zip for a portable version {{< helphint >}}A portable, or standalone application, is a program designed to read and write its configuration settings into an accessible folder in the computer, usually in the folder where the portable application can be found.{{< /helphint >}}
+1. Download the .appinstaller or .appx (it doesn't really matter) from the [website](https://xmcl.app/), or the .zip for a {{< helphint "A portable, or standalone application, is a program designed to read and write its configuration settings into an accessible folder in the computer, usually in the folder where the portable application can be found." >}}portable version{{< /helphint >}}
 
 2. Double-click/open the downloaded file, and install.
 
