@@ -43,3 +43,5 @@ outputs:
   page:
     - html
     - rss
+
+enableRobotsTXT: true
