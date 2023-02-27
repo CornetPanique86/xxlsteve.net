@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script>
-    window.onload = () => {
+    window.addEventListener("load", () => {
         document.querySelectorAll(".swiper").forEach(elm => {
             const swiper = new Swiper(`#${elm.id}`, {
                 loop: true,
@@ -23,7 +23,7 @@
         } else if (window.matchMedia("(prefers-color-scheme: dark)").matches && window.REMARK42) {
             window.REMARK42.changeTheme("dark");
         }
-    }
+    });
 </script>
 {{ end }}
 {{ define "main" }}
@@ -78,13 +78,13 @@
             <div class="b-table-of-contents__content">
                 <div class="b-table-of-contents__text">
                     {{ range .Params.tableOfContents }}
-                    <a href="#{{ anchorize .h1 }}">
+                    <a href="#{{ anchorize .h1 }}" class="noA">
                         <span class="b-table-of-contents__h1"> {{ .h1 }} </span>
                     </a>
                     <br>
                         {{ with .h2 }}
                             {{ range . }}
-                                <a href="#{{ anchorize .t2 }}">
+                                <a href="#{{ anchorize .t2 }}" class="noA">
                                     <span class="b-table-of-contents__h2"> {{ .t2 }} </span>
                                 </a>
                                 <br>

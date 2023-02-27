@@ -51,6 +51,8 @@ $container-padding-lg: 96px;
   --color-btn-bg: 229, 231, 235;
   --color-btn-bg-hover: 217, 220, 224;
 
+  --code: #1b1f230d;
+
   /* width */
   ::-webkit-scrollbar {
     width: 9px;
@@ -109,6 +111,7 @@ $container-padding-lg: 96px;
     --color-btn-bg: 67, 73, 86;
     --color-btn-bg-hover: 73, 79, 88;
 
+    --code: #aec7e167;
     /* width */
     ::-webkit-scrollbar {
       width: 9px;
@@ -157,6 +160,7 @@ body[data-theme="light"] {
   --color-btn-bg: 229, 231, 235;
   --color-btn-bg-hover: 217, 220, 224;
 
+  --code: #1b1f230d;
   ::-webkit-scrollbar {
     width: 9px;
   }
@@ -192,6 +196,7 @@ body[data-theme="dark"] {
   --box-text-color: #AAA;
   --color-btn-bg: 67, 73, 86;
   --color-btn-bg-hover: 73, 79, 88;
+  --code: #aec7e167;
   ::-webkit-scrollbar {
     width: 9px;
   }
@@ -268,6 +273,14 @@ p, span {
 
 p {
   line-height: 1.5rem;
+}
+
+code {
+  padding: .2rem;
+  margin: 0;
+  font-size: 75%;
+  background-color: var(--code);
+  border-radius: 3px;
 }
 
 ul {
@@ -1027,12 +1040,6 @@ article section.mainArticle {
     padding-left: 5px;
     background-color: #0005;
   }
-
-  &__text {
-    text-decoration: underline;
-    text-decoration-color: var(--text-color);
-  }
-
   &__h2 {
     padding-left: 5px;
   }

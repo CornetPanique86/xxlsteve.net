@@ -43,7 +43,7 @@ function moreDetails(event) {
 
         case "infoYtFr":
             header = "XXL Steve Français";
-            img.src = "https://cdn.discordapp.com/icons/955139831900557312/438117b1dadd60842a867c8b6e14fef5.webp?size=512";
+            img.src = "https://cdn.discordapp.com/icons/955139831900557312/4b061b45256ff2c8c894c81026248b89.webp?size=512";
             img.alt = "Le logo de ma chaîne"
             desc = "Bienvenue sur ma chaîne YouTube française ! J'upload plus rarement que sur ma chaîne anglaise, et des fois la même vidéo mais traduite en français. Mais je fais surtout des vidéos d'events !";
             ahref = "https://www.youtube.com/@XXLSteveFR";
@@ -51,7 +51,7 @@ function moreDetails(event) {
             break;
         case "infoDiscFr":
             header = "XXL Steve Français";
-            img.src = "https://cdn.discordapp.com/icons/955139831900557312/438117b1dadd60842a867c8b6e14fef5.webp?size=512";
+            img.src = "https://cdn.discordapp.com/icons/955139831900557312/4b061b45256ff2c8c894c81026248b89.webp?size=512";
             img.alt = "Le logo de mon serveur discord"
             desc = "Bienvenue sur mon serveur Discord français ! Tenez vous au courant de mes dernières vidéos et parlez de tout et n'importe quoi :)";
             ahref = "https://discord.gg/qPcDsAUZyv";

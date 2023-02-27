@@ -6,5 +6,5 @@
             {{ .Get "type" }}
         {{ end }}
     </p>
-    <p>{{ .Inner }}</p>
+    <p>{{ .Inner | markdownify }}</p>
 </div>

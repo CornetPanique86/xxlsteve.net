@@ -56,6 +56,24 @@
 		],
 		"description": "Table div for overflow"
 	},
+	"Keyboard input": {
+		"scope": "markdown",
+		"prefix": "kbd",
+		"body": [
+			"<kbd>$1</kbd>$0"
+		],
+		"description": "Keyboard input (html element)"
+	},
+	"Code block": {
+		"scope": "markdown",
+		"prefix": "codehugo",
+		"body": [
+			"{{< highlight $1 \"linenos=table\" >}}",
+			"$2",
+			"{{< / highlight >}}$0"
+		],
+		"description": "Hugo code block shortcode"
+	},
 	"Multilingual reference": {
 		"scope": "html",
 		"prefix": "i18n",

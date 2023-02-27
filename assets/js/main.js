@@ -29,6 +29,8 @@ function cookieAgreementFn (value) {
 
 window.onload = () => {
     const consentPopup = document.getElementById("page-blur");
+    const theme = document.getElementById("themeToggler");
+    const themeAttr = document.createAttribute("selected");
 
     switch (shouldShowPopup()) {
         case "-1":
@@ -36,9 +38,11 @@ window.onload = () => {
             break;
         case "3":
             changeTheme("dark");
+            theme.querySelectorAll('[value="dark"]')[0].setAttributeNode(themeAttr);
             break;
         case "2":
             changeTheme("light");
+            theme.querySelectorAll('[value="light"]')[0].setAttributeNode(themeAttr);
             break;
         case "1":
             changeTheme("auto");
