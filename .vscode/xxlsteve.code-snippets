@@ -70,7 +70,17 @@
 		"body": [
 			"{{< highlight $1 \"linenos=table\" >}}",
 			"$2",
-			"{{< / highlight >}}$0"
+			"{{< /highlight >}}$0"
+		],
+		"description": "Hugo code block shortcode"
+	},
+	"Spoiler": {
+		"scope": "markdown",
+		"prefix": "spoiler",
+		"body": [
+			"{{< spoiler \"$1\" >}}",
+			"$2",
+			"{{< /spoiler >}}$0"
 		],
 		"description": "Hugo code block shortcode"
 	},

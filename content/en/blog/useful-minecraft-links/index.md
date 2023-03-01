@@ -57,10 +57,23 @@ Modded BDS (built on BDS; therefore supports addons, vanilla generation, etc):
 - [BDSX](https://github.com/bdsx/bdsx) - supports node.js
 
 {{< hanchor h="4" >}}
-Free server hosting
+Server hosting
 {{< /hanchor >}}
 
+- [GGServers](https://ggservers.com/minecrafthosting)
+- [Shockbyte](https://shockbyte.com/games/minecraft-server-hosting)
+- [Apex Minecraft Hosting](https://apexminecrafthosting.com)
+- [Hostinger](https://www.hostinger.com/minecraft-server-hosting)
+- [MelonCube](https://www.meloncube.net/minecraft)
+- [MCProHosting](https://mcprohosting.com/)
+
+&nbsp;
+
+**Includes free plan**
+
 - [bedocker](https://bedocker.com/) - easy free Minecraft Bedrock only server hoster. Only supports BDS
+- [Minehut](https://minehut.com/)
+- [Server.pro](https://server.pro/)
 
 &nbsp;
 
@@ -89,6 +102,14 @@ A comparison video of the most popular Minecraft launchers:
 
 {{< ytcustom id="tEY5tMqhoOY" title="Comparison video of the most popular Minecraft launchers" >}}
 
+{{< hanchor h="4" >}}
+Launchers (Bedrock)
+{{< /hanchor >}}
+
+- [MCBE Preview Switcher](https://foxynotail.com/software/mcbe-preview-switcher/) - multi-instancing and version switching software
+- [Minecraft Bedrock Launcher](https://bedrocklauncher.github.io/) - An unofficial Minecraft Bedrock for Windows Launcher
+
+&nbsp;
 &nbsp;
 
 {{< hanchor h="3" >}}
