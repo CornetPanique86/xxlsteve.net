@@ -126,36 +126,39 @@ function changeIndexBackground(theme) {
             <img src="/index/bgbuilds04.png" id="bgbuilds4" style="z-index: 2">
             <img src="/index/clouds05.png" id="clouds5" style="z-index: 1">
             <script>
-            gsap.from("#redbuilding1", {
-                scrollTrigger : {
-                  scrub: true
-                },
-                y: 200
-            });
-            gsap.from("#uglogo2", {
-              scrollTrigger : {
-                scrub: true
-              },
-              y: 100
-            });
-            gsap.from("#platform3", {
-              scrollTrigger : {
-                scrub: true
-              },
-              y: 80
-            });
-            gsap.from("#bgbuilds4", {
-              scrollTrigger : {
-                scrub: true
-              },
-              y: 50
-            });
-            gsap.from("#parallax__aboutbg", {
-                scrollTrigger : {
-                  scrub: true
-                },
-                opacity: 0.5
-            });
+              // Only put parallax effect when no vestibular issues
+              if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                gsap.from("#redbuilding1", {
+                  scrollTrigger : {
+                    scrub: true
+                  },
+                  y: 200
+                });
+                gsap.from("#uglogo2", {
+                  scrollTrigger : {
+                    scrub: true
+                  },
+                  y: 100
+                });
+                gsap.from("#platform3", {
+                  scrollTrigger : {
+                    scrub: true
+                  },
+                  y: 80
+                });
+                gsap.from("#bgbuilds4", {
+                  scrollTrigger : {
+                    scrub: true
+                  },
+                  y: 50
+                });
+                gsap.from("#parallax__aboutbg", {
+                  scrollTrigger : {
+                    scrub: true
+                  },
+                  opacity: 0.5
+                });
+              }
             </script>`;
             setInnerHTML(parallax, parallaxLightInnerHTML);
             break;
@@ -166,7 +169,8 @@ function changeIndexBackground(theme) {
             <img src="/index/ncbuilding02.png" id="uglogo2" style="z-index: 2">
             <img src="/index/ncbg03.png" id="clouds5" style="z-index: 1">
             <script>
-            gsap.from("#redbuilding1", {
+            if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+              gsap.from("#redbuilding1", {
                 scrollTrigger : {
                   scrub: true
                 },
@@ -184,6 +188,7 @@ function changeIndexBackground(theme) {
                 },
                 opacity: 0.5
               });
+            }
             </script>`;
             setInnerHTML(parallax, parallaxDarkInnerHTML);
             break;

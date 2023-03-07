@@ -2,8 +2,8 @@
 title: "Tools"
 date: 2023-01-14T19:06:10+01:00
 draft: false
-description: Tools for Minecraft
+description: Minecraft web tools and more!
 ogtype: article
 ---
 
-### There are no tools yet.
+Web tools

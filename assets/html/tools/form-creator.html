@@ -1,0 +1,42 @@
+<!-- Top left: form builder -->
+<div class="formSettings">
+    <div>
+        <label for="formType">Form type</label>
+        <select name="formType" id="formType">
+            <option value="modal" title="or custom form on LiteLoaderBDS/BDSX">Modal Form</option>
+            <option value="action" title="or simple form on LiteLoaderBDS/BDSX">Action Form</option>
+            <option value="message" title="or modal form on LiteLoaderBDS/BDSX">Message Form</option>
+        </select>
+        <dfn data-info="⚠️ Form types' names are different between Scripting API and LiteLoaderBDS/BDSX" class="helphint">?</dfn>
+    </div>
+    <div>
+        <label for="formTitle">Form title</label>
+        <input type="text" name="formTitle" id="formTitle">
+    </div>
+    <div><button type="button" id="formClear">Clear all</button></div>
+</div>
+
+<div id="form">
+    <div id="addFormElm">
+        <button type="button" id="addFormElmBtn">+</button>
+        <ul class="hidden">
+            <li value="button" role="button" class="actionOnly">Button</li>
+            <li value="label" role="button" class="modalOnly">Label</li>
+            <li value="dropdown" role="button" class="modalOnly">Dropdown</li>
+            <li value="input" role="button" class="modalOnly">Input</li>
+            <li value="slider" role="button" class="modalOnly">Slider</li>
+        </ul>
+    </div>
+</div>
+
+<!-- SECTION_SEP -->
+<!-- Top right: preview -->
+section 2
+
+<!-- SECTION_SEP -->
+<!-- Bottom left: export -->
+section 3
+
+<!-- SECTION_SEP -->
+<!-- Bottom right: info -->
+section 4

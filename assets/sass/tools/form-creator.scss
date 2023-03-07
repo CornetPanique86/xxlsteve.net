@@ -1,0 +1,39 @@
+.formSettings {
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    grid-template-rows: auto;
+    align-items: center;
+}
+
+#addFormElmBtn {
+    background-color: #840000;
+    font-weight: bold;
+    padding: 0.27em 0.45em;
+}
+
+#addFormElm {
+    position: relative;
+    & > ul {
+        list-style: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        overflow: visible;
+        background-color: #581717;
+        z-index: 1;
+        & > li {
+            cursor: pointer;
+            padding: 0.4em;
+            &:hover {
+                background-color: #441111;
+            }
+            &:active {
+                background-color: #340c0c;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}

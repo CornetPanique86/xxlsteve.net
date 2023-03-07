@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ with .Title }}
+      <title>{{ . }} | {{ site.Title }}</title>
+    {{ else }}
+      <title>{{ site.Title }}</title>
+    {{ end }}
+
+    {{ $toolsScript := resources.Get "js/tools.js" | minify | fingerprint -}}
+    <script src="{{ $toolsScript.Permalink }}" {{ printf "integrity=%q" $toolsScript.Data.Integrity | safeHTMLAttr }}></script>
+    {{ $toolsCSS := resources.Get "sass/tools.scss" | toCSS | minify }}
+    <link rel="stylesheet" href="{{ $toolsCSS.Permalink }}">
+    {{ with .Params.css }}
+        {{ $toolsCustomCSS := resources.Get (delimit (slice "sass/tools/" .) "") | toCSS | minify }}
+        <link rel="stylesheet" href="{{ $toolsCustomCSS.Permalink }}">
+    {{ end }}
+    {{ with .Params.js }}
+        {{ $toolsCustomScript := resources.Get (delimit (slice "js/tools/" .) "") | minify | fingerprint -}}
+        <script src="{{ $toolsCustomScript.Permalink }}" {{ printf "integrity=%q" $toolsCustomScript.Data.Integrity | safeHTMLAttr }}></script>
+    {{ end }}
+
+    {{ template "_internal/opengraph.html" . }}
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+    <meta content="#4A3C5C" data-react-helmet="true" name="theme-color" />
+
+    {{ if .IsTranslated }}
+      {{ range .AllTranslations }}
+        <link rel="alternate" hreflang="{{ .Site.Language.Lang }}" href="{{ .Permalink }}" />
+      {{ end }}
+    {{ end }}
+  </head>
+  {{ template "_internal/twitter_cards.html" . }}
+  {{ $toolsSectionsHTML := split (resources.Get (delimit (slice "html/tools/" .Params.html ) "" )).Content "<!-- SECTION_SEP -->" }}
+  <body class="page">
+    <header>
+      <nav>
+        <img src="/header-icon.png" title='{{ i18n "home" }}'>
+        <div class="dropDownParent"><h2>{{ i18n "tools" }}</h2><span class="caret"></span>
+          <ul class="dropDown">
+            {{ range (.Site.GetPage "section" "tools").Pages }}
+              <li>
+                <a href="{{ .RelPermalink }}">
+                  <h3>{{ .Title }}</h3>
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      </nav>
+      <h1>
+        {{ .Title }}
+      </h1>
+    </header>
+    <div class="page-rows">
+        <div class="page-columns">
+            <section {{ with .Params.tool.section1 }}{{ printf "data-title=%q" . | safeHTMLAttr }}{{ end }}>
+              {{ range first 1 $toolsSectionsHTML }}
+                {{ . | safeHTML }}
+              {{ end }}
+            </section>
+            <div class="resizer" data-direction="horizontal"></div>
+            <section {{ with .Params.tool.section2 }}{{ printf "data-title=%q" . | safeHTMLAttr }}{{ end }}>
+              {{ range  $section, $html := $toolsSectionsHTML }}
+                {{ if eq $section 1 }}
+                  {{ $html | safeHTML }}
+                {{ end }}
+              {{ end }}
+            </section>
+        </div>
+        <div class="resizer" data-direction="vertical"></div>
+        <div class="page-columns">
+            <section {{ with .Params.tool.section3 }}{{ printf "data-title=%q" . | safeHTMLAttr }}{{ end }}>
+              {{ range  $section, $html := $toolsSectionsHTML }}
+                {{ if eq $section 2 }}
+                  {{ $html | safeHTML }}
+                {{ end }}
+              {{ end }}
+            </section>
+            <div class="resizer" data-direction="horizontal"></div>
+            <section {{ with .Params.tool.section4 }}{{ printf "data-title=%q" . | safeHTMLAttr }}{{ end }}>
+              {{ range  $section, $html := $toolsSectionsHTML }}
+                {{ if eq $section 3 }}
+                  {{ $html | safeHTML }}
+                {{ end }}
+              {{ end }}
+            </section>
+        </div>
+    </div>
+    <div id="customAlert"></div>
+  </body>
+</html>
