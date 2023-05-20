@@ -3,15 +3,19 @@
     display: grid;
     grid-template-rows: auto;
     align-items: center;
+    padding-bottom: .4em;
+    margin-bottom: .4em;
+    border-bottom: 4px dashed #b9b9b9;
 }
 
-#addFormElmBtn {
+.addFormElmBtn {
     background-color: #840000;
     font-weight: bold;
     padding: 0.27em 0.45em;
 }
 
-#addFormElm {
+.addFormElm {
+    display: none;
     position: relative;
     & > ul {
         list-style: none;
@@ -36,4 +40,31 @@
 
 .hidden {
     display: none;
+}
+
+.elmDelete {
+    background-color: #ac0000;
+    padding: 0.27em 0.40em;
+}
+
+.formElm {
+    &::before {
+        content: attr(data-label);
+        font-size: .7em;
+    }
+}
+
+.elmDropdownContent {
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-height: 10em;
+    & input {
+        width: 5em;
+    }
+    & button {
+        padding: 0.14em 0.34em;
+    }
 }

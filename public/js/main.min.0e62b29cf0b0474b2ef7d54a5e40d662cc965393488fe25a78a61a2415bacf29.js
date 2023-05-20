@@ -5,42 +5,46 @@ const cookieStorage={getItem:e=>{const t=document.cookie.split(";").map(e=>e.spl
             <img src="/index/bgbuilds04.png" id="bgbuilds4" style="z-index: 2">
             <img src="/index/clouds05.png" id="clouds5" style="z-index: 1">
             <script>
-            gsap.from("#redbuilding1", {
-                scrollTrigger : {
-                  scrub: true
-                },
-                y: 200
-            });
-            gsap.from("#uglogo2", {
-              scrollTrigger : {
-                scrub: true
-              },
-              y: 100
-            });
-            gsap.from("#platform3", {
-              scrollTrigger : {
-                scrub: true
-              },
-              y: 80
-            });
-            gsap.from("#bgbuilds4", {
-              scrollTrigger : {
-                scrub: true
-              },
-              y: 50
-            });
-            gsap.from("#parallax__aboutbg", {
-                scrollTrigger : {
-                  scrub: true
-                },
-                opacity: 0.5
-            });
+              // Only put parallax effect when no vestibular issues
+              if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                gsap.from("#redbuilding1", {
+                  scrollTrigger : {
+                    scrub: true
+                  },
+                  y: 200
+                });
+                gsap.from("#uglogo2", {
+                  scrollTrigger : {
+                    scrub: true
+                  },
+                  y: 100
+                });
+                gsap.from("#platform3", {
+                  scrollTrigger : {
+                    scrub: true
+                  },
+                  y: 80
+                });
+                gsap.from("#bgbuilds4", {
+                  scrollTrigger : {
+                    scrub: true
+                  },
+                  y: 50
+                });
+                gsap.from("#parallax__aboutbg", {
+                  scrollTrigger : {
+                    scrub: true
+                  },
+                  opacity: 0.5
+                });
+              }
             <\/script>`;setInnerHTML(t,e);break;case"dark":let n=`<button type="button" id="parallax__aboutbg" class="mcbutton" onclick="aboutbgOpenPopup('nc')">About this background</button>
             <img src="/index/ncwhitestarline01.png" id="redbuilding1" style="z-index: 3">
             <img src="/index/ncbuilding02.png" id="uglogo2" style="z-index: 2">
             <img src="/index/ncbg03.png" id="clouds5" style="z-index: 1">
             <script>
-            gsap.from("#redbuilding1", {
+            if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+              gsap.from("#redbuilding1", {
                 scrollTrigger : {
                   scrub: true
                 },
@@ -58,4 +62,5 @@ const cookieStorage={getItem:e=>{const t=document.cookie.split(";").map(e=>e.spl
                 },
                 opacity: 0.5
               });
+            }
             <\/script>`;setInnerHTML(t,n);break;case"auto":default:if(!window.matchMedia)return!1;window.matchMedia("(prefers-color-scheme: dark)").matches?setInnerHTML(t,n):setInnerHTML(t,e);break}}const closePageBlock=e=>{let t=document.getElementById(e);t.classList.add("hidden"),setTimeout(()=>{t.style.display="none"},520),document.documentElement.classList.remove("noScroll")},openPageBlock=e=>{let t=document.getElementById(e);t.style.display="block",t.classList.remove("hidden"),document.documentElement.classList.remove("noScroll")};function customAlert(e){const t=document.getElementById("customAlert");t.innerHTML=e,t.style.display="inline-block",t.classList.add("slideIn"),setTimeout(()=>{t.classList.add("slideOut"),setTimeout(()=>{t.style.display="none",t.classList.remove("slideOut"),t.classList.remove("slideIn")},520)},3e3)}function imagePopup(e){if(document.documentElement.classList.add("noScroll"),e.nodeName.toLowerCase()=="figure"){let t=e.querySelector("img");imagePopupAddInfo(t)}else imagePopupAddInfo(e);try{document.getElementById("image-popup__text").innerHTML=e.querySelector("figcaption").innerHTML}catch{}openPageBlock("image-popup-pageblock")}function imagePopupAddInfo(e){document.getElementById("image-popup__image").src=e.getAttribute("src"),document.getElementById("image-popup__download").href=e.getAttribute("src"),document.getElementById("image-popup__download").title="Download ("+e.getAttribute("src").split("/").pop()+")",document.getElementById("image-popup__image").alt=e.getAttribute("alt")}function showNavBar(){let e=document.querySelector(".top-nav"),t=window.getComputedStyle(e);t.display=="none"?e.setAttribute("opened","true"):e.removeAttribute("opened")}

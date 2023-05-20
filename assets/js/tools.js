@@ -112,3 +112,9 @@ function customAlert(text, time=520) {
         }, time);
     }, 3000);
 }
+
+function elementFromHtml(html) {
+    const template = document.createElement("template");
+    template.innerHTML = html.trim();
+    return template.content.firstElementChild;
+}

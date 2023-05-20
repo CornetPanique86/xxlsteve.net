@@ -206,6 +206,7 @@ nav {
     flex-direction: row;
     height: 50%;
     & > section {
+        overflow: auto;
         width: 50%;
         margin: .5em;
         padding: .6em;

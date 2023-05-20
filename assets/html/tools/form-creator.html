@@ -17,14 +17,19 @@
 </div>
 
 <div id="form">
-    <div id="addFormElm">
-        <button type="button" id="addFormElmBtn">+</button>
-        <ul class="hidden">
-            <li value="button" role="button" class="actionOnly">Button</li>
-            <li value="label" role="button" class="modalOnly">Label</li>
-            <li value="dropdown" role="button" class="modalOnly">Dropdown</li>
-            <li value="input" role="button" class="modalOnly">Input</li>
-            <li value="slider" role="button" class="modalOnly">Slider</li>
+    <div id="formElms">
+    </div>
+    <div id="addFormElmAction" class="addFormElm">
+        <button type="button" id="addFormElmBtnAction" class="addFormElmBtn">+ Button</button>
+    </div>
+    <div id="addFormElmModal" class="addFormElm">
+        <button type="button" id="addFormElmBtnModal" class="addFormElmBtn">+</button>
+        <ul class="hidden" id="addFormElmListModal">
+            <li value="label" role="button" class="addFormElmListModalLi">Label</li>
+            <li value="dropdown" role="button" class="addFormElmListModalLi">Dropdown</li>
+            <li value="input" role="button" class="addFormElmListModalLi">Input</li>
+            <li value="slider" role="button" class="addFormElmListModalLi">Slider</li>
+            <li value="switch" role="button" class="addFormElmListModalLi">Switch</li>
         </ul>
     </div>
 </div>

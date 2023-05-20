@@ -11,4 +11,4 @@ aliases:
 
 Si vous souhaitez me contacter, vous pouvez envoyer un mail à : contact@xxlsteve.net
 
-Cependant, je suis plus actif sur Discord, alors attendez-vous à une réponse beaucoup plus rapide en envoyant un MP à : **CornetPanique86#9962**
+Cependant, je suis plus actif sur Discord, alors attendez-vous à une réponse beaucoup plus rapide en envoyant un MP à : **XXL Steve#9962**

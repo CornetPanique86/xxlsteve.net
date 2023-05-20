@@ -21,6 +21,7 @@
         {{ $toolsCustomScript := resources.Get (delimit (slice "js/tools/" .) "") | minify | fingerprint -}}
         <script src="{{ $toolsCustomScript.Permalink }}" {{ printf "integrity=%q" $toolsCustomScript.Data.Integrity | safeHTMLAttr }}></script>
     {{ end }}
+    <script src="https://kit.fontawesome.com/24bbd48e74.js" crossorigin="anonymous"></script>
 
     {{ template "_internal/opengraph.html" . }}
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
