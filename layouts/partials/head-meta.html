@@ -18,7 +18,7 @@
 
 {{ $mainScript := resources.Get "js/main.js" | minify -}}
 {{ $secureMainScript := $mainScript | resources.Fingerprint "sha512" }}
-<script src="{{ $secureMainScript.Permalink }}" {{ printf "integrity=%q" $secureMainScript.Data.Integrity | safeHTMLAttr }}></script>
+<script src="{{ $secureMainScript.Permalink }}" integrity=""></script>
 
 <script src="https://kit.fontawesome.com/24bbd48e74.js" crossorigin="anonymous"></script>
 <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=63dc0e00b14908001316e618&product=inline-share-buttons' async='async'></script>

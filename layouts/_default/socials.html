@@ -26,7 +26,7 @@
 
     {{ $socialsScript := resources.Get "js/socials.js" | minify -}}
     {{ $secureSocialsScript := $socialsScript | resources.Fingerprint "sha512" }}
-    <script src="{{ $secureSocialsScript.Permalink }}" {{ printf "integrity=%q" $secureSocialsScript.Data.Integrity | safeHTMLAttr }}></script>
+    <script src="{{ $secureSocialsScript.Permalink }}" integrity=""></script>
     <script src="https://kit.fontawesome.com/24bbd48e74.js" crossorigin="anonymous"></script>
     <script src='/libs/skinview3d/skinview3d.bundle.js'></script>
 </head>
