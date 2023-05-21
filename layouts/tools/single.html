@@ -9,8 +9,9 @@
       <title>{{ site.Title }}</title>
     {{ end }}
 
-    {{ $toolsScript := resources.Get "js/tools.js" | minify | fingerprint -}}
-    <script src="{{ $toolsScript.Permalink }}" {{ printf "integrity=%q" $toolsScript.Data.Integrity | safeHTMLAttr }}></script>
+    {{ $toolsScript := resources.Get "js/tools.js" | minify -}}
+    {{ $secureToolsScript := $toolsScript | resources.Fingerprint "sha512" }}
+    <script src="{{ $secureToolsScript.Permalink }}" {{ printf "integrity=%q" $secureToolsScript.Data.Integrity | safeHTMLAttr }}></script>
     {{ $toolsCSS := resources.Get "sass/tools.scss" | toCSS | minify }}
     <link rel="stylesheet" href="{{ $toolsCSS.Permalink }}">
     {{ with .Params.css }}
@@ -18,8 +19,9 @@
         <link rel="stylesheet" href="{{ $toolsCustomCSS.Permalink }}">
     {{ end }}
     {{ with .Params.js }}
-        {{ $toolsCustomScript := resources.Get (delimit (slice "js/tools/" .) "") | minify | fingerprint -}}
-        <script src="{{ $toolsCustomScript.Permalink }}" {{ printf "integrity=%q" $toolsCustomScript.Data.Integrity | safeHTMLAttr }}></script>
+        {{ $toolsCustomScript := resources.Get (delimit (slice "js/tools/" .) "") | minify -}}
+        {{ $secureToolsCustomScript := $toolsCustomScript | resources.Fingerprint "sha512" }}
+        <script src="{{ $secureToolsCustomScript.Permalink }}" {{ printf "integrity=%q" $secureToolsCustomScript.Data.Integrity | safeHTMLAttr }}></script>
     {{ end }}
     <script src="https://kit.fontawesome.com/24bbd48e74.js" crossorigin="anonymous"></script>
 

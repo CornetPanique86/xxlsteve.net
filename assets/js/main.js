@@ -11,11 +11,10 @@ const cookieStorage = {
     }
 }
 
-//const storageType = cookieStorage;
-const consentPropName = "xxlsteve";
+const consentPropertyName = "xxlsteve";
 
-const shouldShowPopup = () => { return cookieStorage.getItem(consentPropName) }
-const saveToStorage = (value) => { if (shouldShowPopup() != "-1") cookieStorage.setItem(consentPropName, value) }
+const shouldShowPopup = () => { return cookieStorage.getItem(consentPropertyName) }
+const saveToStorage = (value) => { if (shouldShowPopup() != "-1") cookieStorage.setItem(consentPropertyName, value) }
 
 function cookieAgreementFn (value) {
     saveToStorage(value);

@@ -24,8 +24,9 @@
     <meta name="og:url" content="{{ .Permalink }}">
     <meta property="twitter:url" content="{{ .Permalink }}">
 
-    {{ $socialsScript := resources.Get "js/socials.js" | minify | fingerprint -}}
-    <script src="{{ $socialsScript.Permalink }}" {{ printf "integrity=%q" $socialsScript.Data.Integrity | safeHTMLAttr }}></script>
+    {{ $socialsScript := resources.Get "js/socials.js" | minify -}}
+    {{ $secureSocialsScript := $socialsScript | resources.Fingerprint "sha512" }}
+    <script src="{{ $secureSocialsScript.Permalink }}" {{ printf "integrity=%q" $secureSocialsScript.Data.Integrity | safeHTMLAttr }}></script>
     <script src="https://kit.fontawesome.com/24bbd48e74.js" crossorigin="anonymous"></script>
     <script src='/libs/skinview3d/skinview3d.bundle.js'></script>
 </head>
