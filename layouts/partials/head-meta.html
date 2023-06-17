@@ -21,11 +21,11 @@
 
 {{ if hugo.IsProduction }}
   {{- $CSS := slice (resources.Get "sass/main.scss") (resources.Get "sass/search.scss") | resources.Concat "assets/css/main.css" | toCSS | minify | fingerprint "sha512" }}
-    <link rel="stylesheet" href="{{ $CSS.RelPermalink }}" integrity="{{ $CSS.Data.Integrity }}">
+    <link rel="stylesheet" href="{{ $CSS.RelPermalink }}" integrity="">
   {{ $mainScript :=  resources.Get "js/main.js" | minify | fingerprint "sha512" }}
-    <script fetchpriority="high" src="{{ $mainScript.RelPermalink }}" integrity="{{ $mainScript.Data.Integrity }}"></script>
+    <script fetchpriority="high" src="{{ $mainScript.RelPermalink }}" integrity=""></script>
   {{ $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify | fingerprint "sha512" }}
-    <script fetchpriority="low" src="{{ $pixelarticonsScript.RelPermalink }}" integrity="{{ $pixelarticonsScript.Data.Integrity }}" async></script>
+    <script fetchpriority="low" src="{{ $pixelarticonsScript.RelPermalink }}" integrity="" async></script>
 {{ else }}
   {{- $CSS := slice (resources.Get "sass/main.scss") (resources.Get "sass/search.scss") | resources.Concat "assets/css/main.css" | toCSS | minify }}
     <link rel="stylesheet" href="{{ $CSS.RelPermalink }}">
