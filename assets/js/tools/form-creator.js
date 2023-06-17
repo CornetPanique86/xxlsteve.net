@@ -2,13 +2,13 @@ const elmTemplates = {
     label: elementFromHtml(`
         <div class="elmLabel formElm" data-label="Label: ">
             <input type="text" placeholder="Label text" required>
-            <button class="elmDelete"><i class="fa-solid fa-trash-can"></i></button>
+            <button class="elmDelete"><i class="pxico-cross"></i></button>
         </div>
     `),
     dropdown: elementFromHtml(`
         <div class="elmDropdown formElm" data-label="Dropdown: ">
             <input type="text" placeholder="Dropdown description" required>
-            <button class="elmDelete"><i class="fa-solid fa-trash-can"></i></button>
+            <button class="elmDelete"><i class="pxico-cross"></i></button>
             <div class="elmDropdownContent">
                 <input type="text" required>
                 <button class="addFormElmBtn addDropdownContent">+</button>
@@ -20,7 +20,7 @@ const elmTemplates = {
             <input type="text" placeholder="Description" required>
             <input type="text" placeholder="Placeholder">
             <input type="text" placeholder="Content">
-            <button class="elmDelete"><i class="fa-solid fa-trash-can"></i></button>
+            <button class="elmDelete"><i class="pxico-cross"></i></button>
         </div>
     `),
     slider: elementFromHtml(`
@@ -34,7 +34,7 @@ const elmTemplates = {
             <input type="text" name="max" size="2" step="1" required>
             <input type="text" name="step" size="2" step="1">
             <input type="text" name="default" size="2" step="1">
-            <button class="elmDelete"><i class="fa-solid fa-trash-can"></i></button>
+            <button class="elmDelete"><i class="pxico-cross"></i></button>
         </div>
     `),
     sliderNormal: elementFromHtml(`
@@ -56,7 +56,7 @@ const elmTemplates = {
         <div class="elmSwitch formElm" data-label="Switch: ">
             <input type="text" placeholder="Description" required>
             <input type="checkbox" value="default">
-            <button class="elmDelete"><i class="fa-solid fa-trash-can"></i></button>
+            <button class="elmDelete"><i class="pxico-cross"></i></button>
         </div>
     `)
 }

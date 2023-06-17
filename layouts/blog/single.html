@@ -23,11 +23,31 @@
         } else if (window.matchMedia("(prefers-color-scheme: dark)").matches && window.REMARK42) {
             window.REMARK42.changeTheme("dark");
         }
+        const showOnPx = 800;
+        const backToTopButton = document.querySelector(".backToTop");
+
+        const scrollContainer = () => {
+          return document.documentElement || document.body;
+        }
+
+        document.addEventListener("scroll", () => {
+          if (scrollContainer().scrollTop > showOnPx) {
+            backToTopButton.classList.remove("hidden")
+          } else {
+            backToTopButton.classList.add("hidden")
+          }
+        });
+
+        const goToTop = () => {
+            document.body.scrollIntoView();
+        }
+        backToTopButton.addEventListener("click", goToTop);
     });
 </script>
 {{ end }}
 {{ define "main" }}
-<a href='{{ relLangURL "blog" }}'>← {{ i18n "blog" }}</a>
+<button type="button" class="backToTop mcbutton hidden"><i class="pxico-arrow"></i></button>
+<a href='{{ relLangURL "blog" }}'><i class="pxico-arrow" style="transform: rotate(-90deg)"></i> {{ i18n "blog" }}</a>
 <article>
     <section>
     <meta itemprop="image" content="/blog/{{ .Params.image }}">
@@ -120,12 +140,12 @@
         <br>
         <section>
             <div class="hanchor__div">
-            <h2 class="hanchor" id='{{ anchorize (i18n "downloads") }}'>{{ i18n "downloads" }}</h2><a href='#{{ anchorize (i18n "downloads") }}' class="hanchor__anchor" title="Anchor: Downloads"><i class="fa-sharp fa-solid fa-link"></i></a>
+            <h2 class="hanchor" id='{{ anchorize (i18n "downloads") }}'>{{ i18n "downloads" }}</h2><a href='#{{ anchorize (i18n "downloads") }}' class="hanchor__anchor" title="Anchor: Downloads"><i class="pxico-link"></i></a>
             </div>
             <div class="b-downloads">
                 {{ range . }}
                     <a href="{{ .dl }}" class="noA b-downloads__element" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-download"></i>
+                        <i class="pxico-download_anim"></i>
                         <p>{{ .text }}</p>
                     </a>
                 {{ end }}
@@ -138,11 +158,11 @@
 {{ with $related }}
     <aside>
         <h2>{{ i18n "seeAlso" }}</h2>
-        <ul class="post-preview-grid seeAlso noUl">
+        <ul class="post-preview-grid seeAlso ">
             {{ range . }}
               <div class="post-preview">
                 <a href="{{ .Permalink }}">
-                    <img class="post-preview__top" src="/blog/{{ .Params.image }}">
+                    <img class="post-preview__top" src="/blog/{{ .Params.image }}" alt="{{ .Title }}">
                 </a>
                 <div class="post-preview__bottom">
                     <div class="taxonomies" style="flex-direction: column;">

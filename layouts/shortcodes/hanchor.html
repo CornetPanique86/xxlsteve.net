@@ -3,6 +3,6 @@
         {{ .Inner }}
     </h{{ .Get "h" }}>
     <a href="#{{ with .Get "anchor" }}{{ . }}{{ else }}{{ anchorize .Inner }}{{ end }}" class="hanchor__anchor" title="{{ i18n "anchor" }} {{ .Inner }}">
-        <i class="fa-sharp fa-solid fa-link"></i>
+        <i class="pxico-link"></i>
     </a>
 </div>

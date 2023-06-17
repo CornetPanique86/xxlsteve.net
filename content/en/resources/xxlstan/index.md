@@ -12,4 +12,4 @@ categories:
 
 A skin pack which turns my Discord server's members into the cardboard-version of their skin!
 
-{{< figure src="https://media.discordapp.net/attachments/748473329849204806/1030176831686578276/unknown.png" class="figurePopup imagePopup" >}}
+{{< image src="https://media.discordapp.net/attachments/748473329849204806/1030176831686578276/unknown.png"  >}}

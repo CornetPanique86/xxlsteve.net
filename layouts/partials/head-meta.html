@@ -8,20 +8,35 @@
 
 {{/* $mainSCSS := resources.Get "sass/main.scss" | resources.ToCSS */}}
 {{/* $searchSCSS := resources.Get "sass/search.scss" | resources.ToCSS */}}
-{{- $CSS := slice (resources.Get "sass/main.scss") (resources.Get "sass/search.scss") | resources.Concat "assets/css/main.css" | toCSS | minify | fingerprint }}
 
-<link rel="stylesheet" href="{{ $CSS.RelPermalink }}">
+{{ if hugo.IsProduction }}
+  
+{{ else }}
+
+{{ end }}
 
 {{ template "_internal/opengraph.html" . }}
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
 <meta content="#4A3C5C" data-react-helmet="true" name="theme-color" />
 
-{{ $mainScript := resources.Get "js/main.js" | minify -}}
-{{ $secureMainScript := $mainScript | resources.Fingerprint "sha512" }}
-<script src="{{ $secureMainScript.Permalink }}" integrity=""></script>
+{{ if hugo.IsProduction }}
+  {{- $CSS := slice (resources.Get "sass/main.scss") (resources.Get "sass/search.scss") | resources.Concat "assets/css/main.css" | toCSS | minify | fingerprint "sha512" }}
+    <link rel="stylesheet" href="{{ $CSS.RelPermalink }}" integrity="{{ $CSS.Data.Integrity }}">
+  {{ $mainScript :=  resources.Get "js/main.js" | minify | fingerprint "sha512" }}
+    <script fetchpriority="high" src="{{ $mainScript.RelPermalink }}" integrity="{{ $mainScript.Data.Integrity }}"></script>
+  {{ $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify | fingerprint "sha512" }}
+    <script fetchpriority="low" src="{{ $pixelarticonsScript.RelPermalink }}" integrity="{{ $pixelarticonsScript.Data.Integrity }}" async></script>
+{{ else }}
+  {{- $CSS := slice (resources.Get "sass/main.scss") (resources.Get "sass/search.scss") | resources.Concat "assets/css/main.css" | toCSS | minify }}
+    <link rel="stylesheet" href="{{ $CSS.RelPermalink }}">
+  {{ $mainScript :=  resources.Get "js/main.js" | minify }}
+    <script fetchpriority="high" src="{{ $mainScript.RelPermalink }}"></script>
+  {{ $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify }}
+    <script fetchpriority="low" src="{{ $pixelarticonsScript.RelPermalink }}" async></script>
+{{ end }}
 
-<script src="https://kit.fontawesome.com/24bbd48e74.js" crossorigin="anonymous"></script>
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=63dc0e00b14908001316e618&product=inline-share-buttons' async='async'></script>
+<link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/gh/CornetPanique86/pixelart-icons/dist/pixelarticons_anim.css'>
+<script fetchpriority="low" type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=63dc0e00b14908001316e618&product=inline-share-buttons' async='async'></script>
 
 {{ if .IsTranslated }}
   {{ range .AllTranslations }}

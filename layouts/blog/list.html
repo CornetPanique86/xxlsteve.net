@@ -1,10 +1,10 @@
 {{ define "main" }}
     <h1>Blog posts</h1>
-    <ul class="noUl post-preview-grid">
+    <ul class="post-preview-grid">
     {{ range (.Site.GetPage "section" "blog").Pages }}
     <li class="post-preview">
         <a href="{{ .Permalink }}">
-            <img class="post-preview__top" src="{{ .Params.image }}">
+            <img class="post-preview__top" src="{{ .Params.image }}" alt="{{ .Title }}">
         </a>
         <div class="post-preview__bottom">
             <div class="taxonomies" style="flex-direction: column;">

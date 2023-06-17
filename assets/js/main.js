@@ -205,7 +205,7 @@ function changeIndexBackground(theme) {
 }
 
 const closePageBlock = id => {
-  let elm = document.getElementById(id);
+  const elm = document.getElementById(id);
   elm.classList.add("hidden");
   setTimeout(() => {
     elm.style.display = "none";
@@ -214,7 +214,7 @@ const closePageBlock = id => {
 }
 
 const openPageBlock = id => {
-  let elm = document.getElementById(id);
+  const elm = document.getElementById(id);
   elm.style.display = "block";
   elm.classList.remove("hidden");
   document.documentElement.classList.remove("noScroll");
@@ -261,11 +261,85 @@ function imagePopupAddInfo(image) {
 
 // Nav bar hamburger icon for mobile devices
 function showNavBar() {
-  let topNav = document.querySelector(".top-nav");
-  let topNavStyles = window.getComputedStyle(topNav);
+  const topNav = document.querySelector(".top-nav");
+  const topNavStyles = window.getComputedStyle(topNav);
+  const burger = document.querySelector(".nav-burger");
+
+  const burgerSVG = `<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h10v2H0zm0 4h10v2H0zm0 4h10v2H0z"/></svg>`,
+        burgerOpenSVG = `<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+        <rect width="2" height="2" x="0" y="0"/>
+        <rect width="2" height="2" x="2" y="2">
+                <animate attributeName="y" to="2" from="0" dur="0.25s" repeatCount="1" fill="freeze" />
+        </rect>
+
+        <rect width="2" height="2" x="4" y="4">
+                <animate attributeName="x" to="4" from="0" dur="0.3s" repeatCount="1" fill="freeze" />
+                <animate attributeName="width" to="2" from="10" dur="0.3s" repeatCount="1" fill="freeze" />
+        </rect>  
+        <rect width="2" height="2" x="4" y="4">
+                <animate attributeName="y" to="4" from="0" dur="0.25s" repeatCount="1" fill="freeze" />
+        </rect>
+        <rect width="2" height="2" x="4" y="4">
+                <animate attributeName="y" to="4" from="8" dur="0.25s" repeatCount="1" fill="freeze" />
+        </rect>
+
+        <rect width="2" height="2" x="2" y="6">
+                <animate attributeName="y" to="6" from="8" dur="0.25s" repeatCount="1" fill="freeze" />
+        </rect>
+        <rect width="2" height="2" x="0" y="8"/>
+
+        <rect width="2" height="2" x="6" y="6">
+                <animate attributeName="y" to="6" from="8" dur="0.25s" repeatCount="1" fill="freeze" />
+        </rect>
+        <rect width="2" height="2" x="8" y="8"/>
+
+        <rect width="2" height="2" x="6" y="2">
+                <animate attributeName="y" to="2" from="0" dur="0.25s" repeatCount="1" fill="freeze" />
+        </rect>
+        <rect width="2" height="2" x="8" y="0"/>
+</svg>`,
+        burgerCloseSVG = `<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+        <rect width="2" height="2" x="0" y="0"/>
+        <rect width="2" height="2" x="2" y="2">
+          <animate attributeName="y" from="2" to="0" dur="0.25s" repeatCount="1" fill="freeze" />
+        </rect>
+        
+        <rect width="2" height="2" x="4" y="4">
+                <animate attributeName="x" from="4" to="0" dur="0.3s" repeatCount="1" fill="freeze" />
+                <animate attributeName="width" from="2" to="10" dur="0.3s" repeatCount="1" fill="freeze" />
+        </rect>  
+        <rect width="2" height="2" x="4" y="4">
+                  <animate attributeName="y" from="4" to="0" dur="0.25s" repeatCount="1" fill="freeze" />
+        </rect>
+        <rect width="2" height="2" x="4" y="4">
+                  <animate attributeName="y" from="4" to="8" dur="0.25s" repeatCount="1" fill="freeze" />
+        </rect>
+        
+        <rect width="2" height="2" x="2" y="6">
+                <animate attributeName="y" from="6" to="8" dur="0.25s" repeatCount="1" fill="freeze" />
+        </rect>
+        <rect width="2" height="2" x="0" y="8"/>
+        
+        <rect width="2" height="2" x="6" y="6">
+                <animate attributeName="y" from="6" to="8" dur="0.25s" repeatCount="1" fill="freeze" />
+        </rect>
+        <rect width="2" height="2" x="8" y="8"/>
+      
+        <rect width="2" height="2" x="6" y="2">
+              <animate attributeName="y" from="2" to="0" dur="0.25s" repeatCount="1" fill="freeze" />
+        </rect>
+        <rect width="2" height="2" x="8" y="0"/>
+      </svg>`;
   if (topNavStyles.display == "none") {
+    // Open the burger
+    burger.innerHTML = burgerOpenSVG;
     topNav.setAttribute("opened", "true");
   } else {
+    // Close the burger
+    burger.innerHTML = burgerCloseSVG;
     topNav.removeAttribute("opened");
+    setTimeout(() => {
+      burger.innerHTML = burgerSVG;
+    }, 500);
   }
 }

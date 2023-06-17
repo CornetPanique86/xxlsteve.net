@@ -287,11 +287,6 @@ ul {
   list-style-type: square;
 }
 
-ul:not(.noUl), ol:not(.noUl) {
-  line-height: 1.6rem;
-  padding-left: 20px;
-}
-
 a:not(.noA), a:visited:not(.noA) {
   text-decoration: none;
   color: #4982e3;
@@ -439,6 +434,18 @@ hr {
 }
 
 // ICONS
+.rotateDown {
+  transform: rotate(180deg);
+}
+
+svg[class^="pxico-"] {
+  image-rendering: pixelated;
+  shape-rendering: crispEdges;
+  display: inline;
+  width: 1.2rem;
+  height: auto;
+}
+
 .icons {
   transition: color, 0.2s ease;
 }
@@ -533,13 +540,15 @@ hr {
 
 .cross-button {
   position: absolute;
-  width: 25px;
-  height: 25px;
   top: 0;
   right: 0;
-  padding: 5px;
+  color: #fff;
   &:hover {
     background-color: #ffffff7a;
+  }
+  & svg {
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -735,6 +744,9 @@ dfn {
       color: var(--box-text-color);
       text-shadow: 0px 3px #00000051;
     }
+    & svg {
+      width: 0.8em;
+    }
     & a {
       text-decoration: none;
     }
@@ -742,6 +754,9 @@ dfn {
       width: auto;
       height: auto;
       padding: 12px;
+      & svg {
+        width: 1.5em;
+      }
     }
     &:hover {
       background-color: #00000034;
@@ -944,23 +959,31 @@ article section.mainArticle {
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+  & ul, ol {
+    line-height: 1.6rem;
+    padding-left: 20px;
+  }
 }
 
 .figurePopup {
-  margin: 20px auto;
-  background-image: url("/images/figure_bg.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  max-width: 256px;
+  min-width: fit-content;
+  max-width: 80%;
+  display: block;
+  margin: 1em auto;
   cursor: pointer;
 
   & img {
-    border: 17px solid transparent;
-    width: 256px;
-    height: 232px;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
     opacity: 1;
     transition: opacity 0.2s ease;
+    border-image: url("/images/figure_border.png") 10 round;
+    border-image-slice: 40 40 40 40;
+    border-image-width: 35px;
+    border-image-outset: 6px 6px 6px 6px;
+    border-image-repeat: stretch stretch;
+    border-image-source: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAPUExURSUmIU1LTG9yb3t9fwAAADOLhD8AAAAFdFJOU/////8A+7YOUwAAAAlwSFlzAAAOwAAADsABataJCQAAAONJREFUaEPt2UsOgzAQBFES5/5njqz0jvgDYnosud4KkGdqb45Zn0k6/hztHdLxGa8J2jpFI13Z4XdXKdo4rRSNNqwdvp6t+uk1wqVBmy7T+MlKYU2EIkw4DGHCYQgTDkOYcJh1wp5sVdP5YV+2KiU/rC822WG9WWWG9WRH2IawDWEbwjaEbQjbELYhbEPYhrANYRvCNoRtNrzZ2/H2dscb+v3+wiT+8CIchTDhMIQJhyFMOAzh3PB/mrhM4yfrhFvupX+BlrXDd9L97ArhMW2copGu3PAcbR3S8edo75CODxzHF3yIyEGe0+S0AAAAAElFTkSuQmCC");
+    border-style: solid;
   }
 
   &:hover img {
@@ -990,7 +1013,20 @@ article section.mainArticle {
     }
   }
   &__anchor {
-    font-size: small;
+    display: none;
+    & svg {
+      width: 0.8em;
+    }
+  }
+}
+
+.backToTop {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  transition: opacity 0.8s ease;
+  opacity: 1;
+  &.hidden {
     display: none;
   }
 }
@@ -1417,15 +1453,16 @@ article section.mainArticle {
     }
     color: #fff;
     position: absolute;
-    width: 25px;
-    height: 25px;
     top: 0;
-    right: 25px;
-    padding: 5px;
+    right: 32px;
     cursor: pointer;
 
     &:hover {
       background-color: #ffffff7a;
+    }
+    & svg {
+      width: 24px;
+      height: 24px;
     }
   }
 }
@@ -1538,11 +1575,7 @@ article section.mainArticle {
     position: fixed;
     top: 10px;
     left: 10px;
-    font-size: 1.5rem;
-    transition: transform, 1s ease;
-    &:hover {
-      transform: rotate(360deg);
-    }
+    width: 1.5rem;
   }
 
   .top-nav[opened] {
@@ -1587,7 +1620,7 @@ article section.mainArticle {
       justify-content: center;
     }
     &__dropDownParent {
-      & > i {
+      & > svg {
         display: inline;
         padding: 5px 10px;
         &:hover {
@@ -1641,7 +1674,7 @@ article section.mainArticle {
       padding: 5px 0 5px 5px;
     }
     &__dropDownParent {
-      & > i {
+      & > svg {
         display: inline;
         padding: 5px 10px;
         &:hover {
@@ -1679,7 +1712,7 @@ article section.mainArticle {
 
   .top-nav {
     &__dropDownParent {
-      & > i { display: none; }
+      & > svg { display: none; }
     }
   }
 

@@ -42,7 +42,7 @@ How to start:
 
 To start the game, simply write */function start* in chat (you need at least 2 players to play the game)!
 
-{{< figure src="https://my.mcpedl.com/storage/addons/6943/images/minecraft-mansave_2.png" caption="Start the game" class="figurePopup imagePopup" >}}
+{{< image src="https://my.mcpedl.com/storage/addons/6943/images/minecraft-mansave_2.png" caption="Start the game"  >}}
 
 For the credits, */function credits*
 
@@ -56,7 +56,7 @@ If you want to be automatically selected as the kamikaze, write */function kamik
 
 If you think 2 minutes is too fast/slow, you can always change it! Write */scoreboard players set @s time yourTimeInSeconds* (note: you have to be the host for it to work. If someone else writes it, he has to write */scoreboard players set nameOfTheHost timeInSeconds*).
 
-{{< figure src="https://my.mcpedl.com/storage/addons/6943/images/minecraft-mansave_3.png" caption="Change the time limit" class="figurePopup imagePopup" >}}
+{{< image src="https://my.mcpedl.com/storage/addons/6943/images/minecraft-mansave_3.png" caption="Change the time limit"  >}}
 
 {{< ytcustom id="JVZw_i3uHhc" title="Addon showcase" >}}
 

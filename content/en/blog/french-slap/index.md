@@ -42,7 +42,7 @@ Additions:
 - Cheese Power - right-click on PC or long-tap on mobile to trigger it, and you will get a levitation effect for 1 second! 
 - Power-up - it will randomly spawn in the game. It looks like a floating lucky block. Step in it and it will give you a random power-up (like an effect or additional Cheese Power).
 
-{{< figure src="https://my.mcpedl.com/storage/worlds/7810/images/french-slap_2.png" caption="1st hotbar slot: baguette, 2nd hotbar slot: Cheese Power, middle: Power-Up." class="figurePopup imagePopup" >}}
+{{< image src="https://my.mcpedl.com/storage/worlds/7810/images/french-slap_2.png" caption="1st hotbar slot: baguette, 2nd hotbar slot: Cheese Power, middle: Power-Up."  >}}
 
 {{< ytcustom id="5zbpmtRtp6w" title="Showcase" >}}
 

@@ -43,9 +43,9 @@ Au début du jeu, vous avez 8 minutes pour rassembler des ressources. Après ces
 
 Voici des exemples de trappes :
 
-{{< figure src="/blog/death-swap/img/fall_trap.jpg" caption="Alex tombe d'une tour à la dernière seconde, alors Steve prend sa place !" class="figurePopup imagePopup" >}}
+{{< image src="img/fall_trap.jpg" caption="Alex tombe d'une tour à la dernière seconde, alors Steve prend sa place !"  >}}
 
-{{< figure src="/blog/death-swap/img/lava_trap.jpg" caption="R.I.P. Steve..." alt="Alex échange de place avec Steve dans un lac de lave" class="figurePopup imagePopup" >}}
+{{< image src="img/lava_trap.jpg" caption="R.I.P. Steve..." alt="Alex échange de place avec Steve dans un lac de lave"  >}}
 
 {{< hanchor h="3" >}}
 Démarrer le jeu
@@ -53,10 +53,10 @@ Démarrer le jeu
 
 - Évidemment, entrez dans le monde que vous avez importé dans Minecraft
 - Vous trouverez un cube orange. Appuyez sur le bouton sous le signe "Setup the game"
-- Cela configurera le jeu. Lorsque cela est terminé, appuyez à nouveau sur le bouton pour démarrer le jeu.
+- Cela conimagera le jeu. Lorsque cela est terminé, appuyez à nouveau sur le bouton pour démarrer le jeu.
 - Si vous rencontrez un bug pendant votre jeu, vous pouvez toujours appuyer sur le bouton pour réinitialiser le jeu !
 
-{{< figure src="/blog/death-swap/img/overview.jpg" caption="C'est là que vous apparaîtrez lorsque vous rejoignez le monde." alt="Le cube orange pour démarrer la partie" class="figurePopup imagePopup" >}}
+{{< image src="img/overview.jpg" caption="C'est là que vous apparaîtrez lorsque vous rejoignez le monde." alt="Le cube orange pour démarrer la partie"  >}}
 
 {{< hanchor h="3" >}}
 Crédits

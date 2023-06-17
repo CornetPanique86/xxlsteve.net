@@ -8,4 +8,4 @@ layout: socials
 
 If you'd like to contact me, you can send an email to: contact@xxlsteve.net
 
-However, I'm most active on Discord, so expect a much faster response by sending a DM to: **XXL Steve#9962**
+However, I'm most active on Discord, so expect a much faster response by sending a DM to: **@xxlsteve** (or **XXL Steve#9962**)

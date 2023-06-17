@@ -3,8 +3,10 @@
 </script>
 <div id="image-popup-pageblock" class="pageblock hidden" style="display: none" onclick="closePageBlock('image-popup-pageblock')">
     <div id="image-popup" onclick="event.stopPropagation();">
-        <a href="" download id="image-popup__download" title="Download"><i class="fa-solid fa-download"></i></a>
-        <img src="/icons/cross_mc.png" alt="Close" class="cross-button" onclick="closePageBlock('image-popup-pageblock')" style="display: inline" draggable="false">
+        <a href="" download id="image-popup__download" title="Download"><i class="pxico-download_anim"></i></a>
+        <span onclick="closePageBlock('image-popup-pageblock')" draggable="false" class="cross-button">
+            <i class="pxico-cross" ></i>
+        </span>
         <img src="" alt="" id="image-popup__image">
         <div id="image-popup__text">
 

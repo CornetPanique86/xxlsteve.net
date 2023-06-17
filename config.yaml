@@ -17,8 +17,6 @@ author:
 
 params:
   description: Welcome to my website
-  images:
-  - /favicon.png
   title: XXL Steve
   remark42SiteID: "xxlsteve.net"
   remark42Url: "https://xxlsteve.net/remark42"

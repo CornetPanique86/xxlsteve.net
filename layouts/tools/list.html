@@ -1,6 +1,6 @@
 {{ define "main" }}
     <h1>{{.Content}}</h1>
-    <ul class="resources-grid tools-grid noUl">
+    <ul class="resources-grid tools-grid ">
         {{ range (.Site.GetPage "/tools").Pages }}
             <li class="tools-preview">
                 <a href="{{ .RelPermalink }}" class="noA">

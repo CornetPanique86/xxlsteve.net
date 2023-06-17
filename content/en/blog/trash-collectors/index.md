@@ -61,7 +61,7 @@ Collect as much trash as you can by right-clicking it (or interaction text for m
 
 Increase the number of pounds you collect by getting more trash! The player with most pounds of trash collected wins. You can see how much pounds you have in the scoreboard on the right side of your screen:
 
-{{< figure src="https://api.mcpedl.com/storage/submissions/137211/images/trash-collectors-teamseas_2.png" class="figurePopup imagePopup" >}}
+{{< image src="https://api.mcpedl.com/storage/submissions/137211/images/trash-collectors-teamseas_2.png"  >}}
 
 Be careful, you can't "collect" turtles, anglerfish or normal fish!
 
@@ -84,7 +84,7 @@ If you feed the turtles with seagrass, you will earn money (visible in the game 
 - **Speed Booster**: swim 2x faster for 5 seconds! Price: *50 Money*
 - **Disguised Trash**: spawn disguised trash that will remove 3 pounds to the player that tries to collect it! Price: *40 Money*
 
-{{< figure src="https://api.mcpedl.com/storage/submissions/137211/images/trash-collectors-teamseas_3.png" caption="The shop" class="figurePopup imagePopup" >}}
+{{< image src="https://api.mcpedl.com/storage/submissions/137211/images/trash-collectors-teamseas_3.png" caption="The shop"  >}}
 
 {{< ytcustom id="K1OxP7XD6rw" title="Showcase" >}}
 

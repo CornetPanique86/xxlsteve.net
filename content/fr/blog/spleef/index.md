@@ -52,7 +52,7 @@ Dans ce mode de jeu, vous aurez 1 boule de neige pour chaque bloc que vous casse
 
 **⚠ ATTENTION : Pour que le mode de jeu Snowball Spleef fonctionne correctement, votre langue doit être en français ou en anglais. ⚠**
 
-{{< figure src="/blog/spleef/img/gameplay.jpg" caption="Gameplay" alt="Gameplay" class="figurePopup imagePopup" >}}
+{{< image src="img/gameplay.jpg" caption="Gameplay" alt="Gameplay"  >}}
 
 Bon jeu :D
 

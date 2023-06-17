@@ -76,7 +76,7 @@ Well, the intro is starting to get long, here's the tutorial you are waiting for
 
 3. An interface will then open, to define 3 parameters before starting the app. Choose the language of your choice. Then put the application root folder, in which all resources will be stored (mods, resource packs, etc). Finally, the app offers to import your existing resources, by default from the `.minecraft` folder in `%appdata%`.
 
-{{< figure src="/blog/x-minecraft-launcher/img/app-install-language.jpg" caption="Choose your language" class="figurePopup imagePopup" >}}
+{{< image src="img/app-install-language.jpg" caption="Choose your language" >}}
 
 {{< hanchor h="3" >}}
 User account
@@ -86,7 +86,7 @@ Now, you have to log in to your Minecraft account.
 
 Click on the account button at the top left corner then add an account. For a premium account, simply connect to Microsoft (I assume you have already migrated, as Mojang accounts are unsupported).
 
-{{< figure src="/blog/x-minecraft-launcher/img/user-profile.jpg" caption="Premium account display" class="figurePopup imagePopup" >}}
+{{< image src="img/user-profile.jpg" caption="Premium account display" >}}
 
 {{< hanchor h="4" >}}
 Cracked accounts
@@ -183,7 +183,7 @@ If you don't recognize the multi-instance system, basically each instance corres
 
 For example, if you want to play in 1.19.2 with the Fabric modpack "Fabulously Optimized", press the "Modrinth" button, select "Modpacks", then download the modpack in question. Everything else is handled by the app.
 
-{{< figure src="/blog/x-minecraft-launcher/img/modpack-download.jpg" caption="The newly created instance" class="figurePopup imagePopup" >}}
+{{< image src="img/modpack-download.jpg" caption="The newly created instance" >}}
 
 {{< hanchor h="4" >}}
 Launching the game

@@ -50,9 +50,9 @@ Captures d'écran
 {{< /hanchor >}}
 
 {{< imgslider "screenshots" >}}
-    {{< imgslide src="/blog/noxcity/img/Mairie_Nox_City.jpg" caption="La mairie" >}}
-    {{< imgslide src="/blog/noxcity/img/centre_commercial.jpg" caption="Un centre commercial" >}}
-    {{< imgslide src="/blog/noxcity/img/map.png" caption="La map (fait avec uNmINeD)" >}}
+    {{< image slider="true" src="img/Mairie_Nox_City.jpg" caption="La mairie" >}}
+    {{< image slider="true" src="img/centre_commercial.jpg" caption="Un centre commercial" >}}
+    {{< image slider="true" src="img/map.png" caption="La map (fait avec uNmINeD)" >}}
 {{< /imgslider >}}
 
 

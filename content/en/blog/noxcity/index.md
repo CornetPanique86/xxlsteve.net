@@ -50,9 +50,9 @@ Screenshots
 {{< /hanchor >}}
 
 {{< imgslider "screenshots" >}}
-    {{< imgslide src="/blog/noxcity/img/Mairie_Nox_City.jpg" caption="Town hall" >}}
-    {{< imgslide src="/blog/noxcity/img/centre_commercial.jpg" caption="A mall" >}}
-    {{< imgslide src="/blog/noxcity/img/map.png" caption="Map (rendered with uNmINeD)" >}}
+    {{< image slider="true" src="img/Mairie_Nox_City.jpg" caption="Town hall" >}}
+    {{< image slider="true" src="img/centre_commercial.jpg" caption="A mall" >}}
+    {{< image slider="true" src="img/map.png" caption="Map (rendered with uNmINeD)" >}}
 {{< /imgslider >}}
 
 

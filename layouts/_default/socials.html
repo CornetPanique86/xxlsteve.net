@@ -5,8 +5,6 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>{{ .Title }}</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    {{ $style := resources.Get "sass/socials.scss" | resources.ToCSS | resources.Minify }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700" rel="stylesheet">
     <meta property="og:title" content="{{ .Title }}" />
     <meta property="twitter:title" content="{{ .Title }}">
@@ -19,26 +17,39 @@
     {{ with $.Params.ogtype }}
         <meta name="og:type" content="{{ . }}">
     {{ end }}
-    <meta name="og:image" content="xxlsteve.net/favicon.png">
-    <meta property="twitter:image" content="xxlsteve.net/favicon.png">
+    <meta name="og:image" content="xxlsteve.net/banner.jpg">
+    <meta property="twitter:image" content="xxlsteve.net/banner.jpg">
     <meta name="og:url" content="{{ .Permalink }}">
     <meta property="twitter:url" content="{{ .Permalink }}">
 
-    {{ $socialsScript := resources.Get "js/socials.js" | minify -}}
-    {{ $secureSocialsScript := $socialsScript | resources.Fingerprint "sha512" }}
-    <script src="{{ $secureSocialsScript.Permalink }}" integrity=""></script>
-    <script src="https://kit.fontawesome.com/24bbd48e74.js" crossorigin="anonymous"></script>
-    <script src='/libs/skinview3d/skinview3d.bundle.js'></script>
+    {{ if hugo.IsProduction }}
+      {{ $style :=  resources.Get "sass/socials.scss" | resources.ToCSS | resources.Minify fingerprint "sha512" }}
+        <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+      {{ $socialsScript :=  resources.Get "js/socials.js" | minify | fingerprint "sha512" }}
+        <script fetchpriority="high" src="{{ $socialsScript.RelPermalink }}" integrity="{{ $socialsScript.Data.Integrity }}"></script>
+      {{ $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify | fingerprint "sha512" }}
+        <script fetchpriority="low" src="{{ $pixelarticonsScript.RelPermalink }}" integrity="{{ $pixelarticonsScript.Data.Integrity }}" async></script>
+    {{ else }}
+      {{ $style :=  resources.Get "sass/socials.scss" | resources.ToCSS }}
+      <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+      {{ $socialsScript :=  resources.Get "js/socials.js" | minify }}
+        <script fetchpriority="high" src="{{ $socialsScript.RelPermalink }}"></script>
+      {{ $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify }}
+        <script fetchpriority="low" src="{{ $pixelarticonsScript.RelPermalink }}" async></script>
+    {{ end }}
+    
+    <link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/gh/CornetPanique86/pixelart-icons/dist/pixelarticons_anim.css'>
+    <script fetchpriority="high" src='/libs/skinview3d/skinview3d.bundle.js'></script>
 </head>
 <body>
     <section id="intro">
         <header>
-            <h6><a href='{{ relLangURL "" }}' tabindex="0">SITE</a> | 
+            <h6><a href='{{ relLangURL "" }}' tabindex="0"><img src="/favicon.png" alt="Site logo" title='{{ i18n "home" }}'></a> | 
                 {{ if .IsTranslated }}
                   {{ range .Translations }}
                     <a href='{{ .Permalink }}' tabindex="0">[ {{ .Language.LanguageName }} ]</a>
                   {{ end }}
-                {{ end }} | <a href="#" onclick="addCape()"><i class="fa-solid fa-star"></i></a></h6>
+                {{ end }} | <a href="#" onclick="addCape()" class="addCape">★</a></h6>
             <h3>Hi, I'm</h3> <h1>XXL Steve</h1> <h3>aka</h3> <h2>CornetPanique86</h2>
         </header>
     </section>
@@ -54,33 +65,33 @@
                 </summary>
                 <a href="https://youtube.com/@XXLSteve" class="icons youtube" target="_blank" rel="noopener noreferrer" title='{{ i18n "linkYtEn" }}' tabindex="0">
                     <div class="link">
-                        <i class="fa-brands fa-youtube"></i>
+                        <i class="pxico-youtube"></i>
                         <span>{{ i18n "linkYtEn" }}</span>
-                        <button type="button" title="Details" class="infoBtn" id="infoYtEn"><i class="fa-solid fa-circle-info noIcons"></i></button>
+                        <button type="button" title="Details" class="infoBtn" id="infoYtEn"><i class="pxico-info noIcons"></i></button>
                     </div>
                 </a>
                 <a href="https://discord.gg/dJJyryc" class="icons discord" target="_blank" rel="noopener noreferrer" title='{{ i18n "linkDiscEn" }}' tabindex="0">
                     <div class="link">
-                        <i class="fa-brands fa-discord"></i>
+                        <i class="pxico-discord"></i>
                         <span>{{ i18n "linkDiscEn" }}</span>
-                        <button type="button" title="Details" class="infoBtn" id="infoDiscEn"><i class="fa-solid fa-circle-info noIcons"></i></button>
+                        <button type="button" title="Details" class="infoBtn" id="infoDiscEn"><i class="pxico-info noIcons"></i></button>
                     </div>
                 </a>
                 <a href="https://twitter.com/CornetPanique86" class="icons twitter" target="_blank" rel="noopener noreferrer" title="Twitter">
                     <div class="link">
-                        <i class="fa-brands fa-twitter"></i>
+                        <i class="pxico-twitter"></i>
                         <span>Twitter: @cornetpanique86</span>
                     </div>
                 </a>
                 <a href="https://github.com/CornetPanique86" class="icons github" target="_blank" rel="noopener noreferrer" title="Github">
                     <div class="link">
-                        <i class="fa-brands fa-github"></i>
+                        <i class="pxico-github"></i>
                         <span>Github: CornetPanique86</span>
                     </div>
                 </a>
                 <a href="https://reddit.com/u/CornetPanique86" class="icons reddit" target="_blank" rel="noopener noreferrer" title="Reddit">
                     <div class="link">
-                        <i class="fa-brands fa-reddit"></i>
+                        <i class="pxico-reddit"></i>
                         <span>Reddit: CornetPanique86</span>
                     </div>
                 </a>
@@ -91,23 +102,23 @@
                 </summary>
                 <a href="https://youtube.com/@XXLSteveFR" class="icons youtube" target="_blank" rel="noopener noreferrer" title='{{ i18n "linkYtFr" }}' tabindex="0">
                     <div class="link">
-                        <i class="fa-brands fa-youtube"></i>
+                        <i class="pxico-youtube"></i>
                         <span>{{ i18n "linkYtFr" }}</span>
-                        <button type="button" title="Details" class="infoBtn" id="infoYtFr"><i class="fa-solid fa-circle-info noIcons"></i></button>
+                        <button type="button" title="Details" class="infoBtn" id="infoYtFr"><i class="pxico-info noIcons"></i></button>
                     </div>
                 </a>
                 <a href="https://discord.gg/qPcDsAUZyv" class="icons discord" target="_blank" rel="noopener noreferrer" title='{{ i18n "linkDiscFr" }}' tabindex="0">
                     <div class="link">
-                        <i class="fa-brands fa-discord"></i>
+                        <i class="pxico-discord"></i>
                         <span>{{ i18n "linkDiscFr" }}</span>
-                        <button type="button" title="Details" class="infoBtn" id="infoDiscFr"><i class="fa-solid fa-circle-info noIcons"></i></button>
+                        <button type="button" title="Details" class="infoBtn" id="infoDiscFr"><i class="pxico-info noIcons"></i></button>
                     </div>
                 </a>
                 <a href="https://discord.gg/nsgXbM7sxz" class="icons discord" target="_blank" rel="noopener noreferrer" title='{{ i18n "linkDiscEvents" }}' tabindex="0">
                     <div class="link">
-                        <i class="fa-brands fa-discord"></i>
+                        <i class="pxico-discord"></i>
                         <span>{{ i18n "linkDiscEvents" }}</span>
-                        <button type="button" title="Details" class="infoBtn" id="infoDiscEvents"><i class="fa-solid fa-circle-info noIcons"></i></button>
+                        <button type="button" title="Details" class="infoBtn" id="infoDiscEvents"><i class="pxico-info noIcons"></i></button>
                     </div>
                 </a>
             </details>
@@ -117,26 +128,26 @@
                 <h3>{{ i18n "ingame" }}</h3>
             </header>
             <select name="ign" id="ign" class="mcbutton" onchange="skinChange()" title="Nickname" tabindex="0">
-                <option value="bedrock">Bedrock</option>
                 <option value="java">Java</option>
+                <option value="bedrock">Bedrock</option>
             </select>
             <div id="skin_div">
               <canvas id="skin_container"></canvas>
             </div>
             <script>
-            	let skinViewer = new skinview3d.SkinViewer({
+            	const skinViewer = new skinview3d.SkinViewer({
             		canvas: document.getElementById("skin_container"),
             		width: 200,
             		height: 350,
-            		skin: "/socials/bedrock.png",
-                    nameTag: "CornetPanique86",
+            		skin: "https://mineskin.eu/skin/XXL_Steve",
+                    nameTag: "XXL_Steve",
                     zoom: 0.6
             	});
 
                 function skinChange() {
                     const skin = document.getElementById("ign").value;
                     if (skin == "java") {
-                        skinViewer.loadSkin("/socials/java.png");
+                        skinViewer.loadSkin("https://mineskin.eu/skin/XXL_Steve");
                         skinViewer.nameTag = "XXL_Steve";
                         skinViewer.loadCape(null);
                     } else if (skin == "bedrock") {
@@ -181,7 +192,7 @@
         <p id="detailsPopup__desc" class="detailsElm">Loading...</p>
         <a href="" target="_blank" rel="noopener noreferrer" class="detailsElm">
             <span id="detailsPopup__linkText" class="detailsElm">Join</span>
-            <i class="fa-solid fa-square-arrow-up-right" class="detailsElm"></i>
+            <i class="pxico-external_link_anim" class="detailsElm"></i>
         </a>
     </div>
 </body>

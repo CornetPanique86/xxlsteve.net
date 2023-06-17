@@ -27,7 +27,7 @@ Les origines
 
 Ulorium Games a été fondé par [Sam0312](https://www.youtube.com/@Sam0312_) (Sam0312#3846 sur discord) vers le 4 mai 2020. Il a été précédé par quelques autres mondes comme celui nommé "Plantania" pour lequel j'avais fait un addon.
 
-{{< figure src="/blog/uloriumgames/img/old-first-lobby.jpg" caption="La première version du lobby" alt="La première version du lobby d'UloriumGames" class="figurePopup imagePopup" >}}
+{{< image src="img/old-first-lobby.jpg" caption="La première version du lobby" alt="La première version du lobby d'UloriumGames"  >}}
 
 J'étais déjà ami avec lui à l'époque, alors je rejoignais de temps en temps et l'aidais avec le monde.
 
@@ -41,16 +41,16 @@ Avec de plus en plus de staff et de joueurs, sont venus de plus en plus de mini-
 
 Un membre du staff nommé [endereyes202](https://www.youtube.com/@endereyes202) (endereyes202#5828 sur discord) a également créé un logo et une bannière pour UloriumGames (parce qu'il s'agissait à la base d'une image prise au hasard sur Google) !
 
-{{< figure src="/blog/uloriumgames/img/uloriumgames-logo.jpg" caption="Nouveau logo par endereyes202" alt="Le nouveau logo par endereyes202" class="figurePopup imagePopup" >}}
+{{< image src="img/uloriumgames-logo.jpg" caption="Nouveau logo par endereyes202" alt="Le nouveau logo par endereyes202"  >}}
 
 ##### Captures d'écran
 
 {{< imgslider "screenshots1" >}}
-  {{< imgslide src="/blog/uloriumgames/img/ffa.jpg" caption="FFA" alt="FFA" >}}
-  {{< imgslide src="/blog/uloriumgames/img/hikabrain.jpg" caption="Hikabrain" alt="Hikabrain" >}}
-  {{< imgslide src="/blog/uloriumgames/img/sumo.jpg" caption="Sumo" alt="Sumo" >}}
-  {{< imgslide src="/blog/uloriumgames/img/tntrun.jpg" caption="TNT run" alt="TNT run" >}}
-  {{< imgslide src="/blog/uloriumgames/img/lobby-old.jpg" caption="Lobby (1ère version)" alt="Lobby (1ère version)" >}}
+  {{< image slider="true" src="img/ffa.jpg" caption="FFA" alt="FFA" >}}
+  {{< image slider="true" src="img/hikabrain.jpg" caption="Hikabrain" alt="Hikabrain" >}}
+  {{< image slider="true" src="img/sumo.jpg" caption="Sumo" alt="Sumo" >}}
+  {{< image slider="true" src="img/tntrun.jpg" caption="TNT run" alt="TNT run" >}}
+  {{< image slider="true" src="img/lobby-old.jpg" caption="Lobby (1ère version)" alt="Lobby (1ère version)" >}}
 {{< /imgslider >}}
 
 {{< hanchor h="3" >}}
@@ -59,7 +59,7 @@ La maintenance
 
 Mais pour le prochain mini-jeu, nous voulions qu'il soit plus grand. Nous avons fait un vote sur le serveur Discord et le gagnant était : 'Bedwars' !
 
-{{< figure src="/blog/uloriumgames/img/bedwars.jpg" caption="La map Bedwars" alt="La map Bedwars" class="figurePopup imagePopup" >}}
+{{< image src="img/bedwars.jpg" caption="La map Bedwars" alt="La map Bedwars"  >}}
 
 Et c'est ainsi que la maintenance a commencé. Nous avons construit une map et Carl (Carl#1681 sur discord) était responsable du développement du minijeu.
 
@@ -74,8 +74,8 @@ L'ensemble du mini-jeu contenait de petits bugs pour à peu près tous les méca
 ##### Captures d'écran
 
 {{< imgslider "screenshots2" >}}
-  {{< imgslide src="/blog/uloriumgames/img/parkour.jpg" caption="Parkour" alt="Parkour">}}
-  {{< imgslide src="/blog/uloriumgames/img/shop.jpg" caption="Le magasin" alt="Le magasin">}}
+  {{< image slider="true" src="img/parkour.jpg" caption="Parkour" alt="Parkour">}}
+  {{< image slider="true" src="img/shop.jpg" caption="Le magasin" alt="Le magasin">}}
 {{< /imgslider >}}
 
 {{< hanchor h="3" >}}

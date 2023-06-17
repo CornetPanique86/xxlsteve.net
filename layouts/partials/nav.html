@@ -1,21 +1,30 @@
 <header>
   <nav>
-    <button class="nav-burger" title="Navigation" type="button" onclick="showNavBar()"><i class="fa-solid fa-bars"></i></button>
-    <ul class="noUl top-nav">
+    <button class="nav-burger" title="Navigation" type="button" onclick="showNavBar()">
+      <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h10v2H0zm0 4h10v2H0zm0 4h10v2H0z"/></svg>
+    </button>
+    <ul class="top-nav">
       <li class="top-nav__logo"><a href='{{ relLangURL "" }}'>
         <img class="icons" src="/header-icon.png" title='{{ i18n "home" }}'>
       </a></li>
       <div class="top-nav__link-group">
         <li class="top-nav__link top-nav__dropDownParent"><a href='{{ relLangURL "resources" }}' class="noA"><span>{{ i18n "resources" }}</span></a>
-          <i class="fa-solid fa-caret-down"></i>
-          <ul class="noUl top-nav__dropDown">
+          <i class="pxico-caret rotateDown"></i>
+          <ul class="top-nav__dropDown">
             <li>
               <a href='{{ relLangURL "tools" }}' class="noA"><span>{{ i18n "tools" }}</span></a>
             </li>
           </ul>
         </li>
         <li class="top-nav__link"><a href='{{ relLangURL "blog" }}' class="noA"><span>{{ i18n "blog" }}</span></a></li>
-        <li class="top-nav__link"><a href='{{ relLangURL "about" }}' class="noA"><span>{{ i18n "about" }}</span></a></li>
+        <li class="top-nav__link top-nav__dropDownParent"><a href='{{ relLangURL "about" }}' class="noA"><span>{{ i18n "about" }}</span></a>
+          <i class="pxico-caret rotateDown"></i>
+          <ul class=" top-nav__dropDown">
+            <li>
+              <a href='{{ relLangURL "socials" }}' class="noA"><span>{{ i18n "socials" }}</span></a>
+            </li>
+          </ul>
+        </li>
         <li class="top-nav__link">
           <select name="theme" id="themeToggler" class="mcbutton" onchange="themeSettings()" title='{{ i18n "selectTheme" }}'>
             <option value="auto">Auto</option>
@@ -32,7 +41,7 @@
         {{ end }}
         <li class="top-nav__link">
           <button type="button" title='{{ i18n "search" }}' id="navSearchBtn">
-            <span><i class="fa-solid fa-magnifying-glass"></i></span>
+            <span><i class="pxico-search"></i></span>
           </button>
         </li>
       </div>

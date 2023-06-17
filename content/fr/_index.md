@@ -1,6 +1,9 @@
 ---
 date: "2022-11-04T19:33:17+01:00"
 draft: false
+description: Coucou, je suis XXL Steve, et bienvenue dans la page d'accueil !
+images:
+- banner.jpg
 ---
 
 # Salut, je suis XXL Steve *(alias CornetPanique86)*

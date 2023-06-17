@@ -49,6 +49,14 @@ h3, h4, h5, h6 {
   padding: 20px 0;
 }
 
+svg[class^="pxico-"] {
+  image-rendering: pixelated;
+  shape-rendering: crispEdges;
+  display: inline;
+  width: 1.2rem;
+  height: auto;
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -77,6 +85,12 @@ button {
         position: absolute;
         top: 0;
         left: 1em;
+        font-size: 1.2em;
+        padding: 10px 0;
+        & img {
+            max-height: 1.2em;
+            max-width: 1.2em;
+        }
     }
 }
 
@@ -145,8 +159,13 @@ article {
     width: auto;
     margin: 10px 0;
     position: relative;
-    & span, i {
+    & span, svg {
         color: black;
+    }
+    & svg {
+        max-height: 1.5rem;
+        max-width: 2.2rem;
+        width: auto;
     }
     &:hover {
         background: hsl(0, 0%, 100%);
@@ -163,15 +182,15 @@ article {
     top: 50%;
     transform: translateY(-50%);
     padding: 5px 6px 4.5px 6px;
-    font-size: 1.2rem;
+    width: 2.3rem;
+    max-width: 4rem;
     // height: 90%;
-    width: auto;
     border-radius: 5px;
     color: #1c1c1c;
     &:hover {
         background: hsla(0, 0%, 51%, 0.565);
     }
-    & i {
+    & svg {
         color: #313131;
         pointer-events: none;
     }
@@ -239,30 +258,30 @@ article {
 }
 
 // ICONS
-.icons  i {
+.icons svg {
     transition: color, 0.2s ease;
 }
-.icons.twitter:hover i:not(.noIcons) {
+.icons.twitter:hover svg:not(.noIcons) {
     color: #1DA1F2;
 }
 
-.icons.youtube:hover i:not(.noIcons) {
+.icons.youtube:hover svg:not(.noIcons) {
     color: #FF0000;
 }
 
-.icons.discord:hover i:not(.noIcons) {
+.icons.discord:hover svg:not(.noIcons) {
     color: #7289da;
 }
 
-.icons.reddit:hover  i:not(.noIcons) {
+.icons.reddit:hover  svg:not(.noIcons) {
     color: #ff4500;
 }
 
-.icons.github:hover  i:not(.noIcons) {
+.icons.github:hover  svg:not(.noIcons) {
     color: #c9c9c9;
 }
 
-.fa-star:hover {
+.addCape:hover {
     animation: rainbow 5s linear;
     animation-iteration-count: infinite;
 }

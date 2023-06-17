@@ -54,7 +54,7 @@ In this gamemode you will have 1 snowball for every block you break. You can thr
 
 **⚠ WARNING: For the Snowball Spleef gamemode to work correctly, your language needs to be set to French or English. ⚠**
 
-{{< figure src="/blog/spleef/img/gameplay.jpg" caption="Gameplay" alt="Gameplay" class="figurePopup imagePopup" >}}
+{{< image src="img/gameplay.jpg" caption="Gameplay" alt="Gameplay"  >}}
 
 Enjoy :D
 

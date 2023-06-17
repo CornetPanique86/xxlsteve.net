@@ -32,7 +32,7 @@ How it started
 
 Ulorium Games was founded by [Sam0312](https://www.youtube.com/@Sam0312_) (Sam0312#3846 on discord) around the 4th of may 2020. It was preceded by a few other worlds like one named "Plantania" for which I had made an addon.
 
-{{< figure src="/blog/uloriumgames/img/old-first-lobby.jpg" caption="The first build of UloriumGames" alt="The first build of UloriumGames" class="figurePopup imagePopup" >}}
+{{< image src="img/old-first-lobby.jpg" caption="The first build of UloriumGames" alt="The first build of UloriumGames"  >}}
 
 I was already friends with him at the time, so I would occasionally hop on and help him with the world.
 
@@ -46,16 +46,16 @@ With an increasing staff and player base came an increasing number of minigames:
 
 A staff member named [endereyes202](https://www.youtube.com/@endereyes202) (endereyes202#5828 on discord) also made a logo and a banner for UloriumGames (because it used to be a random picture taken from Google)!
 
-{{< figure src="/blog/uloriumgames/img/uloriumgames-logo.jpg" caption="New logo by endereyes202" alt="The new logo by endereyes202" class="figurePopup imagePopup" >}}
+{{< image src="img/uloriumgames-logo.jpg" caption="New logo by endereyes202" alt="The new logo by endereyes202"  >}}
 
 ##### Screenshots
 
 {{< imgslider "screenshots1" >}}
-  {{< imgslide src="/blog/uloriumgames/img/ffa.jpg" caption="FFA" alt="FFA minigame" >}}
-  {{< imgslide src="/blog/uloriumgames/img/hikabrain.jpg" caption="Hikabrain" alt="Hikabrain minigame" >}}
-  {{< imgslide src="/blog/uloriumgames/img/sumo.jpg" caption="Sumo" alt="Sumo minigame" >}}
-  {{< imgslide src="/blog/uloriumgames/img/tntrun.jpg" caption="TNT run" alt="TNT run minigame" >}}
-  {{< imgslide src="/blog/uloriumgames/img/lobby-old.jpg" caption="Lobby (the first version)" alt="Lobby (the first version)" >}}
+  {{< image slider="true" src="img/ffa.jpg" caption="FFA" alt="FFA minigame" >}}
+  {{< image slider="true" src="img/hikabrain.jpg" caption="Hikabrain" alt="Hikabrain minigame" >}}
+  {{< image slider="true" src="img/sumo.jpg" caption="Sumo" alt="Sumo minigame" >}}
+  {{< image slider="true" src="img/tntrun.jpg" caption="TNT run" alt="TNT run minigame" >}}
+  {{< image slider="true" src="img/lobby-old.jpg" caption="Lobby (the first version)" alt="Lobby (the first version)" >}}
 {{< /imgslider >}}
 
 {{< hanchor h="3" >}}
@@ -64,7 +64,7 @@ The maintenance
 
 But for the next minigame, we wanted it to be bigger. We made a vote on the Discord server and the winner was: 'Bedwars'! 
 
-{{< figure src="/blog/uloriumgames/img/bedwars.jpg" caption="Bedwars map" alt="The bedwars map" class="figurePopup imagePopup" >}}
+{{< image src="img/bedwars.jpg" caption="Bedwars map" alt="The bedwars map"  >}}
 
 And that's how the maintenance began. We built a map and Carl (Carl#1681 on discord) was responsible for coding the functionality of the minigame. 
 
@@ -79,8 +79,8 @@ Aside from me, many work was done: a much bigger FFA arena was built by builders
 ##### Screenshots
 
 {{< imgslider "screenshots2" >}}
-  {{< imgslide src="/blog/uloriumgames/img/parkour.jpg" caption="Parkour" alt="Parkour">}}
-  {{< imgslide src="/blog/uloriumgames/img/shop.jpg" caption="The shop" alt="The shop">}}
+  {{< image slider="true" src="img/parkour.jpg" caption="Parkour" alt="Parkour">}}
+  {{< image slider="true" src="img/shop.jpg" caption="The shop" alt="The shop">}}
 {{< /imgslider >}}
 
 {{< hanchor h="3" >}}

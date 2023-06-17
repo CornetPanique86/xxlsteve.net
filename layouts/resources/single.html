@@ -4,14 +4,14 @@
 
 {{ define "main" }}
     <article>
-        <ul class="resources-grid noUl" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));">
+        <ul class="resources-grid " style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));">
             {{ range .Resources.Match "*" }}
                 <li class="resources-preview">
                     {{ if eq .ResourceType "image" }}
                         <img src="{{ .Permalink }}" title="{{ .Name }}" alt="{{ .Name }}" class="imagePopup resources-image">
                     {{ else }}
                         <div class="resources-preview__top">
-                            <a download href="{{ .Permalink }}" class="noA download-button" title="Download: {{ .Name }}"><i class="fa-solid fa-download"></i></a>
+                            <a download href="{{ .Permalink }}" class="noA download-button" title="Download: {{ .Name }}"><i class="pxico-download"></i></a>
                             {{ .Name }}
                         </div>
                     {{ end }}

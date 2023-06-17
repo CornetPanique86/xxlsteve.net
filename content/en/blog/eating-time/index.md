@@ -55,11 +55,11 @@ Items:
 
 To get these items, write */function items* in the chat. Or to get an individual item, write */give @s et:* and you will see a list of items. You will see some food too, you can use it but there isn't much. More food will be added in the next update.
 
-{{< figure src="https://my.mcpedl.com/storage/addons/4777/images/eating-time-addon_2.png" caption="Get items" class="figurePopup imagePopup" >}}
+{{< image src="https://my.mcpedl.com/storage/addons/4777/images/eating-time-addon_2.png" caption="Get items"  >}}
 
 You can craft a water bottle by doing this craft:
 
-{{< figure src="https://my.mcpedl.com/storage/addons/4777/images/eating-time-addon_3.png" caption="Craft a water bottle" class="figurePopup imagePopup" >}}
+{{< image src="https://my.mcpedl.com/storage/addons/4777/images/eating-time-addon_3.png" caption="Craft a water bottle"  >}}
 
 {{< hanchor h="3" >}}
 Decoration entities:
@@ -76,7 +76,7 @@ Decoration entities:
 - Frying pan
 - Pan
 
-{{< figure src="https://my.mcpedl.com/storage/addons/4777/images/eating-time-addon_4.png" caption="House by Alexodroid01" class="figurePopup imagePopup" >}}
+{{< image src="https://my.mcpedl.com/storage/addons/4777/images/eating-time-addon_4.png" caption="House by Alexodroid01"  >}}
 
 {{< ytcustom id="7K05m7O6M80" title="Showcase" >}}
 

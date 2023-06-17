@@ -76,7 +76,7 @@ Bon, l'intro commence à être longue, voici le tuto 😆
 
 3. Une interface va alors s'ouvrir, pour définir 3 paramètres avant de démarrer l'appli. Choisissez la langue de votre choix (j'ai fait une traduction en français 😄). Puis mettez le dossier racine de l'application, dans lequel toutes les ressources seront stockées (mods, packs de ressources, etc). Enfin, l'appli propose d'importer vos ressources déjà existantes, par défaut depuis le dossier `.minecraft` dans `%appdata%`.
 
-{{< figure src="/blog/x-minecraft-launcher/img/app-install-language.jpg" caption="Choisissez la langue" class="figurePopup imagePopup" >}}
+{{< image src="img/app-install-language.jpg" caption="Choisissez la langue"  >}}
 
 {{< hanchor h="3" >}}
 Compte utilisateur
@@ -86,7 +86,7 @@ Maintenant, il faut se connecter à son compte Minecraft.
 
 Cliquez sur le bouton de compte en haut à gauche puis ajoutez un compte. Pour un compte premium, connectez-vous à Microsoft (normalement, vous avez fait la migration, et les comptes Mojang sont inutilisables).
 
-{{< figure src="/blog/x-minecraft-launcher/img/user-profile.jpg" caption="Affichage d'un compte premium" class="figurePopup imagePopup" >}}
+{{< image src="img/user-profile.jpg" caption="Affichage d'un compte premium"  >}}
 
 {{< hanchor h="4" >}}
 Comptes crack
@@ -183,7 +183,7 @@ Si vous ne reconnaissez pas le système de multi-instances, en gros chaque insta
 
 Par exemple, si vous souhaitez jouer en 1.19.2 avec le modpack Fabric "Fabulously Optimized", appuyez sur le bouton "Modrinth", sélectionnez les "Modpacks", puis téléchargez le modpack en question. Tout le reste est géré par l'appli.
 
-{{< figure src="/blog/x-minecraft-launcher/img/modpack-download.jpg" caption="La nouvelle instance" class="figurePopup imagePopup" >}}
+{{< image src="img/modpack-download.jpg" caption="La nouvelle instance"  >}}
 
 {{< hanchor h="4" >}}
 Lancer le jeu
