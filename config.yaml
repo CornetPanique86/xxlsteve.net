@@ -43,3 +43,7 @@ outputs:
     - rss
 
 enableRobotsTXT: true
+
+security:
+  gotemplates:
+    allowActionJSTmpl: true
