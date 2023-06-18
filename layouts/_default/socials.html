@@ -24,20 +24,21 @@
 
     {{ if hugo.IsProduction }}
       {{ $style :=  resources.Get "sass/socials.scss" | resources.ToCSS | minify | fingerprint "sha512" }}
-        <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="">
+        <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
       {{ $socialsScript :=  resources.Get "js/socials.js" | minify | fingerprint "sha512" }}
-        <script fetchpriority="high" src="{{ $socialsScript.RelPermalink }}" integrity=""></script>
-      {{ $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify | fingerprint "sha512" }}
-        <script fetchpriority="low" src="{{ $pixelarticonsScript.RelPermalink }}" integrity="" async></script>
+        <script fetchpriority="high" src="{{ $socialsScript.RelPermalink }}" integrity="{{ $socialsScript.Data.Integrity }}"></script>
+      {{/* $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify | fingerprint "sha512" */}}
+        <!-- <script fetchpriority="low" src="{{/* $pixelarticonsScript.RelPermalink */}}" integrity="{{/* $pixelarticonsScript.Data.Integrity */}}" async></script> -->
     {{ else }}
       {{ $style :=  resources.Get "sass/socials.scss" | resources.ToCSS }}
       <link rel="stylesheet" href="{{ $style.RelPermalink }}">
       {{ $socialsScript :=  resources.Get "js/socials.js" | minify }}
         <script fetchpriority="high" src="{{ $socialsScript.RelPermalink }}"></script>
-      {{ $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify }}
-        <script fetchpriority="low" src="{{ $pixelarticonsScript.RelPermalink }}" async></script>
+      {{/* $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify */}}
+        <!-- <script fetchpriority="low" src="{{/* $pixelarticonsScript.RelPermalink */}}" async></script> -->
     {{ end }}
     
+    <script src="https://cdn.jsdelivr.net/gh/CornetPanique86/pixelart-icons/dist/pixelarticons.js" crossorigin="anonymous"></script>
     <link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/gh/CornetPanique86/pixelart-icons/dist/pixelarticons_anim.css'>
     <script fetchpriority="high" src='/libs/skinview3d/skinview3d.bundle.js'></script>
 </head>

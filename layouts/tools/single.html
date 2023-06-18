@@ -11,18 +11,18 @@
 
     {{ if hugo.IsProduction }}
       {{ $toolsScript :=  resources.Get "js/tools.js" | minify | fingerprint "sha512" }}
-        <script src="{{ $toolsScript.RelPermalink }}" integrity=""></script>
+        <script src="{{ $toolsScript.RelPermalink }}" integrity="{{ $toolsScript.Data.Integrity }}"></script>
       {{ $toolsCSS := resources.Get "sass/tools.scss" | toCSS | minify | fingerprint "sha512" }}
-        <link rel="stylesheet" href="{{ $toolsCSS.Permalink }}" integrity="">
-      {{ $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify | fingerprint "sha512" }}
-        <script fetchpriority="low" src="{{ $pixelarticonsScript.RelPermalink }}" integrity="" async></script>
+        <link rel="stylesheet" href="{{ $toolsCSS.Permalink }}" integrity="{{ $toolsCSS.Data.Integrity }}">
+      {{/* $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify | fingerprint "sha512" */}}
+        <!-- <script fetchpriority="low" src="{{/* $pixelarticonsScript.RelPermalink */}}" integrity="{{/* $pixelarticonsScript.Data.Integrity */}}" async></script> -->
     {{ else }}
       {{ $toolsScript :=  resources.Get "js/socials.js" | minify }}
         <script src="{{ $toolsScript.RelPermalink }}"></script>
       {{ $toolsCSS := resources.Get "sass/tools.scss" | toCSS | minify }}
         <link rel="stylesheet" href="{{ $toolsCSS.Permalink }}">
-      {{ $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify }}
-        <script fetchpriority="low" src="{{ $pixelarticonsScript.RelPermalink }}" async></script>
+      {{/* $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify */}}
+        <!-- <script fetchpriority="low" src="{{/* $pixelarticonsScript.RelPermalink */}}" async></script> -->
     {{ end }}
 
     {{ with .Params.css }}
@@ -35,6 +35,7 @@
         <script src="{{ $secureToolsCustomScript.Permalink }}" integrity=""></script>
     {{ end }}
     
+    <script src="https://cdn.jsdelivr.net/gh/CornetPanique86/pixelart-icons/dist/pixelarticons.js" crossorigin="anonymous"></script>
     <link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/gh/CornetPanique86/pixelart-icons/dist/pixelarticons_anim.css'>
 
     {{ template "_internal/opengraph.html" . }}
