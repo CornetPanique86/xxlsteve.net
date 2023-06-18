@@ -11,7 +11,7 @@
 
     {{ if hugo.IsProduction }}
       {{ $toolsScript :=  resources.Get "js/tools.js" | minify | fingerprint "sha512" }}
-        <script src="{{ $toolsScript.RelPermalink }}" integrity="{{ $toolsScript.Data.Integrity }}"></script>
+        <script src="{{ $toolsScript.RelPermalink }}" integrity=""></script>
       {{ $toolsCSS := resources.Get "sass/tools.scss" | toCSS | minify | fingerprint "sha512" }}
         <link rel="stylesheet" href="{{ $toolsCSS.Permalink }}" integrity="{{ $toolsCSS.Data.Integrity }}">
       {{/* $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify | fingerprint "sha512" */}}

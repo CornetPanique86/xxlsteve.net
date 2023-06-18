@@ -26,7 +26,7 @@
       {{ $style :=  resources.Get "sass/socials.scss" | resources.ToCSS | minify | fingerprint "sha512" }}
         <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
       {{ $socialsScript :=  resources.Get "js/socials.js" | minify | fingerprint "sha512" }}
-        <script fetchpriority="high" src="{{ $socialsScript.RelPermalink }}" integrity="{{ $socialsScript.Data.Integrity }}"></script>
+        <script fetchpriority="high" src="{{ $socialsScript.RelPermalink }}" integrity=""></script>
       {{/* $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify | fingerprint "sha512" */}}
         <!-- <script fetchpriority="low" src="{{/* $pixelarticonsScript.RelPermalink */}}" integrity="{{/* $pixelarticonsScript.Data.Integrity */}}" async></script> -->
     {{ else }}
