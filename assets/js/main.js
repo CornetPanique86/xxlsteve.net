@@ -56,13 +56,24 @@ window.onload = () => {
     }
 
     // This doesn't work aiouhzaiudhzaiohu
-    try {
-      document.getElementById("image-popup-pageblock").addEventListener('keydown', (e) => {
-        if (e.keyCode == 27) {
-          closePageBlock("image-popup-pageblock");
-        }
-      });
-    } catch { }
+    // window.addEventListener('keydown', (event) => {
+    //   if (event.code === 'Escape' && document.getElementById("image-popup-pageblock").style.display != "none") {
+    //     closePageBlock("image-popup-pageblock");
+    //   }
+    // });
+    // window.addEventListener('keydown', (event) => {
+    //   if (event.key === 'Escape') {
+    //     console.log("pressed escape");
+    //     // console.log(closePageBlock("image-popup-pageblock"));
+    //   }
+    // });
+    // try {
+    //   document.getElementById("image-popup-pageblock").addEventListener('keydown', (e) => {
+    //     if (e.keyCode == 27) {
+    //       closePageBlock("image-popup-pageblock");
+    //     }
+    //   });
+    // } catch { }
 }
 
 function themeSettings() {
@@ -217,7 +228,7 @@ const openPageBlock = id => {
   const elm = document.getElementById(id);
   elm.style.display = "block";
   elm.classList.remove("hidden");
-  document.documentElement.classList.remove("noScroll");
+  document.documentElement.classList.add("noScroll");
 }
 
 function customAlert(text) {
@@ -238,7 +249,7 @@ function customAlert(text) {
 
 // Image popup
 function imagePopup(figure) {
-  document.documentElement.classList.add("noScroll");
+  console.log("imagePopup");
   if (figure.nodeName.toLowerCase() == "figure") {
     let image = figure.querySelector("img");
     imagePopupAddInfo(image);

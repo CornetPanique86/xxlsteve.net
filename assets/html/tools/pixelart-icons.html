@@ -1,0 +1,75 @@
+<!-- Top left: form builder -->
+<div id="searchIcons">
+    <input type="text" id="searchIcons__input" placeholder="Search icons..." />
+    <button type="button" id="searchIcons__btn">
+        <i class="pxico-search"></i>
+    </button>
+</div>
+<ul id="icons">
+
+</ul>
+
+<!-- SECTION_SEP -->
+<!-- Top right: preview -->
+<div id="previewSection">
+    <div id="iconPreview">
+    
+    </div>
+    <div id="iconPreviewSettings">
+        <div>
+            <input type="range" min="1" max="500" value="50" name="iconScaleRange" id="iconScaleRange">
+            <label for="iconScaleRange" id="iconScaleRangeLabel">Scale: 50px</label>
+        </div>
+    
+        <div>
+            <label for="iconColor">Color</label>
+            <input type="color" id="iconColor" name="iconColor" value="#000000">
+        </div>
+    </div>
+</div>
+
+<!-- SECTION_SEP -->
+<!-- Bottom left: use -->
+<p>Paste the following element in your HTML:</p>
+
+<br>
+
+<div id="useiElm" class="codeDiv">
+    <pre><code class="lang-html" id="useiText">&lt;i class="pxico-"&gt;&lt;/i&gt;</code></pre>
+    <button id="useiElmBtn" type="button" class="codeDiv__copy"><i class="pxico-clipboard"></i></button>
+</div>
+
+<br>
+
+<p>or import the icon via <code>&lt;img&gt;</code>:</p>
+
+<br>
+
+<div id="useimgElm" class="codeDiv">
+    <pre><code class="lang-html" id="useimgText">&lt;img src="https://cdn.jsdelivr.net/gh/CornetPanique86/pixelart-icons/res/svg/optimized/.svg"&gt;</code></pre>
+    <button id="useimgElmBtn" type="button" class="codeDiv__copy"><i class="pxico-clipboard"></i></button>
+</div>
+
+<!-- SECTION_SEP -->
+<!-- Bottom right: info -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<div>
+    <p>
+        Extracted from <a href="https://github.com/CornetPanique86/pixelart-icons" target="_blank" rel="noopener noreferrer">pixelart-icons/README.md</a>
+    </p>
+    <div id="infoSection">
+
+    </div>
+</div>
+<script>
+    (async function fetchREADME() {
+        const url = 'https://cdn.jsdelivr.net/gh/CornetPanique86/pixelart-icons/README.md';
+        const response = await fetch(url);
+
+        const readme = await response.text();
+        document.getElementById("infoSection").innerHTML = await marked.parse(readme, {
+            mangle: false,
+            headerIds: false
+        });
+    }())
+</script>

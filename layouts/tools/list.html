@@ -1,18 +1,23 @@
 {{ define "main" }}
-    <h1>{{.Content}}</h1>
-    <ul class="resources-grid tools-grid ">
-        {{ range (.Site.GetPage "/tools").Pages }}
-            <li class="tools-preview">
-                <a href="{{ .RelPermalink }}" class="noA">
-                    <div class="tools-preview__top">
-                        <img src="{{ range first 1 .Params.images }}{{ . }}{{ end }}" alt="{{ .Title }}">
-                        <h3>{{ .Title }}</h3>
-                    </div>
-                    <div class="tools-preview__bottom">
-                        <p>{{ .Description }}</p>
-                    </div>
-                </a>
-            </li>
-        {{ end }}
-    </ul>
+    {{ if eq .Site.Language.Lang "fr" }}
+        <h1>Outils</h1>
+        {{ .Content }}
+    {{ else }}
+        <h1>{{.Content}}</h1>
+        <ul class="resources-grid tools-grid ">
+            {{ range (.Site.GetPage "/tools").Pages }}
+                <li class="tools-preview">
+                    <a href="{{ .RelPermalink }}" class="noA">
+                        <div class="tools-preview__top">
+                            <img src="{{ range first 1 .Params.images }}{{ . }}{{ end }}" alt="{{ .Title }}">
+                            <h3>{{ .Title }}</h3>
+                        </div>
+                        <div class="tools-preview__bottom">
+                            <p>{{ .Description }}</p>
+                        </div>
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
+    {{ end }}
 {{ end }}

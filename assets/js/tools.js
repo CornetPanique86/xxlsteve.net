@@ -98,10 +98,12 @@ window.mobileCheck = function () {
     return check;
 }
 
-function customAlert(text, time=520) {
+function customAlert(text, color=false, time=520) {
     const customAlert = document.getElementById("customAlert");
-    customAlert.innerHTML = text;
+    const escapedText = escapeHtml(text);
+    customAlert.innerHTML = escapedText;
     customAlert.style.display = "inline-block";
+    if (color) customAlert.style.backgroundColor = color;
     customAlert.classList.add("slideIn");
     setTimeout(() => {
         customAlert.classList.add("slideOut");
@@ -113,8 +115,21 @@ function customAlert(text, time=520) {
     }, 3000);
 }
 
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text);
+    if (text.length < 31) {
+        customAlert(`✓ Copied: ${text}`, "#3c3c3c")
+    } else {
+        customAlert("✓ Copied to clipboard", "#3c3c3c")
+    }
+}
+
 function elementFromHtml(html) {
     const template = document.createElement("template");
     template.innerHTML = html.trim();
     return template.content.firstElementChild;
+}
+
+const escapeHtml = (unsafe) => {
+    return unsafe.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
 }

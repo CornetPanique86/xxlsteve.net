@@ -17,7 +17,7 @@
       {{/* $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify | fingerprint "sha512" */}}
         <!-- <script fetchpriority="low" src="{{/* $pixelarticonsScript.RelPermalink */}}" integrity="{{/* $pixelarticonsScript.Data.Integrity */}}" async></script> -->
     {{ else }}
-      {{ $toolsScript :=  resources.Get "js/socials.js" | minify }}
+      {{ $toolsScript :=  resources.Get "js/tools.js" | minify }}
         <script src="{{ $toolsScript.RelPermalink }}"></script>
       {{ $toolsCSS := resources.Get "sass/tools.scss" | toCSS | minify }}
         <link rel="stylesheet" href="{{ $toolsCSS.Permalink }}">
@@ -53,7 +53,9 @@
   <body class="page">
     <header>
       <nav>
-        <img src="/header-icon.png" title='{{ i18n "home" }}'>
+        <a href='{{ relLangURL "" }}'>
+          <img src="/favicon.png" alt="Site logo" title='{{ i18n "home" }}'>
+        </a>
         <div class="dropDownParent"><h2>{{ i18n "tools" }}</h2><span class="caret"></span>
           <ul class="dropDown">
             {{ range (.Site.GetPage "section" "tools").Pages }}
@@ -73,35 +75,43 @@
     <div class="page-rows">
         <div class="page-columns">
             <section {{ with .Params.tool.section1 }}{{ printf "data-title=%q" . | safeHTMLAttr }}{{ end }}>
-              {{ range first 1 $toolsSectionsHTML }}
-                {{ . | safeHTML }}
-              {{ end }}
+              <div class="section-content">
+                {{ range first 1 $toolsSectionsHTML }}
+                  {{ . | safeHTML }}
+                {{ end }}
+              </div>
             </section>
             <div class="resizer" data-direction="horizontal"></div>
             <section {{ with .Params.tool.section2 }}{{ printf "data-title=%q" . | safeHTMLAttr }}{{ end }}>
-              {{ range  $section, $html := $toolsSectionsHTML }}
-                {{ if eq $section 1 }}
-                  {{ $html | safeHTML }}
+              <div class="section-content">
+                {{ range  $section, $html := $toolsSectionsHTML }}
+                  {{ if eq $section 1 }}
+                    {{ $html | safeHTML }}
+                  {{ end }}
                 {{ end }}
-              {{ end }}
+              </div>
             </section>
         </div>
         <div class="resizer" data-direction="vertical"></div>
         <div class="page-columns">
             <section {{ with .Params.tool.section3 }}{{ printf "data-title=%q" . | safeHTMLAttr }}{{ end }}>
-              {{ range  $section, $html := $toolsSectionsHTML }}
-                {{ if eq $section 2 }}
-                  {{ $html | safeHTML }}
+              <div class="section-content">
+                {{ range  $section, $html := $toolsSectionsHTML }}
+                  {{ if eq $section 2 }}
+                    {{ $html | safeHTML }}
+                  {{ end }}
                 {{ end }}
-              {{ end }}
+              </div>
             </section>
             <div class="resizer" data-direction="horizontal"></div>
             <section {{ with .Params.tool.section4 }}{{ printf "data-title=%q" . | safeHTMLAttr }}{{ end }}>
-              {{ range  $section, $html := $toolsSectionsHTML }}
-                {{ if eq $section 3 }}
-                  {{ $html | safeHTML }}
+              <div class="section-content">
+                {{ range  $section, $html := $toolsSectionsHTML }}
+                  {{ if eq $section 3 }}
+                    {{ $html | safeHTML }}
+                  {{ end }}
                 {{ end }}
-              {{ end }}
+              </div>
             </section>
         </div>
     </div>

@@ -9,12 +9,6 @@
 {{/* $mainSCSS := resources.Get "sass/main.scss" | resources.ToCSS */}}
 {{/* $searchSCSS := resources.Get "sass/search.scss" | resources.ToCSS */}}
 
-{{ if hugo.IsProduction }}
-  
-{{ else }}
-
-{{ end }}
-
 {{ template "_internal/opengraph.html" . }}
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
 <meta content="#4A3C5C" data-react-helmet="true" name="theme-color" />

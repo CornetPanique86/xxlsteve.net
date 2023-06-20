@@ -6,4 +6,4 @@ description: Outils en ligne pour Minecraft mais pas seulement !
 ogtype: article
 ---
 
-Outils en ligne
+Les outils ne sont que disponibles en [anglais](/tools).

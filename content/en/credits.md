@@ -19,4 +19,4 @@ Credits
 - [**Complementary Reimagined**](https://www.complementary.dev/reimagined/) - the shader used for my home page light mode background (Ulorium Games lobby).
 - [**Overimagined Shaders**](https://github.com/isuewo/OverimaginedShaders) - the shader used for my home page dark mode background (NoxCity).
 - [**IJAMinecraft's awesome website**](https://ijaminecraft.com/) - my website's style is highly inspired from it!
-- **@endereyes202** ([YouTube](https://www.youtube.com/@endereyes202), [Twitch](https://www.twitch.tv/endereyes202), [Twitter](https://twitter.com/endereyes202)) - making some icons for [pixelart-icons](https://github.com/CornetPanique86/pixelart-icons/tree/main)
+- **@endereyes202** ([YouTube](https://www.youtube.com/@endereyes202), [Twitch](https://www.twitch.tv/endereyes202), [Twitter](https://twitter.com/endereyes202)) - making some icons for [pixelart-icons](https://github.com/CornetPanique86/pixelart-icons)

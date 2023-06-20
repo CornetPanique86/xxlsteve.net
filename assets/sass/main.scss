@@ -993,10 +993,9 @@ article section.mainArticle {
 
   & figcaption {
   text-align: center;
-  transform: translate(0, -50%);
+  transform: translate(0, -25%);
 
     & p, h4 {
-      color: var(--black);
       line-height: normal;
       font-size: 0.8em;
     }
