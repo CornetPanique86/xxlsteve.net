@@ -22,6 +22,7 @@ categories:
 
 My personal list of cool and useful Minecraft-related links: tools, software, mods, launchers... all created by the community!
 I was inspired to make this list by [bs-community's Awesome Minecraft list](https://github.com/bs-community/awesome-minecraft)
+(Very incomplete list)
 
 {{< hanchor h="3" >}}
 Servers

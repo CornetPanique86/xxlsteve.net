@@ -27,6 +27,7 @@ tableOfContents:
 - h1: Conclusion
 
 tags:
+- Minecraft
 - Tutorial
 categories:
 - Blog
