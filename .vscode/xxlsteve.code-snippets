@@ -16,13 +16,13 @@
 		],
 		"description": "Insert hanchor shortcode"
 	},
-	"Figure": {
+	"Image": {
 		"scope": "markdown",
-		"prefix": "figure",
+		"prefix": "img",
 		"body": [
-			"{{< figure src=\"/blog/$1\" caption=\"$2\" alt=\"$3\" class=\"figurePopup imagePopup\" >}}"
+			"{{< image src=\"img/$1.jpg\" caption=\"$2\" >}}$0"
 		],
-		"description": "Insert figure element"
+		"description": "Insert image shortcode"
 	},
 	"YouTube video": {
 		"scope": "markdown",
