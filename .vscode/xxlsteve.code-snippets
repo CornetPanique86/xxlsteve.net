@@ -68,9 +68,9 @@
 		"scope": "markdown",
 		"prefix": "codehugo",
 		"body": [
-			"{{< highlight $1 \"linenos=table\" >}}",
+			"```plaintext$1 {linenos=table}",
 			"$2",
-			"{{< /highlight >}}$0"
+			"```$0"
 		],
 		"description": "Hugo code block shortcode"
 	},
@@ -82,7 +82,7 @@
 			"$2",
 			"{{< /spoiler >}}$0"
 		],
-		"description": "Hugo code block shortcode"
+		"description": "Spoiler/Details element"
 	},
 	"Multilingual reference": {
 		"scope": "html",

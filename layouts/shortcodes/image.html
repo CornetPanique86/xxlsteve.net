@@ -17,11 +17,11 @@
 class="figurePopup imagePopup" style="width: min({{ $src.Width }}px, 70%)">
   {{ with .Get "link" }}<a href="{{ . }}">{{ end }}
       <img
+      src="{{ $src.RelPermalink }}"
       srcset="
         {{ ($src.Resize "320x").RelPermalink }} 320w,
         {{ ($src.Resize "600x").RelPermalink }} 600w,
         {{ ($src.Resize "1200x").RelPermalink }} 2x"
-      src="{{ ($src.Resize "600x").RelPermalink }}"
       {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"{{ end }}/>
   {{ if .Get "link" }}</a>{{ end }}
   {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr") }}

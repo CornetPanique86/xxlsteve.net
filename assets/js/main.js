@@ -55,6 +55,8 @@ window.onload = () => {
             break;
     }
 
+    document.querySelectorAll(".highlight").forEach((highlightDiv) => createCopyButton(highlightDiv));
+
     // This doesn't work aiouhzaiudhzaiohu
     // window.addEventListener('keydown', (event) => {
     //   if (event.code === 'Escape' && document.getElementById("image-popup-pageblock").style.display != "none") {
@@ -245,6 +247,31 @@ function customAlert(text) {
       customAlert.classList.remove("slideIn");
     }, 520);
   }, 3000);
+}
+
+function createCopyButton(highlightDiv) {
+  const buttonI = document.createElement("i");
+  buttonI.className = "pxico-clipboard";
+  const button = document.createElement("button");
+  button.className = "copy-code-button";
+  button.type = "button";
+  button.appendChild(buttonI);
+  button.addEventListener("click", () => copyCodeToClipboard(button, highlightDiv));
+  highlightDiv.insertBefore(button, highlightDiv.firstChild);
+}
+
+function copyCodeToClipboard(button, highlightDiv) {
+  const codeToCopy = highlightDiv.querySelector(':last-child code[class^="language-"]').innerText;
+  navigator.clipboard.writeText(codeToCopy).then(() => {
+    button.blur();
+    const copyIcon = button.innerHTML;
+    button.innerHTML = "✓";
+    setTimeout(() => {
+      button.innerHTML = copyIcon;
+    }, 2000);
+  }, error => {
+    button.innerHTML = "Error";
+  });
 }
 
 // Image popup

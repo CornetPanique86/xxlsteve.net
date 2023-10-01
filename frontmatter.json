@@ -1,0 +1,261 @@
+{
+  "$schema": "https://beta.frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Author",
+          "name": "author",
+          "type": "string",
+          "default": "XXL Steve"
+        },
+        {
+          "title": "OG: Type",
+          "name": "ogtype",
+          "type": "string",
+          "default": "article"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Last modified date",
+          "name": "lastmod",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isModifiedDate": true
+        },
+        {
+          "title": "Thumbnail",
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "title": "Thumbnails",
+          "name": "images",
+          "type": "list"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories",
+          "default": "Blog"
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "hugo",
+  "frontMatter.content.publicFolder": "static",
+  "frontMatter.preview.host": "http://localhost:1313/blog",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "blog",
+      "path": "[[workspace]]/content/en/blog"
+    },
+    {
+      "title": "frblog",
+      "path": "[[workspace]]/content/fr/blog"
+    }
+  ],
+  "frontMatter.content.snippets": {
+    "Hanchor": {
+      "description": "Heading anchor",
+      "body": [
+        "{{< hanchor h=\"[[type]]\" >}}",
+        "[[selection]]",
+        "{{< /hanchor >}}"
+      ],
+      "fields": [
+        {
+          "name": "type",
+          "title": "Level",
+          "type": "number",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "default": "3"
+        },
+        {
+          "name": "selection",
+          "title": "selection",
+          "type": "string",
+          "default": "FM_SELECTED_TEXT"
+        }
+      ]
+    },
+    "Image": {
+      "description": "Insert image shortcode",
+      "body": "{{< image src=\"img/[[&mediaUrl]]\" caption=\"[[caption]]\" alt=\"[[alt]]\" >}}",
+      "isMediaSnippet": true
+    },
+    "Youtube": {
+      "description": "Insert youtube shortcode",
+      "body": "{{< ytcustom id=\"[[url]]\" title=\"[[title]]\" >}}",
+      "fields": [
+        {
+          "name": "url",
+          "title": "URL",
+          "type": "string",
+          "single": true
+        },
+        {
+          "name": "title",
+          "title": "Title",
+          "type": "string",
+          "single": true
+        }
+      ]
+    },
+    "Helphint": {
+      "description": "Expanded hint text to help with the initial text",
+      "body": "{{< helphint \"[[def]]\" >}}[[selection]]{{< /helphint >}}",
+      "fields": [
+        {
+          "name": "def",
+          "title": "Hint for text",
+          "type": "string"
+        },
+        {
+          "name": "selection",
+          "title": "selection",
+          "type": "string",
+          "single": true,
+          "default": "FM_SELECTED_TEXT"
+        }
+      ]
+    },
+    "Box notice": {
+      "description": "Box notice. Type=tip/warning",
+      "body": "{{< boxnotice type=\"[[type]]\" >}}[[selection]]{{< /boxnotice >}}",
+      "fields": [
+        {
+          "name": "type",
+          "title": "Notice",
+          "type": "choice",
+          "choices": [
+            "TIP",
+            "WARNING"
+          ]
+        },
+        {
+          "name": "selection",
+          "title": "selection",
+          "type": "string",
+          "default": "FM_SELECTED_TEXT"
+        }
+      ]
+    },
+    "Code block": {
+      "description": "Hugo code block shortcode",
+      "body": [
+        "```[[type]] {linenos=[[linenos]]}",
+        "[[selection]]",
+        "```"
+      ],
+      "fields": [
+        {
+          "name": "type",
+          "title": "Language",
+          "type": "choice",
+          "choices": [
+            "apacheconf",
+            "bat",
+            "c",
+            "cpp",
+            "csharp",
+            "css",
+            "dart",
+            "docker",
+            "go",
+            "go-html-template",
+            "html",
+            "java",
+            "java-properties",
+            "javascript",
+            "json",
+            "kotlin",
+            "lua",
+            "md",
+            "mcfunction",
+            "nginx",
+            "php",
+            "powershell",
+            "python",
+            "scss",
+            "sh",
+            "systemd",
+            "text",
+            "typescript",
+            "yaml"
+          ],
+          "default": "text"
+        },
+        {
+          "name": "linenos",
+          "title": "linenos",
+          "type": "string",
+          "single": true,
+          "default": ""
+        },
+        {
+          "name": "selection",
+          "title": "selection",
+          "type": "string",
+          "single": true,
+          "default": ""
+        }
+      ]
+    },
+    "Spoiler": {
+      "description": "Spoiler/Details/Summary",
+      "body": [
+        "{{< spoiler \"[[selection]]\" >}}",
+        "[[def]]",
+        "{{< /spoiler >}}"
+      ],
+      "fields": [
+        {
+          "name": "selection",
+          "title": "Spoiler definition",
+          "type": "string",
+          "single": true,
+          "default": "FM_SELECTED_TEXT"
+        },
+        {
+          "name": "def",
+          "title": "Spoiler text",
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "frontMatter.website.host": "https://xxlsteve.net",
+  "frontMatter.dashboard.openOnStart": false
+}

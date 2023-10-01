@@ -5,6 +5,7 @@ $monospace-font: "Courier New", Courier, monospace;
 $desktop-page-sp: 100px;
 $container-padding-sm: 18px;
 $container-padding-lg: 96px;
+$text-margin: 1.2rem;
 
 @font-face {
   font-family: "Minecraft";
@@ -277,10 +278,68 @@ p {
 
 code {
   padding: .2rem;
-  margin: 0;
   font-size: 75%;
   background-color: var(--code);
   border-radius: 3px;
+}
+
+pre {
+  padding: 0.8rem 0.5rem;
+  & code {
+    display: inline-block;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+    background-color: transparent;
+  }
+}
+
+div.highlight {
+  position: relative;
+  margin-top: $text-margin;
+  margin-bottom: $text-margin;
+  & table {
+    outline: 0;
+  }
+  &:hover .copy-code-button {
+    opacity: 0.4;
+  }
+}
+
+.copy-code-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: var(--white);
+  background-color: #393939;
+  border: 1.25px solid #232326;
+  white-space: nowrap;
+  padding: 3px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  & svg {
+    width: 1.1rem !important;
+  }
+}
+
+.copy-code-button:hover,
+.copy-code-button:focus,
+.copy-code-button:active,
+.copy-code-button:active:hover {
+  opacity: 0.8 !important;
+}
+
+kbd {
+  background: rgb(233,233,233);
+  background: linear-gradient(90deg, rgba(233,233,233,1) 7%, rgb(183, 183, 183) 100%);
+  padding: 5px;
+  border-right: 1px solid #F1F1F1;
+  box-shadow: 3px 0 2px 0px #D6D6D6, -1px 3px 0 3px #656565, 0 2px 0 4px #000;
+  border-radius: 3px;
+  margin: 0 5px;
+  color: var(--text-black);
+  font-size: 90%;
 }
 
 ul {
@@ -333,6 +392,8 @@ table {
   background-color: var(--box-bg);
   color: var(--text-color);
   overflow-x: scroll;
+  margin-top: $text-margin;
+  margin-bottom: $text-margin;
   &:hover {
   outline: 2px solid white;
   }
@@ -347,7 +408,8 @@ details {
   border-radius: 15px;
   padding: .5rem .5rem 0;
   border: 3px solid rgba(var(--color-btn-bg), 1);
-  margin: 10px 0;
+  margin-top: $text-margin;
+  margin-bottom: $text-margin;
   & summary {
     font-weight: bold;
     margin: -.5rem -.5rem 0;
@@ -370,7 +432,8 @@ details[open] > summary {
 }
 
 .custom-block {
-  margin: 1rem 0;
+  margin-top: $text-margin;
+  margin-bottom: $text-margin;
   border-left: .5rem solid;
   padding: .1rem 1.5rem;
   overflow-x: auto;
@@ -969,7 +1032,7 @@ article section.mainArticle {
   min-width: fit-content;
   max-width: 80%;
   display: block;
-  margin: 1em auto;
+  margin: $text-margin auto;
   cursor: pointer;
 
   & img {
@@ -1005,8 +1068,8 @@ article section.mainArticle {
 .hanchor {
   display: inline;
   &__div {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 2.2rem;
+    margin-bottom: 1.2rem;
     &:hover > .hanchor__anchor {
       display: inline;
     }

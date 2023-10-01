@@ -14,6 +14,11 @@
 <meta content="#4A3C5C" data-react-helmet="true" name="theme-color" />
 
 {{ if hugo.IsProduction }}
+  {{ if (findRE "<pre" .Content 1) }}
+    {{ $syntax := resources.Get "sass/syntax.css" | minify }}
+    <link href="{{ $syntax.RelPermalink }}" rel="stylesheet">
+  {{ end }}
+
   {{- $CSS := slice (resources.Get "sass/main.scss") (resources.Get "sass/search.scss") | resources.Concat "assets/css/main.css" | toCSS | minify | fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $CSS.RelPermalink }}" integrity="{{ $CSS.Data.Integrity }}">
   {{ $mainScript :=  resources.Get "js/main.js" | minify | fingerprint "sha512" }}
@@ -21,6 +26,9 @@
   {{/* $pixelarticonsScript :=  resources.Get "js/pixelarticons.js" | minify | fingerprint "sha512" */}}
     <!-- <script fetchpriority="low" src="{{/* $pixelarticonsScript.RelPermalink */}}" integrity="{{/* $pixelarticonsScript.Data.Integrity */}}" async></script> -->
 {{ else }}
+  {{ $syntax := resources.Get "sass/syntax.css" | minify }}
+  <link href="{{ $syntax.RelPermalink }}" rel="stylesheet">
+
   {{- $CSS := slice (resources.Get "sass/main.scss") (resources.Get "sass/search.scss") | resources.Concat "assets/css/main.css" | toCSS | minify }}
     <link rel="stylesheet" href="{{ $CSS.RelPermalink }}">
   {{ $mainScript :=  resources.Get "js/main.js" | minify }}
