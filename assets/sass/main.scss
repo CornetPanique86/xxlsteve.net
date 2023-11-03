@@ -285,6 +285,7 @@ code {
 
 pre {
   padding: 0.8rem 0.5rem;
+  overflow-x: auto;
   & code {
     display: inline-block;
     padding: 0;
@@ -295,6 +296,7 @@ pre {
 }
 
 div.highlight {
+  overflow-x: auto;
   position: relative;
   margin-top: $text-margin;
   margin-bottom: $text-margin;
@@ -1101,6 +1103,7 @@ article section.mainArticle {
   margin-bottom: 10px;
 
   &__image {
+    object-fit: contain;
     max-width: 50%;
     margin-right: 40px;
   }
@@ -1132,8 +1135,9 @@ article section.mainArticle {
   &__content {
     display: flex;
     width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
     flex-direction: row;
-    justify-content: flex-end;
     padding-right: 8px;
     padding-left: 5px;
     background-color: #0005;
@@ -1141,10 +1145,17 @@ article section.mainArticle {
   &__h2 {
     padding-left: 5px;
   }
+  &__text {
+    max-width: 20ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
   &__number {
     color: #f55;
     padding-left: 5px;
+    pointer-events: none;
   }
 
   &__header {
