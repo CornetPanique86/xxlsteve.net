@@ -1,7 +1,7 @@
 ---
 title: How to Install Filestash on Linux for Local Storage
 date: 2023-09-24T17:00:25+02:00
-lastmod: 2023-10-01T14:40:42.820Z
+lastmod: 2023-11-12T16:39:24.625Z
 draft: false
 aliases:
   - how-to-install-filestash-on-linux-for-local-storage
@@ -225,7 +225,59 @@ Please note that linking filestash with a URL in root like: `example.com/filesta
 Using a reverse proxy with https
 {{< /hanchor >}}
 
-See official example: https://www.filestash.app/docs/install-and-upgrade/#optional-using-a-reverse-proxy
+Filestash is strict with the request headers, so be sure to use the following properties in your NGINX configuration file.
+Example for `filestash` subdomain using TLS/SSL from Let's Encrypt:
+
+&nbsp;
+**Generate a new set of 2048 bit DH parameters:**
+
+```sh
+openssl dhparam -out /etc/letsencrypt/live/filestash.example.com/dh2048.pem -outform PEM -2 2048
+```
+
+Config:
+
+```nginx {linenos=table}
+server {
+    listen         80;
+    server_name    filestash.example.com;
+    return         301 https://$server_name$request_uri;
+}
+server {
+    listen 443 ssl;
+    server_name filestash.example.com;
+
+    ssl_certificate /etc/letsencrypt/live/filestash.example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/filestash.example.com/privkey.pem;
+    ssl_dhparam /etc/letsencrypt/live/filestash.example.com/dh2048.pem;
+    ssl_protocols TLSv1.1 TLSv1.2;
+    ssl_ciphers 'ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA:ECDHE-ECDSA-DES-CBC3-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA:!DSS';
+
+    # file upload limit
+    # 1024M = 1Mb
+    # 1024G = 1Gb
+    client_max_body_size 1024M;
+
+    location / {
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+
+        proxy_set_header     Host $host:$server_port;
+        proxy_set_header     X-Real-IP $remote_addr;
+        proxy_set_header     X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header     X-Forwarded-Proto $scheme;
+        proxy_set_header     Origin '';
+
+        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+
+        proxy_pass           http://127.0.0.1:8334;
+        proxy_read_timeout   86400;
+    }
+}
+```
+
+Make sure to replace `filestash.example.com` with your own subdomain.
 
 {{< hanchor h="4" >}}
 Configure backend
