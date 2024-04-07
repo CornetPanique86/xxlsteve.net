@@ -16,4 +16,4 @@ A skin pack which turns my Discord server's members into the cardboard-version o
 
 Credit to jigarbov for creating the Papercraft skin pack, as that's where the template [comes from](https://mcpedl.com/basic-papercraft-adventure-skin-pack/).
 
-{{< image src="https://media.discordapp.net/attachments/748473329849204806/1030176831686578276/unknown.png"  >}}
+{{< image src="img/example.jpg" >}}

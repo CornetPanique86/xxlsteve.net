@@ -110,6 +110,10 @@ Launchers (Bedrock)
 - [MCBE Preview Switcher](https://foxynotail.com/software/mcbe-preview-switcher/) - multi-instancing and version switching software
 - [Minecraft Bedrock Launcher](https://bedrocklauncher.github.io/) - An unofficial Minecraft Bedrock for Windows Launcher
 
+modded bedrock:
+amethyst launcher
+OptiCraft
+
 &nbsp;
 &nbsp;
 
