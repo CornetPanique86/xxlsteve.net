@@ -1,7 +1,7 @@
 ---
 title: Useful Minecraft Links (personal awesome-minecraft)
 date: 2024-04-08T18:01:39.563Z
-lastmod: 2024-04-08T19:58:27.654Z
+lastmod: 2024-04-13T22:28:36.659Z
 draft: false
 image: useful-minecraft-links/img/thumbnail.jpg
 author: XXL Steve
@@ -267,6 +267,7 @@ Worlds
 - [uNmINeD](https://unmined.net/) - an easy to use and fast Minecraft world viewer and mapper tool (supports Java & Bedrock worlds)
 - [Amidst](https://github.com/toolbox4minecraft/amidst) - a tool to display an overview of a Minecraft seed
 - 🌐 [MCSeeder](https://www.mcseeder.com/) - an online tool to display an overview of a Minecraft seed
+- 🌐 [World Size Calculator](https://onlinemo.de/world) - calculate Java worlds' disk size
 
 &nbsp;
 
