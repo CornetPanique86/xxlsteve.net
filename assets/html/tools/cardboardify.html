@@ -1,0 +1,32 @@
+<!-- Top left: upload -->
+<div id="uploadSection">
+    <div id="uploadFile">
+        <input type="file" id="uploadFile__fileBtn" name="Upload file" accept="image/png" />
+        <button type="button" onclick="document.getElementById('uploadFile__fileBtn').click()">Upload File (.png)</button>
+        <span id="uploadFile__chosenFile">No file chosen</span>
+    </div>
+    
+    <div id="searchUsername">
+        <input type="search" id="searchUsername__input" placeholder="Search Java account..." autocomplete="off" spellcheck="false" />
+        <button type="button" id="searchUsername__btn">
+            <i class="pxico-search"></i>
+        </button>
+    </div>
+</div>
+
+<!-- SECTION_SEP -->
+<!-- Top right: 3D preview -->
+<div id="3DpreviewSection">
+    a
+</div>
+
+<!-- SECTION_SEP -->
+<!-- Bottom left: download -->
+<div id="downloadSection">
+    <button id="downloadBtn" type="button"><i class="pxico-download_anim"></i> Download</button>
+</div>
+
+<!-- SECTION_SEP -->
+<!-- Bottom right: 2D preview -->
+<canvas id="2DpreviewSection">
+</canvas>

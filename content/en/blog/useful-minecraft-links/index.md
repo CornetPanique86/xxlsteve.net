@@ -1,7 +1,7 @@
 ---
 title: Useful Minecraft Links (personal awesome-minecraft)
 date: 2024-04-08T18:01:39.563Z
-lastmod: 2024-04-13T22:28:36.659Z
+lastmod: 2024-04-16T22:53:20.776Z
 draft: false
 image: useful-minecraft-links/img/thumbnail.jpg
 author: XXL Steve
@@ -338,4 +338,11 @@ Documentation & Communities
 &nbsp;
 - 🌐 [Minecraft Assets](https://mcasset.cloud/) - browse Minecraft files
 &nbsp;
+
 - [Omniarchive](https://omniarchive.uk/) - Minecraft archives
+
+&nbsp;
+
+**🛒 Markets**
+- [BuiltByBit](https://builtbybit.com/) - formerly MCMarket, largest market from Minecraft-related services
+- [Bucket of Crabs](https://www.bucketofcrabs.net/) - find jobs related to Minecraft (and other games)

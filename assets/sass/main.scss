@@ -1603,7 +1603,8 @@ article section.mainArticle {
   }
 
   .b-table-of-contents {
-    position: inherit;  
+    position: inherit;
+    transform: none;
     &__content {
       justify-content: space-between;
       padding-right: 5px;
