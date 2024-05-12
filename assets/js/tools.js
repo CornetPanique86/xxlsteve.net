@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    if (mobileCheck()) customAlert("Web tools are not optimized for mobile devices!", 4000);
+    if (mobileCheck()) customAlert("Web tools are not optimized for mobile devices!", false, 4000);
 
     const resizable = resizer => {
         const direction = resizer.getAttribute('data-direction') || 'horizontal';
