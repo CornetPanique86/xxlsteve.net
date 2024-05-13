@@ -115,7 +115,6 @@ function changeIconScaleWheel(event) {
         let scale = 50;
         scale = parseFloat(iconSVG.style.width.replace("px", ""));
         scale += event.deltaY * -0.1;
-        console.log(scale);
         scale = Math.min(Math.max(1, scale), 500);
         iconSVG.style.width = scale + "px";
         document.getElementById("iconScaleRangeLabel").innerHTML = "Scale: " + scale + "px";

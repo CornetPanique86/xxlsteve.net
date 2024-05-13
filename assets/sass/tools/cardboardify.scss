@@ -1,12 +1,18 @@
-/*label {
-    background-color: indigo;
-    color: white;
-    padding: 0.5rem;
-    font-family: sans-serif;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    margin-top: 1rem;
-}*/
+label {
+    display: inline;
+}
+
+input[type=checkbox][disabled] {
+    filter: invert(25%);
+}
+
+#outlineBtn {
+    margin-left: 1.5em;
+    display: none;
+}
+label[for=outlineBtn] {
+    display: none;
+}
 
 #uploadSection {
     grid-template-columns: 50% 50%;
@@ -34,4 +40,16 @@
 #searchUsername__input {
     flex: 1;
     width: auto;
+}
+
+section[data-title="2D preview"] > div {
+    position: relative;
+}
+
+#preview2DSectionCanvas {
+    image-rendering: pixelated;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-20%, -10%);
 }
