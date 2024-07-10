@@ -84,6 +84,14 @@
 		],
 		"description": "Spoiler/Details element"
 	},
+	"Embed PDF": {
+		"scope": "markdown",
+		"prefix": "embedpdf",
+		"body": [
+			"{{< embedpdf \"$0\" >}}"
+		],
+		"description": "Embed PDF into article"
+	},
 	"Multilingual reference": {
 		"scope": "html",
 		"prefix": "i18n",

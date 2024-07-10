@@ -20,6 +20,7 @@ params:
   title: XXL Steve
   remark42SiteID: "remark"
   remark42Url: "https://remark42.xxlsteve.net"
+  math: false
 
 social:
   twitter: cornetpanique86
@@ -65,3 +66,13 @@ markup:
     renderer:
       hardWraps: true
       unsafe: true
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - \[
+            - \]
+          inline:
+          - - \(
+            - \)
+        enable: true

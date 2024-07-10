@@ -11,8 +11,6 @@ images:
 - /blog/uloriumgames/img/header-image.png
 tags:
     - Other
-categories:
-    - Blog
 
 tableOfContents:
 - h1: Les origines

@@ -103,7 +103,7 @@ function changeTheme(theme) {
   // if (!(theme == "light" && document.getElementById("redbuilding1"))) 
   changeIndexBackground(theme);
   if (window.REMARK42) {
-    if (theme == "light" || theme == "auto") {
+    if (theme === "light" || theme === "auto") {
       window.REMARK42.changeTheme("light");
     } else {
       window.REMARK42.changeTheme("dark");
@@ -128,87 +128,85 @@ function changeIndexBackground(theme) {
     if (!parallax) {
         return;
     }
+    const parallaxLightInnerHTML = 
+    `<button type="button" id="parallax__aboutbg" class="mcbutton" onclick="aboutbgOpenPopup('ug')">About this background</button>
+    <img src="/index/redbuilding01.png" id="redbuilding1" style="z-index: 5">
+    <img src="/index/uglogo02.png" id="uglogo2" style="z-index: 4">
+    <img src="/index/platform03.png" id="platform3" style="z-index: 3">
+    <img src="/index/bgbuilds04.png" id="bgbuilds4" style="z-index: 2">
+    <img src="/index/clouds05.png" id="clouds5" style="z-index: 1">
+    <script>
+      // Only put parallax effect when no vestibular issues
+      if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        gsap.from("#redbuilding1", {
+          scrollTrigger : {
+            scrub: true
+          },
+          y: 200
+        });
+        gsap.from("#uglogo2", {
+          scrollTrigger : {
+            scrub: true
+          },
+          y: 100
+        });
+        gsap.from("#platform3", {
+          scrollTrigger : {
+            scrub: true
+          },
+          y: 80
+        });
+        gsap.from("#bgbuilds4", {
+          scrollTrigger : {
+            scrub: true
+          },
+          y: 50
+        });
+        gsap.from("#parallax__aboutbg", {
+          scrollTrigger : {
+            scrub: true
+          },
+          opacity: 0.5
+        });
+      }
+    </script>`;
+    const parallaxDarkInnerHTML = 
+        `<button type="button" id="parallax__aboutbg" class="mcbutton" onclick="aboutbgOpenPopup('nc')">About this background</button>
+        <img src="/index/ncwhitestarline01.png" id="redbuilding1" style="z-index: 3">
+        <img src="/index/ncbuilding02.png" id="uglogo2" style="z-index: 2">
+        <img src="/index/ncbg03.png" id="clouds5" style="z-index: 1">
+        <script>
+        if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          gsap.from("#redbuilding1", {
+            scrollTrigger : {
+              scrub: true
+            },
+            y: 180
+          });
+          gsap.from("#uglogo2", {
+            scrollTrigger : {
+              scrub: true
+            },
+            y: 120
+          });
+          gsap.from("#parallax__aboutbg", {
+            scrollTrigger : {
+              scrub: true
+            },
+            opacity: 0.5
+          });
+        }
+        </script>`;
     switch (theme) {
         case "light":
-            let parallaxLightInnerHTML = 
-            `<button type="button" id="parallax__aboutbg" class="mcbutton" onclick="aboutbgOpenPopup('ug')">About this background</button>
-            <img src="/index/redbuilding01.png" id="redbuilding1" style="z-index: 5">
-            <img src="/index/uglogo02.png" id="uglogo2" style="z-index: 4">
-            <img src="/index/platform03.png" id="platform3" style="z-index: 3">
-            <img src="/index/bgbuilds04.png" id="bgbuilds4" style="z-index: 2">
-            <img src="/index/clouds05.png" id="clouds5" style="z-index: 1">
-            <script>
-              // Only put parallax effect when no vestibular issues
-              if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                gsap.from("#redbuilding1", {
-                  scrollTrigger : {
-                    scrub: true
-                  },
-                  y: 200
-                });
-                gsap.from("#uglogo2", {
-                  scrollTrigger : {
-                    scrub: true
-                  },
-                  y: 100
-                });
-                gsap.from("#platform3", {
-                  scrollTrigger : {
-                    scrub: true
-                  },
-                  y: 80
-                });
-                gsap.from("#bgbuilds4", {
-                  scrollTrigger : {
-                    scrub: true
-                  },
-                  y: 50
-                });
-                gsap.from("#parallax__aboutbg", {
-                  scrollTrigger : {
-                    scrub: true
-                  },
-                  opacity: 0.5
-                });
-              }
-            </script>`;
             setInnerHTML(parallax, parallaxLightInnerHTML);
             break;
         case "dark":
-            let parallaxDarkInnerHTML = 
-            `<button type="button" id="parallax__aboutbg" class="mcbutton" onclick="aboutbgOpenPopup('nc')">About this background</button>
-            <img src="/index/ncwhitestarline01.png" id="redbuilding1" style="z-index: 3">
-            <img src="/index/ncbuilding02.png" id="uglogo2" style="z-index: 2">
-            <img src="/index/ncbg03.png" id="clouds5" style="z-index: 1">
-            <script>
-            if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-              gsap.from("#redbuilding1", {
-                scrollTrigger : {
-                  scrub: true
-                },
-                y: 180
-              });
-              gsap.from("#uglogo2", {
-                scrollTrigger : {
-                  scrub: true
-                },
-                y: 120
-              });
-              gsap.from("#parallax__aboutbg", {
-                scrollTrigger : {
-                  scrub: true
-                },
-                opacity: 0.5
-              });
-            }
-            </script>`;
             setInnerHTML(parallax, parallaxDarkInnerHTML);
             break;
         case "auto":
         default:
-            if(!window.matchMedia) {
-                return false;
-            } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
                 setInnerHTML(parallax, parallaxDarkInnerHTML);
             } else {
                 setInnerHTML(parallax, parallaxLightInnerHTML);

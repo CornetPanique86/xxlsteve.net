@@ -1,34 +1,28 @@
 ---
-title: "No More Scary Cave Sounds"
+title: No More Scary Cave Sounds
 date: 2020-07-16T12:00:00+06:00
-lastmod: 2023-01-04T22:10:53+06:00
+lastmod: 2024-07-10T15:38:53.907Z
 draft: false
 image: no-more-scary-cave-sounds/img/header-image.jpg
 author: United Noobs
-description: "No More Scary Cave Sounds is a resource pack that will change the cave sounds (yes, they got added in 1.16!) ambient.cave to ambient sounds like water lowing in a cave or birds singing."
+description: No More Scary Cave Sounds is a resource pack that will change the cave sounds (yes, they got added in 1.16!) ambient.cave to ambient sounds like water lowing in a cave or birds singing.
 ogtype: article
 images:
-- /blog/no-more-scary-cave-sounds/img/header-image.jpg
-
+  - /blog/no-more-scary-cave-sounds/img/header-image.jpg
 downloads:
-- text: .mcpack (MCPEDL DL)
-  dl: "https://dl.mcpedl.com/texturepacks/2562/NoMoreScarryCaveSounds.mcpack"
-- text: .zip (MCPEDL DL)
-  dl: "https://dl.mcpedl.com/texturepacks/2562/NoMoreScarryCaveSounds.zip"
-
+  - text: .mcpack
+    dl: /dl/no-more-scary-cave-sounds/NoMoreScarryCaveSounds.mcpack
+  - text: .zip
+    dl: /dl/no-more-scary-cave-sounds/NoMoreScarryCaveSounds.zip
 tableOfContents:
   - h1: Credits
-    
   - h1: Copyright
-    
-
 tags:
-- Minecraft Bedrock
-- v1.16
-
+  - Minecraft Bedrock
+  - v1.16
 categories:
-- Creation
-- Resource Pack
+  - Creation
+  - Resource Pack
 ---
 
 No More Scary Cave Sounds is a resource pack that will change the cave sounds (yes, they got added in 1.16!) "ambient.cave" to "ambient" sounds like water lowing in a cave or birds singing.

@@ -4,7 +4,11 @@
     {{ range (.Site.GetPage "section" "blog").Pages }}
     <li class="post-preview">
         <a href="{{ .Permalink }}">
-            <img class="post-preview__top" src="{{ .Params.image }}" alt="{{ .Title }}">
+            {{ $title := .Title }}
+            {{ $imgSrc := printf "%s/%s" (path.Split (path.Dir .Params.image)).File (path.Base .Params.image) }}
+            {{ with .Resources.GetMatch $imgSrc }}
+                <img class="post-preview__top" src="{{ (.Resize "500x webp").RelPermalink }}" alt="Thumbnail for article {{ $title }}">
+            {{ end }}
         </a>
         <div class="post-preview__bottom">
             <div class="taxonomies" style="flex-direction: column;">

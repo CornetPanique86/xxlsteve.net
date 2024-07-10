@@ -1,35 +1,28 @@
 ---
-title: "Minecraft Mansave"
+title: Minecraft Mansave
 date: 2021-01-01T12:00:00+06:00
-lastmod: 2023-01-09T14:34:20+06:00
+lastmod: 2024-07-10T15:38:25.787Z
 draft: false
 image: minecraft-mansave/img/header-image.png
 author: XXL Steve
 description: "Minecraft Mansave: a kamikaze and lifeguards. If the kamikaze dies, he WON! If he's still alive after (by default in my addon) 2 minutes, he lost! This idea was originally invented by McBirken and I ported it to Bedrock as an addon!"
 ogtype: article
 images:
-- /blog/minecraft-mansave/img/header-image.png
-
+  - /blog/minecraft-mansave/img/header-image.png
 tableOfContents:
-    - h1: How to start
-      
-    - h1: Copyright
-      
-    - h1: Credits
-      
-    - h1: Downloads
-      
-
+  - h1: How to start
+  - h1: Copyright
+  - h1: Credits
+  - h1: Downloads
 downloads:
-- text: ".mcpack (MCPEDL DL)"
-  dl: "https://dl.mcpedl.com/addons/6943/MinecraftMansave_1609452774.mcpack"
-
+  - text: .mcpack
+    dl: /dl/minecraft-mansave/MinecraftMansave.mcpack
 tags:
-- Minecraft Bedrock
-- v1.16
+  - Minecraft Bedrock
+  - v1.16
 categories:
-- Creation
-- Addon
+  - Creation
+  - Addon
 ---
 
 Minecraft Mansave: a kamikaze and lifeguards. If the kamikaze dies, he WON! If he's still alive after (by default in my addon) 2 minutes, he lost! This idea was originally invented by [McBirken](https://youtube.com/c/McBirken) and I ported it to Bedrock as an addon!

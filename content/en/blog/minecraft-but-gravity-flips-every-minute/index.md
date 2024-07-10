@@ -1,39 +1,31 @@
 ---
-title: "Minecraft, But Gravity Flips Every Minute"
+title: Minecraft, But Gravity Flips Every Minute
 date: 2020-08-22T12:00:00+06:00
-lastmod: 2023-01-09T14:26:17+06:00
+lastmod: 2024-07-10T15:37:26.199Z
 draft: false
 image: minecraft-but-gravity-flips-every-minute/img/header-image.png
 author: XXL Steve
-description: "Every minute, gravity flips for 30 seconds! You will get levitated in the air! The goal of this challenge is to beat Minecraft (kill the Ender dragon). Play with your friends or alone!"
+description: Every minute, gravity flips for 30 seconds! You will get levitated in the air! The goal of this challenge is to beat Minecraft (kill the Ender dragon). Play with your friends or alone!
 ogtype: article
 images:
-- /blog/minecraft-but-gravity-flips-every-minute/img/header-image.png
-
+  - /blog/minecraft-but-gravity-flips-every-minute/img/header-image.png
 tableOfContents:
-    - h1: How to start
-      
-    - h1: Change time between gravity flip
-      
-    - h1: Copyright
-      
-    - h1: Credits
-      
-    - h1: Downloads
-      
-
+  - h1: How to start
+  - h1: Change time between gravity flip
+  - h1: Copyright
+  - h1: Credits
+  - h1: Downloads
 downloads:
-- text: ".mcpack (MCPEDL DL)"
-  dl: "https://dl.mcpedl.com/addons/4821/GravityFlipsEveryMinute_1598126279.mcpack"
-- text: ".zip (MCPEDL DL)"
-  dl: "https://dl.mcpedl.com/addons/4821/GravityFlipsEveryMinute.zip"
-
+  - text: .mcpack
+    dl: /dl/minecraft-but-gravity-flips-every-minute/GravityFlipsEveryMinute.mcpack
+  - text: .zip
+    dl: /dl/minecraft-but-gravity-flips-every-minute/GravityFlipsEveryMinute.zip
 tags:
-- Minecraft Bedrock
-- v1.16
+  - Minecraft Bedrock
+  - v1.16
 categories:
-- Creation
-- Addon
+  - Creation
+  - Addon
 ---
 
 Every minute, gravity flips for 30 seconds! You will get levitated in the air! The goal of this challenge is to beat Minecraft (kill the Ender dragon). Play with your friends or alone! 

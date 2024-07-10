@@ -1,35 +1,29 @@
 ---
-title: "Minecraft, but Speed and Jump Progressively Increase"
+title: Minecraft, but Speed and Jump Progressively Increase
 date: 2021-08-02T12:00:00+06:00
-lastmod: 2023-01-09T14:43:12+06:00
+lastmod: 2024-07-10T15:38:22.668Z
 draft: false
 image: minecraft-but-speed-and-jump-progressively-increase/img/header-image.png
 author: XXL Steve
 description: "Minecraft, but Speed and Jump progressively increase: the more you walk and jump, the faster you move and the higher you jump. This addon is very challenging, and with enough walking as well as jumping, you might reach the maximum levels!"
 ogtype: article
 images:
-- /blog/minecraft-but-speed-and-jump-progressively-increase/img/header-image.png
-
+  - /blog/minecraft-but-speed-and-jump-progressively-increase/img/header-image.png
 tableOfContents:
-    - h1: Copyright
-      
-    - h1: Credits
-      
-    - h1: Downloads
-      
-
+  - h1: Copyright
+  - h1: Credits
+  - h1: Downloads
 downloads:
-- text: ".mcpack (Mediafire)"
-  dl: "https://www.mediafire.com/file/z7zcutb13l2b32n/SpeedIncreases.mcpack/file"
-- text: ".zip (Mediafire)"
-  dl: "https://www.mediafire.com/file/vebb0udvmuq8esx/SpeedIncreases.zip/file"
-
+  - text: .mcpack
+    dl: /dl/minecraft-but-speed-and-jump-progressively-increase/SpeedIncreases.mcpack
+  - text: .zip
+    dl: /dl/minecraft-but-speed-and-jump-progressively-increase/SpeedIncreases.zip
 tags:
-- Minecraft Bedrock
-- v1.17
+  - Minecraft Bedrock
+  - v1.17
 categories:
-- Creation
-- Addon
+  - Creation
+  - Addon
 ---
 
 Minecraft, but Speed and Jump progressively increase: the more you walk and jump, the faster you move and the higher you jump. This addon is very challenging, and with enough walking as well as jumping, you might reach the maximum levels!

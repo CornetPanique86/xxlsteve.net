@@ -44,16 +44,19 @@
         backToTopButton.addEventListener("click", goToTop);
     });
 </script>
+{{ if .Params.params.math }}
+    {{ partialCached "math.html" . }}
+{{ end }}
 {{ end }}
 {{ define "main" }}
 <button type="button" class="backToTop mcbutton hidden"><i class="pxico-arrow"></i></button>
 <a href='{{ relLangURL "blog" }}'><i class="pxico-arrow" style="transform: rotate(-90deg)"></i> {{ i18n "blog" }}</a>
 <article>
     <section>
-    <meta itemprop="image" content="/blog/{{ .Params.image }}">
+    <meta itemprop="image" content="{{ index .Params.images 0 }}">
     <meta itemprop="publisher" content="xxlsteve.net">
     <div class="b-hero" itemscope itemtype="https://schema.org/BlogPosting">
-        <img class="b-hero__image" src="/blog/{{ .Params.image }}">
+        <img class="b-hero__image" src="{{ index .Params.images 0 }}">
         <div class="b-hero__info">
             <header>
                 <h1 class="b-hero__title" itemprop="name headline">{{ .Title }}</h1>

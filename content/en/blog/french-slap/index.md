@@ -1,35 +1,29 @@
 ---
-title: "French Slap"
+title: French Slap
 date: 2020-07-30T12:00:00+06:00
-lastmod: 2023-01-09T13:49:51+06:00
+lastmod: 2024-07-10T15:36:49.773Z
 draft: false
 image: french-slap/img/header-image.png
 author: XXL Steve
 description: French Slap is a game like Cookie Slap; the goal is to knock all the players off the arena, last player alive wins, but this map is in a typically-French theme!
 ogtype: article
 images:
-- /blog/french-slap/img/header-image.png
-
+  - /blog/french-slap/img/header-image.png
 tableOfContents:
-    - h1: Additions
-      
-    - h1: Credits
-      
-    - h1: Downloads
-      
-
+  - h1: Additions
+  - h1: Credits
+  - h1: Downloads
 downloads:
-- text: ".mcworld (MCPEDL DL)"
-  dl: "https://dl.mcpedl.com/worlds/7810/French_Slap_1596136347.mcworld"
-- text: ".zip (MCPEDL DL)"
-  dl: "https://dl.mcpedl.com/worlds/7810/French_Slap.zip"
-
+  - text: .mcworld
+    dl: /dl/french-slap/French_Slap.mcworld
+  - text: .zip
+    dl: /dl/french-slap/French_Slap.zip
 tags:
-- Minecraft Bedrock
-- v1.16
+  - Minecraft Bedrock
+  - v1.16
 categories:
-- Creation
-- Map
+  - Creation
+  - Map
 ---
 
 French Slap is a game where the goal is to knock the players off the map. Last player alive wins! But this map is in a "typically-French" theme/style, and with little twists!

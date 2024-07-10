@@ -1,35 +1,29 @@
 ---
-title: "X Minecraft Launcher - le seul launcher dont vous avez besoin"
+title: X Minecraft Launcher - le seul launcher qu'il vous faut
 date: 2023-01-30T17:26:21+01:00
-lastmod: 2023-02-18T21:37:26+01:00
+lastmod: 2024-07-10T15:01:06.651Z
 draft: false
-
 aliases:
   - xmcl
-  - x-minecraft-launcher-le-seul-launcher-dont-vous-avez-besoin
-
+  - x-minecraft-launcher-le-seul-launcher-quil-vous-faut
 image: x-minecraft-launcher/img/thumbnail.jpg
 author: XXL Steve
-description: "X Minecraft Launcher est un launcher gratuit, open source, avec une interface stylée. On va voir comment l'installer."
+description: X Minecraft Launcher est un launcher gratuit, open source, avec une interface stylée. On va voir comment l'installer.
 ogtype: article
 images:
-- /blog/x-minecraft-launcher/img/thumbnail.jpg
-
+  - /blog/x-minecraft-launcher/img/thumbnail.jpg
 tableOfContents:
-- h1: Intro
-- h1: Installer XMCL
-- h1: Compte utilisateur
-  h2:
-    - t2: Comptes crack
-- h1: Ajouter une instance
-  h2:
-    - t2: Lancer le jeu
-- h1: Conclusion
-
+  - h1: Intro
+  - h1: Installer XMCL
+  - h1: Compte utilisateur
+    h2:
+      - t2: Comptes crack
+  - h1: Ajouter une instance
+    h2:
+      - t2: Lancer le jeu
+  - h1: Conclusion
 tags:
-- Tutorial
-categories:
-- Blog
+  - Tutorial
 ---
 
 ### [X Minecraft Launcher](https://xmcl.app/fr) : un launcher gratuit, open source, avec une belle interface

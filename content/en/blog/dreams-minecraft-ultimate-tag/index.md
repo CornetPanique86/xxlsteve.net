@@ -1,41 +1,32 @@
 ---
-title: "Dream's Minecraft Ultimate Tag"
+title: Dream's Minecraft Ultimate Tag
 date: 2020-08-14T12:00:00+06:00
-lastmod: 2023-01-09T14:01:22+06:00
+lastmod: 2024-07-10T15:35:49.061Z
 draft: false
 image: dreams-minecraft-ultimate-tag/img/header-image.png
 author: XXL Steve
-description: "Dream's Ultimate Tag is a function pack of the minigame Minecraft Ultimate Tag by Dream. A random hunter is chosen and has to tag a runner. If the runner(s) survive for 2 minutes, they win! If they don't... they lose."
+description: Dream's Ultimate Tag is a function pack of the minigame Minecraft Ultimate Tag by Dream. A random hunter is chosen and has to tag a runner. If the runner(s) survive for 2 minutes, they win! If they don't... they lose.
 ogtype: article
 images:
-- /blog/dreams-minecraft-ultimate-tag/img/header-image.png
-
+  - /blog/dreams-minecraft-ultimate-tag/img/header-image.png
 tableOfContents:
-    - h1: How to start
-      
-    - h1: Roles
-      
-    - h1: Bugs
-      
-    - h1: Credits
-      
-    - h1: Copyright
-      
-    - h1: Downloads
-      
-
+  - h1: How to start
+  - h1: Roles
+  - h1: Bugs
+  - h1: Credits
+  - h1: Copyright
+  - h1: Downloads
 downloads:
-- text: ".mcpack (MCPEDL DL)"
-  dl: "https://dl.mcpedl.com/addons/4690/DreamsUltimateTag_1597427210.mcpack"
-- text: ".zip (MCPEDL DL)"
-  dl: "https://dl.mcpedl.com/addons/4690/DreamsUltimateTag.zip"
-
+  - text: .mcpack
+    dl: /dl/dreams-minecraft-ultimate-tag/DreamsUltimateTag.mcpack
+  - text: .zip
+    dl: /dl/dreams-minecraft-ultimate-tag/DreamsUltimateTag.zip
 tags:
-- Minecraft Bedrock
-- v1.16
+  - Minecraft Bedrock
+  - v1.16
 categories:
-- Creation
-- Addon
+  - Creation
+  - Addon
 ---
 
 Dream's Ultimate Tag is a function pack of the minigame "Minecraft Ultimate Tag" by Dream. A random hunter is chosen and has to tag a runner. If the runner(s) survive for 2 minutes, they win! If they don't... they lose.

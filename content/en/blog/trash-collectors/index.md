@@ -1,48 +1,36 @@
 ---
 title: "Trash Collectors! #TeamSeas"
 date: 2021-12-28T12:00:00+06:00
-lastmod: 2023-01-09T15:02:30+06:00
+lastmod: 2024-07-10T15:39:51.378Z
 draft: false
 image: trash-collectors/img/header-image.png
 author: XXL Steve
 description: "Help clean the ocean by collecting trash in Trash Collectors! A fun map to compete with friends and support MrBeast's and Mark Rober's #TeamSeas campaign! Collect trash, feed turtles and buy various powerups joined with MrBeast's outro song music in noteblocks!"
 ogtype: article
 images:
-- /blog/trash-collectors/img/header-image.png
-
+  - /blog/trash-collectors/img/header-image.png
 tableOfContents:
-- h1: What is Team Seas?
-  
-- h1: How to play
-  
-  h2:
-    - t2: Types of trash
-      n2: 2.1
-    - t2: Shop powerups
-      n2: 2.2
-- h1: Credits
-  
-- h1: Languages
-  
-- h1: "Donate to #TeamSeas"
-  
-- h1: Installation
-  
-- h1: Downloads
-  
-
+  - h1: What is Team Seas?
+  - h1: How to play
+    h2:
+      - t2: Types of trash
+      - t2: Shop powerups
+  - h1: Credits
+  - h1: Languages
+  - h1: "Donate to #TeamSeas"
+  - h1: Installation
+  - h1: Downloads
 downloads:
-- text: ".mcworld (Mediafire)"
-  dl: "https://www.mediafire.com/file/0sby4a2pzaqer7f/TrashCollectors.mcworld/file"
-- text: ".zip (Mediafire)"
-  dl: "https://www.mediafire.com/file/gswj11apgzraefc/TrashCollectors.zip/file"
-
+  - text: .mcworld
+    dl: /dl/trash-collectors/TrashCollectors.mcworld
+  - text: .zip
+    dl: /dl/trash-collectors/TrashCollectors.zip
 tags:
-- Minecraft Bedrock
-- v1.18
+  - Minecraft Bedrock
+  - v1.18
 categories:
-- Creation
-- Map
+  - Creation
+  - Map
 ---
 
 Help clean the ocean by collecting trash in Trash Collectors! A fun map to compete with friends and support MrBeast's and Mark Rober's #TeamSeas campaign! Collect trash, feed turtles and buy various powerups joined with MrBeast's outro song music in noteblocks!

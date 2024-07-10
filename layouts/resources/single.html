@@ -5,7 +5,29 @@
 {{ define "main" }}
     <article>
         <ul class="resources-grid " style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));">
-            {{ range .Resources.Match "*" }}
+            {{ $pageDir := replace .File.Dir "\\" "/" }}
+            {{ with .Params.res }}
+                {{ range . }}
+                    {{ $file := printf "/dl/%s%s" $pageDir . }}
+                    {{ $imageExtensions := slice "jpg" "jpeg" "png" "gif" "bmp" "webp" }}
+                    <li class="resources-preview">
+                        {{ if in $imageExtensions (slicestr (path.Ext .) 1) }}
+                            <img src="{{ $file }}" title="{{ . }}" alt="{{ . }}" class="imagePopup resources-image">
+                        {{ else }}
+                            <div class="resources-preview__top">
+                                <a download href="{{ $file }}" class="noA download-button" title="Download: {{ . }}"><i class="pxico-download"></i></a>
+                                {{ . }}
+                            </div>
+                        {{ end }}
+                        <div class="resources-preview__bottom">
+                            <h3 class="preview-title">
+                                {{ . }}
+                            </h3>
+                        </div>
+                    </li>
+                {{ end }}
+            {{ else }}
+                {{ range .Resources.Match "*" }}
                 <li class="resources-preview">
                     {{ if eq .ResourceType "image" }}
                         <img src="{{ .Permalink }}" title="{{ .Name }}" alt="{{ .Name }}" class="imagePopup resources-image">
@@ -21,6 +43,7 @@
                         </h3>
                     </div>
                 </li>
+                {{ end }}
             {{ end }}
         </ul>
         <section>

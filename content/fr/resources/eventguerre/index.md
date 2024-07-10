@@ -4,6 +4,12 @@ date: 2023-03-01T16:33:49+01:00
 draft: false
 description: Mods & Modpacks pour l'event guerre avec Eureka!
 
+res:
+- "Modpack_full.mrpack"
+- "Modpack_nec_curseforge.zip"
+- "Modpack_nec_modrinth.mrpack"
+- "mods.zip"
+
 tags:
 - 
 categories:

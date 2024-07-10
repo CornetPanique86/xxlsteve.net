@@ -1,25 +1,21 @@
 ---
-title: "Minecraft Java Roadmap"
+title: Minecraft Java Roadmap
 date: 2023-08-16T22:49:09+02:00
-lastmod: 2023-08-16T22:49:09+02:00
+lastmod: 2024-07-10T15:00:34.564Z
 draft: true
 image: minecraft-java-roadmap/img/thumbnail.jpg
 author: XXL Steve
 description: Having trouble to adapt to Minecraft Java's way of managing mods and gameplay and want to learn about all the available tools? This guide will explore the various community creations!
 ogtype: article
 images:
-- /blog/minecraft-java-roadmap/img/thumbnail.jpg
-
+  - /blog/minecraft-java-roadmap/img/thumbnail.jpg
 tableOfContents:
-- h1:
-  h2:
-    - t2:
-
+  - h1: null
+    h2:
+      - t2: null
 tags:
-- Minecraft
-- Tutorial
-categories:
-- Blog
+  - Minecraft
+  - Tutorial
 ---
 
 Having trouble to adapt to Minecraft Java's way of managing mods and gameplay and want to learn about all the available tools? This guide will explore the various community creations!

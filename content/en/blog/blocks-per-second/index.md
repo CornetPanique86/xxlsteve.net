@@ -1,36 +1,29 @@
 ---
-title: "Blocks Per Second Calculator"
+title: Blocks Per Second Calculator
 date: 2021-08-26T12:00:00+06:00
-lastmod: 2023-01-09T14:52:39+06:00
+lastmod: 2024-07-10T15:35:17.806Z
 draft: false
-
 image: blocks-per-second/img/header-image.png
 author: XXL Steve
 description: "This script lets you calculate how many blocks you place every second! You can customise the time between every update: 1, 3, 5, 30 or 60 seconds! Singleplayer and Windows 10 only."
 ogtype: article
 images:
-- /blog/blocks-per-second/img/header-image.png
-
+  - /blog/blocks-per-second/img/header-image.png
 tableOfContents:
-    - h1: Copyright
-      
-    - h1: Credits
-      
-    - h1: Downloads
-      
-
+  - h1: Copyright
+  - h1: Credits
+  - h1: Downloads
 downloads:
-- text: ".mcpack (Mediafire)"
-  dl: "https://www.mediafire.com/file/2m31s6a4q4r2bre/Blocks_per_Second_calculator.mcpack/file"
-- text: ".zip (Mediafire)"
-  dl: "https://www.mediafire.com/file/727xvf3qabwwh6n/Blocks_per_Second_calculator.zip/file"
-
+  - text: .mcpack
+    dl: /dl/blocks-per-second/Blocks_per_Second_calculator.mcpack
+  - text: .zip
+    dl: /dl/blocks-per-second/Blocks_per_Second_calculator.zip
 tags:
-- Minecraft Bedrock
-- v1.17
+  - Minecraft Bedrock
+  - v1.17
 categories:
-- Creation
-- Addon
+  - Creation
+  - Addon
 ---
 
 {{< boxnotice type="warning" >}}The old scripting API has been removed on Minecraft Bedrock since march 2022, replaced by the newer and better GameTest Framework. Therefore, this addon doesn't work on versions 1.18 or higher.{{< /boxnotice >}}

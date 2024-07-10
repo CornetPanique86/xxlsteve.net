@@ -1,30 +1,22 @@
 ---
-title: "What is Ulorium Games?"
+title: What is Ulorium Games?
 date: 2022-12-07T19:32:51+01:00
-lastmod: 2023-01-01T23:11:32+06:00
+lastmod: 2024-07-10T15:00:41.156Z
 draft: false
 image: uloriumgames/img/header-image.png
 author: XXL Steve
 description: UloriumGames is a Minecraft Bedrock minigames realm.
 ogtype: article
 images:
-- /blog/uloriumgames/img/header-image.png
+  - /blog/uloriumgames/img/header-image.png
 tags:
-    - Other
-categories:
-    - Blog
-
+  - Other
 tableOfContents:
-    - h1: How it started
-      
-    - h1: The rise
-      
-    - h1: The maintenance
-      
-    - h1: The fall
-      
-    - h1: Credits
-      
+  - h1: How it started
+  - h1: The rise
+  - h1: The maintenance
+  - h1: The fall
+  - h1: Credits
 ---
 {{< hanchor h="3" >}}
 How it started

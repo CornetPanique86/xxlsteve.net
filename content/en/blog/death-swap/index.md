@@ -1,37 +1,30 @@
 ---
-title: "Death Swap (2 Players Only)"
+title: Death Swap (2 Players Only)
 date: 2020-04-24T12:00:00+06:00
-lastmod: 2023-01-04T18:37:30+06:00
+lastmod: 2024-07-10T15:35:13.342Z
 draft: false
 image: death-swap/img/header-image.jpg
 author: United Noobs
 description: Welcome to Death Swap, a mini-game of trapping your friend! When the game starts, you have 8 minutes to gather resources. Then the swapping will begin! You and your friend will swap places! The goal is to kill your opponent!
 ogtype: article
 images:
-- /blog/death-swap/img/header-image.jpg
-
+  - /blog/death-swap/img/header-image.jpg
 tableOfContents:
-- h1: How to start the game
-  
-- h1: Credits
-  
-- h1: Copyright
-  
-- h1: Downloads
-  
-
+  - h1: How to start the game
+  - h1: Credits
+  - h1: Copyright
+  - h1: Downloads
 downloads:
-- text: ".mcworld (MCPEDL DL)"
-  dl: "https://dl.mcpedl.com/worlds/5322/DeathSwap_1587762158.mcworld"
-- text: ".zip (MCPEDL DL)"
-  dl: "https://dl.mcpedl.com/worlds/5322/DeathSwap.zip"
-
+  - text: .mcworld
+    dl: /dl/death-swap/DeathSwap.mcworld
+  - text: .zip
+    dl: /dl/death-swap/DeathSwap.zip
 tags:
-- Minecraft Bedrock
-- v1.14
+  - Minecraft Bedrock
+  - v1.14
 categories:
-- Creation
-- Map
+  - Creation
+  - Map
 ---
 
 ⚠️ **Warning: this is my first map, therefore it is very buggy and... bad. If you'd like to play Death Swap, use this addon instead: [Scommander's Death Swap Ultimate](https://mcpedl.com/deathswap-ultimate-addon/)** ⚠️

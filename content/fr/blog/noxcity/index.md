@@ -1,25 +1,21 @@
 ---
 title: Qu'est-ce que NoxCity?
 date: 2022-12-07T19:33:08+01:00
-lastmod: 2023-02-05T14:08:34+01:00
+lastmod: 2024-07-10T15:00:49.691Z
 draft: false
 image: noxcity/img/header-image.png
 author: XXL Steve
 description: NoxCity est une ville de jeu de rôle Minecraft Bedrock utilisant différents addons.
 ogtype: article
 images:
-- /blog/noxcity/img/header-image.png
-
+  - /blog/noxcity/img/header-image.png
 tableOfContents:
-- h1: Captures d'écran
-- h1: Crédits
-  h2:
-    - t2: Staff
-
+  - h1: Captures d'écran
+  - h1: Crédits
+    h2:
+      - t2: Staff
 tags:
-- Other
-categories:
-- Blog
+  - Other
 ---
 
 NoxCity est né vers 2019, d'abord sous le nom de NoxTown. NoxTown est rapidement devenu NoxCity et le staff avait de plus en plus de membres.

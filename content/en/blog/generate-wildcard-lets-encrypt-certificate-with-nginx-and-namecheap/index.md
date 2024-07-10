@@ -1,7 +1,7 @@
 ---
 title: Generate Wildcard Let's Encrypt Certificate with nginx and Namecheap
 date: 2023-11-02T17:27:46+01:00
-lastmod: 2023-11-03T00:06:19.959Z
+lastmod: 2024-07-10T15:00:23.372Z
 draft: false
 image: generate-wildcard-lets-encrypt-certificate-with-nginx-and-namecheap/img/thumbnail.jpg
 author: XXL Steve
@@ -23,8 +23,6 @@ tableOfContents:
   - h1: Renewal
 tags:
   - Tutorial
-categories:
-  - Blog
 ---
 
 Namecheap offers SSL certificates support but it costs around $10 for the first year, where as there are free solutions to getting SSL for your website like [Let's Encrypt](https://letsencrypt.org/) using [Certbot](https://certbot.eff.org/).  So, that's why after 1 year with namecheap's PositiveSSL I tried switching to the free Certbot solution.

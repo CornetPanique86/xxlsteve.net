@@ -1,7 +1,7 @@
 ---
 title: Useful Minecraft Links (personal awesome-minecraft)
 date: 2024-04-08T18:01:39.563Z
-lastmod: 2024-04-16T22:53:20.776Z
+lastmod: 2024-07-10T15:00:43.948Z
 draft: false
 image: useful-minecraft-links/img/thumbnail.jpg
 author: XXL Steve
@@ -38,8 +38,6 @@ tableOfContents:
   - h1: Documentation & Communities
 tags:
   - Minecraft
-categories:
-  - Blog
 ---
 
 My personal list of cool and useful Minecraft-related links: tools, software, mods, launchers... all created by the community!

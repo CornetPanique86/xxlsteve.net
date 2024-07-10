@@ -1,43 +1,34 @@
 ---
-title: "Eating Time!"
+title: Eating Time!
 date: 2020-08-21T12:00:00+06:00
-lastmod: 2023-01-09T14:16:04+06:00
+lastmod: 2024-07-10T15:36:25.893Z
 draft: false
 image: eating-time/img/header-image.png
 author: XXL Steve
-description: "Eating Time! is an addon that adds decorating entities like a waterjug, salt shaker, plate, mug, etc. It also adds some items like a fork, spoon, ladle and kitchen knife."
+description: Eating Time! is an addon that adds decorating entities like a waterjug, salt shaker, plate, mug, etc. It also adds some items like a fork, spoon, ladle and kitchen knife.
 ogtype: article
 images:
-- /blog/eating-time/img/header-image.png
-
+  - /blog/eating-time/img/header-image.png
 tableOfContents:
-    - h1: Items
-      
-    - h1: Decoration entities
-      
-    - h1: Copyright
-      
-    - h1: Credits
-      
-    - h1: Installation
-      
-    - h1: Downloads
-      
-
+  - h1: Items
+  - h1: Decoration entities
+  - h1: Copyright
+  - h1: Credits
+  - h1: Installation
+  - h1: Downloads
 downloads:
-- text: ".mcpack Behavior (MCPEDL DL)"
-  dl: https://dl.mcpedl.com/addons/4777/EatingTime_bhv_1597946173.mcpack"
-- text: ".mcpack Resources (MCPEDL DL)"
-  dl: https://dl.mcpedl.com/addons/4777/EatingTime_res_1597946173.mcpack"
-- text: ".zip (MCPEDL DL)"
-  dl: "https://dl.mcpedl.com/addons/4777/EatingTime_addon.zip"
-
+  - text: .mcpack Behavior
+    dl: /dl/eating-time/EatingTime_bhv.mcpack"
+  - text: .mcpack Resources
+    dl: /dl/eating-time/EatingTime_res.mcpack"
+  - text: .zip
+    dl: /dl/eating-time/EatingTime_addon.zip
 tags:
-- Minecraft Bedrock
-- v1.16
+  - Minecraft Bedrock
+  - v1.16
 categories:
-- Creation
-- Addon
+  - Creation
+  - Addon
 ---
 
 Eating Time! is an addon that adds decorating entities like a waterjug, salt shaker, plate, mug, etc. It also adds some items like a fork, spoon, ladle and kitchen knife.

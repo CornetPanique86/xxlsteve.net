@@ -1,35 +1,29 @@
 ---
-title: "A Little Simple Spleef Game"
+title: A Little Simple Spleef Game
 date: 2020-06-27T12:00:00+06:00
-lastmod: 2023-01-04T21:59:05+06:00
+lastmod: 2024-07-10T15:39:21.842Z
 draft: false
 image: spleef/img/header-image.jpg
 author: United Noobs
-description: "Just a little, simple Spleef game. Spleef is a game where you need to break the block under the other players to make them fall into the void and die. This map contains 2 different arenas and 2 gamemodes. 1 arena has 3 layers and the other 2 layers!"
+description: Just a little, simple Spleef game. Spleef is a game where you need to break the block under the other players to make them fall into the void and die. This map contains 2 different arenas and 2 gamemodes. 1 arena has 3 layers and the other 2 layers!
 ogtype: article
 images:
-- /blog/spleef/img/header-image.jpg
-
+  - /blog/spleef/img/header-image.jpg
 downloads:
-- text: .mcworld (MCPEDL DL)
-  dl: "https://dl.mcpedl.com/worlds/7010/Spleef.mcworld"
-- text: .zip (MCPEDL DL)
-  dl: "https://dl.mcpedl.com/worlds/7010/Spleef.zip"
-
+  - text: .mcworld
+    dl: /dl/spleef/Spleef.mcworld
+  - text: .zip
+    dl: /dl/spleef/Spleef.zip
 tableOfContents:
-    - h1: How to play
-      
-    - h1: Gamemodes
-      
-    - h1: Creators
-      
-
+  - h1: How to play
+  - h1: Gamemodes
+  - h1: Creators
 tags:
-- Minecraft Bedrock
-- v1.16
+  - Minecraft Bedrock
+  - v1.16
 categories:
-- Creation
-- Map
+  - Creation
+  - Map
 ---
 
 Just a little, simple Spleef game. This map contains 2 arenas; the first with 2 layers and the second with 3 layers, and 2 gamemodes (Classic Spleef & Snowball Spleef).

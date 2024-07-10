@@ -9,8 +9,14 @@
                             <img src="{{ .Permalink }}" title="{{ .Name }}" alt="{{ .Name }}">
                         {{ end }}
                     {{ else }}
-                        {{ with .Resources.GetMatch "*" }}
-                            <div class="resources-preview__top">{{ .Name }}</div>
+                        {{ with .Params.res }}
+                            {{ range first 1 . }}
+                                <div class="resources-preview__top">{{ . }}</div>
+                            {{ end }}
+                        {{ else }}
+                            {{ with .Resources.GetMatch "*" }}
+                                <div class="resources-preview__top">{{ .Name }}</div>
+                            {{ end }}
                         {{ end }}
                     {{ end }}
                     <div class="resources-preview__bottom">
