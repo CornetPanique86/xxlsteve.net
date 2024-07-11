@@ -165,7 +165,7 @@
             {{ range . }}
               <div class="post-preview">
                 <a href="{{ .Permalink }}">
-                    <img class="post-preview__top" src="/blog/{{ .Params.image }}" alt="{{ .Title }}">
+                    <img class="post-preview__top" src="{{ index .Params.images 0 }}" alt="{{ .Title }}">
                 </a>
                 <div class="post-preview__bottom">
                     <div class="taxonomies" style="flex-direction: column;">
