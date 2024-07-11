@@ -239,8 +239,8 @@ fixedsearch = function(){
 							<span>${results[item].item.summary}</span>
 						</div>
 						<div class="s-taxonomies">
-							<span class="s-categories">${results[item].item.categories.join(', ')}</span>
-							<span class="s-tags">${results[item].item.tags.join(', ')}</span>
+							<span class="s-categories">${results[item].item.categories ? results[item].item.categories.join(', ') : ""}</span>
+							<span class="s-tags">${results[item].item.tags ? results[item].item.tags.join(', ') : ""}</span>
 						</div>
 					</a></li>`;
 			}

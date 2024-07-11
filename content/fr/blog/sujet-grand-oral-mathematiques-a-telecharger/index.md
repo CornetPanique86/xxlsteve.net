@@ -1,8 +1,8 @@
 ---
 title: Sujet Grand Oral Mathématiques à télécharger
 date: 2024-07-10T16:56:16+02:00
-lastmod: 2024-07-10T18:45:48.645Z
-draft: true
+lastmod: 2024-07-11T12:46:51.647Z
+draft: false
 image: sujet-grand-oral-mathematiques-a-telecharger/img/thumbnail.jpg
 author: XXL Steve
 description: Sujet de Grand Oral complètement rédigé pour l'enseignement de spécialité Mathématiques au Bac !

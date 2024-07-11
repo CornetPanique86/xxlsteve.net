@@ -17,6 +17,5 @@ tableOfContents:
 
 tags:
 categories:
-- Blog
 ---
 

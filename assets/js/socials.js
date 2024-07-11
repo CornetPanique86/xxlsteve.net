@@ -57,14 +57,6 @@ function moreDetails(event) {
             ahref = "https://discord.gg/qPcDsAUZyv";
             link = "Rejoins le serveur !";
             break;
-        case "infoDiscEvents":
-            header = "Events Minecraft Français";
-            img.src = "/images/events_minecraft_francais.jpg";
-            img.alt = "Le logo de mon serveur discord"
-            desc = "Ce serveur permet de se tenir au courant sur plein d'events de vos youtubeurs préférés ! Fuze III, Azpaz, heroptix...";
-            ahref = "https://discord.gg/nsgXbM7sxz";
-            link = "Rejoins le serveur !";
-            break;
     }
     const headerElm = document.getElementById("detailsPopup__header");
     headerElm.querySelector("img").src = img.src;
