@@ -130,6 +130,7 @@ function changeIndexBackground(theme) {
     }
     const parallaxLightInnerHTML = 
     `<button type="button" id="parallax__aboutbg" class="mcbutton" onclick="aboutbgOpenPopup('ug')">About this background</button>
+    <a href="#postparallax" id="parallax__scrollDown"><i class="pxico-caret"></i></a>
     <img src="/index/redbuilding01.png" id="redbuilding1" style="z-index: 5">
     <img src="/index/uglogo02.png" id="uglogo2" style="z-index: 4">
     <img src="/index/platform03.png" id="platform3" style="z-index: 3">
@@ -137,6 +138,7 @@ function changeIndexBackground(theme) {
     <img src="/index/clouds05.png" id="clouds5" style="z-index: 1">
     <script>
       // Only put parallax effect when no vestibular issues
+      pxicoReplaceToSVG();
       if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         gsap.from("#redbuilding1", {
           scrollTrigger : {
@@ -172,10 +174,12 @@ function changeIndexBackground(theme) {
     </script>`;
     const parallaxDarkInnerHTML = 
         `<button type="button" id="parallax__aboutbg" class="mcbutton" onclick="aboutbgOpenPopup('nc')">About this background</button>
+        <a href="#postparallax" id="parallax__scrollDown"><i class="pxico-caret"></i></a>
         <img src="/index/ncwhitestarline01.png" id="redbuilding1" style="z-index: 3">
         <img src="/index/ncbuilding02.png" id="uglogo2" style="z-index: 2">
         <img src="/index/ncbg03.png" id="clouds5" style="z-index: 1">
         <script>
+        pxicoReplaceToSVG();
         if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
           gsap.from("#redbuilding1", {
             scrollTrigger : {

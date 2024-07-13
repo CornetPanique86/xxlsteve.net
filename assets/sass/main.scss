@@ -990,6 +990,25 @@ dfn {
   font-size: large;
 }
 
+#parallax__scrollDown {
+  opacity: 1;
+  z-index: 52;
+  position: absolute;
+  top: 92%;
+  padding: 5px;
+  & svg {
+    transform: rotate(0.5turn);
+    color: white;
+    filter: drop-shadow(-5px -5px 0px black);
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.7;
+  }
+}
+
 #parallax::before {
   content: "";
   position: absolute;

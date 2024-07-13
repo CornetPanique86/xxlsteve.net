@@ -50,6 +50,7 @@
         <div style="padding: 0; margin: 0 0 80px 0;">
           <section id="parallax">
             <button type="button" id="parallax__aboutbg" class="mcbutton" onclick="aboutbgOpenPopup('ug')">{{ i18n "aboutThisBg" }}</button>
+            <a href="#postparallax" id="parallax__scrollDown"><i class="pxico-caret"></i></a>
             <img src="/index/redbuilding01.png" id="redbuilding1" style="z-index: 5">
             <img src="/index/uglogo02.png" id="uglogo2" style="z-index: 4">
             <img src="/index/platform03.png" id="platform3" style="z-index: 3">
@@ -92,7 +93,7 @@
             </script>
           </section>
 
-          <section class="indexsec">
+          <section id="postparallax" class="indexsec">
             {{ .Content }}
 
             <br><br>
