@@ -1,7 +1,7 @@
 ---
 title: Useful Minecraft Links (personal awesome-minecraft)
 date: 2024-04-08T18:01:39.563Z
-lastmod: 2024-07-10T15:00:43.948Z
+lastmod: 2024-07-15T13:54:00.162Z
 draft: false
 image: useful-minecraft-links/img/thumbnail.jpg
 author: XXL Steve
@@ -320,6 +320,7 @@ Addon development (Bedrock)
 - 🌐 [Loot tables generator](https://outils.carrade.eu/minecraft/loot_tables)
 - 🌐 [Crafting recipe generator](https://crafting.thedestruc7i0n.ca/)
 - 🌐 [MCBE Essentials](https://mcbe-essentials.github.io/)
+- 🌐 [Minecraft Creator Tools](https://mctools.dev/) - tests and analytics for MCBE pack files (created by Mojang devs!)
 &nbsp;
 {{< hanchor h="4" >}}
 Rip-offs
