@@ -1,7 +1,7 @@
 ---
 title: Useful Minecraft Links (personal awesome-minecraft)
 date: 2024-04-08T18:01:39.563Z
-lastmod: 2024-07-15T13:54:00.162Z
+lastmod: 2024-07-18T19:06:34.807Z
 draft: false
 image: useful-minecraft-links/img/thumbnail.jpg
 author: XXL Steve
@@ -299,6 +299,7 @@ Models & Animation
 - ⭐ [Mine-imator](https://www.mineimatorforums.com/index.php?/topic/90789-mine-imator-202/) - best Minecraft animation software
 - [Modelbench](https://www.mineimatorforums.com/index.php?/topic/79256-modelbench-115/) - modeling software for Mine-imator
 - ⭐ [Blockbench](https://www.blockbench.net/) - also has web app: create blocky models & animations
+- 🌐 [BDEngine](https://block-display.com/bdengine/) - create block displays with a 3D model editor
 - ⚙️ [MineRenderer](https://minerender.org/) - web API for rendering skins, blocks, items & GUI
 - [Open Note Block Studio](https://opennbs.org/) - note block songs editor
 
