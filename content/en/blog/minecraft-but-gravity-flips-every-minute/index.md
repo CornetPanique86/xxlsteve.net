@@ -1,7 +1,7 @@
 ---
 title: Minecraft, But Gravity Flips Every Minute
 date: 2020-08-22T12:00:00+06:00
-lastmod: 2024-07-10T15:37:26.199Z
+lastmod: 2024-07-24T18:46:48.425Z
 draft: false
 image: minecraft-but-gravity-flips-every-minute/img/header-image.png
 author: XXL Steve
@@ -17,9 +17,9 @@ tableOfContents:
   - h1: Downloads
 downloads:
   - text: .mcpack
-    dl: /dl/minecraft-but-gravity-flips-every-minute/GravityFlipsEveryMinute.mcpack
+    dl: /dl/blog/minecraft-but-gravity-flips-every-minute/GravityFlipsEveryMinute.mcpack
   - text: .zip
-    dl: /dl/minecraft-but-gravity-flips-every-minute/GravityFlipsEveryMinute.zip
+    dl: /dl/blog/minecraft-but-gravity-flips-every-minute/GravityFlipsEveryMinute.zip
 tags:
   - Minecraft Bedrock
   - v1.16

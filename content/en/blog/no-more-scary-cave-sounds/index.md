@@ -1,7 +1,7 @@
 ---
 title: No More Scary Cave Sounds
 date: 2020-07-16T12:00:00+06:00
-lastmod: 2024-07-10T15:38:53.907Z
+lastmod: 2024-07-24T18:46:48.409Z
 draft: false
 image: no-more-scary-cave-sounds/img/header-image.jpg
 author: United Noobs
@@ -11,9 +11,9 @@ images:
   - /blog/no-more-scary-cave-sounds/img/header-image.jpg
 downloads:
   - text: .mcpack
-    dl: /dl/no-more-scary-cave-sounds/NoMoreScarryCaveSounds.mcpack
+    dl: /dl/blog/no-more-scary-cave-sounds/NoMoreScarryCaveSounds.mcpack
   - text: .zip
-    dl: /dl/no-more-scary-cave-sounds/NoMoreScarryCaveSounds.zip
+    dl: /dl/blog/no-more-scary-cave-sounds/NoMoreScarryCaveSounds.zip
 tableOfContents:
   - h1: Credits
   - h1: Copyright

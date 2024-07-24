@@ -1,7 +1,7 @@
 ---
 title: Death Swap (2 Players Only)
 date: 2020-04-24T12:00:00+06:00
-lastmod: 2024-07-10T15:35:13.342Z
+lastmod: 2024-07-24T18:46:48.443Z
 draft: false
 image: death-swap/img/header-image.jpg
 author: United Noobs
@@ -16,9 +16,9 @@ tableOfContents:
   - h1: Downloads
 downloads:
   - text: .mcworld
-    dl: /dl/death-swap/DeathSwap.mcworld
+    dl: /dl/blog/death-swap/DeathSwap.mcworld
   - text: .zip
-    dl: /dl/death-swap/DeathSwap.zip
+    dl: /dl/blog/death-swap/DeathSwap.zip
 tags:
   - Minecraft Bedrock
   - v1.14

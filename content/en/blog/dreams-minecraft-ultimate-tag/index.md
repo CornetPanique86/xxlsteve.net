@@ -1,7 +1,7 @@
 ---
 title: Dream's Minecraft Ultimate Tag
 date: 2020-08-14T12:00:00+06:00
-lastmod: 2024-07-10T15:35:49.061Z
+lastmod: 2024-07-24T18:46:48.439Z
 draft: false
 image: dreams-minecraft-ultimate-tag/img/header-image.png
 author: XXL Steve
@@ -18,9 +18,9 @@ tableOfContents:
   - h1: Downloads
 downloads:
   - text: .mcpack
-    dl: /dl/dreams-minecraft-ultimate-tag/DreamsUltimateTag.mcpack
+    dl: /dl/blog/dreams-minecraft-ultimate-tag/DreamsUltimateTag.mcpack
   - text: .zip
-    dl: /dl/dreams-minecraft-ultimate-tag/DreamsUltimateTag.zip
+    dl: /dl/blog/dreams-minecraft-ultimate-tag/DreamsUltimateTag.zip
 tags:
   - Minecraft Bedrock
   - v1.16

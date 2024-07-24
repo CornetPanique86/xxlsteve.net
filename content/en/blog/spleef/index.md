@@ -1,7 +1,7 @@
 ---
 title: A Little Simple Spleef Game
 date: 2020-06-27T12:00:00+06:00
-lastmod: 2024-07-10T15:39:21.842Z
+lastmod: 2024-07-24T18:46:48.417Z
 draft: false
 image: spleef/img/header-image.jpg
 author: United Noobs
@@ -11,9 +11,9 @@ images:
   - /blog/spleef/img/header-image.jpg
 downloads:
   - text: .mcworld
-    dl: /dl/spleef/Spleef.mcworld
+    dl: /dl/blog/spleef/Spleef.mcworld
   - text: .zip
-    dl: /dl/spleef/Spleef.zip
+    dl: /dl/blog/spleef/Spleef.zip
 tableOfContents:
   - h1: How to play
   - h1: Gamemodes

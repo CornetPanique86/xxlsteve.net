@@ -1,7 +1,7 @@
 ---
 title: French Slap
 date: 2020-07-30T12:00:00+06:00
-lastmod: 2024-07-10T15:36:49.773Z
+lastmod: 2024-07-24T18:46:48.432Z
 draft: false
 image: french-slap/img/header-image.png
 author: XXL Steve
@@ -15,9 +15,9 @@ tableOfContents:
   - h1: Downloads
 downloads:
   - text: .mcworld
-    dl: /dl/french-slap/French_Slap.mcworld
+    dl: /dl/blog/french-slap/French_Slap.mcworld
   - text: .zip
-    dl: /dl/french-slap/French_Slap.zip
+    dl: /dl/blog/french-slap/French_Slap.zip
 tags:
   - Minecraft Bedrock
   - v1.16

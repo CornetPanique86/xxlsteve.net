@@ -1,7 +1,7 @@
 ---
 title: "Trash Collectors! #TeamSeas"
 date: 2021-12-28T12:00:00+06:00
-lastmod: 2024-07-10T15:39:51.378Z
+lastmod: 2024-07-24T18:46:48.413Z
 draft: false
 image: trash-collectors/img/header-image.png
 author: XXL Steve
@@ -22,9 +22,9 @@ tableOfContents:
   - h1: Downloads
 downloads:
   - text: .mcworld
-    dl: /dl/trash-collectors/TrashCollectors.mcworld
+    dl: /dl/blog/trash-collectors/TrashCollectors.mcworld
   - text: .zip
-    dl: /dl/trash-collectors/TrashCollectors.zip
+    dl: /dl/blog/trash-collectors/TrashCollectors.zip
 tags:
   - Minecraft Bedrock
   - v1.18

@@ -1,7 +1,7 @@
 ---
 title: Minecraft Mansave
 date: 2021-01-01T12:00:00+06:00
-lastmod: 2024-07-10T15:38:25.787Z
+lastmod: 2024-07-24T18:46:48.428Z
 draft: false
 image: minecraft-mansave/img/header-image.png
 author: XXL Steve
@@ -16,7 +16,7 @@ tableOfContents:
   - h1: Downloads
 downloads:
   - text: .mcpack
-    dl: /dl/minecraft-mansave/MinecraftMansave.mcpack
+    dl: /dl/blog/minecraft-mansave/MinecraftMansave.mcpack
 tags:
   - Minecraft Bedrock
   - v1.16

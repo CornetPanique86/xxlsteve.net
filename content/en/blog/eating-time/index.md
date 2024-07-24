@@ -1,7 +1,7 @@
 ---
 title: Eating Time!
 date: 2020-08-21T12:00:00+06:00
-lastmod: 2024-07-10T15:36:25.893Z
+lastmod: 2024-07-24T18:46:48.435Z
 draft: false
 image: eating-time/img/header-image.png
 author: XXL Steve
@@ -18,11 +18,11 @@ tableOfContents:
   - h1: Downloads
 downloads:
   - text: .mcpack Behavior
-    dl: /dl/eating-time/EatingTime_bhv.mcpack"
+    dl: /dl/blog/eating-time/EatingTime_bhv.mcpack"
   - text: .mcpack Resources
-    dl: /dl/eating-time/EatingTime_res.mcpack"
+    dl: /dl/blog/eating-time/EatingTime_res.mcpack"
   - text: .zip
-    dl: /dl/eating-time/EatingTime_addon.zip
+    dl: /dl/blog/eating-time/EatingTime_addon.zip
 tags:
   - Minecraft Bedrock
   - v1.16

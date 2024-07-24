@@ -1,7 +1,7 @@
 ---
 title: Minecraft, but Speed and Jump Progressively Increase
 date: 2021-08-02T12:00:00+06:00
-lastmod: 2024-07-10T15:38:22.668Z
+lastmod: 2024-07-24T18:46:48.420Z
 draft: false
 image: minecraft-but-speed-and-jump-progressively-increase/img/header-image.png
 author: XXL Steve
@@ -15,9 +15,9 @@ tableOfContents:
   - h1: Downloads
 downloads:
   - text: .mcpack
-    dl: /dl/minecraft-but-speed-and-jump-progressively-increase/SpeedIncreases.mcpack
+    dl: /dl/blog/minecraft-but-speed-and-jump-progressively-increase/SpeedIncreases.mcpack
   - text: .zip
-    dl: /dl/minecraft-but-speed-and-jump-progressively-increase/SpeedIncreases.zip
+    dl: /dl/blog/minecraft-but-speed-and-jump-progressively-increase/SpeedIncreases.zip
 tags:
   - Minecraft Bedrock
   - v1.17

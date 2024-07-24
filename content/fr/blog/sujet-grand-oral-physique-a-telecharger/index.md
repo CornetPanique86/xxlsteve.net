@@ -1,7 +1,7 @@
 ---
 title: Sujet Grand Oral Physique à télécharger
 date: 2024-07-11T16:09:01+02:00
-lastmod: 2024-07-11T14:39:34.795Z
+lastmod: 2024-07-24T18:47:10.072Z
 draft: false
 image: sujet-grand-oral-physique-a-telecharger/img/thumbnail.jpg
 author: XXL Steve
@@ -18,9 +18,9 @@ tableOfContents:
   - h1: Téléchargements
 downloads:
   - text: Sujet .pdf
-    dl: /dl/sujet-grand-oral-physique-a-telecharger/GRAND ORAL PHYSIQUE.pdf
+    dl: /dl/blog/sujet-grand-oral-physique-a-telecharger/GRAND ORAL PHYSIQUE.pdf
   - text: Sujet .odt
-    dl: /dl/sujet-grand-oral-physique-a-telecharger/GRAND ORAL PHYSIQUE.odt
+    dl: /dl/blog/sujet-grand-oral-physique-a-telecharger/GRAND ORAL PHYSIQUE.odt
 tags:
   - Studies
 ---
@@ -55,7 +55,7 @@ D'autres liens sont dans le PDF du sujet.
 Sujet
 {{< /hanchor >}}
 
-{{< embedpdf "/dl/sujet-grand-oral-physique-a-telecharger/GRAND ORAL PHYSIQUE.pdf" >}}
+{{< embedpdf "/dl/blog/sujet-grand-oral-physique-a-telecharger/GRAND ORAL PHYSIQUE.pdf" >}}
 
 {{< hanchor h="3" >}}
 Support

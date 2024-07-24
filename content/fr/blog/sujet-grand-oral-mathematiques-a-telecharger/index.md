@@ -1,7 +1,7 @@
 ---
 title: Sujet Grand Oral Mathématiques à télécharger
 date: 2024-07-10T16:56:16+02:00
-lastmod: 2024-07-11T12:46:51.647Z
+lastmod: 2024-07-24T18:47:10.074Z
 draft: false
 image: sujet-grand-oral-mathematiques-a-telecharger/img/thumbnail.jpg
 author: XXL Steve
@@ -19,9 +19,9 @@ tableOfContents:
   - h1: Téléchargements
 downloads:
   - text: Sujet .pdf
-    dl: /dl/sujet-grand-oral-mathematiques-a-telecharger/GRAND ORAL MATHS.pdf
+    dl: /dl/blog/sujet-grand-oral-mathematiques-a-telecharger/GRAND ORAL MATHS.pdf
   - text: Sujet .odt
-    dl: /dl/sujet-grand-oral-mathematiques-a-telecharger/GRAND ORAL MATHS.odt
+    dl: /dl/blog/sujet-grand-oral-mathematiques-a-telecharger/GRAND ORAL MATHS.odt
 tags:
   - Studies
 ---
@@ -55,7 +55,7 @@ Pour mieux comprendre le sujet, voici quelques pages qui m'ont servi lors de mes
 Sujet
 {{< /hanchor >}}
 
-{{< embedpdf "/dl/sujet-grand-oral-mathematiques-a-telecharger/GRAND ORAL MATHS.pdf" >}}
+{{< embedpdf "/dl/blog/sujet-grand-oral-mathematiques-a-telecharger/GRAND ORAL MATHS.pdf" >}}
 
 {{< hanchor h="3" >}}
 Support

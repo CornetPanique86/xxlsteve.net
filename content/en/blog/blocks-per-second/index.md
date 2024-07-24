@@ -1,7 +1,7 @@
 ---
 title: Blocks Per Second Calculator
 date: 2021-08-26T12:00:00+06:00
-lastmod: 2024-07-10T15:35:17.806Z
+lastmod: 2024-07-24T18:46:48.405Z
 draft: false
 image: blocks-per-second/img/header-image.png
 author: XXL Steve
@@ -15,9 +15,9 @@ tableOfContents:
   - h1: Downloads
 downloads:
   - text: .mcpack
-    dl: /dl/blocks-per-second/Blocks_per_Second_calculator.mcpack
+    dl: /dl/blog/blocks-per-second/Blocks_per_Second_calculator.mcpack
   - text: .zip
-    dl: /dl/blocks-per-second/Blocks_per_Second_calculator.zip
+    dl: /dl/blog/blocks-per-second/Blocks_per_Second_calculator.zip
 tags:
   - Minecraft Bedrock
   - v1.17
