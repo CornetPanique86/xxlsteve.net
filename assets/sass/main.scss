@@ -1300,8 +1300,11 @@ article section.mainArticle {
   }
   &__top {
     //position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     opacity: 0.5;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: center;
     word-wrap: break-word;
     line-height: 1.2em;
