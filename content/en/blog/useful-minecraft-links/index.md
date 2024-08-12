@@ -1,7 +1,7 @@
 ---
 title: Useful Minecraft Links (personal awesome-minecraft)
 date: 2024-04-08T18:01:39.563Z
-lastmod: 2024-07-18T19:06:34.807Z
+lastmod: 2024-08-12T10:30:44.547Z
 draft: false
 image: useful-minecraft-links/img/thumbnail.jpg
 author: XXL Steve
@@ -244,6 +244,7 @@ Launchers (Bedrock)
 - [MCMrARM's mc-w10-version-launcher](https://github.com/MCMrARM/mc-w10-version-launcher) - Windows version switcher
 - [Amethyst Launcher](https://github.com/FrederoxDev/Amethyst-Launcher) - Amethyst runtime support, version switcher and profiles manager
 - [MCBE Preview Switcher](https://foxynotail.com/software/mcbe-preview-switcher/) - multi-instancing and version switching software
+- [Keep Minecraft UWP Online](https://github.com/yqs112358/Keep-MinecraftUWP-Online) - (not really a launcher) prevents disconnecting when the window is minimized
 
 &nbsp;
 &nbsp;
