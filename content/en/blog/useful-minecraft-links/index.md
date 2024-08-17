@@ -1,7 +1,7 @@
 ---
 title: Useful Minecraft Links (personal awesome-minecraft)
 date: 2024-04-08T18:01:39.563Z
-lastmod: 2024-08-12T10:30:44.547Z
+lastmod: 2024-08-17T07:35:35.794Z
 draft: false
 image: useful-minecraft-links/img/thumbnail.jpg
 author: XXL Steve
@@ -346,4 +346,5 @@ Documentation & Communities
 
 **🛒 Markets**
 - [BuiltByBit](https://builtbybit.com/) - formerly MCMarket, largest market from Minecraft-related services
+- [Polymart](https://polymart.org/) - Minecraft marketplace
 - [Bucket of Crabs](https://www.bucketofcrabs.net/) - find jobs related to Minecraft (and other games)
