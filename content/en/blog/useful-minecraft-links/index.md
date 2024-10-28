@@ -1,7 +1,7 @@
 ---
 title: Useful Minecraft Links (personal awesome-minecraft)
 date: 2024-04-08T18:01:39.563Z
-lastmod: 2024-08-17T07:35:35.794Z
+lastmod: 2024-10-28T11:25:24.247Z
 draft: false
 image: useful-minecraft-links/img/thumbnail.jpg
 author: XXL Steve
@@ -338,6 +338,8 @@ Documentation & Communities
 - 📕 [Minecraft Parkour Wiki](https://mcpk.miraheze.org/wiki/Main_Page)
 &nbsp;
 - 🌐 [Minecraft Assets](https://mcasset.cloud/) - browse Minecraft files
+- 🌐 [MCICONS](https://mcicons.pages.dev/) - get full resolution Minecraft item icons
+- 🌐 [Minecraft Titles](https://mctitles.com/) - get Minecraft-styled fonts and Minecraft's official logos
 &nbsp;
 
 - [Omniarchive](https://omniarchive.uk/) - Minecraft archives
