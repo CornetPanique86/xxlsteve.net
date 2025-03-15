@@ -1,11 +1,11 @@
 ---
 title: Search Component and Page for NextJS App Router
 date: 2025-03-15T12:47:17+01:00
-lastmod: 2025-03-15T16:32:58.457Z
+lastmod: 2025-03-15T20:20:47.649Z
 draft: false
 image: search-component-and-page-for-nextjs/img/thumbnail.jpg
 author: XXL Steve
-description: null
+description: How to add a search component and page to your Next App router website!
 ogtype: article
 images:
     - /blog/search-component-and-page-for-nextjs/img/thumbnail.jpg
