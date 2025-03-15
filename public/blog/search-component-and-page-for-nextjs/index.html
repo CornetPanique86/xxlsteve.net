@@ -1,0 +1,987 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Search Component and Page for NextJS App Router | XXL Steve</title><meta property="og:title" content="Search Component and Page for NextJS App Router"><meta property="og:description" content="Build a search component in the navigation bar that updates results on user input, as well as a search page to show all results!
+Search pageSearch component in navigation barThere are two parts to this project:
+the search component, which is embedded in the navigation bar (or wherever you want to put it), that fetches the search results from an API: it&rsquo;s client-side the search page, like /search which is server-side So first of all, let&rsquo;s make the search function."><meta property="og:type" content="article"><meta property="og:url" content="https://xxlsteve.net/blog/search-component-and-page-for-nextjs/"><meta property="og:image" content="https://xxlsteve.net/blog/search-component-and-page-for-nextjs/img/thumbnail.jpg"><meta property="article:section" content="blog"><meta property="article:published_time" content="2025-03-15T12:47:17+01:00"><meta property="article:modified_time" content="2025-03-15T16:32:58+00:00"><meta property="og:site_name" content="XXL Steve"><meta name=description content="Build a search component in the navigation bar that updates results on user input, as well as a search page to show all results!
+Search pageSearch component in navigation barThere are two parts to this project:
+the search component, which is embedded in the navigation bar (or wherever you want to put it), that fetches the search results from an API: it&rsquo;s client-side the search page, like /search which is server-side So first of all, let&rsquo;s make the search function."><meta content="#4A3C5C" data-react-helmet=true name=theme-color><link href=/sass/syntax.min.css rel=stylesheet><link rel=stylesheet href=/assets/css/main.min.6141b1a9007e185b24bcf6baeb7fc55063d4287534766c43d0f27bcddf7ca0aed8bd18330102973261a7507deb547f7c502cd6f96666cef15d3333cc2719afd9.css integrity="sha512-YUGxqQB+GFskvPa663/FUGPUKHU0dmxD0PJ7zd98oK7YvRgzAQKXMmGnUH3rVH98UCzW+WZmzvFdMzPMJxmv2Q=="><script fetchpriority=high src=/js/main.min.e81f969b5a9898540e50117b6ba5f266e90149c39a0f525d10968e0d2bd257fbd22baef42f4ff6f11dc19d461e4bb9d6084eef93dcd35d2c11976da4883c6ded.js integrity></script>
+<script src=https://cdn.jsdelivr.net/gh/CornetPanique86/pixelart-icons/dist/pixelarticons.js crossorigin=anonymous></script>
+<link rel=stylesheet type=text/css href=https://cdn.jsdelivr.net/gh/CornetPanique86/pixelart-icons/dist/pixelarticons_anim.css><script fetchpriority=low type=text/javascript src='https://platform-api.sharethis.com/js/sharethis.js#property=63dc0e00b14908001316e618&product=inline-share-buttons' async></script>
+<link rel=alternate type=application/rss+xml href=https://xxlsteve.net/blog/search-component-and-page-for-nextjs/index.xml title="XXL Steve"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css><script src=https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js></script>
+<script>window.addEventListener("load",()=>{if(document.querySelectorAll(".swiper").forEach(e=>{const t=new Swiper(`#${e.id}`,{loop:!0,pagination:{el:".swiper-pagination",clickable:!0},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}})}),!window.matchMedia)return!1;window.matchMedia("(prefers-color-scheme: dark)").matches&&window.REMARK42&&window.REMARK42.changeTheme("dark");const t=800,e=document.querySelector(".backToTop"),n=()=>document.documentElement||document.body;document.addEventListener("scroll",()=>{n().scrollTop>t?e.classList.remove("hidden"):e.classList.add("hidden")});const s=()=>{document.body.scrollIntoView()};e.addEventListener("click",s)})</script></head><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://xxlsteve.net/blog/search-component-and-page-for-nextjs/img/thumbnail.jpg"><meta name=twitter:title content="Search Component and Page for NextJS App Router"><meta name=twitter:description content="Build a search component in the navigation bar that updates results on user input, as well as a search page to show all results!
+Search pageSearch component in navigation barThere are two parts to this project:
+the search component, which is embedded in the navigation bar (or wherever you want to put it), that fetches the search results from an API: it&rsquo;s client-side the search page, like /search which is server-side So first of all, let&rsquo;s make the search function."><meta name=twitter:site content="@cornetpanique86"><body class=page><div class=grid-page><header><nav><button class=nav-burger title=Navigation type=button onclick=showNavBar()><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h10v2H0zm0 4h10v2H0zm0 4h10v2H0z"/></svg></button><ul class=top-nav><li class=top-nav__logo><a href=/><img class=icons src=/header-icon.png title=Home></a></li><div class=top-nav__link-group><li class="top-nav__link top-nav__dropDownParent"><a href=/resources class=noA><span>Resources</span></a>
+<i class="pxico-caret rotateDown"></i><ul class=top-nav__dropDown><li><a href=/tools class=noA><span>Tools</span></a></li></ul></li><li class=top-nav__link><a href=/blog class=noA><span>Blog</span></a></li><li class="top-nav__link top-nav__dropDownParent"><a href=/about class=noA><span>About</span></a>
+<i class="pxico-caret rotateDown"></i><ul class=top-nav__dropDown><li><a href=/socials class=noA><span>Socials & Contact</span></a></li></ul></li><li class=top-nav__link><select name=theme id=themeToggler class=mcbutton onchange=themeSettings() title='Select theme'><option value=auto>Auto</option><option value=light>Light</option><option value=dark>Dark</option></select></li><li class=top-nav__link><button type=button title='Search (Ctrl /)' id=navSearchBtn>
+<span><i class=pxico-search></i></span></button></li></div></ul><div id=search-pageblock class="pageblock hidden" style=display:none><form id=search-form class=noscript method=get action=https://duckduckgo.com/ data-language-prefix><div class=search-bar><input id=search-input class=search--display name=q tabindex=0 autocomplete=off value=" site:https://xxlsteve.net" placeholder="Search (Ctrl /)">
+<input id=search-submit class="icon mcbutton" type=submit value=⌕></div><div class=search-topTaxonomies><div><h3><a href=/categories/>Categories</a></h3><div class=taxonomies__tag-group><div class=tag><span class=tag-text><a href=/categories/addon/>Addon</a></span></div><div class=tag><span class=tag-text><a href=/categories/creation/>Creation</a></span></div><div class=tag><span class=tag-text><a href=/categories/map/>Map</a></span></div><div class=tag><span class=tag-text><a href=/categories/resource-pack/>Resource Pack</a></span></div><div class=tag><span class=tag-text><a href=/categories/tutorial/>Tutorial</a></span></div></div></div><div><h3><a href=/tags/>Tags</a></h3><div class=taxonomies__tag-group><div class=tag><span class=tag-text><a href=/tags/javascript/>Javascript</a></span></div><div class=tag><span class=tag-text><a href=/tags/linux/>Linux</a></span></div><div class=tag><span class=tag-text><a href=/tags/minecraft/>Minecraft</a></span></div><div class=tag><span class=tag-text><a href=/tags/minecraft-bedrock/>Minecraft Bedrock</a></span></div><div class=tag><span class=tag-text><a href=/tags/minecraft-java/>Minecraft Java</a></span></div><div class=tag><span class=tag-text><a href=/tags/other/>Other</a></span></div><div class=tag><span class=tag-text><a href=/tags/react/>React</a></span></div><div class=tag><span class=tag-text><a href=/tags/typescript/>Typescript</a></span></div><div class=tag><span class=tag-text><a href=/tags/v1.14/>v1.14</a></span></div><div class=tag><span class=tag-text><a href=/tags/v1.16/>v1.16</a></span></div><div class=tag><span class=tag-text><a href=/tags/v1.17/>v1.17</a></span></div><div class=tag><span class=tag-text><a href=/tags/v1.18/>v1.18</a></span></div></div></div></div><ul id=search-results class=search--display></ul></form></div></nav></header><main class=main-content><div class=container><div class=page-content><button type=button class="backToTop mcbutton hidden"><i class=pxico-arrow></i></button>
+<a href=/blog><i class=pxico-arrow style=transform:rotate(-90deg)></i> Blog</a><article><section><meta itemprop=image content="/blog/search-component-and-page-for-nextjs/img/thumbnail.jpg"><meta itemprop=publisher content="xxlsteve.net"><div class=b-hero itemscope itemtype=https://schema.org/BlogPosting><img class=b-hero__image src=/blog/search-component-and-page-for-nextjs/img/thumbnail.jpg><div class=b-hero__info><header><h1 class=b-hero__title itemprop="name headline">Search Component and Page for NextJS App Router</h1></header><div class=b-hero__author-date><span>Author: <a href=/about itemprop=author name="XXL Steve">XXL Steve</a></span>
+<span>Published: <span class=date>March 15, 2025<span class=date__expand>Saturday, March 15, 2025 12:47:17 pm CET</span></span></span>
+<span>Updated: <span class=date>March 15, 2025<span class=date__expand>Saturday, March 15, 2025 4:32:58 pm UTC</span></span></span>
+<span>Reading time: <span class=date>11 min<span class=date__expand>2177 words</span></span></span></div><div class=sharethis-inline-share-buttons></div></div></div><div class=taxonomies><span class=taxonomies__text>Categories:</span><div class=taxonomies__tag-group><div class=tag><span class=tag-text><a href=/categories/tutorial>Tutorial</a></span></div></div><span class=taxonomies__text>Tags:</span><div class=taxonomies__tag-group><div class=tag><span class=tag-text><a href=/tags/javascript>Javascript</a></span></div><div class=tag><span class=tag-text><a href=/tags/typescript>Typescript</a></span></div><div class=tag><span class=tag-text><a href=/tags/react>React</a></span></div></div></div></section><aside><div class=b-table-of-contents><div class=b-table-of-contents__header>Table of Contents</div><div class=b-table-of-contents__content><div class=b-table-of-contents__text><a href=#getting-the-search-results class=noA><span class=b-table-of-contents__h1>Getting the search results</span></a><br><a href=#install-fuse class=noA><span class=b-table-of-contents__h2>Install Fuse</span></a><br><a href=#search-function class=noA><span class=b-table-of-contents__h2>Search function</span></a><br><a href=#search-component class=noA><span class=b-table-of-contents__h1>Search component</span></a><br><a href=#apisearch class=noA><span class=b-table-of-contents__h2>api/search</span></a><br><a href=#add-component-to-website class=noA><span class=b-table-of-contents__h2>Add component to website</span></a><br><a href=#search-page class=noA><span class=b-table-of-contents__h1>Search page</span></a><br><a href=#configuring-fuzzy-search class=noA><span class=b-table-of-contents__h1>Configuring fuzzy search</span></a><br><a href=#styling class=noA><span class=b-table-of-contents__h1>Styling</span></a><br></div><div class=b-table-of-contents__number>1<br>1.1<br>1.2<br>2<br>2.1<br>2.2<br>3<br>4<br>5<br></div></div></div></aside><hr><section itemprop=headline class=mainArticle><p>Build a search component in the navigation bar that updates results on user input, as well as a search page to show all results!</p><div class=swiper id=finalResult><div class=swiper-wrapper><div class=swiper-slide><figure title='Search page' class="figurePopup imagePopup" style=width:min(1744px,70%)><img src=/blog/search-component-and-page-for-nextjs/img/styled-page.jpg srcset="/blog/search-component-and-page-for-nextjs/img/styled-page_huafe6296d896fe167a351b69076252303_31930_320x0_resize_q75_box.jpg 320w,
+/blog/search-component-and-page-for-nextjs/img/styled-page_huafe6296d896fe167a351b69076252303_31930_600x0_resize_q75_box.jpg 600w,
+/blog/search-component-and-page-for-nextjs/img/styled-page_huafe6296d896fe167a351b69076252303_31930_1200x0_resize_q75_box.jpg 2x" alt="Search page"><figcaption><p>Search page</p></figcaption></figure></div><div class=swiper-slide><figure title='Search component in navigation bar' class="figurePopup imagePopup" style=width:min(1744px,70%)><img src=/blog/search-component-and-page-for-nextjs/img/styled-search.jpg srcset="/blog/search-component-and-page-for-nextjs/img/styled-search_hufb0c52fa50cfa688bd46e67e2dcb2da3_17837_320x0_resize_q75_box.jpg 320w,
+/blog/search-component-and-page-for-nextjs/img/styled-search_hufb0c52fa50cfa688bd46e67e2dcb2da3_17837_600x0_resize_q75_box.jpg 600w,
+/blog/search-component-and-page-for-nextjs/img/styled-search_hufb0c52fa50cfa688bd46e67e2dcb2da3_17837_1200x0_resize_q75_box.jpg 2x" alt="Search component in navigation bar"><figcaption><p>Search component in navigation bar</p></figcaption></figure></div></div><div class=swiper-pagination></div><div class=swiper-button-prev></div><div class=swiper-button-next></div></div><p>There are two parts to this project:</p><ul><li>the search component, which is embedded in the navigation bar (or wherever you want to put it), that fetches the search results from an API: it&rsquo;s client-side</li><li>the search page, like <code>/search</code> which is server-side</li></ul><p>So first of all, let&rsquo;s make the search function.</p><div class=hanchor__div><h3 class=hanchor id=getting-the-search-results>Getting the search results</h3><a href=#getting-the-search-results class=hanchor__anchor title="Anchor: 
+Getting the search results
+"><i class=pxico-link></i></a></div><p>This function is responsible for searching a query in the dataset, and returning the results.</p><p>Now, you can simply iterate through your data and use <code>content.includes(query)</code> to keep it simple, but for slightly more advanced search yet just as lightweight, you can use <a href=https://www.fusejs.io>Fuse.js</a>, a very popular library for fuzzy search; meaning typos will still give you search results.</p><div class=hanchor__div><h4 class=hanchor id=install-fuse>Install Fuse</h4><a href=#install-fuse class=hanchor__anchor title="Anchor: 
+Install Fuse
+"><i class=pxico-link></i></a></div><p>In your root directory, enter the command:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>npm install fuse.js
+</span></span></code></pre></div><p>It should now be installed in your project.</p><div class=hanchor__div><h4 class=hanchor id=search-function>Search function</h4><a href=#search-function class=hanchor__anchor title="Anchor: 
+Search function
+"><i class=pxico-link></i></a></div><p><code>lib/search.ts</code>:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>Fuse</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;fuse.js&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>fuse</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Fuse</span>(<span style=color:#a6e22e>dataset</span>, {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>keys</span><span style=color:#f92672>:</span> [
+</span></span><span style=display:flex><span>      <span style=color:#e6db74>&#34;metadata.title&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#e6db74>&#34;metadata.author&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#e6db74>&#34;content&#34;</span>
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>threshold</span>: <span style=color:#66d9ef>0.3</span>
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>getSearchResults</span>(
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>text</span>: <span style=color:#66d9ef>string</span> <span style=color:#f92672>|</span> <span style=color:#66d9ef>string</span>[] <span style=color:#f92672>|</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>|</span> <span style=color:#66d9ef>undefined</span>, <span style=color:#75715e>/* search query */</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>limit</span>: <span style=color:#66d9ef>number</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>15</span>, <span style=color:#75715e>/* max number of results */</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>start</span>: <span style=color:#66d9ef>number</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> <span style=color:#75715e>/* start index */</span>
+</span></span><span style=display:flex><span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>text</span> <span style=color:#f92672>||</span> <span style=color:#a6e22e>text</span>.<span style=color:#a6e22e>toString</span>().<span style=color:#a6e22e>trim</span>().<span style=color:#a6e22e>length</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>3</span> <span style=color:#f92672>||</span> <span style=color:#a6e22e>text</span>.<span style=color:#a6e22e>toString</span>().<span style=color:#a6e22e>trim</span>().<span style=color:#a6e22e>length</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>255</span>) <span style=color:#66d9ef>return</span> { <span style=color:#a6e22e>results</span><span style=color:#f92672>:</span> [], <span style=color:#a6e22e>totalNumber</span>: <span style=color:#66d9ef>0</span> };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>text</span>.<span style=color:#a6e22e>toString</span>().<span style=color:#a6e22e>trim</span>();
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>result</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>fuse</span>.<span style=color:#a6e22e>search</span>(<span style=color:#a6e22e>query</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>results</span>: <span style=color:#66d9ef>result</span>
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>slice</span>(<span style=color:#a6e22e>start</span>, <span style=color:#a6e22e>start</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>limit</span>)
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>map</span>((<span style=color:#a6e22e>result</span>) <span style=color:#f92672>=&gt;</span> ({
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>slug</span>: <span style=color:#66d9ef>result.item.slug</span>,
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>metadata</span>: <span style=color:#66d9ef>result.item.metadata</span>
+</span></span><span style=display:flex><span>        })),
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>totalNumber</span>: <span style=color:#66d9ef>result.length</span>
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></td></tr></table></div></div><p><code>limit</code> and <code>start</code> arguments will be useful for pagination later on, but also assure that only a maximum of 15 results are sent to avoid too large responses.</p><p>Your dataset is a list containing your data. For a blog for example, it could be:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>[
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;slug&#34;</span>: <span style=color:#e6db74>&#34;first-post&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;metadata&#34;</span>: {
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;title&#34;</span>: <span style=color:#e6db74>&#34;First Post&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;date&#34;</span>: <span style=color:#e6db74>&#34;2020-01-01&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;author&#34;</span>: <span style=color:#e6db74>&#34;John Doe&#34;</span>
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;content&#34;</span>: <span style=color:#e6db74>&#34;This is the first post.&#34;</span>
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;slug&#34;</span>: <span style=color:#e6db74>&#34;second-post&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;metadata&#34;</span>: {
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;title&#34;</span>: <span style=color:#e6db74>&#34;Second Post&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;date&#34;</span>: <span style=color:#e6db74>&#34;2020-01-02&#34;</span>,
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&#34;author&#34;</span>: <span style=color:#e6db74>&#34;Jane Doe&#34;</span>
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;content&#34;</span>: <span style=color:#e6db74>&#34;Lorem ipsum dolor sit amet.&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>]
+</span></span></code></pre></td></tr></table></div></div><p>The keys correspond to the object keys of your data that you&rsquo;d like Fuse to search in. You can apply different weights to them:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>fuse</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Fuse</span>(<span style=color:#a6e22e>dataset</span>, {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>keys</span><span style=color:#f92672>:</span> [
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;metadata.title&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>weight</span>: <span style=color:#66d9ef>3</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;metadata.author&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>weight</span>: <span style=color:#66d9ef>2</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      <span style=color:#e6db74>&#34;content&#34;</span>
+</span></span><span style=display:flex><span>    ],
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>threshold</span>: <span style=color:#66d9ef>0.3</span>
+</span></span><span style=display:flex><span>});
+</span></span></code></pre></td></tr></table></div></div><p>Currently, the fuse configuration has a <code>threshold</code> value of <code>3</code> which means how strict the search is regarding to typos.</p><p>Later on, we will change the config to fix a problem.</p><div class=hanchor__div><h3 class=hanchor id=search-component>Search component</h3><a href=#search-component class=hanchor__anchor title="Anchor: 
+Search component
+"><i class=pxico-link></i></a></div><p>Now, let&rsquo;s write the search component.<br>We will be using the package &ldquo;use-debounce&rdquo; to send requests to the API with a cooldown, instead of every time the input changes:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>npm i use-debounce
+</span></span></code></pre></div><p><code>app/Search.tsx</code>:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code><span style=background-color:#3c3d38><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style=background-color:#3c3d38><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style=background-color:#3c3d38><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style=background-color:#3c3d38><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span></span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">69
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-tsx data-lang=tsx><span style=display:flex;background-color:#3c3d38><span><span style=color:#e6db74>&#34;use client&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>useState</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;react&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>Form</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;next/form&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>Link</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;next/link&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>useDebouncedCallback</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;use-debounce&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>TSearchResult</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>results</span><span style=color:#f92672>:</span> { <span style=color:#a6e22e>slug</span>: <span style=color:#66d9ef>string</span>, <span style=color:#a6e22e>metadata</span><span style=color:#f92672>:</span> { <span style=color:#a6e22e>title</span>: <span style=color:#66d9ef>string</span>, <span style=color:#a6e22e>date</span>: <span style=color:#66d9ef>string</span>, <span style=color:#a6e22e>author</span>: <span style=color:#66d9ef>string</span> } }[],
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>totalNumber</span>: <span style=color:#66d9ef>number</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>Search() {</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> [<span style=color:#a6e22e>showSearchbar</span>, <span style=color:#a6e22e>setShowSearchbar</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>useState</span>(<span style=color:#66d9ef>false</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> [<span style=color:#a6e22e>searchResults</span>, <span style=color:#a6e22e>setSearchResults</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>useState</span>&lt;<span style=color:#f92672>TSearchResult</span>&gt;({ <span style=color:#a6e22e>results</span><span style=color:#f92672>:</span> [], <span style=color:#a6e22e>totalNumber</span>: <span style=color:#66d9ef>0</span> });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex;background-color:#3c3d38><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>handleInputChange</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>useDebouncedCallback</span>((<span style=color:#a6e22e>e</span>: <span style=color:#66d9ef>React.ChangeEvent</span>&lt;<span style=color:#f92672>HTMLInputElement</span>&gt;) <span style=color:#f92672>=&gt;</span> {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>value</span>.<span style=color:#a6e22e>trim</span>();
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>query</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>setSearchResults</span>({ <span style=color:#a6e22e>results</span><span style=color:#f92672>:</span> [], <span style=color:#a6e22e>totalNumber</span>: <span style=color:#66d9ef>0</span> });
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex;background-color:#3c3d38><span>        <span style=color:#a6e22e>fetch</span>(<span style=color:#e6db74>`/api/search?query=</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>query</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&amp;limit=5`</span>)
+</span></span><span style=display:flex><span>            .<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>res</span> <span style=color:#f92672>=&gt;</span> {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>json</span>().<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>parsedValue</span> <span style=color:#f92672>=&gt;</span> {
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>setSearchResults</span>(<span style=color:#a6e22e>parsedValue</span>);
+</span></span><span style=display:flex><span>                });
+</span></span><span style=display:flex><span>            });
+</span></span><span style=display:flex><span>    }, <span style=color:#ae81ff>300</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> (
+</span></span><span style=display:flex><span>        &lt;&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>li</span> <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Search&#34;</span>&gt;
+</span></span><span style=display:flex><span>                &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;button&#34;</span> <span style=color:#a6e22e>onClick</span><span style=color:#f92672>=</span>{() <span style=color:#f92672>=&gt;</span> <span style=color:#a6e22e>setShowSearchbar</span>(<span style=color:#f92672>!</span><span style=color:#a6e22e>showSearchbar</span>)}&gt;<span style=color:#960050;background-color:#1e0010>🔎</span>&lt;/<span style=color:#f92672>button</span>&gt;
+</span></span><span style=display:flex><span>            &lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>            {<span style=color:#a6e22e>showSearchbar</span> <span style=color:#f92672>&amp;&amp;</span> 
+</span></span><span style=display:flex><span>                &lt;<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>                    &lt;<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex;background-color:#3c3d38><span>                        &lt;<span style=color:#f92672>Form</span> <span style=color:#a6e22e>action</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/search&#34;</span> <span style=color:#a6e22e>role</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#39;search&#39;</span>&gt;
+</span></span><span style=display:flex><span>                            &lt;<span style=color:#f92672>label</span> <span style=color:#a6e22e>htmlFor</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;navSearch&#34;</span> <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Search&#34;</span>&gt;<span style=color:#960050;background-color:#1e0010>🔎</span>&lt;/<span style=color:#f92672>label</span>&gt;
+</span></span><span style=display:flex><span>                            &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;navSearch&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;query&#34;</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text&#34;</span> <span style=color:#a6e22e>maxLength</span><span style=color:#f92672>=</span>{<span style=color:#ae81ff>255</span>} <span style=color:#a6e22e>placeholder</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Search...&#34;</span>
+</span></span><span style=display:flex><span>                                <span style=color:#a6e22e>onChange</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>handleInputChange</span>}
+</span></span><span style=display:flex><span>                            /&gt;
+</span></span><span style=display:flex><span>                            &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;submit&#34;</span>&gt;<span style=color:#a6e22e>SEARCH</span>&lt;/<span style=color:#f92672>button</span>&gt;
+</span></span><span style=display:flex><span>                        &lt;/<span style=color:#f92672>Form</span>&gt;
+</span></span><span style=display:flex><span>                        &lt;<span style=color:#f92672>ul</span>&gt;
+</span></span><span style=display:flex><span>                            {<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span>                                <span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>results</span>.<span style=color:#a6e22e>map</span>((<span style=color:#a6e22e>result</span>, <span style=color:#a6e22e>index</span>) <span style=color:#f92672>=&gt;</span> (
+</span></span><span style=display:flex><span>                                    &lt;<span style=color:#f92672>li</span> <span style=color:#a6e22e>key</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>index</span>}&gt;
+</span></span><span style=display:flex><span>                                        &lt;<span style=color:#f92672>Link</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>slug</span>}&gt;
+</span></span><span style=display:flex><span>                                            &lt;<span style=color:#f92672>h4</span>&gt;
+</span></span><span style=display:flex><span>                                                {<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>metadata</span>.<span style=color:#a6e22e>title</span>}
+</span></span><span style=display:flex><span>                                            &lt;/<span style=color:#f92672>h4</span>&gt;
+</span></span><span style=display:flex><span>                                        &lt;/<span style=color:#f92672>Link</span>&gt;
+</span></span><span style=display:flex><span>                                    &lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>                                ))
+</span></span><span style=display:flex><span>                            }
+</span></span><span style=display:flex><span>                            {<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span> <span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>results</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span>                                &lt;<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>                                    <span style=color:#f92672>+</span>{<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>results</span>.<span style=color:#a6e22e>length</span>} <span style=color:#a6e22e>results</span>
+</span></span><span style=display:flex><span>                                &lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>                            }
+</span></span><span style=display:flex><span>                        &lt;/<span style=color:#f92672>ul</span>&gt;
+</span></span><span style=display:flex><span>                    &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>                &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        &lt;/&gt;
+</span></span><span style=display:flex><span>    );
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></td></tr></table></div></div><ul><li><code>"use client";</code>: it&rsquo;s a client-side component</li><li><code>handleInputChange</code>: it uses <code>useDebouncedCallback</code> with a <code>300ms</code> cooldown</li><li><code>fetch("/api/search?query=${query}&amp;limit=5")</code> every time input changes, it makes a call to the search API which we are about to write</li><li><code>&lt;Form action="/search" role='search'></code>: it uses <code>Next/Form</code>, which will move the user to <code>/search?query=&lt;their query></code> if they press <kbd>Enter</kbd> or click the submit button</li></ul><div class=hanchor__div><h4 class=hanchor id=apisearch>api/search</h4><a href=#apisearch class=hanchor__anchor title="Anchor: 
+api/search
+"><i class=pxico-link></i></a></div><p>Now, let&rsquo;s define the search API:</p><p><code>app/api/search/route.ts</code>:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">9
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>getSearchResults</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;@/lib/search&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>async</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>GET</span>(<span style=color:#a6e22e>request</span>: <span style=color:#66d9ef>Request</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>url</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>URL</span>(<span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>url</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>url</span>.<span style=color:#a6e22e>searchParams</span>.<span style=color:#66d9ef>get</span>(<span style=color:#e6db74>&#34;query&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>limit</span> <span style=color:#f92672>=</span> parseInt(<span style=color:#a6e22e>url</span>.<span style=color:#a6e22e>searchParams</span>.<span style=color:#66d9ef>get</span>(<span style=color:#e6db74>&#34;limit&#34;</span>) <span style=color:#f92672>??</span> <span style=color:#e6db74>&#34;&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>Response</span>.<span style=color:#a6e22e>json</span>(<span style=color:#a6e22e>getSearchResults</span>(<span style=color:#a6e22e>query</span>, (<span style=color:#a6e22e>limit</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span>Number.isNaN(<span style=color:#a6e22e>limit</span>)) <span style=color:#f92672>?</span> <span style=color:#a6e22e>limit</span> : <span style=color:#66d9ef>undefined</span>));
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></td></tr></table></div></div><div class=hanchor__div><h4 class=hanchor id=add-component-to-website>Add component to website</h4><a href=#add-component-to-website class=hanchor__anchor title="Anchor: 
+Add component to website
+"><i class=pxico-link></i></a></div><p>Finally, let&rsquo;s include the search component in our website, for example:</p><p><code>app/layout.tsx</code>:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>Search</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;./Search&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#75715e>/* ... */</span>
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>html</span> <span style=color:#a6e22e>lang</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;en&#34;</span>&gt;
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>body</span> <span style=color:#a6e22e>className</span><span style=color:#f92672>=</span>{<span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>geistSans</span>.<span style=color:#a6e22e>variable</span><span style=color:#e6db74>}</span><span style=color:#e6db74> </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>geistMono</span>.<span style=color:#a6e22e>variable</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>}&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>nav</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>ul</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>                &lt;<span style=color:#f92672>Link</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/&#34;</span>&gt;<span style=color:#a6e22e>Home</span>&lt;/<span style=color:#f92672>Link</span>&gt;
+</span></span><span style=display:flex><span>            &lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>Search</span> /&gt;
+</span></span><span style=display:flex><span>          &lt;/<span style=color:#f92672>ul</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>nav</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>main</span>&gt;{<span style=color:#a6e22e>children</span>}&lt;/<span style=color:#f92672>main</span>&gt;
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>body</span>&gt;
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>html</span>&gt;
+</span></span><span style=display:flex><span><span style=color:#75715e>/* ... */</span>
+</span></span></code></pre></td></tr></table></div></div><p>And there you go, you have a working - albeit ugly - search component!</p><figure title='Search in the home page' class="figurePopup imagePopup" style=width:min(269px,70%)><img src=/blog/search-component-and-page-for-nextjs/img/working-search-component.jpg srcset="/blog/search-component-and-page-for-nextjs/img/working-search-component_hu278a0bf87e3c3af370e7a7e518284353_5602_320x0_resize_q75_box.jpg 320w,
+/blog/search-component-and-page-for-nextjs/img/working-search-component_hu278a0bf87e3c3af370e7a7e518284353_5602_600x0_resize_q75_box.jpg 600w,
+/blog/search-component-and-page-for-nextjs/img/working-search-component_hu278a0bf87e3c3af370e7a7e518284353_5602_1200x0_resize_q75_box.jpg 2x" alt="Search in the home page"><figcaption><p>Search in the home page</p></figcaption></figure><div class=hanchor__div><h3 class=hanchor id=search-page>Search page</h3><a href=#search-page class=hanchor__anchor title="Anchor: 
+Search page
+"><i class=pxico-link></i></a></div><p>Located at <code>example.com/search</code>, the search page may be entered every time the user presses <kbd>Enter</kbd> in the search bar or clicks on the &ldquo;Search&rdquo; submit button.</p><p>It&rsquo;s a server-side component, so it doesn&rsquo;t require the API as it directly calls the <code>getSearchResults</code> function.</p><p><code>api/search/page.tsx</code>:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">53
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>Form</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;next/form&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>getSearchResults</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;@/lib/search&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>Link</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;next/link&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>async</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>SearchPage</span>({
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>searchParams</span>,
+</span></span><span style=display:flex><span>  }<span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>searchParams</span>: <span style=color:#66d9ef>Promise</span><span style=color:#f92672>&lt;</span>{ [<span style=color:#a6e22e>key</span>: <span style=color:#66d9ef>string</span>]<span style=color:#f92672>:</span> <span style=color:#66d9ef>string</span> <span style=color:#f92672>|</span> <span style=color:#66d9ef>string</span>[] <span style=color:#f92672>|</span> <span style=color:#66d9ef>undefined</span> }<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>  }) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>query</span>, <span style=color:#a6e22e>page</span> } <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#a6e22e>searchParams</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>currentPage</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>page</span> <span style=color:#f92672>?</span> (parseInt(<span style=color:#a6e22e>page</span>.<span style=color:#a6e22e>toString</span>()) <span style=color:#f92672>||</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>searchResults</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>getSearchResults</span>(<span style=color:#a6e22e>query</span>, <span style=color:#66d9ef>undefined</span>, (<span style=color:#a6e22e>currentPage</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>*</span> <span style=color:#ae81ff>15</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> (
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>article</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>h1</span>&gt;<span style=color:#a6e22e>Search</span> <span style=color:#a6e22e>results</span>&lt;/<span style=color:#f92672>h1</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>section</span>&gt;
+</span></span><span style=display:flex><span>                &lt;<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>                    &lt;<span style=color:#f92672>Form</span> <span style=color:#a6e22e>action</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/search&#34;</span> <span style=color:#a6e22e>role</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#39;search&#39;</span>&gt;
+</span></span><span style=display:flex><span>                        &lt;<span style=color:#f92672>label</span> <span style=color:#a6e22e>htmlFor</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;search&#34;</span> <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Search&#34;</span>&gt;<span style=color:#960050;background-color:#1e0010>🔎</span>&lt;/<span style=color:#f92672>label</span>&gt;
+</span></span><span style=display:flex><span>                        &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;search&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;query&#34;</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text&#34;</span> <span style=color:#a6e22e>maxLength</span><span style=color:#f92672>=</span>{<span style=color:#ae81ff>255</span>} <span style=color:#a6e22e>defaultValue</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>query</span>} <span style=color:#a6e22e>placeholder</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Search...&#34;</span>/&gt;
+</span></span><span style=display:flex><span>                        &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;submit&#34;</span>&gt;<span style=color:#a6e22e>Search</span>&lt;/<span style=color:#f92672>button</span>&gt;
+</span></span><span style=display:flex><span>                    &lt;/<span style=color:#f92672>Form</span>&gt;
+</span></span><span style=display:flex><span>                    &lt;<span style=color:#f92672>p</span>&gt;
+</span></span><span style=display:flex><span>                        {<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>0</span> 
+</span></span><span style=display:flex><span>                            <span style=color:#f92672>?</span> &lt;&gt;<span style=color:#a6e22e>Found</span> <span style=color:#a6e22e>no</span> <span style=color:#a6e22e>results</span> <span style=color:#66d9ef>for</span> &lt;<span style=color:#f92672>strong</span>&gt;{<span style=color:#a6e22e>query</span>}&lt;/<span style=color:#f92672>strong</span>&gt;.&lt;/&gt;
+</span></span><span style=display:flex><span>                            <span style=color:#f92672>:</span> &lt;&gt;<span style=color:#a6e22e>Found</span> {<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span>} <span style=color:#a6e22e>results</span> <span style=color:#66d9ef>for</span> &lt;<span style=color:#f92672>strong</span>&gt;{<span style=color:#a6e22e>query</span>}&lt;/<span style=color:#f92672>strong</span>&gt;.&lt;/&gt;
+</span></span><span style=display:flex><span>                        }
+</span></span><span style=display:flex><span>                    &lt;/<span style=color:#f92672>p</span>&gt;
+</span></span><span style=display:flex><span>                &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>                &lt;<span style=color:#f92672>ul</span>&gt;
+</span></span><span style=display:flex><span>                    {<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>results</span>.<span style=color:#a6e22e>map</span>((<span style=color:#a6e22e>result</span>, <span style=color:#a6e22e>index</span>) <span style=color:#f92672>=&gt;</span> (
+</span></span><span style=display:flex><span>                        &lt;<span style=color:#f92672>li</span> <span style=color:#a6e22e>key</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>index</span>}&gt;
+</span></span><span style=display:flex><span>                            &lt;<span style=color:#f92672>Link</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>slug</span>}&gt;
+</span></span><span style=display:flex><span>                                &lt;<span style=color:#f92672>h4</span>&gt;
+</span></span><span style=display:flex><span>                                    {<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>metadata</span>.<span style=color:#a6e22e>title</span>}
+</span></span><span style=display:flex><span>                                &lt;/<span style=color:#f92672>h4</span>&gt;
+</span></span><span style=display:flex><span>                                &lt;<span style=color:#f92672>p</span>&gt;<span style=color:#a6e22e>by</span> {<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>metadata</span>.<span style=color:#a6e22e>author</span>} <span style=color:#a6e22e>on</span> {<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>metadata</span>.<span style=color:#a6e22e>date</span>}&lt;/<span style=color:#f92672>p</span>&gt;
+</span></span><span style=display:flex><span>                            &lt;/<span style=color:#f92672>Link</span>&gt;
+</span></span><span style=display:flex><span>                        &lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>                    ))}
+</span></span><span style=display:flex><span>                &lt;/<span style=color:#f92672>ul</span>&gt;
+</span></span><span style=display:flex><span>                &lt;<span style=color:#f92672>p</span>&gt;
+</span></span><span style=display:flex><span>                    {<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span><span style=color:#f92672>&gt;</span><span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#e6db74>`Page </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>currentPage</span><span style=color:#e6db74>}</span><span style=color:#e6db74>/</span><span style=color:#e6db74>${</span>Math.<span style=color:#a6e22e>ceil</span>(<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>15</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74> `</span>}
+</span></span><span style=display:flex><span>                    {<span style=color:#a6e22e>currentPage</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>&amp;&amp;</span> &lt;<span style=color:#f92672>Link</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span>{<span style=color:#e6db74>`/search?query=</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>query</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&amp;page=</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>currentPage</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>}&gt;<span style=color:#a6e22e>Previous</span>&lt;/<span style=color:#f92672>Link</span>&gt;}
+</span></span><span style=display:flex><span>                    {<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span> <span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>currentPage</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>15</span> <span style=color:#f92672>&amp;&amp;</span> 
+</span></span><span style=display:flex><span>                        &lt;&gt; <span style=color:#f92672>|</span> &lt;<span style=color:#f92672>Link</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span>{<span style=color:#e6db74>`/search?query=</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>query</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&amp;page=</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>currentPage</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>}&gt;<span style=color:#a6e22e>Next</span>&lt;/<span style=color:#f92672>Link</span>&gt;&lt;/&gt;
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                &lt;/<span style=color:#f92672>p</span>&gt;
+</span></span><span style=display:flex><span>            &lt;/<span style=color:#f92672>section</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>article</span>&gt;
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></td></tr></table></div></div><ul><li>the page gets the initial query from <code>searchParams</code>, meaning the text after <code>/search?query=</code></li><li>search pagination uses the limit of results (set to 15) to determine how many pages there are</li></ul><p>You can also add a dynamic title to the page:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=display:flex><span><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>Metadata</span> } <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;next&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>async</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>generateMetadata</span>({
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>searchParams</span>,
+</span></span><span style=display:flex><span>  }<span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>searchParams</span>: <span style=color:#66d9ef>Promise</span><span style=color:#f92672>&lt;</span>{ [<span style=color:#a6e22e>key</span>: <span style=color:#66d9ef>string</span>]<span style=color:#f92672>:</span> <span style=color:#66d9ef>string</span> <span style=color:#f92672>|</span> <span style=color:#66d9ef>string</span>[] <span style=color:#f92672>|</span> <span style=color:#66d9ef>undefined</span> }<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>  })<span style=color:#f92672>:</span> <span style=color:#a6e22e>Promise</span>&lt;<span style=color:#f92672>Metadata</span>&gt; {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>query</span> <span style=color:#f92672>=</span> (<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>searchParams</span>).<span style=color:#a6e22e>query</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>page</span> <span style=color:#f92672>=</span> (<span style=color:#66d9ef>await</span> <span style=color:#a6e22e>searchParams</span>).<span style=color:#a6e22e>page</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>title</span><span style=color:#f92672>:</span> (<span style=color:#a6e22e>page</span> <span style=color:#f92672>?</span> <span style=color:#e6db74>`Page </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>page</span><span style=color:#e6db74>}</span><span style=color:#e6db74>: `</span> <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;&#34;</span>) <span style=color:#f92672>+</span> (<span style=color:#a6e22e>query</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>?</span> <span style=color:#e6db74>&#34;Searching &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>query</span>.<span style=color:#a6e22e>toString</span>().<span style=color:#a6e22e>trim</span>()
+</span></span><span style=display:flex><span>            <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;Search&#34;</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; | My Website&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></td></tr></table></div></div><p>And you&rsquo;re done!</p><figure title='Head over to /search?query=lorem' class="figurePopup imagePopup" style=width:min(271px,70%)><img src=/blog/search-component-and-page-for-nextjs/img/working-search-page.jpg srcset="/blog/search-component-and-page-for-nextjs/img/working-search-page_huc9114e60272b3ff21e7f3d0ca034116e_14109_320x0_resize_q75_box.jpg 320w,
+/blog/search-component-and-page-for-nextjs/img/working-search-page_huc9114e60272b3ff21e7f3d0ca034116e_14109_600x0_resize_q75_box.jpg 600w,
+/blog/search-component-and-page-for-nextjs/img/working-search-page_huc9114e60272b3ff21e7f3d0ca034116e_14109_1200x0_resize_q75_box.jpg 2x" alt="Head over to /search?query=lorem"><figcaption><p>Head over to /search?query=lorem</p></figcaption></figure><div class=hanchor__div><h3 class=hanchor id=configuring-fuzzy-search>Configuring fuzzy search</h3><a href=#configuring-fuzzy-search class=hanchor__anchor title="Anchor: 
+Configuring fuzzy search
+"><i class=pxico-link></i></a></div><p>You may try searching a specific word that only appears once deep inside one of your articles. And, for some reason, Fuse.js does not find anything.</p><p>The reason is that with Fuse&rsquo;s default configuration, it will only search in the first 60 characters of every key&rsquo;s value (<a href=https://github.com/krisk/Fuse/issues/569#issuecomment-1120314318>why?</a>).</p><p>If searching everywhere is important to you, you can set <code>ignoreLocation=true</code>. However, Fuse not being optimized for large fields of text, it could slow down search.</p><p>If so, you could try out other search algorithms like <a href=https://github.com/leeoniya/uFuzzy>uFuzzy</a>.</p><div class=hanchor__div><h3 class=hanchor id=styling>Styling</h3><a href=#styling class=hanchor__anchor title="Anchor: 
+Styling
+"><i class=pxico-link></i></a></div><p>All that&rsquo;s left to do is styling.</p><p>Below you can find some basic css to achieve this:</p><figure title='/search?query=lorem' class="figurePopup imagePopup" style=width:min(1744px,70%)><img src=/blog/search-component-and-page-for-nextjs/img/styled-page.jpg srcset="/blog/search-component-and-page-for-nextjs/img/styled-page_huafe6296d896fe167a351b69076252303_31930_320x0_resize_q75_box.jpg 320w,
+/blog/search-component-and-page-for-nextjs/img/styled-page_huafe6296d896fe167a351b69076252303_31930_600x0_resize_q75_box.jpg 600w,
+/blog/search-component-and-page-for-nextjs/img/styled-page_huafe6296d896fe167a351b69076252303_31930_1200x0_resize_q75_box.jpg 2x" alt="/search?query=lorem"><figcaption><p>/search?query=lorem</p></figcaption></figure><div class=hanchor__div><h4 class=hanchor id=search-component--navigation>Search component & navigation
+
+   </h4><a href=#search-component--navigation class=hanchor__anchor title="Anchor: 
+Search component & navigation
+"><i class=pxico-link></i></a></div><details><summary>app/layout.tsx</summary><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=display:flex><span>&lt;<span style=color:#f92672>nav</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>ul</span> <span style=color:#a6e22e>className</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;navbar&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>Link</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/&#34;</span>&gt;<span style=color:#a6e22e>Home</span>&lt;/<span style=color:#f92672>Link</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>Search</span> /&gt;
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>ul</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>nav</span>&gt;
+</span></span></code></pre></td></tr></table></div></div></details><details><summary>app/Search.tsx</summary><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=display:flex><span>&lt;&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>li</span> <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Search&#34;</span> <span style=color:#a6e22e>className</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;searchButton&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;button&#34;</span> <span style=color:#a6e22e>onClick</span><span style=color:#f92672>=</span>{() <span style=color:#f92672>=&gt;</span> <span style=color:#a6e22e>setShowSearchbar</span>(<span style=color:#f92672>!</span><span style=color:#a6e22e>showSearchbar</span>)}&gt;<span style=color:#960050;background-color:#1e0010>🔎</span>&lt;/<span style=color:#f92672>button</span>&gt;
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>    {<span style=color:#a6e22e>showSearchbar</span> <span style=color:#f92672>&amp;&amp;</span> 
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>className</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;searchbar&#34;</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>className</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;searchbarContainer&#34;</span>&gt;
+</span></span><span style=display:flex><span>                &lt;<span style=color:#f92672>Form</span> <span style=color:#a6e22e>action</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/search&#34;</span> <span style=color:#a6e22e>role</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#39;search&#39;</span>&gt;
+</span></span><span style=display:flex><span>                    &lt;<span style=color:#f92672>label</span> <span style=color:#a6e22e>htmlFor</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;navSearch&#34;</span> <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Search&#34;</span>&gt;<span style=color:#960050;background-color:#1e0010>🔎</span>&lt;/<span style=color:#f92672>label</span>&gt;
+</span></span><span style=display:flex><span>                    &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;navSearch&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;query&#34;</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text&#34;</span> <span style=color:#a6e22e>maxLength</span><span style=color:#f92672>=</span>{<span style=color:#ae81ff>255</span>} <span style=color:#a6e22e>placeholder</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Search...&#34;</span>
+</span></span><span style=display:flex><span>                        <span style=color:#a6e22e>onChange</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>handleInputChange</span>}
+</span></span><span style=display:flex><span>                    /&gt;
+</span></span><span style=display:flex><span>                    &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;submit&#34;</span>&gt;<span style=color:#a6e22e>SEARCH</span>&lt;/<span style=color:#f92672>button</span>&gt;
+</span></span><span style=display:flex><span>                &lt;/<span style=color:#f92672>Form</span>&gt;
+</span></span><span style=display:flex><span>                &lt;<span style=color:#f92672>ul</span>&gt;
+</span></span><span style=display:flex><span>                    {<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span>                        <span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>results</span>.<span style=color:#a6e22e>map</span>((<span style=color:#a6e22e>result</span>, <span style=color:#a6e22e>index</span>) <span style=color:#f92672>=&gt;</span> (
+</span></span><span style=display:flex><span>                            &lt;<span style=color:#f92672>li</span> <span style=color:#a6e22e>key</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>index</span>}&gt;
+</span></span><span style=display:flex><span>                                &lt;<span style=color:#f92672>Link</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>slug</span>}&gt;
+</span></span><span style=display:flex><span>                                    &lt;<span style=color:#f92672>h4</span>&gt;
+</span></span><span style=display:flex><span>                                        {<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>metadata</span>.<span style=color:#a6e22e>title</span>}
+</span></span><span style=display:flex><span>                                    &lt;/<span style=color:#f92672>h4</span>&gt;
+</span></span><span style=display:flex><span>                                &lt;/<span style=color:#f92672>Link</span>&gt;
+</span></span><span style=display:flex><span>                            &lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>                        ))
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                    {<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span> <span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>results</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span>                        &lt;<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>                            <span style=color:#f92672>+</span>{<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>results</span>.<span style=color:#a6e22e>length</span>} <span style=color:#a6e22e>results</span>
+</span></span><span style=display:flex><span>                        &lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                &lt;/<span style=color:#f92672>ul</span>&gt;
+</span></span><span style=display:flex><span>            &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>&lt;/&gt;
+</span></span></code></pre></td></tr></table></div></div></details><details><summary>app/globals.css</summary><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">79
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=display:flex><span>.<span style=color:#a6e22e>navbar</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>list-style</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>justify-content</span>: <span style=color:#66d9ef>space-between</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>align-items</span>: <span style=color:#66d9ef>center</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>foreground);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>: <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>background);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>1.2</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>relative</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchButton</span> <span style=color:#f92672>button</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>appearance</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>background);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>: <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>foreground);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>0.5</span><span style=color:#66d9ef>rem</span> <span style=color:#ae81ff>1</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border-radius</span>: <span style=color:#ae81ff>5</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>cursor</span>: <span style=color:#66d9ef>pointer</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#66d9ef>inherit</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchbar</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>absolute</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>top</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>left</span>: <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background-color</span>: <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>foreground);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>: <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>background);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>justify-content</span>: <span style=color:#66d9ef>center</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchbarContainer</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>width</span>: <span style=color:#a6e22e>min</span>(<span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>, <span style=color:#ae81ff>500</span><span style=color:#66d9ef>px</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>relative</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchbarContainer</span> <span style=color:#f92672>form</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>relative</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>gap</span>: <span style=color:#ae81ff>.7</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchbarContainer</span> <span style=color:#f92672>label</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>absolute</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>top</span>: <span style=color:#ae81ff>50</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>transform</span>: translateY(<span style=color:#ae81ff>-50</span><span style=color:#66d9ef>%</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>left</span>: <span style=color:#ae81ff>.7</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>cursor</span>: <span style=color:#66d9ef>text</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchbarContainer</span> <span style=color:#f92672>input</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>appearance</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border</span>: <span style=color:#ae81ff>2</span><span style=color:#66d9ef>px</span> <span style=color:#66d9ef>solid</span> <span style=color:#66d9ef>gray</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>box-sizing</span>: <span style=color:#66d9ef>border-box</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>max-width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>.9</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding-left</span>: <span style=color:#ae81ff>2.8</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>transition</span>: <span style=color:#66d9ef>all</span> <span style=color:#ae81ff>0.15</span><span style=color:#66d9ef>s</span> <span style=color:#66d9ef>ease-in-out</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background-color</span>: <span style=color:#66d9ef>inherit</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>: <span style=color:#66d9ef>inherit</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchbarContainer</span> <span style=color:#f92672>input</span>:<span style=color:#a6e22e>focus</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border-color</span>: <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>background);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background-color</span>: <span style=color:#ae81ff>#d3d3d3</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>outline</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchbarContainer</span> <span style=color:#f92672>button</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background-color</span>: <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>background);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>: <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>foreground);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>appearance</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>cursor</span>: <span style=color:#66d9ef>pointer</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#66d9ef>inherit</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-weight</span>: <span style=color:#66d9ef>bold</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>.8</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>letter-spacing</span>: <span style=color:#ae81ff>-1</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border-radius</span>: <span style=color:#ae81ff>5</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></td></tr></table></div></div></details><div class=hanchor__div><h4 class=hanchor id=search-page>Search page</h4><a href=#search-page class=hanchor__anchor title="Anchor: 
+Search page
+"><i class=pxico-link></i></a></div><details><summary>app/search/page.tsx</summary><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tsx data-lang=tsx><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>styles</span> <span style=color:#66d9ef>from</span> <span style=color:#e6db74>&#34;./page.module.css&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#75715e>/* ... */</span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>article</span> <span style=color:#a6e22e>className</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>styles</span>.<span style=color:#a6e22e>searchPage</span>}&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>h1</span>&gt;<span style=color:#a6e22e>Search</span> <span style=color:#a6e22e>results</span>&lt;/<span style=color:#f92672>h1</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>section</span> <span style=color:#a6e22e>className</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>styles</span>.<span style=color:#a6e22e>searchSection</span>}&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>className</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>styles</span>.<span style=color:#a6e22e>searchbarContainer</span>}&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>Form</span> <span style=color:#a6e22e>action</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/search&#34;</span> <span style=color:#a6e22e>role</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#39;search&#39;</span>&gt;
+</span></span><span style=display:flex><span>                &lt;<span style=color:#f92672>label</span> <span style=color:#a6e22e>htmlFor</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;search&#34;</span> <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Search&#34;</span>&gt;<span style=color:#960050;background-color:#1e0010>🔎</span>&lt;/<span style=color:#f92672>label</span>&gt;
+</span></span><span style=display:flex><span>                &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;search&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;query&#34;</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text&#34;</span> <span style=color:#a6e22e>maxLength</span><span style=color:#f92672>=</span>{<span style=color:#ae81ff>255</span>} <span style=color:#a6e22e>defaultValue</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>query</span>} <span style=color:#a6e22e>placeholder</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Search...&#34;</span>/&gt;
+</span></span><span style=display:flex><span>                &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;submit&#34;</span>&gt;<span style=color:#a6e22e>Search</span>&lt;/<span style=color:#f92672>button</span>&gt;
+</span></span><span style=display:flex><span>            &lt;/<span style=color:#f92672>Form</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>p</span>&gt;
+</span></span><span style=display:flex><span>                {<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>0</span> 
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>?</span> &lt;&gt;<span style=color:#a6e22e>Found</span> <span style=color:#a6e22e>no</span> <span style=color:#a6e22e>results</span> <span style=color:#66d9ef>for</span> &lt;<span style=color:#f92672>strong</span>&gt;{<span style=color:#a6e22e>query</span>}&lt;/<span style=color:#f92672>strong</span>&gt;.&lt;/&gt;
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>:</span> &lt;&gt;<span style=color:#a6e22e>Found</span> {<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span>} <span style=color:#a6e22e>results</span> <span style=color:#66d9ef>for</span> &lt;<span style=color:#f92672>strong</span>&gt;{<span style=color:#a6e22e>query</span>}&lt;/<span style=color:#f92672>strong</span>&gt;.&lt;/&gt;
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            &lt;/<span style=color:#f92672>p</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>ul</span> <span style=color:#a6e22e>className</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>styles</span>.<span style=color:#a6e22e>searchResults</span>}&gt;
+</span></span><span style=display:flex><span>            {<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>results</span>.<span style=color:#a6e22e>map</span>((<span style=color:#a6e22e>result</span>, <span style=color:#a6e22e>index</span>) <span style=color:#f92672>=&gt;</span> (
+</span></span><span style=display:flex><span>                &lt;<span style=color:#f92672>li</span> <span style=color:#a6e22e>key</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>index</span>} <span style=color:#a6e22e>className</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>styles</span>.<span style=color:#a6e22e>searchResult</span>}&gt;
+</span></span><span style=display:flex><span>                    &lt;<span style=color:#f92672>Link</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span>{<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>slug</span>}&gt;
+</span></span><span style=display:flex><span>                        &lt;<span style=color:#f92672>h4</span>&gt;
+</span></span><span style=display:flex><span>                            {<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>metadata</span>.<span style=color:#a6e22e>title</span>}
+</span></span><span style=display:flex><span>                        &lt;/<span style=color:#f92672>h4</span>&gt;
+</span></span><span style=display:flex><span>                        &lt;<span style=color:#f92672>p</span>&gt;<span style=color:#a6e22e>by</span> {<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>metadata</span>.<span style=color:#a6e22e>author</span>} <span style=color:#a6e22e>on</span> {<span style=color:#a6e22e>result</span>.<span style=color:#a6e22e>metadata</span>.<span style=color:#a6e22e>date</span>}&lt;/<span style=color:#f92672>p</span>&gt;
+</span></span><span style=display:flex><span>                    &lt;/<span style=color:#f92672>Link</span>&gt;
+</span></span><span style=display:flex><span>                &lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>            ))}
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>ul</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>p</span>&gt;
+</span></span><span style=display:flex><span>            {<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span><span style=color:#f92672>&gt;</span><span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#e6db74>`Page </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>currentPage</span><span style=color:#e6db74>}</span><span style=color:#e6db74>/</span><span style=color:#e6db74>${</span>Math.<span style=color:#a6e22e>ceil</span>(<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>15</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74> `</span>}
+</span></span><span style=display:flex><span>            {<span style=color:#a6e22e>currentPage</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>&amp;&amp;</span> &lt;<span style=color:#f92672>Link</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span>{<span style=color:#e6db74>`/search?query=</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>query</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&amp;page=</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>currentPage</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>}&gt;<span style=color:#a6e22e>Previous</span>&lt;/<span style=color:#f92672>Link</span>&gt;}
+</span></span><span style=display:flex><span>            {<span style=color:#a6e22e>searchResults</span>.<span style=color:#a6e22e>totalNumber</span> <span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>currentPage</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>15</span> <span style=color:#f92672>&amp;&amp;</span> 
+</span></span><span style=display:flex><span>                &lt;&gt; <span style=color:#f92672>|</span> &lt;<span style=color:#f92672>Link</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span>{<span style=color:#e6db74>`/search?query=</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>query</span><span style=color:#e6db74>}</span><span style=color:#e6db74>&amp;page=</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>currentPage</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>}&gt;<span style=color:#a6e22e>Next</span>&lt;/<span style=color:#f92672>Link</span>&gt;&lt;/&gt;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>p</span>&gt;
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>section</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>article</span>&gt;
+</span></span></code></pre></td></tr></table></div></div></details><details><summary>app/search/page.module.css</summary><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">72
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=display:flex><span>.<span style=color:#a6e22e>searchPage</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>max-width</span>: <span style=color:#ae81ff>700</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>margin</span>: <span style=color:#ae81ff>2</span><span style=color:#66d9ef>rem</span> <span style=color:#66d9ef>auto</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>flex-direction</span>: <span style=color:#66d9ef>column</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>gap</span>: <span style=color:#ae81ff>2</span><span style=color:#66d9ef>rem</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchSection</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>flex-direction</span>: <span style=color:#66d9ef>column</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>gap</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchbarContainer</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>flex-direction</span>: <span style=color:#66d9ef>column</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>gap</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchbarContainer</span> <span style=color:#f92672>form</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>relative</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>gap</span>: <span style=color:#ae81ff>.7</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchbarContainer</span> <span style=color:#f92672>label</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>absolute</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>top</span>: <span style=color:#ae81ff>50</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>transform</span>: translateY(<span style=color:#ae81ff>-50</span><span style=color:#66d9ef>%</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>left</span>: <span style=color:#ae81ff>.7</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>cursor</span>: <span style=color:#66d9ef>text</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchbarContainer</span> <span style=color:#f92672>input</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>appearance</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border</span>: <span style=color:#ae81ff>2</span><span style=color:#66d9ef>px</span> <span style=color:#66d9ef>solid</span> <span style=color:#66d9ef>gray</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>box-sizing</span>: <span style=color:#66d9ef>border-box</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>max-width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>.9</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding-left</span>: <span style=color:#ae81ff>2.8</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>transition</span>: <span style=color:#66d9ef>all</span> <span style=color:#ae81ff>0.15</span><span style=color:#66d9ef>s</span> <span style=color:#66d9ef>ease-in-out</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background-color</span>: <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>foreground);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>: <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>background);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchbarContainer</span> <span style=color:#f92672>input</span>:<span style=color:#a6e22e>focus</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>outline</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchbarContainer</span> <span style=color:#f92672>button</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>color</span>: <span style=color:#66d9ef>inherit</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>appearance</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>cursor</span>: <span style=color:#66d9ef>pointer</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-size</span>: <span style=color:#66d9ef>inherit</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>font-weight</span>: <span style=color:#66d9ef>bold</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border</span>: <span style=color:#ae81ff>1.5</span><span style=color:#66d9ef>px</span> <span style=color:#66d9ef>solid</span> <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>foreground);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>.8</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>letter-spacing</span>: <span style=color:#ae81ff>-1</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>border-radius</span>: <span style=color:#ae81ff>20</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchResults</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>list-style</span>: <span style=color:#66d9ef>none</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>flex-direction</span>: <span style=color:#66d9ef>column</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>gap</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>searchResult</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>rem</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>border-radius</span>: <span style=color:#ae81ff>5</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>border</span>: <span style=color:#ae81ff>1.5</span><span style=color:#66d9ef>px</span> <span style=color:#66d9ef>solid</span> <span style=color:#a6e22e>var</span>(<span style=color:#f92672>--</span>foreground);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></td></tr></table></div></div></details></section></article><hr><div class=sharethis-inline-reaction-buttons></div><script>var remark_config={host:"https://remark42.xxlsteve.net",site_id:"remark",url:"https://xxlsteve.net/blog/search-component-and-page-for-nextjs/",locale:"en",max_shown_comments:10}</script><script>!function(e,t){for(s=0;s<e.length;s++){var s,n=t.createElement("script"),o=".js",i=t.head||t.body;"noModule"in n?(n.type="module",o=".mjs"):n.async=!0,n.defer=!0,n.src=remark_config.host+"/web/"+e[s]+o,i.appendChild(n)}}(remark_config.components||["embed"],document)</script><div id=remark42></div><script>document.querySelectorAll(".imagePopup").forEach(e=>{e.onclick=()=>{imagePopup(e)}})</script><div id=image-popup-pageblock class="pageblock hidden" style=display:none onclick='closePageBlock("image-popup-pageblock")'><div id=image-popup onclick=event.stopPropagation()><a href download id=image-popup__download title=Download><i class=pxico-download_anim></i></a>
+<span onclick='closePageBlock("image-popup-pageblock")' draggable=false class=cross-button><i class=pxico-cross></i></span>
+<img src alt id=image-popup__image><div id=image-popup__text></div></div></div></div></div></main><footer><div class=container><div class=footer-content><div class=footer-content__left-group><h3 class=footer-content__site-name>Socials</h3><div class=footer-social><a href=https://youtube.com/@XXLSteve class="icons youtube" target=_blank rel="noopener noreferrer" title='English YouTube Channel'><i class=pxico-youtube></i></a>
+<a href=https://discord.gg/dJJyryc class="icons discord" target=_blank rel="noopener noreferrer" title='English Discord Server'><i class=pxico-discord></i></a>
+<a href=https://twitter.com/CornetPanique86 class="icons twitter" target=_blank rel="noopener noreferrer" title=Twitter><i class=pxico-twitter></i></a>
+<a href=https://github.com/CornetPanique86 class="icons github" target=_blank rel="noopener noreferrer" title=Github><i class=pxico-github></i></a>
+<a href=https://reddit.com/u/CornetPanique86 class="icons reddit" target=_blank rel="noopener noreferrer" title=Reddit><i class=pxico-reddit></i></a></div><div class=footer-social><a href=https://youtube.com/@XXLSteveFR class="icons youtube" target=_blank rel="noopener noreferrer" title='French YouTube Channel'><i class=pxico-youtube></i></a>
+<a href=https://discord.gg/qPcDsAUZyv class="icons discord" target=_blank rel="noopener noreferrer" title='French Discord Server'><i class=pxico-discord></i></a></div></div><div class=footer-content__right-group><h3 class=footer-content__site-name>Links</h3><div class=footer-social><a href=/credits class="links noA">Credits</a>
+<a href=/privacy-policy class="links noA">Privacy Policy</a>
+<a href=/about class="links noA">About</a>
+<a href=/socials class="links noA">Socials & Contact</a></div><br>"Minecraft" is a trademark of Mojang AB. This website is not affiliated in any way with Microsoft or Mojang AB.</div></div></div></footer></div><div id=page-blur class="pageblock hidden" style=display:none><div id=cookie-consent-popup><span id=cookie-consent-popup__header>This website uses <span style=color:#c38108>cookies</span></span><p>By using this website, you agree to our <a href=/privacy-policy>Cookie Policy</a>.<br>By agreeing to Cookies, the website will store the following:</p><br><input type=checkbox id=themeCookieCheckbox value="Remember theme" checked disabled>
+<label for=themeCookieCheckbox>Remember my color scheme/theme</label><br><br><br><button type=button class=mcbutton-hsl style=filter:brightness(100%) onclick=cookieAgreementFn(-1)>I reject Cookies</button>
+<button type=button class=mcbutton-hsl style=filter:hue-rotate(90deg)brightness(200%);margin:10px onclick=cookieAgreementFn(1)>I accept Cookies</button></div></div><div id=customAlert></div><script src=/scripts/fixedsearch/fixedsearch.js></script></body></html>

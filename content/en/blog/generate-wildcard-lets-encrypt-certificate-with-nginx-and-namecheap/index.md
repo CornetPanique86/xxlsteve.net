@@ -1,7 +1,7 @@
 ---
 title: Generate Wildcard Let's Encrypt Certificate with nginx and Namecheap
 date: 2023-11-02T17:27:46+01:00
-lastmod: 2024-07-10T15:00:23.372Z
+lastmod: 2025-03-15T16:02:57.717Z
 draft: false
 image: generate-wildcard-lets-encrypt-certificate-with-nginx-and-namecheap/img/thumbnail.jpg
 author: XXL Steve
@@ -22,6 +22,8 @@ tableOfContents:
       - t2: nginx
   - h1: Renewal
 tags:
+  - Linux
+categories:
   - Tutorial
 ---
 

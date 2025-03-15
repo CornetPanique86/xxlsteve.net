@@ -268,7 +268,7 @@ h3, h4, h5, h6 {
   color: var(--text-color);
 }
 
-p, span {
+p {
   color: var(--text-color);
 }
 
@@ -1158,6 +1158,9 @@ article section.mainArticle {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    & a {
+      color: var(--text-color);
+    }
   }
 
   &__number {

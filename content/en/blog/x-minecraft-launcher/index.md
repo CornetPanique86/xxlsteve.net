@@ -1,7 +1,7 @@
 ---
 title: X Minecraft Launcher - the only launcher you need
 date: 2023-02-05T12:02:47+01:00
-lastmod: 2024-07-10T15:00:47.068Z
+lastmod: 2025-03-15T16:03:19.743Z
 draft: false
 aliases:
   - xmcl
@@ -24,6 +24,7 @@ tableOfContents:
   - h1: Conclusion
 tags:
   - Minecraft
+categories:
   - Tutorial
 ---
 

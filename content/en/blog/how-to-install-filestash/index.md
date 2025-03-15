@@ -1,7 +1,7 @@
 ---
 title: How to Install Filestash on Linux for Local Storage
 date: 2023-09-24T17:00:25+02:00
-lastmod: 2024-07-10T15:00:27.628Z
+lastmod: 2025-03-15T16:03:05.221Z
 draft: false
 aliases:
   - how-to-install-filestash-on-linux-for-local-storage
@@ -23,6 +23,8 @@ tableOfContents:
       - t2: Configure Webserver
       - t2: Configure backend
 tags:
+  - Linux
+categories:
   - Tutorial
 ---
 

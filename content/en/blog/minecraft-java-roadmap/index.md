@@ -1,7 +1,7 @@
 ---
 title: Minecraft Java Roadmap
 date: 2023-08-16T22:49:09+02:00
-lastmod: 2024-07-10T15:00:34.564Z
+lastmod: 2025-03-15T16:03:12.033Z
 draft: true
 image: minecraft-java-roadmap/img/thumbnail.jpg
 author: XXL Steve
@@ -15,6 +15,7 @@ tableOfContents:
       - t2: null
 tags:
   - Minecraft
+categories:
   - Tutorial
 ---
 
