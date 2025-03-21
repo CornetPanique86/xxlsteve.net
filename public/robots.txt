@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /last-comments
-Disallow: /remark42
-Disallow: /trilium

@@ -1,1 +1,0 @@
-hugo -b https://xxlsteve.net -E -F --minify --ignoreCache --verbose
