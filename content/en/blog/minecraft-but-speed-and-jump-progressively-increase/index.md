@@ -35,16 +35,16 @@ This addon was inspired by Dream's "[Minecraft, But Speed Rises Every Second](ht
 This addon also features 3 different modes:
 
 {{< imgslider "modes" >}}
-  {{< image slider="true" src="https://api.mcpedl.com/storage/submissions/116475/images/minecraft-but-speed-and-jump-progressively-increase_2.png" caption="Speed increases - only your speed will increase every time you move" >}}
-  {{< image slider="true" src="https://api.mcpedl.com/storage/submissions/116475/images/minecraft-but-speed-and-jump-progressively-increase_3.png" caption="Jump increases - only your jumping height will increase every time you jump" >}}
-  {{< image slider="true" src="https://api.mcpedl.com/storage/submissions/116475/images/minecraft-but-speed-and-jump-progressively-increase_4.png" caption="Speed and jump increase - both your speed and jump height will increase every time you move/jump" >}}
+  {{< image slider="true" src="img/minecraft-but-speed-and-jump-progressively-increase_2.png" caption="Speed increases - only your speed will increase every time you move" >}}
+  {{< image slider="true" src="img/minecraft-but-speed-and-jump-progressively-increase_3.png" caption="Jump increases - only your jumping height will increase every time you jump" >}}
+  {{< image slider="true" src="img/minecraft-but-speed-and-jump-progressively-increase_4.png" caption="Speed and jump increase - both your speed and jump height will increase every time you move/jump" >}}
 {{< /imgslider >}}
 
-{{< image src="https://api.mcpedl.com/storage/submissions/116475/images/minecraft-but-speed-and-jump-progressively-increase_5.png" caption="To choose the mode, click on the gear icon on the addon"  >}}
+{{< image src="img/minecraft-but-speed-and-jump-progressively-increase_5.png" caption="To choose the mode, click on the gear icon on the addon"  >}}
 
 If you would like to reset your current speed and/or jump level, write ***/function reset*** in Minecraft chat.
 
-{{< image src="https://api.mcpedl.com/storage/submissions/116475/images/minecraft-but-speed-and-jump-progressively-increase_6.png" caption="function reset"  >}}
+{{< image src="img/minecraft-but-speed-and-jump-progressively-increase_6.png" caption="function reset"  >}}
 
 {{< ytcustom id="VrAshinIIRU" title="Addon showcase" >}}
 
