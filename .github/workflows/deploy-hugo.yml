@@ -32,7 +32,7 @@ jobs:
           echo "${{ secrets.HOST_KEY }}" > ~/.ssh/known_hosts
           echo "Host xxlsteve.net
               Hostname xxlsteve.net
-              user build
+              user web
               IdentityFile ~/.ssh/id_rsa" > ~/.ssh/config
       
       - name: Deploy
