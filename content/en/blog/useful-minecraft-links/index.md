@@ -1,7 +1,7 @@
 ---
 title: Useful Minecraft Links (personal awesome-minecraft)
 date: 2024-04-08T18:01:39.563Z
-lastmod: 2024-10-28T11:25:24.247Z
+lastmod: 2025-06-02T10:10:18.841Z
 draft: false
 image: useful-minecraft-links/img/thumbnail.jpg
 author: XXL Steve
@@ -267,6 +267,8 @@ Worlds
 - [Amidst](https://github.com/toolbox4minecraft/amidst) - a tool to display an overview of a Minecraft seed
 - 🌐 [MCSeeder](https://www.mcseeder.com/) - an online tool to display an overview of a Minecraft seed
 - 🌐 [World Size Calculator](https://onlinemo.de/world) - calculate Java worlds' disk size
+- 🌐 [Chunkbase](https://www.chunkbase.com/apps/) - find structures from a seed
+- 🌐 [Ore Finder](https://www.orefinder.gg/) - find ores from a seed
 
 &nbsp;
 
@@ -340,6 +342,9 @@ Documentation & Communities
 - 🌐 [Minecraft Assets](https://mcasset.cloud/) - browse Minecraft files
 - 🌐 [MCICONS](https://mcicons.pages.dev/) - get full resolution Minecraft item icons
 - 🌐 [Minecraft Titles](https://mctitles.com/) - get Minecraft-styled fonts and Minecraft's official logos
+&nbsp;
+- 🌐 [MC Utils](https://mcutils.com/) - Minecraft tools
+- 🌐 [Minecraft Tools](https://minecraft.tools/) - Minecraft tools
 &nbsp;
 
 - [Omniarchive](https://omniarchive.uk/) - Minecraft archives
