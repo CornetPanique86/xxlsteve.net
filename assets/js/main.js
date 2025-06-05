@@ -37,11 +37,11 @@ window.onload = () => {
             break;
         case "3":
             changeTheme("dark");
-            theme.querySelectorAll('[value="dark"]')[0].setAttributeNode(themeAttr);
+            theme.querySelectorAll('[value="dark"]')[0].setAttributeNode(themeAttr); // For theme dropdown to have correct theme on page load
             break;
         case "2":
             changeTheme("light");
-            theme.querySelectorAll('[value="light"]')[0].setAttributeNode(themeAttr);
+            theme.querySelectorAll('[value="light"]')[0].setAttributeNode(themeAttr); // For theme dropdown to have correct theme on page load
             break;
         case "1":
             changeTheme("auto");
@@ -102,14 +102,18 @@ function changeTheme(theme) {
   body.setAttribute("data-theme", theme);
   // if (!(theme == "light" && document.getElementById("redbuilding1"))) 
   changeIndexBackground(theme);
-  if (window.REMARK42) {
-    if (theme === "light" || theme === "auto") {
-      window.REMARK42.changeTheme("light");
-    } else {
-      window.REMARK42.changeTheme("dark");
-    }
+
+  if (!window.REMARK42) return;
+
+  if (theme === "light") {
+    window.REMARK42.changeTheme("light");
+  } else if (theme === "dark") {
+    window.REMARK42.changeTheme("dark");
+  } else if (window.matchMedia) {
+    window.matchMedia("(prefers-color-scheme: dark)").matches 
+      ? window.REMARK42.changeTheme("dark") 
+      : window.REMARK42.changeTheme("light");
   }
-  return;
 }
 
 const setInnerHTML = (elm, html) => {
