@@ -1,7 +1,7 @@
 ---
 title: Useful Minecraft Links (personal awesome-minecraft)
 date: 2024-04-08T18:01:39.563Z
-lastmod: 2025-06-02T10:10:18.841Z
+lastmod: 2025-06-09T17:24:06.328Z
 draft: false
 image: useful-minecraft-links/img/thumbnail.jpg
 author: XXL Steve
@@ -68,6 +68,7 @@ Servers search
 - ⚙️ [minecraft-server-util](https://passthemayo.gitbook.io/minecraft-server-util/) - a node.js package for interacting with Java and Bedrock Edition Minecraft servers
 &nbsp;
 - 💬 [ServerSeeker](https://discord.com/invite/jVyHyYbqdS) - biggest servers scanner community (and ServerSeeker bot)
+- 💬 [Enderscan](https://enderscan.com/) - growing server scanner community
 - 🌐 [mc-server-scanner](https://mc-server-scanner.vercel.app/) - servers scanner
 &nbsp;
 - 🌐 [The Official Minecraft Server List](https://findmcserver.com/)
