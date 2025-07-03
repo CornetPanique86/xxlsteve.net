@@ -1,7 +1,7 @@
 ---
 title: Useful Minecraft Links (personal awesome-minecraft)
 date: 2024-04-08T18:01:39.563Z
-lastmod: 2025-06-09T17:24:06.328Z
+lastmod: 2025-07-03T17:47:22.790Z
 draft: false
 image: useful-minecraft-links/img/thumbnail.jpg
 author: XXL Steve
@@ -143,6 +143,9 @@ The most well known ones (as there are too many to list):
 - [bedocker](https://bedocker.com/) - easy free Minecraft Bedrock only server hoster. Only supports BDS
 - [Minehut](https://minehut.com/)
 - [Server.pro](https://server.pro/)
+- [MineKeep](https://minekeep.net/)
+- [Aternos](https://aternos.org/)
+- [Play Hosting](https://play.hosting/)
 
 &nbsp;
 
