@@ -1,7 +1,7 @@
 ---
 title: Useful Minecraft Links (personal awesome-minecraft)
 date: 2024-04-08T18:01:39.563Z
-lastmod: 2025-07-03T17:47:22.790Z
+lastmod: 2025-07-03T17:49:30.365Z
 draft: false
 image: useful-minecraft-links/img/thumbnail.jpg
 author: XXL Steve
@@ -16,6 +16,7 @@ tableOfContents:
       - t2: Servers search
       - t2: Server software (Java)
       - t2: Server software (Bedrock)
+      - t2: Server hosting
   - h1: Game modifications
     h2:
       - t2: Mod loaders (Java)
