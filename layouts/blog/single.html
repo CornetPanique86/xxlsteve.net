@@ -207,6 +207,9 @@
         url: "{{ .Permalink }}",
         locale: "{{ .Site.Language.Lang }}",
         max_shown_comments: 10,
+        theme: document.getElementById("themeToggler").value === "auto" 
+            ? (window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches ? "dark" : "light")
+            : document.getElementById("themeToggler").value,
         no_footer: true
     }
 </script>

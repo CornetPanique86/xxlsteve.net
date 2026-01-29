@@ -78,6 +78,11 @@ window.onload = () => {
     // } catch { }
 }
 
+window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change', event => {
+  const newTheme = event.matches ? "dark" : "light";
+  if (window.REMARK42) window.REMARK42.changeTheme(newTheme);
+}); 
+
 function themeSettings() {
     const theme = document.getElementById("themeToggler").value;
 
