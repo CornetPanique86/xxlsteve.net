@@ -1,7 +1,7 @@
 ---
 title: Generate Wildcard Let's Encrypt Certificate with nginx and Namecheap
 date: 2023-11-02T17:27:46+01:00
-lastmod: 2025-03-15T16:02:57.717Z
+lastmod: 2026-01-29T20:54:18.433Z
 draft: false
 image: generate-wildcard-lets-encrypt-certificate-with-nginx-and-namecheap/img/thumbnail.jpg
 author: XXL Steve
@@ -242,4 +242,4 @@ However, these scripts need access to Namecheap's API to perform the otherwise m
 
 Since automatic renewal is not possible because of Namecheap API criteria, the only option left is the manual way. That means running the same command every 60 to 90 days, and therefore repeating the task of adding a TXT record to your domain, etc.
 
-And that's why, after further consideration, I had to stick with namecheap's PositiveSSL offer, in spite of its support of only the root domain and no subdomains.
+Personally, Google calendar notifies me every 90 days to renew the certificate by running the command from [Run Certbot command](#run-certbot-command).
