@@ -1,8 +1,8 @@
 ---
 title: "Intégrer une Grande École Informatique depuis l'Université : les voies cachées"
 date: 2026-06-19T15:57:34.243Z
-lastmod: 2026-06-22T18:29:47.369Z
-draft: true
+lastmod: 2026-06-22T18:45:35.200Z
+draft: false
 image: integrer-une-grande-ecole/img/thumbnail.jpg
 author: XXL Steve
 description: Ancien élève de licence, voici ce que j'ai appris sur les passerelles universitaires pour intégrer une Grande École.
