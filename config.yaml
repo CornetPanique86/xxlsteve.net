@@ -12,18 +12,16 @@ languages:
     languageName: 🇫🇷
     weight: 2
 
-author:
-  name: XXL Steve
-
 params:
   description: Welcome to my website
   title: XXL Steve
   remark42SiteID: "remark"
   remark42Url: "https://remark42.xxlsteve.net"
   math: false
-
-social:
-  twitter: cornetpanique86
+  author:
+    name: XXL Steve
+  social:
+    twitter: cornetpanique86
 
 taxonomies:
   tag: tags
@@ -68,11 +66,12 @@ markup:
       unsafe: true
     extensions:
       passthrough:
+        enable: true
         delimiters:
           block:
-          - - \[
-            - \]
+          - - $$
+            - $$
           inline:
-          - - \(
-            - \)
-        enable: true
+          - - '\('
+            - '\)'
+        

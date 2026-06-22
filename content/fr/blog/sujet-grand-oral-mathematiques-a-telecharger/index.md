@@ -1,7 +1,7 @@
 ---
 title: Sujet Grand Oral Mathématiques à télécharger
 date: 2024-07-10T16:56:16+02:00
-lastmod: 2024-07-24T18:47:10.074Z
+lastmod: 2026-06-21T21:14:22.035Z
 draft: false
 image: sujet-grand-oral-mathematiques-a-telecharger/img/thumbnail.jpg
 author: XXL Steve
@@ -70,10 +70,10 @@ J'y ai écrit en gros les formules importantes et aussi dessiné un graphe d'une
 **Recto :**
 xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx
 
-\\[ p(k)=\frac{A_{k}^{n}}{n^{k}}=\frac{n\times (n-1)\times (n-2)\times \cdots \times (n-k+1)}{n\times n\times n\times \cdots \times n}=\prod_{i=0}^{k-1}\frac{n-i}{n}=\prod_{i=0}^{k-1}1-\frac{i}{n} \\] \\[ \lim_{n \to +\infty } -\frac{i}{n}=0 \\] \\[ Si \quad x=-\frac{i}{n} \quad et \quad x\to 0 \quad alors \quad \prod_{i=0}^{k-1}1-\frac{i}{n}\approx \prod_{i=0}^{k-1}e^{-\frac{i}{n}} \\] \\[ \prod_{i=0}^{k-1}e^{-\frac{i}{n}}=\exp(-\frac{\sum_{i=0}^{k-1}i}{n})=e^{-\frac{k(k-1)}{2n}} \\] \\[ \frac{1}{2}\approx 1-e^{-\frac{k(k-1)}{2n}}
-\Leftrightarrow k^{2}-k-n\ln(4)\approx 0 \\] \\[ k\approx 2,714922669\cdot 10^{18} \Rightarrow  p(2,714922669\cdot 10^{18})\approx \frac{1}{2} \\]
+$$ p(k)=\frac{A_{k}^{n}}{n^{k}}=\frac{n\times (n-1)\times (n-2)\times \cdots \times (n-k+1)}{n\times n\times n\times \cdots \times n}=\prod_{i=0}^{k-1}\frac{n-i}{n}=\prod_{i=0}^{k-1}1-\frac{i}{n} $$ $$ \lim_{n \to +\infty } -\frac{i}{n}=0 $$ $$ Si \quad x=-\frac{i}{n} \quad et \quad x\to 0 \quad alors \quad \prod_{i=0}^{k-1}1-\frac{i}{n}\approx \prod_{i=0}^{k-1}e^{-\frac{i}{n}} $$ $$ \prod_{i=0}^{k-1}e^{-\frac{i}{n}}=\exp(-\frac{\sum_{i=0}^{k-1}i}{n})=e^{-\frac{k(k-1)}{2n}} $$ $$ \frac{1}{2}\approx 1-e^{-\frac{k(k-1)}{2n}}
+\Leftrightarrow k^{2}-k-n\ln(4)\approx 0 $$ $$ k\approx 2,714922669\cdot 10^{18} \Rightarrow  p(2,714922669\cdot 10^{18})\approx \frac{1}{2} $$
 
 **Verso :**
-\\[ f(x):=e(x) \\, et \\, f'(x)=e(x) \\]
+$$ f(x):=e(x) \\, et \\, f'(x)=e(x) $$
 Tangente de \\(f(x)\\) en \\(x=0\\):
-\\[ y=f'(0)(x-0)+f(0)=1+x \\] \\[ Pour \\, x\to 0: e(x)\approx 1+x \\]
+$$ y=f'(0)(x-0)+f(0)=1+x $$ $$ Pour \\, x\to 0: e(x)\approx 1+x $$

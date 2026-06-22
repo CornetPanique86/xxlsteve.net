@@ -433,6 +433,10 @@ details[open] > summary {
   margin-bottom: .5rem;
 }
 
+mjx-mtd, mjx-container[jax="CHTML"][display="true"] {
+  text-align: left !important;
+}
+
 .custom-block {
   margin-top: $text-margin;
   margin-bottom: $text-margin;
