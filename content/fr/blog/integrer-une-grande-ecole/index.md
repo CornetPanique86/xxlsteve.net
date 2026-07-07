@@ -1,7 +1,7 @@
 ---
 title: "Intégrer une Grande École Informatique depuis l'Université : les voies cachées"
 date: 2026-06-19T15:57:34.243Z
-lastmod: 2026-06-22T18:45:35.200Z
+lastmod: 2026-07-07T21:15:55.883Z
 draft: false
 image: integrer-une-grande-ecole/img/thumbnail.jpg
 author: XXL Steve
@@ -25,7 +25,7 @@ tags:
   - Studies
 ---
 
-Élève de la prépa universitaire [CUPGE UPSSITECH](https://www.univ-tlse3.fr/decouvrir-nos-diplomes/preparation-concours-ingenieur-parcours-cycle-universitaire-preparatoire-aux-grandes-ecoles-upssitech) à l'Université de Toulouse, j'ai intégré en 2026 la Grande École [INP Bordeaux ENSEIRB-MATMECA](https://enseirb-matmeca.bordeaux-inp.fr) en formation Informatique.
+Élève de la prépa universitaire [CUPGE UPSSITECH](https://www.univ-tlse3.fr/decouvrir-nos-diplomes/preparation-concours-ingenieur-parcours-cycle-universitaire-preparatoire-aux-grandes-ecoles-upssitech) à l'Université de Toulouse, j'ai été admis en 2026 à la Grande École [INP Bordeaux ENSEIRB-MATMECA](https://enseirb-matmeca.bordeaux-inp.fr) en formation Informatique **et** la Grande École [ensIIE](https://www.ensiie.fr/) sous statut étudiant.
 
 À travers mes deux ans de classe préparatoire *universitaire*, j'ai découvert les voies les plus communes pour intégrer une École d'ingénieur dans le numérique, et que **c'est possible voire plus facile d'entrer en Grande École depuis la licence** que depuis la CPGE.
 
@@ -75,6 +75,8 @@ Si cette voie t'intéresse, j'ai écrit un [article pour te préparer au concour
 Admission sur titre
 {{< /hanchor >}}
 
+J'ai été admis à l'[ensIIE](https://www.ensiie.fr/ecole/actualites-et-evenements/admission-sur-titre-en-premiere-annee-0) après un entretien, en parallèle du Pass'Ingénieur ; tu peux en savoir plus sur [mon article dédié](/fr/blog/ensiie).
+
 Pour candidater sur dossier, il existe **beaucoup** de procédures. Je vais lister les plus communes mais fais tes recherches !
 
 &nbsp;
@@ -95,7 +97,7 @@ Une autre procédure groupée, le [réseau Polytech](https://www.polytech-reseau
 
 **Écoles rattachées à l'université**
 
-Il existe beaucoup d'Écoles d'ingénieurs intégrées dans des universités (comme UPSSITECH à l'Université de Toulouse), et parfois on peut y candidater depuis la plateforme eCandidat de l'université.
+Il existe beaucoup d'Écoles d'ingénieurs intégrées dans des universités (comme UPSSITECH à l'Université de Toulouse), et parfois on peut y candidater depuis la plateforme eCandidat de l'université, comme [Telecom Nancy](https://telecomnancy.univ-lorraine.fr/admission/modalites-dadmission/).
 
 {{< hanchor h="3" >}}
 Depuis la L3
